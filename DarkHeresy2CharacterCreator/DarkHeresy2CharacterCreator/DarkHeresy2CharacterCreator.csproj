@@ -99,12 +99,21 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Resource Include="Res\AdmiralGotic.ttf" />
+    <Resource Include="Res\FontCloisterBlackLight.ttf" />
+    <Resource Include="Res\FontGoticE.ttf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ViewModel\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Res\VerticalWindowBackground.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Res\HorizontalWindowBackground.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
