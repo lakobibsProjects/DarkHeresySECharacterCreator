@@ -3,9 +3,9 @@
                     xmlns:local="clr-namespace:DarkHeresy2CharacterCreator.View">
     <Color x:Key="Bronze">#CD7F32</Color>
     <Color x:Key="Bronze_Dark">#784511</Color>
-    <Color x:Key="Blood_Fresh">#980002</Color>
+    <Color x:Key="Blood_Fresh">#980002</Color> <!--compiler add ff to begin of codding-->
     <Color x:Key="Blood_Dried">#4b0101</Color>
     <Color x:Key="Black">#000000</Color>
     <Color x:Key="White">#FFFFFF</Color>
-    <Color x:Key="Blood_Red">#980000</Color>
+    <Color x:Key="Blood_Red">#980000</Color>    <!--compiler add ff to begin of codding-->
 </ResourceDictionary>
