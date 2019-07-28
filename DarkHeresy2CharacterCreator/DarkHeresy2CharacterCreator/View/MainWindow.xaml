@@ -11,14 +11,14 @@
 
     <Window.Resources>
         <LinearGradientBrush x:Key="BronzeButtonBackground" StartPoint="1,0.3" EndPoint="0,0">
-            <GradientStop Color="#CD7F32" Offset=".7" />
-            <GradientStop Color="#784511" Offset="0" />
+            <GradientStop Color="{DynamicResource ResourceKey=Bronze}" Offset=".7" />
+            <GradientStop Color="{DynamicResource ResourceKey=Bronze_Dark}" Offset="0" />
         </LinearGradientBrush>        
         <Style x:Key="BaseButton" TargetType="Button" >
             <Setter Property="FontFamily" Value="Res/FontGoticE"/>
             <Setter Property="FontStyle" Value="Oblique"/>
-            <Setter Property="Foreground" Value="#000000"/>
-            <Setter Property="BorderBrush" Value="#980002"/>
+            <Setter Property="Foreground" Value="{DynamicResource ResourceKey=Dark}"/>
+            <Setter Property="BorderBrush"  Value="{DynamicResource ResourceKey=Dark}"/>
             <Setter Property="BorderThickness" Value="10"/>
             <Setter Property="FontSize" Value="21"/>            
             <Setter Property="Margin" Value="5"/>

@@ -1,0 +1,11 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:DarkHeresy2CharacterCreator.View">
+    <Color x:Key="Bronze">#CD7F32</Color>
+    <Color x:Key="Bronze_Dark">#784511</Color>
+    <Color x:Key="Blood_Fresh">#980002</Color>
+    <Color x:Key="Blood_Dried">#4b0101</Color>
+    <Color x:Key="Black">#000000</Color>
+    <Color x:Key="White">#FFFFFF</Color>
+    <Color x:Key="Blood_Red">#980000</Color>
+</ResourceDictionary>
