@@ -7,11 +7,9 @@
         mc:Ignorable="d"
         Title="HomeWorld" Height="450" Width="600">
     <Grid>
-        <Grid.Resources>
-            <Style x:Key="HWTB" TargetType="TextBlock">
-                <Setter Property="TextAlignment" Value="Center"/>
-            </Style>
-        </Grid.Resources>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Res/HorizontalWindowBackground.jpg"/>
+        </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
