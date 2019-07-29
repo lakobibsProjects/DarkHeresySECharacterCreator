@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Projects\C#\DarkHeresy2CharacterCreator\DarkHeresy2CharacterCreator\DarkHeresy2CharacterCreator\App.xaml
-4-1822333321
+5-1262213229
 
 172033034599
 13-1454942768
-View\CharacterCreationView\Background.xaml;View\CharacterCreationView\HomeWorld.xaml;View\MainWindow.xaml;View\ResourceDictionary.xaml;
+View\CharacterCreationView\Background.xaml;View\CharacterCreationView\HomeWorld.xaml;View\Dictionaries\ColorsDictionary.xaml;View\Dictionaries\ElementsDictionary.xaml;View\MainWindow.xaml;
 
 True
 

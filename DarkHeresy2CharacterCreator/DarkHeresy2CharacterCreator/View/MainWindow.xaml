@@ -10,21 +10,6 @@
         Background="#980002">
 
     <Window.Resources>
-        <LinearGradientBrush x:Key="BronzeButtonBackground" StartPoint="1,0.3" EndPoint="0,0">
-            <GradientStop Color="{DynamicResource ResourceKey=Bronze}" Offset=".7" />
-            <GradientStop Color="{DynamicResource ResourceKey=Bronze_Dark}" Offset="0" />
-        </LinearGradientBrush>        
-        <Style x:Key="BaseButton" TargetType="Button" >
-            <Setter Property="FontFamily" Value="Res/FontGoticE"/>
-            <Setter Property="FontStyle" Value="Oblique"/>
-            <Setter Property="Foreground" Value="{DynamicResource ResourceKey=Dark}"/>
-            <Setter Property="BorderBrush"  Value="{DynamicResource ResourceKey=Dark}"/>
-            <Setter Property="BorderThickness" Value="10"/>
-            <Setter Property="FontSize" Value="21"/>            
-            <Setter Property="Margin" Value="5"/>
-            <Setter Property="MinHeight" Value="35"/>
-            <Setter Property="Background" Value="{StaticResource BronzeButtonBackground}"/>
-        </Style>
     </Window.Resources>
     <Grid>
         <Grid.Background>
@@ -41,11 +26,11 @@
             
         </DataGrid>
         <StackPanel Orientation="Vertical" Margin="5" Grid.Column="1" CanVerticallyScroll="True" VerticalAlignment="Center">
-            <Button Content="New" Style="{StaticResource BaseButton}"></Button>
-            <Button Content="Load" Style="{StaticResource BaseButton}" ></Button>
-            <Button Content="Delete" Style="{StaticResource BaseButton}"></Button>
+            <Button Content="New" Style="{DynamicResource ResourceKey=BaseButton}"></Button>
+            <Button Content="Load" Style="{DynamicResource ResourceKey=BaseButton}" ></Button>
+            <Button Content="Delete" Style="{DynamicResource ResourceKey=BaseButton}"></Button>
             <Separator/>
-            <Button Content="Exit" Style="{StaticResource BaseButton}" ></Button>
+            <Button Content="Exit" Style="{DynamicResource ResourceKey=BaseButton}" ></Button>
         </StackPanel>
     </Grid>
 </Window>
