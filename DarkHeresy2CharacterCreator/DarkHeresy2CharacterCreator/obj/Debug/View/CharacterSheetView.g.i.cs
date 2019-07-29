@@ -81,7 +81,8 @@ namespace DarkHeresy2CharacterCreator.View
         internal System.Windows.Controls.TabItem Talents;
         internal System.Windows.Controls.TabItem Skills;
         internal System.Windows.Controls.TabItem EliteAdvances;
-        internal System.Windows.Controls.TabItem Rules;
+        internal System.Windows.Controls.TabItem Gear;
+        internal System.Windows.Controls.TabItem Armory;
     }
 }
 

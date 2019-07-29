@@ -15,22 +15,52 @@
                 <ImageBrush ImageSource="/Res/HorizontalWindowBackground.jpg"/>
             </TabControl.Background>
             <TabItem x:Name="CharacterSheet" Header="Character Sheet">
+                <Grid>
+                    
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="Gear" Header="Gear">
                 
             </TabItem>
             <TabItem x:Name="CharacterAdvancement" Header="Character Advancement">
+                <DataGrid>
+                    
+                </DataGrid>
+            </TabItem>
+            <TabItem x:Name="Armory" Header="Armory">
 
             </TabItem>
             <TabItem x:Name="Talents" Header="Talents">
-
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <DataGrid Grid.Column="0"/>
+                    <TextBlock Grid.Column="1"/>
+                </Grid>
             </TabItem>
             <TabItem x:Name="Skills" Header="Skills">
-
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <DataGrid Grid.Column="0"/>
+                    <TextBlock Grid.Column="1"/>
+                </Grid>
             </TabItem>
             <TabItem x:Name="EliteAdvances" Header="Elite Advances">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <DataGrid Grid.Column="0"/>
+                    <Grid Grid.Column="1">
 
-            </TabItem>
-            <TabItem x:Name="Rules" Header="Rules">
-
+                    </Grid>
+                </Grid>
             </TabItem>
         </TabControl>
         
