@@ -12,4 +12,7 @@
         <Setter Property="MinHeight" Value="35"/>
         <Setter Property="Background" Value="{DynamicResource ResourceKey=BronzeButtonBackground}"/>
     </Style>
+    <Style x:Key="BaseTextBlock" TargetType="TextBlock">
+        <Setter Property="TextAlignment" Value="Center"/>
+    </Style>
 </ResourceDictionary>

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DarkHeresy2CharacterCreator.View.CharacterCreationView"
         mc:Ignorable="d"
-        Title="Background" Height="275" Width="500">
+        Title="Background" Height="450" Width="600">
     <Grid>
         <Grid.Resources>
             <Style x:Key="BGTB" TargetType="TextBlock">
@@ -35,26 +35,26 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <TextBlock Grid.Column="0" Grid.Row="0" Style="{StaticResource BGTB}">Discription</TextBlock>
-            <TextBlock Grid.Column="0" Grid.Row="1" Style="{StaticResource BGTB}">Starting Skills</TextBlock>
-            <TextBlock Grid.Column="0" Grid.Row="2" Style="{StaticResource BGTB}">Starting Talents</TextBlock>
-            <TextBlock Grid.Column="0" Grid.Row="3" Style="{StaticResource BGTB}">Starting Equipment</TextBlock>
-            <TextBlock Grid.Column="0" Grid.Row="4" Style="{StaticResource BGTB}">Background Bonus</TextBlock>
-            <TextBlock Grid.Column="0" Grid.Row="5" Style="{StaticResource BGTB}">Background Aptitude</TextBlock>
-            <TextBlock Grid.Column="0" Grid.Row="6" Style="{StaticResource BGTB}">Recomended Roles</TextBlock>
+            <TextBlock Grid.Column="0" Grid.Row="0" Style="{DynamicResource ResourceKey=BaseTextBlock}">Discription</TextBlock>
+            <TextBlock Grid.Column="0" Grid.Row="1" Style="{DynamicResource ResourceKey=BaseTextBlock}">Starting Skills</TextBlock>
+            <TextBlock Grid.Column="0" Grid.Row="2" Style="{DynamicResource ResourceKey=BaseTextBlock}">Starting Talents</TextBlock>
+            <TextBlock Grid.Column="0" Grid.Row="3" Style="{DynamicResource ResourceKey=BaseTextBlock}">Starting Equipment</TextBlock>
+            <TextBlock Grid.Column="0" Grid.Row="4" Style="{DynamicResource ResourceKey=BaseTextBlock}">Background Bonus</TextBlock>
+            <TextBlock Grid.Column="0" Grid.Row="5" Style="{DynamicResource ResourceKey=BaseTextBlock}">Background Aptitude</TextBlock>
+            <TextBlock Grid.Column="0" Grid.Row="6" Style="{DynamicResource ResourceKey=BaseTextBlock}">Recomended Roles</TextBlock>
 
-            <TextBlock Grid.Column="1" Grid.Row="0" Style="{StaticResource BGTB}"></TextBlock>
-            <TextBlock Grid.Column="1" Grid.Row="1" Style="{StaticResource BGTB}"></TextBlock>
-            <TextBlock Grid.Column="1" Grid.Row="2" Style="{StaticResource BGTB}"></TextBlock>
-            <TextBlock Grid.Column="1" Grid.Row="3" Style="{StaticResource BGTB}"></TextBlock>
-            <TextBlock Grid.Column="1" Grid.Row="4" Style="{StaticResource BGTB}"></TextBlock>
-            <TextBlock Grid.Column="1" Grid.Row="5" Style="{StaticResource BGTB}"></TextBlock>
-            <TextBlock Grid.Column="1" Grid.Row="6" Style="{StaticResource BGTB}"></TextBlock>
+            <TextBlock Grid.Column="1" Grid.Row="0" Style="{DynamicResource ResourceKey=BaseTextBlock}"></TextBlock>
+            <TextBlock Grid.Column="1" Grid.Row="1" Style="{DynamicResource ResourceKey=BaseTextBlock}"></TextBlock>
+            <TextBlock Grid.Column="1" Grid.Row="2" Style="{DynamicResource ResourceKey=BaseTextBlock}"></TextBlock>
+            <TextBlock Grid.Column="1" Grid.Row="3" Style="{DynamicResource ResourceKey=BaseTextBlock}"></TextBlock>
+            <TextBlock Grid.Column="1" Grid.Row="4" Style="{DynamicResource ResourceKey=BaseTextBlock}"></TextBlock>
+            <TextBlock Grid.Column="1" Grid.Row="5" Style="{DynamicResource ResourceKey=BaseTextBlock}"></TextBlock>
+            <TextBlock Grid.Column="1" Grid.Row="6" Style="{DynamicResource ResourceKey=BaseTextBlock}"></TextBlock>
 
             <StackPanel Orientation="Horizontal" Grid.ColumnSpan="2" Grid.Row="7" Margin="5" HorizontalAlignment="Center">
-                <Button  Content="Cancel"></Button>
-                <Button  Content="&lt; Back" Margin="10,0,10,0"></Button>
-                <Button  Content="Next &gt;"></Button>
+                <Button  Content="Cancel" Style="{DynamicResource ResourceKey=BaseButton}"></Button>
+                <Button  Content="&lt; Back" Style="{DynamicResource ResourceKey=BaseButton}" Margin="10,0,10,0"></Button>
+                <Button  Content="Next &gt;" Style="{DynamicResource ResourceKey=BaseButton}"></Button>
             </StackPanel>
 
 
