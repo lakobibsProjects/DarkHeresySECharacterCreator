@@ -7,11 +7,12 @@
         <Setter Property="Foreground" Value="{DynamicResource ResourceKey=Dark}"/>
         <Setter Property="BorderBrush"  Value="{DynamicResource ResourceKey=Dark}"/>
         <Setter Property="BorderThickness" Value="10"/>
-        <Setter Property="FontSize" Value="21"/>
+        <Setter Property="FontSize" Value="{DynamicResource ResourceKey=fontSizeLarge}"/>
         <Setter Property="Margin" Value="5"/>
         <Setter Property="MinHeight" Value="35"/>
         <Setter Property="Background" Value="{DynamicResource ResourceKey=BronzeButtonBackground}"/>
     </Style>
+    
     <Style x:Key="BaseTextBlock" TargetType="TextBlock">
         <Setter Property="TextAlignment" Value="Center"/>
     </Style>

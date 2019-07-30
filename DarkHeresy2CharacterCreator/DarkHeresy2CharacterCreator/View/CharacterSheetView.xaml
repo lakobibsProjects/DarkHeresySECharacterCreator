@@ -50,6 +50,16 @@
                     <TextBlock Grid.Column="1"/>
                 </Grid>
             </TabItem>
+            <TabItem x:Name="PsychicPowers" Header="Psychic Powers">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <DataGrid Grid.Column="0"/>
+                    <TextBlock Grid.Column="1"/>
+                </Grid>
+            </TabItem>
             <TabItem x:Name="EliteAdvances" Header="Elite Advances">
                 <Grid>
                     <Grid.ColumnDefinitions>

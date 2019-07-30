@@ -8,6 +8,7 @@
     <Color x:Key="Black">#000000</Color>
     <Color x:Key="White">#FFFFFF</Color>
     <Color x:Key="Blood_Red">#980000</Color>    <!--compiler add ff to begin of codding-->
+    
     <LinearGradientBrush x:Key="BronzeButtonBackground" StartPoint="1,0.3" EndPoint="0,0">
         <GradientStop Color="{DynamicResource ResourceKey=Bronze}" Offset=".7" />
         <GradientStop Color="{DynamicResource ResourceKey=Bronze_Dark}" Offset="0" />
