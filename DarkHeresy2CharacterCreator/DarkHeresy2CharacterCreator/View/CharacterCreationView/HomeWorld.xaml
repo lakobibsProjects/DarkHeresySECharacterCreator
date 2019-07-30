@@ -50,9 +50,9 @@
             <TextBlock Grid.Column="1" Grid.Row="6" Style="{DynamicResource ResourceKey=BaseTextBlock}"></TextBlock>
 
             <StackPanel Orientation="Horizontal" Grid.ColumnSpan="2" Grid.Row="7" Margin="5" HorizontalAlignment="Center">
-                <Button  Content="Cancel" Style="{DynamicResource ResourceKey=BaseButton}"></Button>
-                <Button  Content="&lt; Back" Style="{DynamicResource ResourceKey=BaseButton}" Margin="10,0,10,0"></Button>
-                <Button  Content="Next &gt;" Style="{DynamicResource ResourceKey=BaseButton}"></Button>
+                <Button  Content=" Cancel   " Style="{DynamicResource ResourceKey=CharacterCreationButton}"></Button>
+                <Button  Content="&lt; Back   " Style="{DynamicResource ResourceKey=CharacterCreationButton}"></Button>
+                <Button  Content=" Next &gt;   " Style="{DynamicResource ResourceKey=CharacterCreationButton}"></Button>
             </StackPanel>
 
             

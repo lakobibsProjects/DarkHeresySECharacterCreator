@@ -20,3 +20,8 @@ C:\Projects\C#\DarkHeresy2CharacterCreator\DarkHeresy2CharacterCreator\DarkHeres
 C:\Projects\C#\DarkHeresy2CharacterCreator\DarkHeresy2CharacterCreator\DarkHeresy2CharacterCreator\obj\Debug\View\CharacterCreationView\Background.baml
 C:\Projects\C#\DarkHeresy2CharacterCreator\DarkHeresy2CharacterCreator\DarkHeresy2CharacterCreator\obj\Debug\View\Dictionaries\ColorsDictionary.baml
 C:\Projects\C#\DarkHeresy2CharacterCreator\DarkHeresy2CharacterCreator\DarkHeresy2CharacterCreator\obj\Debug\View\Dictionaries\ElementsDictionary.baml
+C:\Projects\C#\DarkHeresy2CharacterCreator\DarkHeresy2CharacterCreator\DarkHeresy2CharacterCreator\obj\Debug\View\CharacterCreationView\Role.g.cs
+C:\Projects\C#\DarkHeresy2CharacterCreator\DarkHeresy2CharacterCreator\DarkHeresy2CharacterCreator\obj\Debug\View\CharacterSheetView.g.cs
+C:\Projects\C#\DarkHeresy2CharacterCreator\DarkHeresy2CharacterCreator\DarkHeresy2CharacterCreator\obj\Debug\View\CharacterCreationView\Role.baml
+C:\Projects\C#\DarkHeresy2CharacterCreator\DarkHeresy2CharacterCreator\DarkHeresy2CharacterCreator\obj\Debug\View\CharacterSheetView.baml
+C:\Projects\C#\DarkHeresy2CharacterCreator\DarkHeresy2CharacterCreator\DarkHeresy2CharacterCreator\obj\Debug\View\Dictionaries\FontsDictionary.baml

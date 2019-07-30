@@ -4,6 +4,5 @@
                      xmlns:sys="clr-namespace:System;assembly=mscorlib">
     <sys:Double x:Key="fontSizeNormal">13</sys:Double>
     <sys:Double x:Key="fontSizeTiny">9</sys:Double>
-    <sys:Double x:Key="fontSizeLarge">21</sys:Double>
-    
+    <sys:Double x:Key="fontSizeLarge">21</sys:Double>    
 </ResourceDictionary>
