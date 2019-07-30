@@ -2,7 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:DarkHeresy2CharacterCreator.View.Dictionaries">
     <Style x:Key="BaseButton" TargetType="Button" >
-        <Setter Property="FontFamily" Value="Res/FontGoticE"/>
+        <Setter Property="FontFamily" Value="old english text mt"/>
         <Setter Property="FontStyle" Value="Oblique"/>
         <Setter Property="Foreground" Value="{DynamicResource ResourceKey=Dark}"/>
         <Setter Property="BorderBrush"  Value="{DynamicResource ResourceKey=Dark}"/>
@@ -17,9 +17,14 @@
         <Setter Property="FontSize" Value="{DynamicResource ResourceKey=fontSizeNormal}"/>
         <Setter Property="MinHeight" Value="5"/>        
     </Style>
-    
+
+    <ImageBrush x:Key="BackgroundImage" ImageSource="/Res/HorizontalWindowBackground.jpg"/>
     
     <Style x:Key="BaseTextBlock" TargetType="TextBlock">
         <Setter Property="TextAlignment" Value="Center"/>
+    </Style>
+
+    <Style x:Key="GeneralGrid" TargetType="Grid">
+        <Setter Property="Background" Value="{DynamicResource BackgroundImage}"/>
     </Style>
 </ResourceDictionary>
