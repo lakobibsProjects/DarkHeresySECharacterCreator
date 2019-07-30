@@ -5,17 +5,32 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DarkHeresy2CharacterCreator"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="450">
+        WindowStartupLocation="CenterScreen"
+        Title="CharacterCreator" Height="290" Width="450"
+        Background="#980002">
+
+    <Window.Resources>
+    </Window.Resources>
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Res/HorizontalWindowBackground.jpg"/>
+        </Grid.Background>
         <Grid.RowDefinitions>
-            <RowDefinition Name="MenuRow" Height="15"/>
-            <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
+        <DataGrid Grid.Column="0" Margin="5" Opacity="0.5">
+            
+        </DataGrid>
+        <StackPanel Orientation="Vertical" Margin="5" Grid.Column="1" CanVerticallyScroll="True" VerticalAlignment="Center">
+            <Button Content="New" Style="{DynamicResource ResourceKey=BaseButton}"></Button>
+            <Button Content="Load" Style="{DynamicResource ResourceKey=BaseButton}" ></Button>
+            <Button Content="Delete" Style="{DynamicResource ResourceKey=BaseButton}"></Button>
+            <Separator/>
+            <Button Content="Exit" Style="{DynamicResource ResourceKey=BaseButton}" ></Button>
+        </StackPanel>
     </Grid>
 </Window>
