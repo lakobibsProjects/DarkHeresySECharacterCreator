@@ -12,7 +12,6 @@ namespace DarkHeresy2CharacterCreator.Model
         Aptitudes FirstAptitude { get; }
         Aptitudes SecondAptitude { get; }
         int Cost { get; }
-        void DetermineAdvanceCost(IEnumerable<Aptitudes> CharecterAptitudes);
-        void Update(ICharacter character);
+        void ChangeAdvanceCost(IEnumerable<Aptitudes> CharecterAptitudes);       
     }
 }

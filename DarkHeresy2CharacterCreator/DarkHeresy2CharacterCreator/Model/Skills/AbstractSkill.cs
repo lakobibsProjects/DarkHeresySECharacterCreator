@@ -81,12 +81,7 @@ namespace DarkHeresy2CharacterCreator.Model.Skills
         }
         #endregion
 
-        void IAptitudeDependent.DetermineAdvanceCost(IEnumerable<Aptitudes> CharecterAptitudes)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Update(ICharacter character)
+        void IAptitudeDependent.ChangeAdvanceCost(IEnumerable<Aptitudes> CharecterAptitudes)
         {
             throw new NotImplementedException();
         }
