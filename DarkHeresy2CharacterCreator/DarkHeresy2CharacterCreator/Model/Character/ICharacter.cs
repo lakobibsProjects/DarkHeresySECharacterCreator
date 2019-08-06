@@ -15,8 +15,20 @@ namespace DarkHeresy2CharacterCreator.Model.Character
     {
         string Name { get; set; }
         ObservableCollection<ICharacteristic> Characteristics { get; set; }
-        ObservableCollection<ISkill> Skills { get; set; }
+        ObservableCollection<AbstractSkill> Skills { get; set; }
         ObservableCollection<ITalent> Talents { get; set; }
         ObservableCollection<IItem> Gear { get; set; }
+        ObservableCollection<Aptitudes> Aptitudes { get; set; }
+
+        #region Observer
+        // Присоединяет наблюдателя к издателю.
+        void Attach(IAptitudeDependent observer);
+
+        // Отсоединяет наблюдателя от издателя.
+        void Detach(IAptitudeDependent observer);
+
+        // Уведомляет всех наблюдателей о событии.
+        void Notify();
+        #endregion
     }
 }

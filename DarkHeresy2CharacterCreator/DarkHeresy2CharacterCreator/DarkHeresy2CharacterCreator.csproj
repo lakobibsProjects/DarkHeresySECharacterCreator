@@ -94,11 +94,24 @@
     <Compile Include="Model\Aptitudes.cs" />
     <Compile Include="Model\Characteristics\Characteristics.cs" />
     <Compile Include="Model\Characteristics\ICharacteristic.cs" />
+    <Compile Include="Model\Character\Character.cs" />
     <Compile Include="Model\Character\ICharacter.cs" />
     <Compile Include="Model\Equipment\Interfaces\IItem.cs" />
+    <Compile Include="Model\IAptitudeDependent.cs" />
+    <Compile Include="Model\Skills\AbstractSkill.cs" />
+    <Compile Include="Model\Skills\CommonSkill.cs" />
+    <Compile Include="Model\Skills\Enums\CommonLoreSpecializations.cs" />
+    <Compile Include="Model\Skills\Enums\ForbiddenLoreSpecializations.cs" />
+    <Compile Include="Model\Skills\Enums\LinguisticSpecializations.cs" />
+    <Compile Include="Model\Skills\Enums\NavigateSpecializations.cs" />
+    <Compile Include="Model\Skills\Enums\OperateSpecializations.cs" />
+    <Compile Include="Model\Skills\Enums\ScholasticLoreSpecializations.cs" />
+    <Compile Include="Model\Skills\Enums\TradeSpecializations.cs" />
     <Compile Include="Model\Skills\Ranking.cs" />
     <Compile Include="Model\Skills\ISkill.cs" />
-    <Compile Include="Model\Skills\Skill.cs" />
+    <Compile Include="Model\Skills\Enums\Skill.cs" />
+    <Compile Include="Model\Skills\SkillList.cs" />
+    <Compile Include="Model\Skills\SpezializedSkill.cs" />
     <Compile Include="Model\Talents\ITalent.cs" />
     <Compile Include="View\CharacterCreationView\Background.xaml.cs">
       <DependentUpon>Background.xaml</DependentUpon>

@@ -9,10 +9,10 @@ namespace DarkHeresy2CharacterCreator.Model.Skills
 {
     interface ISkill : INotifyPropertyChanged
     {
-        Skill Name{ get; }
+        Skill Name{ get; set; }
         Ranking Rank { get; set; }
-        Aptitudes firstAptitude { get; }
-        Aptitudes secondAptitude { get; }
+        Aptitudes FirstAptitude { get; }
+        Aptitudes SecondAptitude { get; }
         int Cost { get; }
 
     }

@@ -8,6 +8,8 @@ namespace DarkHeresy2CharacterCreator.Model
 {
     enum Aptitudes
     {
+        None,
+        General,
         Weapon_Skill,
         Balistic_Skill,
         Strength,
@@ -25,7 +27,6 @@ namespace DarkHeresy2CharacterCreator.Model
         Knowledge,
         Leadship,
         Fieldcraft,
-        Social,
-        General
+        Social
     }
 }
