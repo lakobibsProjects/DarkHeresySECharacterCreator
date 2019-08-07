@@ -64,13 +64,6 @@ namespace DarkHeresy2CharacterCreator.Model.Skills
 
         public string Discription { get { return discription; } internal set { discription = value; } }
         #endregion Properties
-        protected void ChangeAdvanceCost(IEnumerable<Aptitudes> CharecterAptitudes)
-        {
-            int haveAptitudes = 0;
-            foreach(Aptitudes a in CharecterAptitudes)
-                if (a == FirstAptitude || a ==SecondAptitude) haveAptitudes++;
-            Cost = costTable[(int)rank - 1, haveAptitudes];
-        }
 
         #region EventHandlers
         public event PropertyChangedEventHandler PropertyChanged;
@@ -83,7 +76,10 @@ namespace DarkHeresy2CharacterCreator.Model.Skills
 
         void IAptitudeDependent.ChangeAdvanceCost(IEnumerable<Aptitudes> CharecterAptitudes)
         {
-            throw new NotImplementedException();
+            int haveAptitudes = 0;
+            foreach (Aptitudes a in CharecterAptitudes)
+                if (a == FirstAptitude || a == SecondAptitude) haveAptitudes++;
+            Cost = costTable[(int)rank - 1, haveAptitudes];
         }
     }
 }
