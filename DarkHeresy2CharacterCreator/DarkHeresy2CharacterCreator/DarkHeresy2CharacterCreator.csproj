@@ -99,6 +99,7 @@
     <Compile Include="Model\Characteristics\ICharacteristic.cs" />
     <Compile Include="Model\Character\Character.cs" />
     <Compile Include="Model\Character\ICharacter.cs" />
+    <Compile Include="Model\DiceRoller\DiceRoller.cs" />
     <Compile Include="Model\Equipment\Interfaces\IItem.cs" />
     <Compile Include="Model\Equipment\Interfaces\IRangedWeaponProfile.cs" />
     <Compile Include="Model\Equipment\Interfaces\IWeapon.cs" />
