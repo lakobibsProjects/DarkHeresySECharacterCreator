@@ -8,8 +8,6 @@ namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment
 {
     class Divinations
     {
-        private string prophecy;
-        private string effect;
 
         public static void GetDivination(int roll, out string prophecy, out string effect)
         {
