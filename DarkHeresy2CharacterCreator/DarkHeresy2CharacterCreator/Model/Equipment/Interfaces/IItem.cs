@@ -11,5 +11,9 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Interfaces
     {
         string Name { get; set; }
         bool IsEquiped { get; set; }
+        Availability Availability { get; }
+        int Weight { get; }
+        string Discription { get; }
+        Craftsmanship Craftsmanship { get; set; }
     }
 }

@@ -100,6 +100,15 @@
     <Compile Include="Model\Character\Character.cs" />
     <Compile Include="Model\Character\ICharacter.cs" />
     <Compile Include="Model\DiceRoller\DiceRoller.cs" />
+    <Compile Include="Model\Equipment\Enums\ArmorTypes.cs" />
+    <Compile Include="Model\Equipment\Enums\Availability.cs" />
+    <Compile Include="Model\Equipment\Enums\Craftsmanship.cs" />
+    <Compile Include="Model\Equipment\Enums\DamageTypes.cs" />
+    <Compile Include="Model\Equipment\Enums\WeaponClasses.cs" />
+    <Compile Include="Model\Equipment\Interfaces\IArmor.cs" />
+    <Compile Include="Model\Equipment\Interfaces\IForceField.cs" />
+    <Compile Include="Model\Equipment\Interfaces\IWeaponModification.cs" />
+    <Compile Include="Model\Equipment\WeaponSpecialQualities.cs" />
     <Compile Include="Model\Equipment\Interfaces\IItem.cs" />
     <Compile Include="Model\Equipment\Interfaces\IRangedWeaponProfile.cs" />
     <Compile Include="Model\Equipment\Interfaces\IWeapon.cs" />
@@ -109,6 +118,7 @@
     <Compile Include="Model\GeneralSuppliment\IEliteAdvance.cs" />
     <Compile Include="Model\GeneralSuppliment\Role.cs" />
     <Compile Include="Model\IAptitudeDependent.cs" />
+    <Compile Include="Model\Locations.cs" />
     <Compile Include="Model\PsychicPowers\AttackPsychicPower.cs" />
     <Compile Include="Model\PsychicPowers\IPsychicPower.cs" />
     <Compile Include="Model\PsychicPowers\PsychicPower.cs" />

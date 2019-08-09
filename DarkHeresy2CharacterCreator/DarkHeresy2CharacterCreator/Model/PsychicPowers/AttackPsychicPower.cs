@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DarkHeresy2CharacterCreator.Model.PsychicPowers
 {
-    class AttackPsychicPower: PsychicPower, IRangedWeaponProfile
+    class AttackPsychicPower: PsychicPower, IRangedWeapon
     {
 
     }

@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace DarkHeresy2CharacterCreator.Model.Equipment.Interfaces
 {
-    interface IRangedWeapon : IWeapon
+    interface IArmor : IItem
     {
-        int[] RateOfFire { get; }
-        int Clip { get; }
-        double Reload { get; }
+        ArmorTypes ArmorType { get; }
+        Locations LocationCovered { get; }
+        int ArmorPoints { get; }
+        int MaxAgility { get; }
+
     }
 }
