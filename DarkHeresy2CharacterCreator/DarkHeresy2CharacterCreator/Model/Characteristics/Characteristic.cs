@@ -10,12 +10,15 @@ namespace DarkHeresy2CharacterCreator.Model.Characteristics
 {
     class Characteristic : ICharacteristic
     {
+        #region Fields
         private CharacteristicName name;
         private AptitudeName first;
         private AptitudeName second;
         private int rank;
         private int cost;
         private readonly int[,] costTable = new int[,] { { 500, 750, 1000, 1500, 2500 }, { 250, 500, 750, 1000, 1500 }, { 100, 250, 500, 750, 1250 } };
+        #endregion Fields
+        #region Properties
         public CharacteristicName Name { get { return name; } protected set {name = value;} }
 
         public AptitudeName FirstAptitude { get { return first; } protected set { first = value; } }
@@ -31,6 +34,15 @@ namespace DarkHeresy2CharacterCreator.Model.Characteristics
                 rank = value;
                 OnPropertyChanged("CharacteristicRank");
             }
+        }
+        #endregion Properties
+
+        public Characteristic(CharacteristicName name, AptitudeName firstAptitude, AptitudeName secondAptitude, int rank = 0)
+        {
+            Name = name;
+            FirstAptitude = firstAptitude;
+            SecondAptitude = secondAptitude;
+            Rank = rank;
         }
 
         #region EventHandlers
