@@ -33,6 +33,12 @@ namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment
         internal List<Role> RecommendedRoles { get => recommendedRoles; set => recommendedRoles = value; }
         #endregion Properties
 
+        public Background(string name, List<Tuple<ISkill, ISkill>> backgroundSkills, List<Tuple<Talent, Talent>> backgroundsTalents,
+            List<Tuple<IItem, IItem>> backgroundEquipment, string backgroundBonuds, List<AptitudeName> backgroundAptitude, List<Role> recommendedRoles)
+        {
+
+        }
+
         #region EventHandlers
         public event PropertyChangedEventHandler PropertyChanged;
 
