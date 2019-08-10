@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace DarkHeresy2CharacterCreator.Model
 {
-    enum Action
+    enum LocationName
     {
-        Free_Action,
-        Half_Action,
-        Complex_Action,
-        Reaction,
-        Special
+        Left_Arm,
+        Right_Arm,
+        Left_Leg,
+        Right_Leg,
+        Head,
+        Body
     }
 }

@@ -13,7 +13,7 @@ namespace DarkHeresy2CharacterCreator.Model.Skills
         public string SpecializationDiscription { get { return specializationDiscription; } set { specializationDiscription = value; OnPropertyChanged("SpecializationDiscription"); } }
         public string Specialization { get { return specialization; } set { specialization = value; OnPropertyChanged("Specialization"); } }
 
-        public SpecializedSkill(Skill skillName, Aptitudes firstAptitude, Aptitudes secondAptitude, String Specialization, String SpecializationDiscription, Ranking skillRank = 0) 
+        public SpecializedSkill(SkillName skillName, AptitudeName firstAptitude, AptitudeName secondAptitude, String Specialization, String SpecializationDiscription, Ranking skillRank = 0) 
             :base(skillName, firstAptitude, secondAptitude, skillRank)
         {
             this.Specialization = Specialization;

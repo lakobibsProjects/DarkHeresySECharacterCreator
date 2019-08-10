@@ -9,9 +9,9 @@ namespace DarkHeresy2CharacterCreator.Model
 {
     interface IAptitudeDependent
     {
-        Aptitudes FirstAptitude { get; }
-        Aptitudes SecondAptitude { get; }
+        AptitudeName FirstAptitude { get; }
+        AptitudeName SecondAptitude { get; }
         int Cost { get; }
-        void ChangeAdvanceCost(IEnumerable<Aptitudes> CharecterAptitudes);       
+        void ChangeAdvanceCost(IEnumerable<AptitudeName> CharecterAptitudes);       
     }
 }

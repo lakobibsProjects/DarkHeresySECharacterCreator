@@ -21,17 +21,17 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment
         public string Discription { get => discription; set => discription = value; }
         #endregion Properties
         #region Constructors
-        public WeaponSpecialQualities(string Name, string Discription)
+        public WeaponSpecialQualities(string name, string discription)
         {
-            this.Name = Name;
-            this.Discription = Discription;
+            Name = name;
+            Discription = discription;
             HasNumeric = false;
             Numeric = null;
         }
-        public WeaponSpecialQualities(string Name, string Discription, int Numeric) : this(Name, Discription)
+        public WeaponSpecialQualities(string name, string discription, int numeric) : this(name, discription)
         {
             HasNumeric = true;
-            this.Numeric = Numeric;
+            Numeric = numeric;
         }
         #endregion Constructors
     }

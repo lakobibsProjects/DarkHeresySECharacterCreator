@@ -10,7 +10,7 @@ namespace DarkHeresy2CharacterCreator.Model.Skills
 {
     class CommonSkill : AbstractSkill
     {      
-        public CommonSkill(Skill skillName, Aptitudes firstAptitude, Aptitudes secondAptitude, Ranking skillRank = 0)
+        public CommonSkill(SkillName skillName, AptitudeName firstAptitude, AptitudeName secondAptitude, Ranking skillRank = 0)
         {
             Name = skillName;
             Rank = skillRank;

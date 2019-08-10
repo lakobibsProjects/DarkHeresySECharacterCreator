@@ -17,7 +17,7 @@ namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment
         private int fateTreshold;
         private int emperorsBlessing;
         private string homeWorldBonus;
-        private Aptitudes homeWorldAptitude;
+        private AptitudeName homeWorldAptitude;
         private int wounds;
         private Background[] rekommendedBackgrouns;
         #endregion Fields
@@ -29,7 +29,7 @@ namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment
         public string HomeWorldBonus { get => homeWorldBonus; set => homeWorldBonus = value; }
         public int Wounds { get => wounds; set => wounds = value; }
         internal Characteristic[] Characteristics { get => characteristics; set => characteristics = value; }
-        internal Aptitudes HomeWorldAptitude { get => homeWorldAptitude; set => homeWorldAptitude = value; }
+        internal AptitudeName HomeWorldAptitude { get => homeWorldAptitude; set => homeWorldAptitude = value; }
         internal Background[] RekommendedBackgrouns { get => rekommendedBackgrouns; set => rekommendedBackgrouns = value; }
         #endregion Properties
 

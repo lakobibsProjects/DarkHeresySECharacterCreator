@@ -12,17 +12,17 @@ namespace DarkHeresy2CharacterCreator.Model.Skills
     abstract class AbstractSkill : IAptitudeDependent, INotifyPropertyChanged
     {
         #region Fields
-        private Skill name;
+        private SkillName name;
         private Ranking rank;
-        private Aptitudes first;
-        private Aptitudes second;
+        private AptitudeName first;
+        private AptitudeName second;
         private int bonus = -20;
         private int cost;
         private readonly int[,] costTable = new int[,] { { 300, 600, 900, 1200 } , { 200, 400, 600, 800 }, { 100, 200, 300, 400 } };
         private string discription;
         #endregion Fields
         #region Properties
-        public Skill Name
+        public SkillName Name
         {
             get { return name; }
             set { name = value; OnPropertyChanged("Name"); }
@@ -33,8 +33,8 @@ namespace DarkHeresy2CharacterCreator.Model.Skills
             get { return rank; }
             set { rank = value; OnPropertyChanged("Rank"); }
         }
-        public Aptitudes FirstAptitude { get { return first; } protected set { first = value; } }
-        public Aptitudes SecondAptitude { get { return second; } protected set { second = value; } }
+        public AptitudeName FirstAptitude { get { return first; } protected set { first = value; } }
+        public AptitudeName SecondAptitude { get { return second; } protected set { second = value; } }
         public int Cost { get { return cost; } private set { cost = value; OnPropertyChanged("Cost"); } }
         public int SkillBonus
         {
@@ -74,10 +74,10 @@ namespace DarkHeresy2CharacterCreator.Model.Skills
         }
         #endregion
 
-        void IAptitudeDependent.ChangeAdvanceCost(IEnumerable<Aptitudes> CharecterAptitudes)
+        void IAptitudeDependent.ChangeAdvanceCost(IEnumerable<AptitudeName> CharecterAptitudes)
         {
             int haveAptitudes = 0;
-            foreach (Aptitudes a in CharecterAptitudes)
+            foreach (AptitudeName a in CharecterAptitudes)
                 if (a == FirstAptitude || a == SecondAptitude) haveAptitudes++;
             Cost = costTable[(int)rank - 1, haveAptitudes];
         }

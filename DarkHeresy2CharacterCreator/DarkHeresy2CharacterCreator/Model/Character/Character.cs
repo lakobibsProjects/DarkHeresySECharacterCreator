@@ -59,6 +59,6 @@ namespace DarkHeresy2CharacterCreator.Model.Character
         public ObservableCollection<AbstractSkill> Skills { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public ObservableCollection<ITalent> Talents { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public ObservableCollection<IItem> Gear { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public ObservableCollection<Aptitudes> Aptitudes { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public ObservableCollection<AptitudeName> Aptitudes { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
     }
 }

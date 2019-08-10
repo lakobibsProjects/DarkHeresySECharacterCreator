@@ -56,7 +56,7 @@ namespace DarkHeresy2CharacterCreator.Model.Character
         ObservableCollection<AbstractSkill> Skills { get; set; }
         ObservableCollection<ITalent> Talents { get; set; }
         ObservableCollection<IItem> Gear { get; set; }
-        ObservableCollection<Aptitudes> Aptitudes { get; set; }
+        ObservableCollection<AptitudeName> Aptitudes { get; set; }
 
     }
 }

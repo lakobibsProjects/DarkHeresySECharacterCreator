@@ -13,7 +13,7 @@ namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment
     {
         #region Fields
         private string name;
-        private List<Aptitudes> aptitudes;
+        private List<AptitudeName> aptitudes;
         private Tuple<Talent, Talent> roleTalent;
         private string roleBonus;
         #endregion Fields
@@ -21,7 +21,7 @@ namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment
         #region Properties
         public string Name { get => name; set => name = value; }
         public string RoleBonus { get => roleBonus; set => roleBonus = value; }
-        internal List<Aptitudes> Aptitudes { get => aptitudes; set => aptitudes = value; }
+        internal List<AptitudeName> Aptitudes { get => aptitudes; set => aptitudes = value; }
         internal Tuple<Talent, Talent> RoleTalent { get => roleTalent; set => roleTalent = value; }
         #endregion Properties
 

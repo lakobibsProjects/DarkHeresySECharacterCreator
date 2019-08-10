@@ -13,10 +13,10 @@ namespace DarkHeresy2CharacterCreator.Model.PsychicPowers
         string Name { get; }
         int Cost { get; }
         object[] Prerequisites { get; }
-        Action Action { get; }
-        Tuple<int, Characteristics.Characteristics> FocusPower { get; }
+        ActionLong Action { get; }
+        Tuple<int, Characteristics.CharacteristicName> FocusPower { get; }
         Tuple<int, string> Range { get; }
-        Action Sustained { get; }
+        ActionLong Sustained { get; }
         string Subtype { get; }
         string Effect { get; }
         PsychisSchools School { get; }

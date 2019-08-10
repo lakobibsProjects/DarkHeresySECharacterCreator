@@ -92,10 +92,10 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Model\Action.cs" />
-    <Compile Include="Model\Aptitudes.cs" />
+    <Compile Include="Model\Enums\ActionLong.cs" />
+    <Compile Include="Model\Enums\AptitudeName.cs" />
     <Compile Include="Model\Characteristics\Characteristic.cs" />
-    <Compile Include="Model\Characteristics\Characteristics.cs" />
+    <Compile Include="Model\Characteristics\CharacteristicName.cs" />
     <Compile Include="Model\Characteristics\ICharacteristic.cs" />
     <Compile Include="Model\Character\Character.cs" />
     <Compile Include="Model\Character\ICharacter.cs" />
@@ -118,7 +118,7 @@
     <Compile Include="Model\GeneralSuppliment\IEliteAdvance.cs" />
     <Compile Include="Model\GeneralSuppliment\Role.cs" />
     <Compile Include="Model\IAptitudeDependent.cs" />
-    <Compile Include="Model\Locations.cs" />
+    <Compile Include="Model\Enums\LocationName.cs" />
     <Compile Include="Model\PsychicPowers\AttackPsychicPower.cs" />
     <Compile Include="Model\PsychicPowers\IPsychicPower.cs" />
     <Compile Include="Model\PsychicPowers\PsychicPower.cs" />
@@ -134,10 +134,10 @@
     <Compile Include="Model\Skills\Enums\TradeSpecializations.cs" />
     <Compile Include="Model\Skills\Ranking.cs" />
     <Compile Include="Model\Skills\ISkill.cs" />
-    <Compile Include="Model\Skills\Enums\Skill.cs" />
+    <Compile Include="Model\Skills\Enums\SkillName.cs" />
     <Compile Include="Model\Skills\SkillList.cs" />
     <Compile Include="Model\Skills\SpezializedSkill.cs" />
-    <Compile Include="Model\SourceList.cs" />
+    <Compile Include="Model\Enums\SourceList.cs" />
     <Compile Include="Model\Talents\ITalent.cs" />
     <Compile Include="Model\Talents\Talent.cs" />
     <Compile Include="Model\Traits\ITrait.cs" />

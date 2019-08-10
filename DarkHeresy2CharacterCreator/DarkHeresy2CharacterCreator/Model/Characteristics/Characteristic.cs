@@ -10,16 +10,16 @@ namespace DarkHeresy2CharacterCreator.Model.Characteristics
 {
     class Characteristic : ICharacteristic
     {
-        private Characteristics name;
-        private Aptitudes first;
-        private Aptitudes second;
+        private CharacteristicName name;
+        private AptitudeName first;
+        private AptitudeName second;
         private int rank;
         private int cost;
         private readonly int[,] costTable = new int[,] { { 500, 750, 1000, 1500, 2500 }, { 250, 500, 750, 1000, 1500 }, { 100, 250, 500, 750, 1250 } };
-        public Characteristics Name { get { return name; } protected set {name = value;} }
+        public CharacteristicName Name { get { return name; } protected set {name = value;} }
 
-        public Aptitudes FirstAptitude { get { return first; } protected set { first = value; } }
-        public Aptitudes SecondAptitude { get { return second; } protected set { second = value; } }
+        public AptitudeName FirstAptitude { get { return first; } protected set { first = value; } }
+        public AptitudeName SecondAptitude { get { return second; } protected set { second = value; } }
         public int Cost { get { return cost; } private set { cost = value; OnPropertyChanged("Cost"); } }
         public int Rank
         {
@@ -42,10 +42,10 @@ namespace DarkHeresy2CharacterCreator.Model.Characteristics
         }
         #endregion
 
-        public void ChangeAdvanceCost(IEnumerable<Aptitudes> CharecterAptitudes)
+        public void ChangeAdvanceCost(IEnumerable<AptitudeName> charecterAptitudes)
         {
             int haveAptitudes = 0;
-            foreach (Aptitudes a in CharecterAptitudes)
+            foreach (AptitudeName a in charecterAptitudes)
                 if (a == FirstAptitude || a == SecondAptitude) haveAptitudes++;
             Cost = costTable[rank - 1, haveAptitudes];
         }

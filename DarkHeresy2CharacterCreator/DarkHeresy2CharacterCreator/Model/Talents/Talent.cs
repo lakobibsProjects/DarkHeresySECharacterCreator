@@ -18,8 +18,8 @@ namespace DarkHeresy2CharacterCreator.Model.Talents
         private SourceList sourceBook;
         private int sourcePage;
         private int tier;
-        private Aptitudes first;
-        private Aptitudes second;
+        private AptitudeName first;
+        private AptitudeName second;
         private int cost;
         private string[] prerequisites;
         private ObservableCollection<string> specializations;
@@ -29,8 +29,8 @@ namespace DarkHeresy2CharacterCreator.Model.Talents
         public string Name { get { return name; } set { name = value; } }
         public string Discription { get { return discription; } set { discription = value; } }
 
-        public Aptitudes FirstAptitude { get { return first; } protected set { first = value; } }
-        public Aptitudes SecondAptitude { get { return second; } protected set { second = value; } }
+        public AptitudeName FirstAptitude { get { return first; } protected set { first = value; } }
+        public AptitudeName SecondAptitude { get { return second; } protected set { second = value; } }
         public int Cost { get { return cost; } private set { cost = value; OnPropertyChanged("Cost"); } }
 
         public int Tier { get { return tier; } protected set { tier = value; } }
@@ -44,22 +44,22 @@ namespace DarkHeresy2CharacterCreator.Model.Talents
         public ObservableCollection<string> Specializations { get { return specializations; } set { specializations = value; OnPropertyChanged("Specializations"); } }
         #endregion Properties
         #region Consturctors
-        public Talent(string Name, string Discription, Aptitudes FirstAptitude, Aptitudes SecondAptitude, int Tier)
+        public Talent(string name, string discription, AptitudeName firstAptitude, AptitudeName secondAptitude, int tier)
         {
-            this.Name = Name;
-            this.Discription = Discription;
-            this.FirstAptitude = FirstAptitude;
-            this.SecondAptitude = SecondAptitude;
-            this.Tier = Tier;
+            Name = name;
+            Discription = discription;
+            FirstAptitude = firstAptitude;
+            SecondAptitude = secondAptitude;
+            Tier = tier;
             Cost = costTable[0, 0];
             SourceBook = SourceList.Core_Rulebook_2_edition;
             SourcePage = 119;
         }
-        public Talent(string Name, string Discription, Aptitudes FirstAptitude, Aptitudes SecondAptitude, int Tier, SourceList SourceBook, int SourcePage)
-            : this(Name, Discription, FirstAptitude, SecondAptitude, Tier)
+        public Talent(string name, string Discription, AptitudeName firstAptitude, AptitudeName secondAptitude, int tier, SourceList sourceBook, int sourcePage)
+            : this(name, Discription, firstAptitude, secondAptitude, tier)
         {
-            this.SourceBook = SourceBook;
-            this.SourcePage = SourcePage;
+            SourceBook = sourceBook;
+            SourcePage = sourcePage;
         }
         #endregion Constructors
 
@@ -72,10 +72,10 @@ namespace DarkHeresy2CharacterCreator.Model.Talents
         }
         #endregion
 
-        public void ChangeAdvanceCost(IEnumerable<Aptitudes> CharecterAptitudes)
+        public void ChangeAdvanceCost(IEnumerable<AptitudeName> charecterAptitudes)
         {
             int haveAptitudes = 0;
-            foreach (Aptitudes a in CharecterAptitudes)
+            foreach (AptitudeName a in charecterAptitudes)
                 if (a == FirstAptitude || a == SecondAptitude) haveAptitudes++;
             Cost = costTable[haveAptitudes, tier - 1];
         }

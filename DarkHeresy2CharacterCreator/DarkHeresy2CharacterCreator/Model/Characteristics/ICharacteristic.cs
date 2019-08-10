@@ -9,6 +9,6 @@ namespace DarkHeresy2CharacterCreator.Model.Characteristics
 {
     interface ICharacteristic : IAptitudeDependent, INotifyPropertyChanged
     {
-        Characteristics Name { get; }
+        CharacteristicName Name { get; }
     }
 }

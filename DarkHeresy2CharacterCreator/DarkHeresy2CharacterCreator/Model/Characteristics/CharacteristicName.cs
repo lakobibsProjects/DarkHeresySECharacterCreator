@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DarkHeresy2CharacterCreator.Model.Characteristics
 {
-    enum Characteristics
+    enum CharacteristicName
     {
         Weapon_Skill,
         Balistic_Skill,
