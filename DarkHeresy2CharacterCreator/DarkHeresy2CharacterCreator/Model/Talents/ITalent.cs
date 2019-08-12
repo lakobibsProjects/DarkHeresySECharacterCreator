@@ -9,14 +9,14 @@ using System.Collections.ObjectModel;
 
 namespace DarkHeresy2CharacterCreator.Model.Talents
 {
-    interface ITalent : IAptitudeDependent, INotifyPropertyChanged
+    interface ITalent : IAptitudeDependent, IPrerequisitable, INotifyPropertyChanged
     {
         string Name { get; set; }
         int Tier { get; }
         string Discription { get; set; }
         SourceList SourceBook { get; }
         int SourcePage { get; }
-        string[] Prerequisites { get; }
+        IPrerequisitable[] Prerequisites { get; }
         ObservableCollection<string> Specializations { get; }
     }
 }
