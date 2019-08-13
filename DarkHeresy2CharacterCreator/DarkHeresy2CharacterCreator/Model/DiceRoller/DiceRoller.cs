@@ -9,11 +9,7 @@ namespace DarkHeresy2CharacterCreator.Model.DiceRoller
     public static class DiceRoller
     {
         #region roll
-        static int Roll(int dice = 100)
-        {
-            return new Random().Next(1, dice + 1);
-        }
-        static int[] Roll(int dice, int numberOfDices)
+        static int[] Roll(int dice = 100, int numberOfDices = 1)
         {
             int[] temp = new int[numberOfDices];
             for (int i = 0; i < numberOfDices; i++)
