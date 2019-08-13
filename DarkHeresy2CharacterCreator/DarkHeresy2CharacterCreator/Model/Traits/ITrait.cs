@@ -11,5 +11,7 @@ namespace DarkHeresy2CharacterCreator.Model.Traits
     {
         string Name { get; set; }
         string Discription { get; set; }
+        int Modifier { get; set; }
+        bool HasModifire { get; set; }
     }
 }

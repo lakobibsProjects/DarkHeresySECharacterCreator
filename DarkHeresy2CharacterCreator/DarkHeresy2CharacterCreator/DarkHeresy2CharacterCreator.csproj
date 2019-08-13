@@ -146,7 +146,9 @@
     <Compile Include="Model\Talents\Talent.cs" />
     <Compile Include="Model\Talents\TalentList.cs" />
     <Compile Include="Model\Traits\ITrait.cs" />
+    <Compile Include="Model\Traits\Trait.cs" />
     <Compile Include="Model\Traits\TraitList.cs" />
+    <Compile Include="Model\Traits\TraitName.cs" />
     <Compile Include="View\CharacterCreationView\Background.xaml.cs">
       <DependentUpon>Background.xaml</DependentUpon>
     </Compile>
