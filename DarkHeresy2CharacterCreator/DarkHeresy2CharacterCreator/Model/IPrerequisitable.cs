@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace DarkHeresy2CharacterCreator.Model
 {
+    /// <summary>
+    /// a marker interface to classes, that can being a prerequisite
+    /// </summary>
     interface IPrerequisitable
     {
     }

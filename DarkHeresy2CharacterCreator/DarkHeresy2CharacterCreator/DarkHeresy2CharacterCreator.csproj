@@ -121,6 +121,7 @@
     <Compile Include="Model\GeneralSuppliment\Role.cs" />
     <Compile Include="Model\IAptitudeDependent.cs" />
     <Compile Include="Model\Enums\LocationName.cs" />
+    <Compile Include="Model\IPrerequisitable.cs" />
     <Compile Include="Model\PsychicPowers\AttackPsychicPower.cs" />
     <Compile Include="Model\PsychicPowers\IPsychicPower.cs" />
     <Compile Include="Model\PsychicPowers\PsychicPower.cs" />
@@ -140,10 +141,12 @@
     <Compile Include="Model\Skills\SkillList.cs" />
     <Compile Include="Model\Skills\SpezializedSkill.cs" />
     <Compile Include="Model\Enums\SourceList.cs" />
+    <Compile Include="Model\Talents\TalentName.cs" />
     <Compile Include="Model\Talents\ITalent.cs" />
     <Compile Include="Model\Talents\Talent.cs" />
     <Compile Include="Model\Talents\TalentList.cs" />
     <Compile Include="Model\Traits\ITrait.cs" />
+    <Compile Include="Model\Traits\TraitList.cs" />
     <Compile Include="View\CharacterCreationView\Background.xaml.cs">
       <DependentUpon>Background.xaml</DependentUpon>
     </Compile>

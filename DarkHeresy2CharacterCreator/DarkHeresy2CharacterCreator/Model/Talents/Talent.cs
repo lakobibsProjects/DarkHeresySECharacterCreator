@@ -21,12 +21,12 @@ namespace DarkHeresy2CharacterCreator.Model.Talents
         private AptitudeName first;
         private AptitudeName second;
         private int cost;
-        private string[] prerequisites;
+        private List<ValueTuple<IPrerequisitable, int>> prerequisites;
         private ObservableCollection<string> specializations;
         private readonly int[,] costTable = { { 600, 900, 1200}, { 300, 450, 600 }, { 200, 300, 400 } };
         #endregion Fields
         #region Properties
-        public string Name { get { return name; } set { name = value; } }
+        public string Name { get { return name; } set { name = value.Replace('_', ' '); } }
         public string Discription { get { return discription; } set { discription = value; } }
 
         public AptitudeName FirstAptitude { get { return first; } protected set { first = value; } }
@@ -39,7 +39,7 @@ namespace DarkHeresy2CharacterCreator.Model.Talents
 
         public int SourcePage { get { return sourcePage; } protected set { sourcePage = value; } }
 
-        public string[] Prerequisites { get { return prerequisites; } protected set { prerequisites = value; } }
+        public List<ValueTuple<IPrerequisitable, int>> Prerequisites { get { return prerequisites; } internal set { prerequisites = value; } }
 
         public ObservableCollection<string> Specializations { get { return specializations; } set { specializations = value; OnPropertyChanged("Specializations"); } }
         #endregion Properties
