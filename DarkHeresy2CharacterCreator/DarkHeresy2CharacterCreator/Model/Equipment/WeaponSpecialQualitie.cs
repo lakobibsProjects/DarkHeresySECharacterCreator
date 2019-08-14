@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace DarkHeresy2CharacterCreator.Model.Equipment
 {
-    class WeaponSpecialQualities
+    public class WeaponSpecialQualitie
     {
         #region Fields
         string name;
-        bool hasNumeric;
+        bool hasNumeric = false;
         int? numeric;
         string discription;
         #endregion Fields
@@ -21,14 +21,13 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment
         public string Discription { get => discription; set => discription = value; }
         #endregion Properties
         #region Constructors
-        public WeaponSpecialQualities(string name, string discription)
+        public WeaponSpecialQualitie(string name, string discription)
         {
             Name = name;
             Discription = discription;
-            HasNumeric = false;
             Numeric = null;
         }
-        public WeaponSpecialQualities(string name, string discription, int numeric) : this(name, discription)
+        public WeaponSpecialQualitie(string name, string discription, int numeric) : this(name, discription)
         {
             HasNumeric = true;
             Numeric = numeric;

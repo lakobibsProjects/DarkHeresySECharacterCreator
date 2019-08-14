@@ -108,6 +108,7 @@
     <Compile Include="Model\Equipment\Enums\WeaponClasses.cs" />
     <Compile Include="Model\Equipment\Interfaces\IArmor.cs" />
     <Compile Include="Model\Equipment\Interfaces\IForceField.cs" />
+    <Compile Include="Model\Equipment\Item.cs" />
     <Compile Include="Model\Equipment\Interfaces\IWeaponModification.cs" />
     <Compile Include="Model\Equipment\WeaponSpecialQualities.cs" />
     <Compile Include="Model\Equipment\Interfaces\IItem.cs" />

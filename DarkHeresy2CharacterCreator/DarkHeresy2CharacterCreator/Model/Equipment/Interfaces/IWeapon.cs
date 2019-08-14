@@ -14,7 +14,7 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Interfaces
         int Damage { get; }
         DamageTypes DamageType { get; }
         int Penetration { get; }
-        WeaponSpecialQualities[] SpecialQualities { get; }
+        WeaponSpecialQualitie[] SpecialQualities { get; }
         IWeaponModification[] WeaponModifications { get; set; }
     }
 }
