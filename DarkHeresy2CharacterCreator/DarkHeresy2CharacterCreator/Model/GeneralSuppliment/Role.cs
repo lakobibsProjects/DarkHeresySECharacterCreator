@@ -13,8 +13,8 @@ namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment
     {
         #region Fields
         private string name;
-        private List<Tuple<AptitudeName, AptitudeName?>> aptitudes;
-        private Tuple<Talent, Talent> roleTalent;
+        private List<ValueTuple<AptitudeName, AptitudeName?>> aptitudes;
+        private ValueTuple<Talent, Talent> roleTalent;
         private string roleBonus;
         private SourceList sourceBook = SourceList.Core_Rulebook_2_edition;
         private int sourcePage = 61;
@@ -25,8 +25,8 @@ namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment
         public string RoleBonus { get => roleBonus; set => roleBonus = value; }
         public SourceList SourceBook { get => sourceBook; set => sourceBook = value; }
         public int SourcePage { get => sourcePage; set => sourcePage = value; }
-        internal List<Tuple<AptitudeName, AptitudeName?>> Aptitudes { get => aptitudes; set => aptitudes = value; }
-        internal Tuple<Talent, Talent> RoleTalent { get => roleTalent; set => roleTalent = value; }
+        internal List<ValueTuple<AptitudeName, AptitudeName?>> Aptitudes { get => aptitudes; set => aptitudes = value; }
+        internal ValueTuple<Talent, Talent> RoleTalent { get => roleTalent; set => roleTalent = value; }
         #endregion Properties
 
         #region EventHandlers
@@ -38,7 +38,7 @@ namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment
         }
         #endregion
 
-        public Role(string name, string roleBonus, List<Tuple<AptitudeName, AptitudeName?>> aptitudes, Tuple<Talent, Talent> roleTalent)
+        public Role(string name, string roleBonus, List<ValueTuple<AptitudeName, AptitudeName?>> aptitudes, ValueTuple<Talent, Talent> roleTalent)
         {
             Name = name;
             RoleBonus = roleBonus;

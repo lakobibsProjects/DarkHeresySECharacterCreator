@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment
 {
-    class Background : INotifyPropertyChanged
+    class Background : INotifyPropertyChanged, ISourceDiscription
     {
         #region Fields
         private string name;
@@ -22,6 +22,8 @@ namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment
         private string backgroundBonuds;
         private List<AptitudeName> backgroundAptitude;
         private List<Role> recommendedRoles;
+        private SourceList sourceBook = SourceList.Core_Rulebook_2_edition;
+        private int sourcePage = 44;
         #endregion Fields
         #region Properties
         public string Name { get; set; }
@@ -31,12 +33,20 @@ namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment
         internal List<Tuple<IItem, IItem>> BackgroundEquipment { get => backgroundEquipment; set => backgroundEquipment = value; }
         internal List<AptitudeName> BackgroundAptitude { get => backgroundAptitude; set => backgroundAptitude = value; }
         internal List<Role> RecommendedRoles { get => recommendedRoles; set => recommendedRoles = value; }
+        public SourceList SourceBook { get => sourceBook; set => sourceBook = value; }
+        public int SourcePage { get => sourcePage; set => sourcePage = value; }
         #endregion Properties
 
         public Background(string name, List<Tuple<ISkill, ISkill>> backgroundSkills, List<Tuple<Talent, Talent>> backgroundsTalents,
             List<Tuple<IItem, IItem>> backgroundEquipment, string backgroundBonuds, List<AptitudeName> backgroundAptitude, List<Role> recommendedRoles)
         {
-
+            Name = name;
+            BackgroundSkills = backgroundSkills;
+            BackgroundsTalents = backgroundsTalents;
+            BackgroundEquipment = backgroundEquipment;
+            BackgroundBonuds = backgroundBonuds;
+            BackgroundAptitude = backgroundAptitude;
+            RecommendedRoles = recommendedRoles;
         }
 
         #region EventHandlers
