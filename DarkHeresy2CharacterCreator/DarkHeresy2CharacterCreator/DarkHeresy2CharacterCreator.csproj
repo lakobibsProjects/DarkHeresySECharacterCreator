@@ -101,6 +101,7 @@
     <Compile Include="Model\Character\Character.cs" />
     <Compile Include="Model\Character\ICharacter.cs" />
     <Compile Include="Model\DiceRoller\DiceRoller.cs" />
+    <Compile Include="Model\Equipment\Collections\DrugsAndConsumablesCollection.cs" />
     <Compile Include="Model\Equipment\Collections\GearCollection.cs" />
     <Compile Include="Model\Equipment\Collections\WeaponSpecialQuilitieCollection.cs" />
     <Compile Include="Model\Equipment\Enums\ArmorTypes.cs" />
