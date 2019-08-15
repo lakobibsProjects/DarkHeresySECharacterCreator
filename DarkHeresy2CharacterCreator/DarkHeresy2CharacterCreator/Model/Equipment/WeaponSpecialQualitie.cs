@@ -27,10 +27,9 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment
             Discription = discription;
             Numeric = null;
         }
-        public WeaponSpecialQualitie(string name, string discription, int numeric) : this(name, discription)
+        public WeaponSpecialQualitie(string name, string discription, bool hasNumeric) : this(name, discription)
         {
-            HasNumeric = true;
-            Numeric = numeric;
+            HasNumeric = hasNumeric;
         }
         #endregion Constructors
     }

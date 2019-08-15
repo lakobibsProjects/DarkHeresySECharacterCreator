@@ -15,7 +15,7 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment
         private string name;
         private bool isEquiped = false;
         private Availability availability;
-        private int weight;
+        private double weight;
         private string discription;
         private Craftsmanship craftsmanship = Craftsmanship.Common;
 
@@ -25,14 +25,14 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment
         public string Name { get => name; set => name = value; }
         public bool IsEquiped { get => isEquiped; set => isEquiped = value; }
         public Availability Availability { get => availability; set => availability = value; }
-        public int Weight { get => weight; set => weight = value; }
+        public double Weight { get => weight; set => weight = value; }
 
         public string Discription { get => discription; set => discription = value; }
 
         public Craftsmanship Craftsmanship { get => craftsmanship; set => craftsmanship = value; }
         #endregion
 
-        public Item(string name, Availability availability, int weight, string discription)
+        public Item(string name, Availability availability, double weight, string discription)
         {
             Name = name;
             Availability = availability;

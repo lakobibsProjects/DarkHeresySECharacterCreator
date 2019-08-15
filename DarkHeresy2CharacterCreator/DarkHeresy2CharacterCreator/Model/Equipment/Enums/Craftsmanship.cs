@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DarkHeresy2CharacterCreator.Model.Equipment
 {
-    enum Craftsmanship
+    public enum Craftsmanship
     {
         Poor,
         Common,

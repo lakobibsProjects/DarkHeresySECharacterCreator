@@ -101,6 +101,8 @@
     <Compile Include="Model\Character\Character.cs" />
     <Compile Include="Model\Character\ICharacter.cs" />
     <Compile Include="Model\DiceRoller\DiceRoller.cs" />
+    <Compile Include="Model\Equipment\Collections\GearCollection.cs" />
+    <Compile Include="Model\Equipment\Collections\WeaponSpecialQuilitieCollection.cs" />
     <Compile Include="Model\Equipment\Enums\ArmorTypes.cs" />
     <Compile Include="Model\Equipment\Enums\Availability.cs" />
     <Compile Include="Model\Equipment\Enums\Craftsmanship.cs" />
@@ -110,7 +112,7 @@
     <Compile Include="Model\Equipment\Interfaces\IForceField.cs" />
     <Compile Include="Model\Equipment\Item.cs" />
     <Compile Include="Model\Equipment\Interfaces\IWeaponModification.cs" />
-    <Compile Include="Model\Equipment\WeaponSpecialQualities.cs" />
+    <Compile Include="Model\Equipment\WeaponSpecialQualitie.cs" />
     <Compile Include="Model\Equipment\Interfaces\IItem.cs" />
     <Compile Include="Model\Equipment\Interfaces\IRangedWeaponProfile.cs" />
     <Compile Include="Model\Equipment\Interfaces\IWeapon.cs" />
