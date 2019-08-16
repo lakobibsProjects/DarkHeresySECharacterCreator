@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace DarkHeresy2CharacterCreator.Model.Equipment.Interfaces
 {
-    interface IRangedWeapon : IWeapon
+    internal interface IRangedWeapon : IWeapon
     {
-        int[] RateOfFire { get; }
+        Tuple<int, int, int> RateOfFire { get; }
         int Clip { get; }
         double Reload { get; }
     }

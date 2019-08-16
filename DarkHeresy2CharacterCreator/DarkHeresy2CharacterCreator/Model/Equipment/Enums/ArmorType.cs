@@ -6,13 +6,12 @@ using System.Threading.Tasks;
 
 namespace DarkHeresy2CharacterCreator.Model.Equipment
 {
-    enum WeaponClasses
+    enum ArmorType
     {
-        Melee,
-        Throw,
-        Pistol,
         Basic,
-        Heavy,
-        Vechicle
+        Flak,
+        Mesh,
+        Carapace,
+        Power
     }
 }

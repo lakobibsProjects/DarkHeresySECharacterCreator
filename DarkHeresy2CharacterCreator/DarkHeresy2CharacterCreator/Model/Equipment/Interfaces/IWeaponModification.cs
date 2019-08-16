@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace DarkHeresy2CharacterCreator.Model.Equipment.Interfaces
 {
-    interface IWeaponModification : IItem
+    public interface IWeaponModification : IItem
     {
-       WeaponClasses appropriateWeaponClass{get;}
+       WeaponClass appropriateWeaponClass{get;}
     }
 }

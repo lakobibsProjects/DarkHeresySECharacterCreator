@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace DarkHeresy2CharacterCreator.Model.Equipment.Interfaces
 {
-    interface IWeapon : IItem
+    public interface IWeapon : IItem
     {
-        string Type { get; }
-        WeaponClasses Class { get; }
+        WeaponType Type { get; }
+        WeaponClass Class { get; }
         int Range { get; }
-        int Damage { get; }
-        DamageTypes DamageType { get; }
+        Tuple<int, int, int> Damage { get; }
+        DamageType DamageType { get; }
         int Penetration { get; }
         WeaponSpecialQualitie[] SpecialQualities { get; }
         IWeaponModification[] WeaponModifications { get; set; }
