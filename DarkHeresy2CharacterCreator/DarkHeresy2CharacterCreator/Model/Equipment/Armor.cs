@@ -9,41 +9,30 @@ using System.Threading.Tasks;
 
 namespace DarkHeresy2CharacterCreator.Model.Equipment
 {
-    internal class Weapon : IWeapon
+    internal class Armor : IArmor
     {
         #region Fields
         private string name;
-        private WeaponType type;
-        private WeaponClass weaponClass;
-        private int range;
-        private Tuple<int, int, int> damage;
-        private DamageType damageType;
-        private int penetration;
-        private WeaponSpecialQualitie[] weaponSpecialQualities;
-        private IWeaponModification[] weaponModifications = new IWeaponModification[4];
-        private bool isEquiped;
+        private ArmorType armorType;
+        private LocationName[] locationCovered;
+        private int armorPoints;
+        private int maxAgility;
+        private bool isEquiped = false;
         private Availability availability;
         private double weight;
         private string discription;
         private Craftsmanship craftsmanship = Craftsmanship.Common;
+
         #endregion Fields
+        #region Discription
+        public ArmorType ArmorType { get => armorType; set => armorType = value; }
 
-        #region Properties
-        public WeaponType Type  { get => type; set => type = value; }
+        public LocationName[] LocationCovered { get => locationCovered; set => locationCovered = value; }
 
-        public WeaponClass Class { get => weaponClass; set => weaponClass = value; }
+        public int ArmorPoints { get => armorPoints; set => armorPoints = value; }
 
-        public int Range { get => range; set => range = value; }
+        public int MaxAgility { get => maxAgility; set => maxAgility = value; }
 
-        public Tuple<int, int, int> Damage { get => damage; set => damage = value; }
-
-        public DamageType DamageType { get => damageType; set => damageType = value; }
-
-        public int Penetration { get => penetration; set => penetration = value; }
-
-        public WeaponSpecialQualitie[] SpecialQualities { get => weaponSpecialQualities; set => weaponSpecialQualities = value; }
-
-        public IWeaponModification[] WeaponModifications { get => weaponModifications; set => weaponModifications = value; }
         public string Name { get => name; set => name = value; }
         public bool IsEquiped { get => isEquiped; set => isEquiped = value; }
 
@@ -54,16 +43,17 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment
         public string Discription { get => discription; set => discription = value; }
 
         public Craftsmanship Craftsmanship { get => craftsmanship; set => craftsmanship = value; }
-        #endregion Properties
-        public Weapon()
+        #endregion Discription
+        #region Constructor
+        public Armor()
         {
 
         }
-        public Weapon(string name)
+        public Armor(string name)
         {
             Name = name;
         }
-
+        #endregion Constructor
         #region EventHandlers
         public event PropertyChangedEventHandler PropertyChanged;
 

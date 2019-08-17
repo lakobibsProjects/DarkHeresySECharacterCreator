@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DarkHeresy2CharacterCreator.Model.Equipment
 {
-    enum ArmorType
+    public enum ArmorType
     {
         Basic,
         Flak,

@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace DarkHeresy2CharacterCreator.Model.Equipment.Interfaces
 {
-    interface IArmor : IItem
+    public interface IArmor : IItem
     {
         ArmorType ArmorType { get; }
-        LocationName LocationCovered { get; }
+        LocationName[] LocationCovered { get; }
         int ArmorPoints { get; }
         int MaxAgility { get; }
 

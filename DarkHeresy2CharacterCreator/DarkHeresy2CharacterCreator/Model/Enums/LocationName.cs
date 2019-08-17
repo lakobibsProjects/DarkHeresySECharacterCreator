@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DarkHeresy2CharacterCreator.Model
 {
-    enum LocationName
+    public enum LocationName
     {
         Left_Arm,
         Right_Arm,
