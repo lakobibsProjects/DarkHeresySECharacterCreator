@@ -14,7 +14,7 @@ using DarkHeresy2CharacterCreator.Model.Traits;
 
 namespace DarkHeresy2CharacterCreator.Model.Character
 {
-    class Character : ICharacter
+    public class Character : ICharacter
     {
         public string CharacterName { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public HomeWorld HomeWorld { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }

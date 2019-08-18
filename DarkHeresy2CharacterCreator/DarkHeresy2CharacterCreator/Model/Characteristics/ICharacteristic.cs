@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DarkHeresy2CharacterCreator.Model.Characteristics
 {
-    interface ICharacteristic : IAptitudeDependent, IPrerequisitable,INotifyPropertyChanged
+    public interface ICharacteristic : IAptitudeDependent, IPrerequisitable,INotifyPropertyChanged
     {
         CharacteristicName Name { get; }
     }

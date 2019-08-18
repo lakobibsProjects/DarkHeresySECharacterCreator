@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DarkHeresy2CharacterCreator.Model
 {
-    interface IAptitudeDependent
+    public interface IAptitudeDependent
     {
         AptitudeName FirstAptitude { get; }
         AptitudeName SecondAptitude { get; }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment
 {
-    class Divinations
+    public class Divinations
     {
 
         public static void GetDivination(int roll, out string prophecy, out string effect)

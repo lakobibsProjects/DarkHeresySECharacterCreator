@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment
 {
-    class Background : INotifyPropertyChanged, ISourceDiscription
+    public class Background : INotifyPropertyChanged, ISourceDiscription
     {
         #region Fields
         private string name;

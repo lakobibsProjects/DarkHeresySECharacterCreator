@@ -10,7 +10,7 @@ using System.Web.UI;
 
 namespace DarkHeresy2CharacterCreator.Model.Talents
 {
-    class Talent : ITalent
+    public class Talent : ITalent
     {
         #region Fields
         private string name;

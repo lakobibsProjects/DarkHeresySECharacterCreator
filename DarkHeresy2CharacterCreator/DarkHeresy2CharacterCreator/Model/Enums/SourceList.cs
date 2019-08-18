@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DarkHeresy2CharacterCreator.Model
 {
-    enum SourceList
+    public enum SourceList
     {
         Core_Rulebook_2_edition,
         Enemy_Beyond,

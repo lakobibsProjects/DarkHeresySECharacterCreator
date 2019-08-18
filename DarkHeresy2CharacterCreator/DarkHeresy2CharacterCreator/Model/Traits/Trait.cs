@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DarkHeresy2CharacterCreator.Model.Traits
 {
-    internal class Trait : ITrait
+    public class Trait : ITrait
     {
         #region Fields
         private string name;

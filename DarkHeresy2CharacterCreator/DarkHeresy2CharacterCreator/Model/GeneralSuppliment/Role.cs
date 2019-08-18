@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment
 {
-    class Role : INotifyPropertyChanged, ISourceDiscription
+    public class Role : INotifyPropertyChanged, ISourceDiscription
     {
         #region Fields
         private string name;

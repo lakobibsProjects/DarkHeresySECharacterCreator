@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment
 {
-    interface IEliteAdvance
+    public interface IEliteAdvance
     {
     }
 }

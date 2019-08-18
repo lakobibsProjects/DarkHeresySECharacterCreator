@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DarkHeresy2CharacterCreator.Model
 {
-    enum ActionLong
+    public enum ActionLong
     {
         Free_Action,
         Half_Action,

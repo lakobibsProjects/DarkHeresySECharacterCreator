@@ -9,7 +9,7 @@ using System.Collections.ObjectModel;
 
 namespace DarkHeresy2CharacterCreator.Model.Talents
 {
-    interface ITalent : IAptitudeDependent, IPrerequisitable, INotifyPropertyChanged
+    public interface ITalent : IAptitudeDependent, IPrerequisitable, INotifyPropertyChanged
     {
         string Name { get; set; }
         int Tier { get; }

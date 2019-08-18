@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DarkHeresy2CharacterCreator.Model.PsychicPowers
 {
-    interface IPsychicPower : IPrerequisitable, INotifyPropertyChanged
+    public interface IPsychicPower : IPrerequisitable, INotifyPropertyChanged
     {
         string Name { get; }
         int Cost { get; }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DarkHeresy2CharacterCreator.Model.PsychicPowers
 {
-    enum PsychisSchools
+    public enum PsychisSchools
     {
         Minor,
         Biomancy,

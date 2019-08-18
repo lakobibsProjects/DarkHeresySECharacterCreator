@@ -9,7 +9,7 @@ using DarkHeresy2CharacterCreator.Model.Character;
 
 namespace DarkHeresy2CharacterCreator.Model.Skills
 {
-    abstract class AbstractSkill : IPrerequisitable, IAptitudeDependent, INotifyPropertyChanged
+    public abstract class AbstractSkill : IPrerequisitable, IAptitudeDependent, INotifyPropertyChanged
     {
         #region Fields
         private SkillName name;
