@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace DarkHeresy2CharacterCreator.Model.Traits
 {
-    static class TraitList
+    public static class TraitList
     {
-        internal static ObservableCollection<ITrait> Traits { get; } = new ObservableCollection<ITrait>()
+        public static ObservableCollection<ITrait> Traits { get; } = new ObservableCollection<ITrait>()
         {
             new Trait(TraitName.Amorphous.ToString(),amorphousDiscription, false),
             new Trait(TraitName.Amphibious.ToString(), amphibiousDiscription, false),
