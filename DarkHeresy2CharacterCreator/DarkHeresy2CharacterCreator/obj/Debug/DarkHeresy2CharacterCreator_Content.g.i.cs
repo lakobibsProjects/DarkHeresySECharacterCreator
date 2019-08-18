@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("res/defaultwindowbackground.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("toodoofile.txt")]
 
 

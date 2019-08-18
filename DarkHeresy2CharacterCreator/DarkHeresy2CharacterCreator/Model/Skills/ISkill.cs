@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace DarkHeresy2CharacterCreator.Model.Skills
 {
-    interface ISkill : INotifyPropertyChanged
+    interface ISkill : IPrerequisitable, INotifyPropertyChanged
     {
-        Skill Name{ get; }
+        SkillName Name{ get; set; }
         Ranking Rank { get; set; }
-        Aptitudes firstAptitude { get; }
-        Aptitudes secondAptitude { get; }
+        AptitudeName FirstAptitude { get; }
+        AptitudeName SecondAptitude { get; }
         int Cost { get; }
 
     }
