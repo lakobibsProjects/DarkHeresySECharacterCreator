@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DarkHeresy2CharacterCreator.Model
 {
-    enum AptitudeName
+    public enum AptitudeName
     {
         None,
         General,

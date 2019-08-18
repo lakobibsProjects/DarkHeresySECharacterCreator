@@ -220,5 +220,8 @@
   <ItemGroup>
     <Resource Include="Res\HorizontalWindowBackground.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TooDooFile.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
