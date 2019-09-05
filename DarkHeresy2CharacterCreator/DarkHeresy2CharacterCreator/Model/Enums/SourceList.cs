@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace DarkHeresy2CharacterCreator.Model
 {
+    /// <summary>
+    /// Rulebooks
+    /// </summary>
     public enum SourceList
     {
         Core_Rulebook_2_edition,

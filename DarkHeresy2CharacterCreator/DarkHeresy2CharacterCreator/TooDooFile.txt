@@ -1,5 +1,0 @@
-﻿1. Create logic  to add specialization in elements of collections;
-2. Upgrade incapsulation;
-3. Upgrade names;
-4. Create extension for string GetPrintableName;
-5. Create logic for Psychic Powers;

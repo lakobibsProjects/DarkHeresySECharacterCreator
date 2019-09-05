@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PropertyChanged;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -8,6 +9,10 @@ using System.Threading.Tasks;
 
 namespace DarkHeresy2CharacterCreator.Model.Traits
 {
+    /// <summary>
+    /// Instantiate a trait
+    /// </summary>
+    [AddINotifyPropertyChangedInterface]
     public class Trait : ITrait
     {
         #region Fields
@@ -23,7 +28,12 @@ namespace DarkHeresy2CharacterCreator.Model.Traits
         public int Modifier { get => modifire; set => modifire = value; }
         public bool HasModifire { get => hasModifire; set => hasModifire = value; }
         #endregion Properties
-
+        /// <summary>
+        /// Base constructor of trait
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="discription"></param>
+        /// <param name="hasModifire"></param>
         public Trait(string name, string discription, bool hasModifire)
         {
             Name = name;
@@ -31,13 +41,6 @@ namespace DarkHeresy2CharacterCreator.Model.Traits
             HasModifire = hasModifire;
         }
         //require add mechanism to operate with modifire
-        #region EventHandlers
-        public event PropertyChangedEventHandler PropertyChanged;
 
-        public void OnPropertyChanged([CallerMemberName]string pror = "")
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(pror));
-        }
-        #endregion
     }
 }

@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace DarkHeresy2CharacterCreator.Model
 {
+    /// <summary>
+    /// Interface to classes, that have cost, that deteminite by aptitudes
+    /// </summary>
     public interface IAptitudeDependent
     {
         AptitudeName FirstAptitude { get; }

@@ -14,7 +14,10 @@ using System.Threading.Tasks;
 
 namespace DarkHeresy2CharacterCreator.Model.Character
 {
-    interface ICharacter
+    /// <summary>
+    /// Interface with general fuctionality of character
+    /// </summary>
+    interface ICharacter 
     {
         string CharacterName { get; set; }
         HomeWorld HomeWorld { get; set; }

@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace DarkHeresy2CharacterCreator.Model
 {
+    /// <summary>
+    /// Names of location of body
+    /// </summary>
     public enum LocationName
     {
         Left_Arm,

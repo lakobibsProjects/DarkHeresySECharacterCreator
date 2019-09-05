@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace DarkHeresy2CharacterCreator.Model.Traits
 {
+    /// <summary>
+    /// Names of traits
+    /// </summary>
     enum TraitName
     {
         Amorphous,

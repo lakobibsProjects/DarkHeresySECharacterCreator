@@ -7,8 +7,14 @@ using System.Threading.Tasks;
 
 namespace DarkHeresy2CharacterCreator.Model.Characteristics
 {
+    /// <summary>
+    /// Instaniate a observableCollection of characteristic
+    /// </summary>
     internal static class CharacteristicList
     {
+        /// <summary>
+        /// Collection of all charateristic
+        /// </summary>
         internal static ObservableCollection<Characteristic> Characteristics { get; } = new ObservableCollection<Characteristic>
         {
             new Characteristic(CharacteristicName.Agility, AptitudeName.Agility , AptitudeName.Finesse),

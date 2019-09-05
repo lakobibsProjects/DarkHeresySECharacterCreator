@@ -11,9 +11,14 @@ using DarkHeresy2CharacterCreator.Model.PsychicPowers;
 using DarkHeresy2CharacterCreator.Model.Skills;
 using DarkHeresy2CharacterCreator.Model.Talents;
 using DarkHeresy2CharacterCreator.Model.Traits;
+using PropertyChanged;
 
 namespace DarkHeresy2CharacterCreator.Model.Character
 {
+    /// <summary>
+    /// Complete character
+    /// </summary>
+    [AddINotifyPropertyChangedInterface]
     public class Character : ICharacter
     {
         public string CharacterName { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }

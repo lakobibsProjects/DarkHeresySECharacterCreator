@@ -1,0 +1,22 @@
+﻿1. Create logic  to add specialization in elements of collections;
+2. Upgrade incapsulation;
+3. Upgrade names;
+4. Create extension for string GetPrintableName;
+5. Create logic for Psychic Powers;
+6. Add comments
+	+Character
+	+Characteristics
+	+DiceRoller
+	+Enums
+	*Equipment
+	*GeneralSuppliment
+	*PsychicPowers
+	*Skills
+	*Talents
+	+Traits
+	+Another
+6.A Update comments
+7. Create Database
+8. Implement
+9. Think about constructors
+10. Think about events to automaticly update cost when increace rank

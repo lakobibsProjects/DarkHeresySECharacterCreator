@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace DarkHeresy2CharacterCreator.Model
 {
+    /// <summary>
+    /// Names of aptitudes
+    /// </summary>
     public enum AptitudeName
     {
         None,

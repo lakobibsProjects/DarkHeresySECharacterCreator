@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace DarkHeresy2CharacterCreator.Model
 {
+    /// <summary>
+    /// Interface to disriptable the source of the characters details
+    /// </summary>
     interface ISourceDiscription
     {
         SourceList SourceBook { get; set; }

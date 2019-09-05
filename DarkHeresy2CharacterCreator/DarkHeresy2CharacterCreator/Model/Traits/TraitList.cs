@@ -7,8 +7,14 @@ using System.Threading.Tasks;
 
 namespace DarkHeresy2CharacterCreator.Model.Traits
 {
+    /// <summary>
+    /// Intantiate a colletion of traits
+    /// </summary>
     public static class TraitList
     {
+        /// <summary>
+        /// Collection of traits
+        /// </summary>
         public static ObservableCollection<ITrait> Traits { get; } = new ObservableCollection<ITrait>()
         {
             new Trait(TraitName.Amorphous.ToString(),amorphousDiscription, false),

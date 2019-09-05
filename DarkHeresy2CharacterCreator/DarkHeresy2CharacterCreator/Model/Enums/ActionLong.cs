@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace DarkHeresy2CharacterCreator.Model
 {
+    /// <summary>
+    /// Time to perform some action
+    /// </summary>
     public enum ActionLong
     {
         Free_Action,

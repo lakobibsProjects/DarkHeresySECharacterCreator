@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace DarkHeresy2CharacterCreator.Model.Characteristics
 {
+    /// <summary>
+    /// Names of characteristics
+    /// </summary>
     public enum CharacteristicName
     {
         Weapon_Skill,

@@ -1,0 +1,5 @@
+﻿1. Create all requiring VM
+2. Add fuctionality to buttons
+	*Create commands
+	*Add commands in VM
+3. Add bound with Model
