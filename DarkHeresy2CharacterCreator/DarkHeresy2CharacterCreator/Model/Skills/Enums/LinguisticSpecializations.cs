@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace DarkHeresy2CharacterCreator.Model.Skills
 {
+
+    /// <summary>
+    /// Specializations of linguistic
+    /// </summary>
     enum LinguisticSpecializations
     {
         Chapter_Runes,

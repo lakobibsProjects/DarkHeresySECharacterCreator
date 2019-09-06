@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace DarkHeresy2CharacterCreator.Model.Skills
 {
+    /// <summary>
+    /// Specializations of  scholastic lore
+    /// </summary>
     enum ScholasticLoreSpecializations
     {
         Astromancy, 

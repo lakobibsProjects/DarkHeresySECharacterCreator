@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace DarkHeresy2CharacterCreator.Model.Skills
 {
+    /// <summary> 
+    /// Specializations of navigate
+    /// </summary>
     enum NavigateSpecializations
     {
         Surface,

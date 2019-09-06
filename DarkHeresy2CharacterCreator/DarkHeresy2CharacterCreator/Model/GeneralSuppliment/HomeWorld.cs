@@ -1,4 +1,5 @@
 ﻿using DarkHeresy2CharacterCreator.Model.Characteristics;
+using PropertyChanged;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,7 +10,11 @@ using System.Threading.Tasks;
 
 namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment
 {
-    public class HomeWorld : INotifyPropertyChanged
+    /// <summary>
+    /// Instantiate logic of homeworld
+    /// </summary>
+    [AddINotifyPropertyChangedInterface]
+    public class HomeWorld
     {
         #region Fields
         private string name;
@@ -36,14 +41,6 @@ namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment
         public HomeWorld(string name)
         {
             Name = name;
-        }
-        #region EventHandlers
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        public void OnPropertyChanged([CallerMemberName]string pror = "")
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(pror));
-        }
-        #endregion
+        }       
     }
 }

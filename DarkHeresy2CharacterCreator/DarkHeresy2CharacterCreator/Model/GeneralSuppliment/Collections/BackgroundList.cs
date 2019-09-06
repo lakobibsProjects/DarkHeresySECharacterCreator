@@ -10,11 +10,17 @@ using System.Threading.Tasks;
 
 namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment
 {
+    /// <summary>
+    /// Instaniate a observableCollection of backgrounds
+    /// </summary>
     internal static class BackgroundList
     {
+        /// <summary>
+        /// Collection of backgrounds
+        /// </summary>
         internal static ObservableCollection<Background> Backgrounds { get; } = new ObservableCollection<Background>
         {
-            //TooDoo create mechanizm to add specialization
+            //TODO create mechanizm to add specialization
             #region Core Culebook
             new Background("Adeptus Administratum")
             {
@@ -209,7 +215,7 @@ namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment
 
         };
 
-        //TooDoo Add discriptions
+        //TODO Add discriptions
         #region Bonuses
         private static readonly string adeptusAdministratumDiscription = "";
         private static readonly string adeptusArbitesDiscription = "";

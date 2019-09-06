@@ -8,8 +8,14 @@ using System.Threading.Tasks;
 
 namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
 {
+    /// <summary>
+    /// Instaniate a observableCollection of tools
+    /// </summary>
     public static class ToolsCollection
     {
+        /// <summary>
+        /// Collection of tools
+        /// </summary>
         public static ObservableCollection<IItem> Tools = new ObservableCollection<IItem>
         {
             new Item("Auspex/Scanner", Availability.Scarce, 0.5, auspexScannecDiscription),

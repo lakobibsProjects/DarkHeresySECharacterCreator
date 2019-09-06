@@ -7,8 +7,14 @@ using System.Threading.Tasks;
 
 namespace DarkHeresy2CharacterCreator.Model.Equipment
 {
+    /// <summary>
+    /// Instaniate a observableCollection of special qualities of weapons
+    /// </summary>
     public static class WeaponSpecialQuilitieCollection
     {
+        /// <summary>
+        /// Collection of special qualities of weapons
+        /// </summary>
         public static ObservableCollection<WeaponSpecialQualitie> WeaponSpecialQualities = new ObservableCollection<WeaponSpecialQualitie>
         {
             new WeaponSpecialQualitie("Accurate", accurateDiscription),

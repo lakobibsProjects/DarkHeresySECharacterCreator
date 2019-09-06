@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace DarkHeresy2CharacterCreator.Model.Equipment
 {
+    /// <summary>
+    /// Instantiate logic of ranged weapon
+    /// </summary>
     class RangedWeapon : Weapon, IRangedWeapon
     {
         private Tuple<int, int, int> rateOfFire;

@@ -8,8 +8,14 @@ using System.Threading.Tasks;
 
 namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment.Collections
 {
+    /// <summary>
+    /// Instaniate a observableCollection of homeworlds
+    /// </summary>
     public static class HomeWorldList
     {
+        /// <summary>
+        /// Collection of homeworlds
+        /// </summary>
         public static ObservableCollection<HomeWorld> HomeWorlds = new ObservableCollection<HomeWorld>
         {
             //TooDoo correct and add recomended backgrounds

@@ -8,9 +8,15 @@ using System.Threading.Tasks;
 
 namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
 {
+    /// <summary>
+    /// Instaniate a observableCollection of weapons
+    /// </summary>
     public static class WeaponCollection
     {
         //require mechanism to add numeric value of weapon special qualities
+        /// <summary>
+        /// Collection of weapons
+        /// </summary>
         public static ObservableCollection<IWeapon> Weapons = new ObservableCollection<IWeapon>
         {
             #region Ranged

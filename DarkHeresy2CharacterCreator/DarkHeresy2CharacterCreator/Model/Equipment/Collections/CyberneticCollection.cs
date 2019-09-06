@@ -8,8 +8,14 @@ using System.Threading.Tasks;
 
 namespace DarkHeresy2CharacterCreator.Model.Equipment
 {
+    /// <summary>
+    /// Instaniate a observableCollection of cybernetics
+    /// </summary>
     public static class CyberneticCollection
     {
+        /// <summary>
+        /// Collection of all cybernetics
+        /// </summary>
         public static ObservableCollection<IItem> Cybernetics = new ObservableCollection<IItem>
         {
             new Item("Bionic Arm", Availability.Scarce, 0, bionicArmDiscription),

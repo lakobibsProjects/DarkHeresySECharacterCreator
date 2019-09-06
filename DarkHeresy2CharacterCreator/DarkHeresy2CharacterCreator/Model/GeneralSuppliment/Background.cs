@@ -2,6 +2,7 @@
 using DarkHeresy2CharacterCreator.Model.Skills;
 using DarkHeresy2CharacterCreator.Model.Talents;
 using DarkHeresy2CharacterCreator.Model.Traits;
+using PropertyChanged;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -13,7 +14,11 @@ using System.Threading.Tasks;
 
 namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment
 {
-    public class Background : INotifyPropertyChanged, ISourceDiscription
+    /// <summary>
+    /// Instantiate logic of background
+    /// </summary>
+    [AddINotifyPropertyChangedInterface]
+    public class Background : ISourceDiscription
     {
         #region Fields
         private string name;
@@ -45,13 +50,6 @@ namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment
             Name = name;
         }
 
-        #region EventHandlers
-        public event PropertyChangedEventHandler PropertyChanged;
 
-        public void OnPropertyChanged([CallerMemberName]string pror = "")
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(pror));
-        }
-        #endregion
     }
 }

@@ -8,8 +8,14 @@ using System.Threading.Tasks;
 
 namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
 {
+    /// <summary>
+    /// Instaniate a observableCollection of armor
+    /// </summary>
     public static class ArmorCollection
     {
+        /// <summary>
+        /// Collection of all armor
+        /// </summary>
         public static ObservableCollection<IArmor> Armors = new ObservableCollection<IArmor>
         {
             #region Basic

@@ -8,8 +8,14 @@ using System.Threading.Tasks;
 
 namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment
 {
+    /// <summary>
+    /// Instaniate a observableCollection of roles
+    /// </summary>
     static class RoleList
     {
+        /// <summary>
+        /// Collection of roles
+        /// </summary>
         public static ObservableCollection<Role> Roles = new ObservableCollection<Role>
         {
             new Role(RoleName.Assassin.ToString(), assassinBonus, new List<ValueTuple<AptitudeName, AptitudeName?>>

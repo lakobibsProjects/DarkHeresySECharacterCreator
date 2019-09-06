@@ -7,7 +7,10 @@ using System.Threading.Tasks;
 
 namespace DarkHeresy2CharacterCreator.Model.Equipment.Interfaces
 {
-    public interface IItem : INotifyPropertyChanged
+    /// <summary>
+    /// General functionality of items
+    /// </summary>
+    public interface IItem
     {
         string Name { get; set; }
         bool IsEquiped { get; set; }

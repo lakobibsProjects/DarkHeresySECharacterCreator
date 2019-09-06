@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace DarkHeresy2CharacterCreator.Model.Equipment
 {
+    /// <summary>
+    /// Availability of items
+    /// </summary>
     public enum Availability
     {
         Ubiquitous,

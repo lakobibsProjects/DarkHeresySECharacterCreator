@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace DarkHeresy2CharacterCreator.Model.Skills
 {
+    /// <summary>
+    /// Names of skills
+    /// </summary>
     public enum SkillName
     {
         Acrobatics,

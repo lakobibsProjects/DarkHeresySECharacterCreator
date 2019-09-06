@@ -1,4 +1,5 @@
 ﻿using DarkHeresy2CharacterCreator.Model.Talents;
+using PropertyChanged;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,7 +10,11 @@ using System.Threading.Tasks;
 
 namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment
 {
-    public class Role : INotifyPropertyChanged, ISourceDiscription
+    /// <summary>
+    /// Instantiate logic of role
+    /// </summary>
+    [AddINotifyPropertyChangedInterface]
+    public class Role : ISourceDiscription
     {
         #region Fields
         private string name;
@@ -28,15 +33,6 @@ namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment
         internal List<ValueTuple<AptitudeName, AptitudeName?>> Aptitudes { get => aptitudes; set => aptitudes = value; }
         internal ValueTuple<Talent, Talent> RoleTalent { get => roleTalent; set => roleTalent = value; }
         #endregion Properties
-
-        #region EventHandlers
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        public void OnPropertyChanged([CallerMemberName]string pror = "")
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(pror));
-        }
-        #endregion
 
         public Role(string name, string roleBonus, List<ValueTuple<AptitudeName, AptitudeName?>> aptitudes, ValueTuple<Talent, Talent> roleTalent)
         {

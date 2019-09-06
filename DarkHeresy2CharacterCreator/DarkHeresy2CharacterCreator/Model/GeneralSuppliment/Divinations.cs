@@ -6,9 +6,17 @@ using System.Threading.Tasks;
 
 namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment
 {
+    /// <summary>
+    /// Instantiate logic of divination
+    /// </summary>
     public class Divinations
     {
-
+        /// <summary>
+        /// Return divination
+        /// </summary>
+        /// <param name="roll">result of roll of d100</param>
+        /// <param name="prophecy">Prophecy</param>
+        /// <param name="effect">effect of divination</param>
         public static void GetDivination(int roll, out string prophecy, out string effect)
         {
             prophecy = "";

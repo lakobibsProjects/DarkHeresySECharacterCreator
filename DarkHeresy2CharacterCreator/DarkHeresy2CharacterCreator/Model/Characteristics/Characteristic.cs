@@ -13,7 +13,7 @@ namespace DarkHeresy2CharacterCreator.Model.Characteristics
     /// Comlete characteristic
     /// </summary>
     [AddINotifyPropertyChangedInterface]
-    class Characteristic
+    public class Characteristic
     {
         #region Fields
         private CharacteristicName name;

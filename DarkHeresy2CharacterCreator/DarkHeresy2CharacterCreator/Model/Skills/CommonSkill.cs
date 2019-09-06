@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PropertyChanged;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -8,6 +9,10 @@ using System.Threading.Tasks;
 
 namespace DarkHeresy2CharacterCreator.Model.Skills
 {
+    /// <summary>
+    /// Instantiate logic of skill
+    /// </summary>
+    [AddINotifyPropertyChangedInterface]
     class CommonSkill : AbstractSkill
     {      
         public CommonSkill(SkillName skillName, AptitudeName firstAptitude, AptitudeName secondAptitude, Ranking skillRank = 0)

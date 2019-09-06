@@ -7,8 +7,14 @@ using System.Threading.Tasks;
 
 namespace DarkHeresy2CharacterCreator.Model.Skills
 {
+    /// <summary>
+    /// Instaniate a observableCollection of skills
+    /// </summary>
     public static class SkillList
     {
+        /// <summary>
+        /// Collection of skills
+        /// </summary>
         internal static ObservableCollection<AbstractSkill> CommonSkills { get; } = new ObservableCollection<AbstractSkill>
         {
             new CommonSkill(SkillName.Acrobatics, AptitudeName.Agility, AptitudeName.General){ Discription = acrobaticsDiscription },

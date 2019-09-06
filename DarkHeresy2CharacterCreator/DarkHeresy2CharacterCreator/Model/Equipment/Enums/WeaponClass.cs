@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace DarkHeresy2CharacterCreator.Model.Equipment
 {
+    /// <summary>
+    /// Classes of weapons
+    /// </summary>
     public enum WeaponClass
     {
         Melee,

@@ -6,10 +6,15 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using DarkHeresy2CharacterCreator.Model.Character;
+using PropertyChanged;
 
 namespace DarkHeresy2CharacterCreator.Model.Skills
 {
-    public abstract class AbstractSkill : IPrerequisitable, IAptitudeDependent, INotifyPropertyChanged
+    /// <summary>
+    /// General functionality of skill
+    /// </summary>
+    [AddINotifyPropertyChangedInterface]
+    public abstract class AbstractSkill : IPrerequisitable, IAptitudeDependent
     {
         #region Fields
         private SkillName name;
@@ -25,17 +30,17 @@ namespace DarkHeresy2CharacterCreator.Model.Skills
         public SkillName Name
         {
             get { return name; }
-            set { name = value; OnPropertyChanged("Name"); }
+            set { name = value;  }
         }
 
         public Ranking Rank
         {
             get { return rank; }
-            set { rank = value; OnPropertyChanged("Rank"); }
+            set { rank = value;  }
         }
         public AptitudeName FirstAptitude { get { return first; } protected set { first = value; } }
         public AptitudeName SecondAptitude { get { return second; } protected set { second = value; } }
-        public int Cost { get { return cost; } private set { cost = value; OnPropertyChanged("Cost"); } }
+        public int Cost { get { return cost; } private set { cost = value; } }
         public int SkillBonus
         {
             get { return bonus; }
@@ -58,22 +63,16 @@ namespace DarkHeresy2CharacterCreator.Model.Skills
                         bonus = 30;
                         break;
                 }
-                OnPropertyChanged("SkillBonus");
             }
         }
 
         public string Discription { get { return discription; } internal set { discription = value; } }
         #endregion Properties
 
-        #region EventHandlers
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        public void OnPropertyChanged([CallerMemberName]string pror = "")
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(pror));
-        }
-        #endregion
-
+        /// <summary>
+        /// Determine cost to advance skill
+        /// </summary>
+        /// <param name="charecterAptitudes">Aptitudes of character</param>
         void IAptitudeDependent.ChangeAdvanceCost(IEnumerable<AptitudeName> CharecterAptitudes)
         {
             int haveAptitudes = 0;

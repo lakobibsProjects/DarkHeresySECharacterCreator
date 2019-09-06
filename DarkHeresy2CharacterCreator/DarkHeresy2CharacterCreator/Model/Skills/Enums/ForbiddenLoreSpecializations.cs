@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace DarkHeresy2CharacterCreator.Model.Skills
 {
+
+    /// <summary>
+    /// Specializations of forbidden lore
+    /// </summary>
     enum ForbiddenLoreSpecializations
     {
         Archeotech,

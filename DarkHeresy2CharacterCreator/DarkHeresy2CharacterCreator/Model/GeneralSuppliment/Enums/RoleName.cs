@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment
 {
+    /// <summary>
+    /// Names of roles
+    /// </summary>
     enum RoleName
     {
         Assassin,
@@ -16,9 +19,9 @@ namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment
         Sage,
         Seeker,
         Warrior,
-        Fanatic = 200,
+        Fanatic = 200,  //rulebook: enemy within
         Penitent,
-        Ace = 300,
-        Crusader = 400
+        Ace = 300,     //rulebook: enemy without
+        Crusader = 400 //rulebook: enemy beyond
     }
 }

@@ -8,8 +8,14 @@ using System.Threading.Tasks;
 
 namespace DarkHeresy2CharacterCreator.Model.Equipment
 {
+    /// <summary>
+    /// Instaniate a observableCollection of drugs and consumables
+    /// </summary>
     public static class DrugsAndConsumablesCollection
     {
+        /// <summary>
+        /// Collection of drugs and consumables
+        /// </summary>
         public static ObservableCollection<IItem> DrugsAndConsumables = new ObservableCollection<IItem>
         {
             new Item("Amasec", Availability.Average, 1, amasecDiscription),

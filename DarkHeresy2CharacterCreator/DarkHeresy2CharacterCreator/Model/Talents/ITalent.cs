@@ -9,7 +9,10 @@ using System.Collections.ObjectModel;
 
 namespace DarkHeresy2CharacterCreator.Model.Talents
 {
-    public interface ITalent : IAptitudeDependent, IPrerequisitable, INotifyPropertyChanged
+    /// <summary>
+    /// General functionality of talent
+    /// </summary>
+    public interface ITalent : IAptitudeDependent, IPrerequisitable
     {
         string Name { get; set; }
         int Tier { get; }

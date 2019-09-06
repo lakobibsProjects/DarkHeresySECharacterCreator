@@ -9,6 +9,10 @@ using System.Threading.Tasks;
 
 namespace DarkHeresy2CharacterCreator.Model.Equipment
 {
+
+    /// <summary>
+    /// Instantiate logic of weapon
+    /// </summary>
     internal class Weapon : IWeapon
     {
         #region Fields

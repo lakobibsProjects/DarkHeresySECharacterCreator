@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PropertyChanged;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -10,6 +11,10 @@ using System.Web.UI;
 
 namespace DarkHeresy2CharacterCreator.Model.Talents
 {
+    /// <summary>
+    /// Instantiate logic of talent
+    /// </summary>
+    [AddINotifyPropertyChangedInterface]
     public class Talent : ITalent
     {
         #region Fields
@@ -31,7 +36,7 @@ namespace DarkHeresy2CharacterCreator.Model.Talents
 
         public AptitudeName FirstAptitude { get { return first; } protected set { first = value; } }
         public AptitudeName SecondAptitude { get { return second; } protected set { second = value; } }
-        public int Cost { get { return cost; } private set { cost = value; OnPropertyChanged("Cost"); } }
+        public int Cost { get { return cost; } private set { cost = value; } }
 
         public int Tier { get { return tier; } protected set { tier = value; } }
 
@@ -41,7 +46,7 @@ namespace DarkHeresy2CharacterCreator.Model.Talents
 
         public List<ValueTuple<IPrerequisitable, int>> Prerequisites { get { return prerequisites; } internal set { prerequisites = value; } }
 
-        public ObservableCollection<string> Specializations { get { return specializations; } set { specializations = value; OnPropertyChanged("Specializations"); } }
+        public ObservableCollection<string> Specializations { get { return specializations; } set { specializations = value; } }
         #endregion Properties
         #region Consturctors
         public Talent(string name, string discription, AptitudeName firstAptitude, AptitudeName secondAptitude, int tier)
@@ -63,15 +68,10 @@ namespace DarkHeresy2CharacterCreator.Model.Talents
         }
         #endregion Constructors
 
-        #region EventHandlers
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        public void OnPropertyChanged([CallerMemberName]string pror = "")
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(pror));
-        }
-        #endregion
-
+        /// <summary>
+        /// Determine cost to take talent
+        /// </summary>
+        /// <param name="charecterAptitudes">Aptitudes of character</param>
         public void ChangeAdvanceCost(IEnumerable<AptitudeName> charecterAptitudes)
         {
             int haveAptitudes = 0;

@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace DarkHeresy2CharacterCreator.Model.Talents
 {
+    /// <summary>
+    /// Names of talents
+    /// </summary>
     enum TalentName
     {
         #region Core Rulebook common talents

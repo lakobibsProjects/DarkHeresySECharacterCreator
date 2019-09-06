@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace DarkHeresy2CharacterCreator.Model.Skills
 {
+    /// <summary>
+    /// Specializations of trade
+    /// </summary>
     enum TradeSpecializations
     {
         Agri,

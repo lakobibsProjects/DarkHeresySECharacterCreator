@@ -7,8 +7,14 @@ using System.Threading.Tasks;
 
 namespace DarkHeresy2CharacterCreator.Model.Talents
 {
+    /// <summary>
+    /// Instaniate a observableCollection of talents
+    /// </summary>
     internal static class TalentList
     {
+        /// <summary>
+        /// Collection of talents
+        /// </summary>
         internal static ObservableCollection<Talent> Talents { get; } = new ObservableCollection<Talent>
         {   
             #region Common talents discription
@@ -17,18 +23,18 @@ namespace DarkHeresy2CharacterCreator.Model.Talents
                 {
                     (Talents.FirstOrDefault( p => p.Name == "Jaded"), 1),
                     (Talents.FirstOrDefault(p => p.Name == "Resistance" && p.Specializations.First() == "Fear"), 1),
-                    (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Willpower), 45)
+                    (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Willpower) as IPrerequisitable, 45)
                 }
             },
             new Talent (TalentName.Ambidextrous.ToString(), ambidextrousDiscription, AptitudeName.Weapon_Skill, AptitudeName.Balistic_Skill, 1)
             {
-                Prerequisites = { (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Agility), 30) }
+                Prerequisites = { (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Agility) as IPrerequisitable, 30) }
             },
             new Talent(TalentName.Armour_Monger.ToString(), armourMongerDiscription, AptitudeName.Intelligence, AptitudeName.Tech, 2)
             {
                 Prerequisites =
                 {                    
-                    (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Intelligence), 35),
+                    (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Intelligence) as IPrerequisitable, 35),
                     (Skills.SkillList.CommonSkills.FirstOrDefault(s => s.Name == Skills.SkillName.Tech_Use), 1),
                     (Skills.SkillList.SpecializedSkills.FirstOrDefault( s => s.Name == Skills.SkillName.Trade), 1)
                 }
@@ -38,7 +44,7 @@ namespace DarkHeresy2CharacterCreator.Model.Talents
                 Prerequisites =
                 {
                     (Skills.SkillList.CommonSkills.FirstOrDefault(s => s.Name == Skills.SkillName.Acrobatics), 1),
-                    (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Agility), 40)
+                    (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Agility) as IPrerequisitable, 40)
                 }
             },
             new Talent(TalentName.Bastion_of_Iron_Will.ToString(), bastionOfIronWillDiscription, AptitudeName.Willpower, AptitudeName.Psyker, 3)
@@ -47,7 +53,7 @@ namespace DarkHeresy2CharacterCreator.Model.Talents
                 {
                     (Traits.TraitList.Traits.FirstOrDefault(t => t.Name == "Psy_Rating"), 1),
                     (Talents.FirstOrDefault( p => p.Name == "Strong Minded"), 1),
-                    (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Willpower), 40)
+                    (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Willpower) as IPrerequisitable, 40)
                 }
             },
             new Talent(TalentName.Battle_Rage.ToString(), battleRageDiscription, AptitudeName.Strength, AptitudeName.Defence, 2)
@@ -58,29 +64,29 @@ namespace DarkHeresy2CharacterCreator.Model.Talents
             {
                 Prerequisites =
                 {
-                    (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Weapon_Skill), 30),
+                    (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Weapon_Skill) as IPrerequisitable, 30),
                     (Talents.FirstOrDefault(p => p.Name == "Weapon Training"), 1)
                 }
             },
             new Talent(TalentName.Blind_Fighting.ToString(), blindFightingDiscription, AptitudeName.Perception, AptitudeName.Fieldcraft, 1)
             {
-                Prerequisites = { (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Perception), 30) }
+                Prerequisites = { (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Perception) as IPrerequisitable, 30) }
             },
             new Talent (TalentName.Bulging_Biceps.ToString(), bulgingBicepsDiscription, AptitudeName.Strength, AptitudeName.Offence, 2)
             {
-                Prerequisites = { (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Strength), 45) }
+                Prerequisites = { (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Strength) as IPrerequisitable, 45) }
             },
             new Talent (TalentName.Catfall.ToString(), catfallDiscription, AptitudeName.Agility, AptitudeName.Fieldcraft, 1)
             {
-                Prerequisites = { (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Agility), 30) }
+                Prerequisites = { (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Agility) as IPrerequisitable, 30) }
             },
             new Talent(TalentName.Clues_from_the_Crowds.ToString(), cluesFromTheCrowdsDiscription, AptitudeName.General, AptitudeName.Social, 1)
             {
-                Prerequisites = { (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Fellowship), 30) }
+                Prerequisites = { (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Fellowship) as IPrerequisitable, 30) }
             },
             new Talent(TalentName.Combat_Master.ToString(), combatMasterDiscription, AptitudeName.Weapon_Skill, AptitudeName.Defence, 3)
             {
-                Prerequisites = { (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Weapon_Skill), 30) }
+                Prerequisites = { (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Weapon_Skill) as IPrerequisitable, 30) }
             },
             new Talent(TalentName.Constant_Vigilance.ToString(), constantVigilanceDiscription, AptitudeName.Perception, AptitudeName.Defence, 2)
             {
@@ -88,15 +94,15 @@ namespace DarkHeresy2CharacterCreator.Model.Talents
                 Prerequisites =
                 {
                     (Skills.SkillList.CommonSkills.FirstOrDefault(s => s.Name == Skills.SkillName.Awarness), 2),
-                    (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Intelligence), 35),
-                    (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Perception), 35)
+                    (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Intelligence) as IPrerequisitable, 35),
+                    (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Perception) as IPrerequisitable, 35)
                 }                
             },
             new Talent (TalentName.Contact_Network.ToString(), contactNetworkDiscription, AptitudeName.Fellowship, AptitudeName.Leadship, 2)
             {
                  Prerequisites =
                  {
-                    (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Intelligence), 35),
+                    (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Intelligence) as IPrerequisitable, 35),
                     (Talents.FirstOrDefault(p => p.Name == "Cover-Up"), 1)
                  }
             },
@@ -104,55 +110,55 @@ namespace DarkHeresy2CharacterCreator.Model.Talents
             {
                 Prerequisites =
                 {
-                    (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Strength), 40),
-                    (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Willpower), 40),
+                    (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Strength) as IPrerequisitable, 40),
+                    (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Willpower) as IPrerequisitable, 40),
                     (Talents.FirstOrDefault(p => p.Name == "Clues from the Crowds"), 1)
                 }
             },
             new Talent(TalentName.Counter_Attack.ToString(), counterAttackDiscription,  AptitudeName.Weapon_Skill, AptitudeName.Defence, 2)
             {
-                 Prerequisites = { (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Weapon_Skill), 40) }
+                 Prerequisites = { (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Weapon_Skill) as IPrerequisitable, 40) }
             },
             new Talent (TalentName.Cover_Up.ToString(), coverUpDiscription, AptitudeName.Intelligence, AptitudeName.Knowledge, 2)
             {
-                Prerequisites = { (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Weapon_Skill), 35) }
+                Prerequisites = { (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Weapon_Skill) as IPrerequisitable, 35) }
             },
             new Talent(TalentName.Crushing_Blow.ToString(), crushingBlowDiscription, AptitudeName.Weapon_Skill, AptitudeName.Offence, 3)
             {
-                Prerequisites = { (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Weapon_Skill), 40) }
+                Prerequisites = { (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Weapon_Skill) as IPrerequisitable, 40) }
             },
             new Talent(TalentName.Deathdealer.ToString(), deathDealerDiscription, AptitudeName.Perception, AptitudeName.Finesse, 3)
             {
                 Specializations = {"Ranged", "Melee"},
                 Prerequisites =
                 {
-                    (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Balistic_Skill), 45) ,
-                    (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Weapon_Skill), 45)
+                    (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Balistic_Skill) as IPrerequisitable, 45) ,
+                    (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Weapon_Skill) as IPrerequisitable, 45)
                 }
             },
             new Talent(TalentName.Delicate_Interrogation.ToString(), delicateInterrogationDiscription, AptitudeName.Intelligence, AptitudeName.Finesse, 3)
             {
                     Prerequisites =
                     {
-                        (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Fellowship), 50),
+                        (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Fellowship) as IPrerequisitable, 50),
                         (Talents.FirstOrDefault(p => p.Name == "Coordinated interrogation"), 1)
                     }
             },
             new Talent(TalentName.Deny_the_Witch.ToString(), denyTheWitchDiscription, AptitudeName.Willpower, AptitudeName.Defence, 2)
             {
-                Prerequisites = { (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Willpower), 35) }
+                Prerequisites = { (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Willpower) as IPrerequisitable, 35) }
             },
             new Talent(TalentName.Devastating_Assault.ToString(), devatatingAssalutDiscription, AptitudeName.Weapon_Skill, AptitudeName.Offence, 2)
             {
-                 Prerequisites = { (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Weapon_Skill), 35) }
+                 Prerequisites = { (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Weapon_Skill) as IPrerequisitable, 35) }
             },
             new Talent(TalentName.Die_Hard.ToString(), dieHardDiscription, AptitudeName.Willpower, AptitudeName.Defence, 1)
             {
-                 Prerequisites = { (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Willpower), 40) }
+                 Prerequisites = { (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Willpower) as IPrerequisitable, 40) }
             },
             new Talent(TalentName.Disarm.ToString(), disarmDiscription, AptitudeName.Weapon_Skill, AptitudeName.Defence, 1)
             {
-                 Prerequisites = { (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Agility), 30) }
+                 Prerequisites = { (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Agility) as IPrerequisitable, 30) }
             },
             new Talent(TalentName.Double_Tap.ToString(), doubleTapDiscription, AptitudeName.Finesse, AptitudeName.Offence, 2)
             {
@@ -169,19 +175,19 @@ namespace DarkHeresy2CharacterCreator.Model.Talents
             },
             new Talent(TalentName.Eye_of_Vengence.ToString(), eyeOfVengenceDiscription, AptitudeName.Balistic_Skill, AptitudeName.Finesse, 3)
             {
-                Prerequisites = { (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Balistic_Skill), 50) }
+                Prerequisites = { (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Balistic_Skill) as IPrerequisitable, 50) }
             },
             new Talent (TalentName.Face_in_a_Crowd.ToString(), faceInACrowdDiscription, AptitudeName.Fellowship, AptitudeName.Social, 2)
             {
                 Prerequisites =
                 {
-                        (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Fellowship), 35),
+                        (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Fellowship) as IPrerequisitable, 35),
                         (Talents.FirstOrDefault(p => p.Name == "Clues from the Crowds"), 1)
                 }
             },
             new Talent (TalentName.Favoured_by_the_Warp.ToString(), favoredByTheWarpDiscription, AptitudeName.Willpower, AptitudeName.Psyker, 3)
             {
-                  Prerequisites = { (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Willpower), 35) }
+                  Prerequisites = { (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Willpower) as IPrerequisitable, 35) }
             },
             new Talent (TalentName.Ferric_Summons.ToString(), ferricSummonDiscription, AptitudeName.Willpower, AptitudeName.Tech, 1)
             {
@@ -190,7 +196,7 @@ namespace DarkHeresy2CharacterCreator.Model.Talents
             new Talent("Flash of Inside", flashOfInsideDiscription, AptitudeName.Perception, AptitudeName.Knowledge, 3)
             {
                    Prerequisites =
-                   {    (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Intelligence), 40),
+                   {    (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Intelligence) as IPrerequisitable, 40),
                         (Talents.FirstOrDefault(p => p.Name == "Contact Network"), 1),
                         (Talents.FirstOrDefault(p => p.Name == "Coordinated Interrogation"), 1)
                    }
@@ -200,8 +206,8 @@ namespace DarkHeresy2CharacterCreator.Model.Talents
             {
                 Prerequisites =
                 {
-                    (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Fellowship), 40),
-                    (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Willpower), 40)
+                    (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Fellowship) as IPrerequisitable, 40),
+                    (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Willpower) as IPrerequisitable, 40)
                 }
             },
             new Talent(TalentName.Hammer_Blow.ToString(), hammerBlowDiscription, AptitudeName.Strength, AptitudeName.Offence, 3)
@@ -210,11 +216,11 @@ namespace DarkHeresy2CharacterCreator.Model.Talents
             },
             new Talent(TalentName.Hard_Target.ToString(), hardTargetDiscription, AptitudeName.Agility, AptitudeName.Defence, 2)
             {
-                Prerequisites = { (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Agility), 40) }
+                Prerequisites = { (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Agility) as IPrerequisitable, 40) }
             },
             new Talent(TalentName.Hardy.ToString(), hardyDiscription, AptitudeName.Toughness, AptitudeName.Defence, 2)
             {
-                Prerequisites = { (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Toughness), 40) }
+                Prerequisites = { (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Toughness) as IPrerequisitable, 40) }
             },
             new Talent(TalentName.Hatred.ToString(), hatredDiscription, AptitudeName.Weapon_Skill, AptitudeName.Social, 2)
             {
@@ -224,28 +230,28 @@ namespace DarkHeresy2CharacterCreator.Model.Talents
             {
                 Prerequisites =
                 {
-                    (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Agility), 40),
-                    (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Balistic_Skill), 40)
+                    (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Agility) as IPrerequisitable, 40),
+                    (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Balistic_Skill) as IPrerequisitable, 40)
                 }
             },
             new Talent(TalentName.Independent_Targeting.ToString(), independentTargetingDiscription, AptitudeName.Balistic_Skill, AptitudeName.Finesse, 3)
             {
-                Prerequisites = { (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Balistic_Skill), 40) }
+                Prerequisites = { (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Balistic_Skill) as IPrerequisitable, 40) }
             },
             new Talent (TalentName.Inescapable_Attack.ToString() + " (ranged)", inescapableAttackDiscription, AptitudeName.Balistic_Skill, AptitudeName.Finesse, 2)
             {
                  Prerequisites =
                  {
-                    (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Perception), 35),
-                    (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Balistic_Skill), 40)
+                    (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Perception) as IPrerequisitable, 35),
+                    (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Balistic_Skill) as IPrerequisitable, 40)
                  }
             },
             new Talent (TalentName.Inescapable_Attack.ToString() + " (melee)", inescapableAttackDiscription, AptitudeName.Weapon_Skill, AptitudeName.Finesse, 2)
             {
                  Prerequisites =
                  {
-                    (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Perception), 35),
-                    (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Weapon_Skill), 40)
+                    (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Perception) as IPrerequisitable, 35),
+                    (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Weapon_Skill) as IPrerequisitable, 40)
                  }
             },
             new Talent(TalentName.Infused_Knowledge.ToString(), infusedKnowledgeDiscription, AptitudeName.Intelligence, AptitudeName.Knowledge, 3)
@@ -254,28 +260,28 @@ namespace DarkHeresy2CharacterCreator.Model.Talents
                  {
                     (Skills.SkillList.SpecializedSkills.FirstOrDefault(s => s.Name == Skills.SkillName.Common_Lore || s.Name == Skills.SkillName.Scholastic_Lore
                         || s.Name == Skills.SkillName.Forbidden_Lore), 1),
-                    (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Intelligence), 40)
+                    (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Intelligence) as IPrerequisitable, 40)
                  }
             },
             new Talent (TalentName.Iron_Jaw.ToString(), ironJawDiscription, AptitudeName.Toughness, AptitudeName.Defence, 1)
             {
-                Prerequisites = { (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Toughness), 40) }
+                Prerequisites = { (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Toughness) as IPrerequisitable, 40) }
             },
             new Talent(TalentName.Jaded.ToString(), jadedDiscription, AptitudeName.Willpower, AptitudeName.Defence, 1)
             {
-                Prerequisites = { (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Willpower), 40) }
+                Prerequisites = { (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Willpower) as IPrerequisitable, 40) }
             },
             new Talent(TalentName.Keen_Intuition.ToString(), keenIntuitionDiscription, AptitudeName.Perception, AptitudeName.Social, 1)
             {
-                Prerequisites = { (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Intelligence), 35) }
+                Prerequisites = { (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Intelligence) as IPrerequisitable, 35) }
             },
             new Talent(TalentName.Killing_Strike.ToString(), killingStrikeDiscription, AptitudeName.Weapon_Skill, AptitudeName.Offence, 2)
             {
-                Prerequisites = { (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Weapon_Skill), 50) }
+                Prerequisites = { (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Weapon_Skill) as IPrerequisitable, 50) }
             },
             new Talent(TalentName.Leap_Up.ToString(), leapUpDiscription, AptitudeName.Agility, AptitudeName.General, 1)
             {
-                Prerequisites = { (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Agility), 30) }
+                Prerequisites = { (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Agility) as IPrerequisitable, 30) }
             },
             new Talent(TalentName.Lightning_Attack.ToString(), lightningAttackDiscription, AptitudeName.Weapon_Skill, AptitudeName.Finesse, 1)
             {
@@ -295,7 +301,7 @@ namespace DarkHeresy2CharacterCreator.Model.Talents
             },
             new Talent(TalentName.Marksman.ToString(), marksmanDiscription, AptitudeName.Balistic_Skill, AptitudeName.Finesse, 2)
             {
-                Prerequisites = { (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Balistic_Skill), 35) }
+                Prerequisites = { (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Balistic_Skill) as IPrerequisitable, 35) }
             },
             new Talent(TalentName.Mastery.ToString(), masteryDiscription, AptitudeName.Intelligence, AptitudeName.Knowledge, 3)
             {   //relize logic of specialization and prerequisites
@@ -309,38 +315,38 @@ namespace DarkHeresy2CharacterCreator.Model.Talents
             },
             new Talent(TalentName.Mighty_Shot.ToString(), mightyShotDiscription, AptitudeName.Balistic_Skill,  AptitudeName.Offence, 3)
             {
-                Prerequisites = { (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Balistic_Skill), 35) }
+                Prerequisites = { (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Balistic_Skill) as IPrerequisitable, 35) }
             },
             new Talent(TalentName.Never_Die.ToString(), neverDieDiscription, AptitudeName.Toughness, AptitudeName.Defence, 3)
             {
                 Prerequisites =
                 {
-                    (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Willpower), 50),
-                    (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Toughness), 50)
+                    (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Willpower) as IPrerequisitable, 50),
+                    (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Toughness) as IPrerequisitable, 50)
                 }
             },
             new Talent(TalentName.Nowhere_to_Hide.ToString(), nowhereToHideDiscription, AptitudeName.Perception, AptitudeName.Offence, 1)
             {
-                Prerequisites = { (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Perception), 30) }
+                Prerequisites = { (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Perception) as IPrerequisitable, 30) }
             },
             new Talent(TalentName.Peer.ToString(), peerDiscription, AptitudeName.Fellowship, AptitudeName.Social, 1)
             {
-                Prerequisites = { (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Fellowship), 30) }
+                Prerequisites = { (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Fellowship) as IPrerequisitable, 30) }
             },
             new Talent(TalentName.Precision_Killer.ToString() + " (ranged)", precisionKillerDiscription, AptitudeName.Balistic_Skill, AptitudeName.Finesse, 2)
             {
-                Prerequisites = { (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Balistic_Skill), 40) }
+                Prerequisites = { (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Balistic_Skill) as IPrerequisitable, 40) }
             },
             new Talent(TalentName.Precision_Killer.ToString() + " (melee)", precisionKillerDiscription, AptitudeName.Weapon_Skill, AptitudeName.Finesse, 2)
             {
-                Prerequisites = { (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Weapon_Skill), 40) }
+                Prerequisites = { (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Weapon_Skill) as IPrerequisitable, 40) }
             },
             new Talent(TalentName.Preternatural_Speed.ToString(), preternaturalSpeedDiscription, AptitudeName.Agility, AptitudeName.Offence, 3)
             {
                 Prerequisites =
                 {
-                    (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Weapon_Skill), 40),
-                    (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Agility), 50)
+                    (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Weapon_Skill) as IPrerequisitable, 40),
+                    (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Agility) as IPrerequisitable, 50)
                 }
             },
             new Talent(TalentName.Prosanguine.ToString(), prosanguineDiscription, AptitudeName.Toughness, AptitudeName.Tech, 2)
@@ -359,7 +365,7 @@ namespace DarkHeresy2CharacterCreator.Model.Talents
             {
                 Prerequisites =
                 {
-                    (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Agility), 40),
+                    (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Agility) as IPrerequisitable, 40),
                     (Skills.SkillList.CommonSkills.FirstOrDefault(s => s.Name == Skills.SkillName.Dodge), 1),
                     (Skills.SkillList.SpecializedSkills.FirstOrDefault( s => s.Name == Skills.SkillName.Parry), 1)
                 }
@@ -368,7 +374,7 @@ namespace DarkHeresy2CharacterCreator.Model.Talents
             {
                  Prerequisites =
                 {
-                    (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Willpower), 30),
+                    (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Willpower) as IPrerequisitable, 30),
                     (Talents.FirstOrDefault(p => p.Name == TalentName.Resistance.ToString().Replace('_',' ') && p.Specializations.Contains("Psychic Power")), 1)
                 }
             },
@@ -378,32 +384,32 @@ namespace DarkHeresy2CharacterCreator.Model.Talents
             },
             new Talent(TalentName.Swift_Attack.ToString(), swiftAttackDiscription, AptitudeName.Weapon_Skill, AptitudeName.Finesse, 2)
             {
-                 Prerequisites = { (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Weapon_Skill), 30) }
+                 Prerequisites = { (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Weapon_Skill) as IPrerequisitable, 30) }
             },
             new Talent(TalentName.Takedown.ToString(), takedownDiscription, AptitudeName.Weapon_Skill, AptitudeName.Offence, 1),
             new Talent(TalentName.Target_Selection.ToString(), targetSelectionDiscription, AptitudeName.Balistic_Skill, AptitudeName.Finesse, 3)
             {
-                Prerequisites = { (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Balistic_Skill), 50) }
+                Prerequisites = { (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Balistic_Skill) as IPrerequisitable, 50) }
             },
             new Talent(TalentName.Technical_Knock.ToString(), technicalKnockDiscription, AptitudeName.Intelligence, AptitudeName.Tech, 1)
             {
-                Prerequisites = { (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Intelligence), 30) }
+                Prerequisites = { (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Intelligence) as IPrerequisitable, 30) }
             },
             new Talent(TalentName.Thunder_Charge.ToString(), thunderChargeDiscription, AptitudeName.Strength, AptitudeName.Offence, 3)
             {
-                Prerequisites = { (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Strength), 50) }
+                Prerequisites = { (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Strength) as IPrerequisitable, 50) }
             },
             new Talent(TalentName.True_Grit.ToString(), trueGritDiscription, AptitudeName.Toughness, AptitudeName.Defence, 3)
             {
-                Prerequisites = { (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Toughness), 40) }
+                Prerequisites = { (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Toughness) as IPrerequisitable, 40) }
             },
             new Talent(TalentName.Two_Weapon_Master.ToString(), twoWeaponMasterDiscription, AptitudeName.Finesse, AptitudeName.Offence, 3)
             {
                 Prerequisites =
                 {
-                    (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Agility), 45),
-                    (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Balistic_Skill), 40),
-                    (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Weapon_Skill), 40),
+                    (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Agility) as IPrerequisitable, 45),
+                    (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Balistic_Skill) as IPrerequisitable, 40),
+                    (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Weapon_Skill) as IPrerequisitable, 40),
                     (Talents.FirstOrDefault(p => p.Name == TalentName.Two_Weapon_Wielder.ToString().Replace('_',' ') && p.Specializations.Contains("Melee")), 1),
                     (Talents.FirstOrDefault(p => p.Name == TalentName.Two_Weapon_Wielder.ToString().Replace('_',' ') && p.Specializations.Contains("Ranged")), 1),
                     (Talents.FirstOrDefault(p => p.Name == TalentName.Ambidextrous.ToString().Replace('_',' ')), 1)
@@ -421,8 +427,8 @@ namespace DarkHeresy2CharacterCreator.Model.Talents
             {
                                 Prerequisites =
                 {
-                    (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Agility), 35),
-                    (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Weapon_Skill), 35),
+                    (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Agility) as IPrerequisitable, 35),
+                    (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Weapon_Skill) as IPrerequisitable, 35),
                     (Talents.FirstOrDefault(p => p.Name == TalentName.Ambidextrous.ToString().Replace('_',' ')), 1)
                 }
             },
@@ -432,7 +438,7 @@ namespace DarkHeresy2CharacterCreator.Model.Talents
                 {
                     (Traits.TraitList.Traits.FirstOrDefault(t => t.Name == "Psy_Rating"), 1),
                     (Talents.FirstOrDefault( p => p.Name == "Strong Minded"), 1),
-                    (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Willpower), 50)
+                    (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Willpower) as IPrerequisitable, 50)
                 }
             },
             new Talent(TalentName.Warp_Lock.ToString(), warpLockDiscription, AptitudeName.Willpower, AptitudeName.Psyker, 3)
@@ -441,7 +447,7 @@ namespace DarkHeresy2CharacterCreator.Model.Talents
                 {
                     (Traits.TraitList.Traits.FirstOrDefault(t => t.Name == "Psy_Rating"), 1),
                     (Talents.FirstOrDefault( p => p.Name == "Strong Minded"), 1),
-                    (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Willpower), 50)
+                    (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Willpower) as IPrerequisitable, 50)
                 }
             },
             new Talent(TalentName.Warp_Sense.ToString(), warpSenseDiscription, AptitudeName.Perception, AptitudeName.Psyker, 1)
@@ -450,7 +456,7 @@ namespace DarkHeresy2CharacterCreator.Model.Talents
                 {
                     (Traits.TraitList.Traits.FirstOrDefault(t => t.Name == "Psy_Rating"), 1),
                     (Skills.SkillList.SpecializedSkills.FirstOrDefault( s => s.Name == Skills.SkillName.Psyniscience), 1),
-                    (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Perception), 30)
+                    (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Perception) as IPrerequisitable, 30)
                 }
             },
             new Talent(TalentName.Weapon_Tech.ToString(), weaponTechDiscription, AptitudeName.Intelligence, AptitudeName.Tech, 1)
@@ -458,7 +464,7 @@ namespace DarkHeresy2CharacterCreator.Model.Talents
                 Prerequisites =
                 {
                     (Skills.SkillList.SpecializedSkills.FirstOrDefault( s => s.Name == Skills.SkillName.Tech_Use), 2),
-                    (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Intelligence), 40)
+                    (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Intelligence) as IPrerequisitable, 40)
                 }
             },
             new Talent(TalentName.Weapon_Training.ToString(), weaponTrainingDiscription, AptitudeName.General, AptitudeName.Finesse, 1)
@@ -467,7 +473,7 @@ namespace DarkHeresy2CharacterCreator.Model.Talents
             },
             new Talent(TalentName.Whirlewind_of_Death.ToString(), whirewindOfDeathDiscription, AptitudeName.Weapon_Skill, AptitudeName.Finesse, 2)
             {
-                Prerequisites = { (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Weapon_Skill), 40) }
+                Prerequisites = { (Characteristics.CharacteristicList.Characteristics.FirstOrDefault(p => p.Name == Characteristics.CharacteristicName.Weapon_Skill) as IPrerequisitable, 40) }
             }
             #endregion Common talents discription
         };

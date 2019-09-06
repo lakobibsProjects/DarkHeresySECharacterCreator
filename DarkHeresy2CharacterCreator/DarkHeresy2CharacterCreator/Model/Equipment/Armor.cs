@@ -1,4 +1,5 @@
 ﻿using DarkHeresy2CharacterCreator.Model.Equipment.Interfaces;
+using PropertyChanged;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,6 +10,10 @@ using System.Threading.Tasks;
 
 namespace DarkHeresy2CharacterCreator.Model.Equipment
 {
+    /// <summary>
+    /// Instantiate logic of armor
+    /// </summary>
+    [AddINotifyPropertyChangedInterface]
     internal class Armor : IArmor
     {
         #region Fields
@@ -54,13 +59,5 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment
             Name = name;
         }
         #endregion Constructor
-        #region EventHandlers
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        public void OnPropertyChanged([CallerMemberName]string pror = "")
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(pror));
-        }
-        #endregion
     }
 }

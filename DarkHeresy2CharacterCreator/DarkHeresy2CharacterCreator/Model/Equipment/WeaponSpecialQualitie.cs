@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace DarkHeresy2CharacterCreator.Model.Equipment
 {
+
+    /// <summary>
+    /// Instantiate logic of weapon special qualities
+    /// </summary>
     public class WeaponSpecialQualitie
     {
         #region Fields

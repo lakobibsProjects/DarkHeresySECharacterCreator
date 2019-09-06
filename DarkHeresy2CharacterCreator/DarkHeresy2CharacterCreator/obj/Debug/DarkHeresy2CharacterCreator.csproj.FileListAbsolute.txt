@@ -12,7 +12,6 @@ C:\Projects\C#\DarkHeresy2CharacterCreator\DarkHeresy2CharacterCreator\DarkHeres
 C:\Projects\C#\DarkHeresy2CharacterCreator\DarkHeresy2CharacterCreator\DarkHeresy2CharacterCreator\obj\Debug\DarkHeresy2CharacterCreator.csproj.CoreCompileInputs.cache
 C:\Projects\C#\DarkHeresy2CharacterCreator\DarkHeresy2CharacterCreator\DarkHeresy2CharacterCreator\obj\Debug\DarkHeresy2CharacterCreator.exe
 C:\Projects\C#\DarkHeresy2CharacterCreator\DarkHeresy2CharacterCreator\DarkHeresy2CharacterCreator\obj\Debug\DarkHeresy2CharacterCreator.pdb
-C:\Projects\C#\DarkHeresy2CharacterCreator\DarkHeresy2CharacterCreator\DarkHeresy2CharacterCreator\obj\Debug\DarkHeresy2CharacterCreator.csprojAssemblyReference.cache
 C:\Projects\C#\DarkHeresy2CharacterCreator\DarkHeresy2CharacterCreator\DarkHeresy2CharacterCreator\obj\Debug\View\CharacterCreationView\HomeWorld.g.cs
 C:\Projects\C#\DarkHeresy2CharacterCreator\DarkHeresy2CharacterCreator\DarkHeresy2CharacterCreator\obj\Debug\App.baml
 C:\Projects\C#\DarkHeresy2CharacterCreator\DarkHeresy2CharacterCreator\DarkHeresy2CharacterCreator\obj\Debug\View\CharacterCreationView\HomeWorld.baml
@@ -25,3 +24,4 @@ C:\Projects\C#\DarkHeresy2CharacterCreator\DarkHeresy2CharacterCreator\DarkHeres
 C:\Projects\C#\DarkHeresy2CharacterCreator\DarkHeresy2CharacterCreator\DarkHeresy2CharacterCreator\obj\Debug\View\CharacterCreationView\Role.baml
 C:\Projects\C#\DarkHeresy2CharacterCreator\DarkHeresy2CharacterCreator\DarkHeresy2CharacterCreator\obj\Debug\View\CharacterSheetView.baml
 C:\Projects\C#\DarkHeresy2CharacterCreator\DarkHeresy2CharacterCreator\DarkHeresy2CharacterCreator\obj\Debug\View\Dictionaries\FontsDictionary.baml
+C:\Projects\C#\DarkHeresy2CharacterCreator\DarkHeresy2CharacterCreator\DarkHeresy2CharacterCreator\obj\Debug\DarkHeresy2CharacterCreator.csproj.Fody.CopyLocal.cache

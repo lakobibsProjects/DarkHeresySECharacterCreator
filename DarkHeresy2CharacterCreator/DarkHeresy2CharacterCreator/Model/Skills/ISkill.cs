@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DarkHeresy2CharacterCreator.Model.Skills
 {
-    interface ISkill : IPrerequisitable, INotifyPropertyChanged
+    interface ISkill : IPrerequisitable
     {
         SkillName Name{ get; set; }
         Ranking Rank { get; set; }
