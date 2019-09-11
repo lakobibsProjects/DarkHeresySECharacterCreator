@@ -100,6 +100,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Model\Characteristics\CharacteristicList.cs" />
+    <Compile Include="Model\Character\CharactersList.cs" />
     <Compile Include="Model\Enums\ActionLong.cs" />
     <Compile Include="Model\Enums\AptitudeName.cs" />
     <Compile Include="Model\Characteristics\Characteristic.cs" />

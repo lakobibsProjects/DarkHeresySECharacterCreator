@@ -17,7 +17,7 @@ namespace DarkHeresy2CharacterCreator.Model.Character
     /// <summary>
     /// Interface with general fuctionality of character
     /// </summary>
-    interface ICharacter 
+    public interface ICharacter 
     {
         string CharacterName { get; set; }
         HomeWorld HomeWorld { get; set; }

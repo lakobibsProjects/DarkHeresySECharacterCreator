@@ -21,49 +21,100 @@ namespace DarkHeresy2CharacterCreator.Model.Character
     [AddINotifyPropertyChangedInterface]
     public class Character : ICharacter
     {
-        public string CharacterName { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public HomeWorld HomeWorld { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public Background Background { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public Role Role { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public Divinations Divination { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string PlayerName { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string Gender { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public int Age { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string Build { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string Complexion { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string Hair { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string Quirks { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string Superstitions { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string Mementos { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public int TotalExpirience { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public int SpendExpirience { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public int FateTreshold { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public int CurrentFate { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string MentalDisorders { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string Malignacies { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string Mutations { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }        
-        public int[] Movements { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public int FatiqueTreshold => throw new NotImplementedException();
-        public int CurrentFatique { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public int TotalWounds { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public int CurrentWounds { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public int CriticalDamage { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }        
-        public int MaxCarry { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public int CurrentCarry { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        #region Fields
+        private string characterName;
+        private HomeWorld homeworld;
+        private Background background;
+        private Role role;
+        private Divinations divination;
+        private string playerName;
+        private string gender;
+        private int age;
+        private string build;
+        private string complexion;
+        private string hair;
+        private string quirks;
+        private string superstitions;
+        private string mementos;
+        private int totalExpirience;
+        private int spendExpirience;
+        private int fateTreshold;
+        private int currentFate;
+        private string mentalDisorders;
+        private string malignacies;
+        private string mutations;
+        private int[] movements;
+        private int fatiqueTreshold;
+        private int currentFatique;
+        private int totalWounds;
+        private int currentWounds;
+        private int criticalDamage;
+        private int maxCarry;
+        private int currentCarry;
 
 
+        #region CollectionProperties
+        private ObservableCollection<IEliteAdvance> eliteAdvances;
+        private ObservableCollection<string> allies;
+        private ObservableCollection<string> enemies;
+        private ObservableCollection<ITrait> traits;
+        private ObservableCollection<IPsychicPower> psychicPowers;
+        private ObservableCollection<string> conditions;
+        private ObservableCollection<ICharacteristic> characteristics;
+        private ObservableCollection<AbstractSkill> skills;
+        private ObservableCollection<ITalent> talents;
+        private ObservableCollection<IItem> gear;
+        private ObservableCollection<AptitudeName> aptitudes;
+        #endregion CollectionProperties
+        #endregion
+
+        #region Properties
+        public string CharacterName { get => characterName; set => characterName = value; }
+        public HomeWorld HomeWorld { get => homeworld; set => homeworld = value; }
+        public Background Background { get => background; set => background = value; }
+        public Role Role { get => role; set => role = value; }
+        public Divinations Divination { get => divination; set => divination = value; }
+        public string PlayerName { get => playerName; set => playerName = value; }
+        public string Gender { get => gender; set => gender = value; }
+        public int Age { get => age; set => age = value; }
+        public string Build { get => build; set => build = value; }
+        public string Complexion { get => complexion; set => complexion = value; }
+        public string Hair { get => hair; set => hair = value; }
+        public string Quirks { get => quirks; set => quirks = value; }
+        public string Superstitions { get => superstitions; set => superstitions = value; }
+        public string Mementos { get => mementos; set => mementos = value; }
+        public int TotalExpirience { get => totalExpirience; set => totalExpirience = value; }
+        public int SpendExpirience { get => spendExpirience; set => spendExpirience = value; }
+        public int FateTreshold { get => fateTreshold; set => fateTreshold = value; }
+        public int CurrentFate { get => currentFate; set => currentFate = value; }
+        public string MentalDisorders { get => mentalDisorders; set => mentalDisorders = value; }
+        public string Malignacies { get => malignacies; set => malignacies = value; }
+        public string Mutations { get => mutations; set => mutations = value; }        
+        public int[] Movements { get => movements; set => movements = value; }
+        public int FatiqueTreshold => fatiqueTreshold;
+        public int CurrentFatique { get => currentFatique; set => currentFatique = value; }
+        public int TotalWounds { get => totalWounds; set => totalWounds = value; }
+        public int CurrentWounds { get => currentWounds; set => currentWounds = value; }
+        public int CriticalDamage { get => criticalDamage; set => criticalDamage = value; }        
+        public int MaxCarry { get => maxCarry; set => maxCarry = value; }
+        public int CurrentCarry { get => currentCarry; set =>  currentCarry= value; }
 
 
-        public ObservableCollection<IEliteAdvance> EliteAdvances { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public ObservableCollection<string> Allies { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public ObservableCollection<string> Enemies { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public ObservableCollection<ITrait> Traits { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public ObservableCollection<IPsychicPower> PsychicPowers { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public ObservableCollection<string> Conditions { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public ObservableCollection<ICharacteristic> Characteristics { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public ObservableCollection<AbstractSkill> Skills { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public ObservableCollection<ITalent> Talents { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public ObservableCollection<IItem> Gear { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public ObservableCollection<AptitudeName> Aptitudes { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        #region CollectionProperties
+        public ObservableCollection<IEliteAdvance> EliteAdvances { get => eliteAdvances; set => eliteAdvances = value; }
+        public ObservableCollection<string> Allies { get => allies; set => allies = value; }
+        public ObservableCollection<string> Enemies { get => enemies; set => enemies = value; }
+        public ObservableCollection<ITrait> Traits { get => traits; set =>  traits= value; }
+        public ObservableCollection<IPsychicPower> PsychicPowers { get => psychicPowers; set => psychicPowers = value; }
+        public ObservableCollection<string> Conditions { get => conditions; set => conditions = value; }
+        public ObservableCollection<ICharacteristic> Characteristics { get => characteristics; set => characteristics = value; }
+        public ObservableCollection<AbstractSkill> Skills { get => skills; set => skills = value; }
+        public ObservableCollection<ITalent> Talents { get => talents; set => talents = value; }
+        public ObservableCollection<IItem> Gear { get => gear; set =>  gear = value; }
+        public ObservableCollection<AptitudeName> Aptitudes { get => aptitudes; set => aptitudes = value; }
+        #endregion CollectionProperties
+        #endregion Properties
+
+
     }
 }
