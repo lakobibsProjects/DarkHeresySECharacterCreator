@@ -35,8 +35,10 @@ namespace DarkHeresy2CharacterCreator.ViewModel.Commands
 
         public void Execute(object parameter)
         {
-            thisWindow.Close();
-            nextWindow.Show();
+            if (thisWindow != null)            
+                thisWindow.Close();
+            if (nextWindow != null)                       
+                nextWindow.Show();
         }
     }
 }

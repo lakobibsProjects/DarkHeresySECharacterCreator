@@ -2,14 +2,16 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"        
         xmlns:local="clr-namespace:DarkHeresy2CharacterCreator"
+        xmlns:vm="clr-namespace:DarkHeresy2CharacterCreator.ViewModel"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         Title="CharacterCreator" Height="290" Width="450"
         Background="#980002">
 
-    <Window.Resources>
+    <Window.Resources>        
+        <vm:MainWindowVM x:Name="ViewModel" x:Key="viewModel"/>        
     </Window.Resources>
     <Grid>
         <Grid.Background>
@@ -26,7 +28,8 @@
             
         </DataGrid>
         <StackPanel Orientation="Vertical" Margin="5" Grid.Column="1" CanVerticallyScroll="True" VerticalAlignment="Center">
-            <Button Content="New" Style="{DynamicResource ResourceKey=BaseButton}"></Button>
+            <Button Content="New" Style="{DynamicResource ResourceKey=BaseButton}"
+                    Command="{Binding}"/>
             <Button Content="Load" Style="{DynamicResource ResourceKey=BaseButton}" ></Button>
             <Button Content="Delete" Style="{DynamicResource ResourceKey=BaseButton}"></Button>
             <Separator/>

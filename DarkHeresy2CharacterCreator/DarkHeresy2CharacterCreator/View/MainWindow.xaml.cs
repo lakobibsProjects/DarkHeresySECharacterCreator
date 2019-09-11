@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DarkHeresy2CharacterCreator.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,7 @@ namespace DarkHeresy2CharacterCreator.View
         public MainWindow()
         {
             InitializeComponent();
+            this.DataContext = new MainWindowVM();
         }
     }
 }

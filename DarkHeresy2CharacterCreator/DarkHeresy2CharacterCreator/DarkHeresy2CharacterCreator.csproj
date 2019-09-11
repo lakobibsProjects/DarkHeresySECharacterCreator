@@ -43,6 +43,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -171,6 +172,12 @@
     <Compile Include="Model\Traits\Trait.cs" />
     <Compile Include="Model\Traits\TraitList.cs" />
     <Compile Include="Model\Traits\TraitName.cs" />
+    <Compile Include="ViewModel\BackgroundVM.cs" />
+    <Compile Include="ViewModel\CharacterSheetVM.cs" />
+    <Compile Include="ViewModel\Commands\ChangeWindowButtonCommand.cs" />
+    <Compile Include="ViewModel\HomeworldVM.cs" />
+    <Compile Include="ViewModel\MainWindowVM.cs" />
+    <Compile Include="ViewModel\RoleVM.cs" />
     <Compile Include="View\CharacterCreationView\Background.xaml.cs">
       <DependentUpon>Background.xaml</DependentUpon>
     </Compile>
@@ -218,10 +225,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Res\Images\" />
-    <Folder Include="ViewModel\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="Res\VerticalWindowBackground.jpg" />
   </ItemGroup>
@@ -236,6 +240,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="TODOViewModel.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Res\Images\HorizontalWindowBackground.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Fody.6.0.0\build\Fody.targets" Condition="Exists('..\packages\Fody.6.0.0\build\Fody.targets')" />

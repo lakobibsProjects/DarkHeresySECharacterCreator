@@ -33,7 +33,7 @@ namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment
         private Trait trait;
         #endregion Fields
         #region Properties
-        public string Name { get; set; }
+        public string Name { get { return name; } set { name = value; } }
         public string BackgroundBonuds { get => backgroundBonuds; set => backgroundBonuds = value; }
         internal List<ValueTuple<AbstractSkill, AbstractSkill>> BackgroundSkills { get => backgroundSkills; set => backgroundSkills = value; }
         internal List<ValueTuple<Talent, Talent>> BackgroundsTalents { get => backgroundsTalents; set => backgroundsTalents = value; }

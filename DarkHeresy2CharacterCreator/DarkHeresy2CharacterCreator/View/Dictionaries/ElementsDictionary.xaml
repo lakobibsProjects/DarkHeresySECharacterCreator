@@ -1,11 +1,13 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:local="clr-namespace:DarkHeresy2CharacterCreator.View.Dictionaries">
+                    xmlns:t="clr-namespace:DarkHeresy2CharacterCreator.View"
+                    xmlns:local="clr-namespace:DarkHeresy2CharacterCreator.View.Dictionaries"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
     <Style x:Key="BaseButton" TargetType="Button" >
         <Setter Property="FontFamily" Value="old english text mt"/>
         <Setter Property="FontStyle" Value="Oblique"/>
-        <Setter Property="Foreground" Value="{DynamicResource ResourceKey=Dark}"/>
-        <Setter Property="BorderBrush"  Value="{DynamicResource ResourceKey=Dark}"/>
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="BorderBrush"  Value="Black"/>
         <Setter Property="BorderThickness" Value="10"/>
         <Setter Property="FontSize" Value="{DynamicResource ResourceKey=fontSizeLarge}"/>
         <Setter Property="Margin" Value="5"/>
@@ -13,13 +15,11 @@
         <Setter Property="Background" Value="{DynamicResource ResourceKey=BronzeButtonBackground}"/>
     </Style>
     
-    <Style x:Key="CharacterCreationButton" TargetType="Button" BasedOn="{DynamicResource ResourceKey=BaseButton}" >
+    <Style x:Key="CharacterCreationButton" TargetType="Button" BasedOn="{StaticResource ResourceKey=BaseButton}" >
         <Setter Property="FontSize" Value="{DynamicResource ResourceKey=fontSizeNormal}"/>
         <Setter Property="MinHeight" Value="5"/>        
-    </Style>
+    </Style>  
 
-    <ImageBrush x:Key="BackgroundImage" ImageSource="/Res/HorizontalWindowBackground.jpg"/>
-    
     <Style x:Key="BaseTextBlock" TargetType="TextBlock">
         <Setter Property="TextAlignment" Value="Center"/>
     </Style>
