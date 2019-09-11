@@ -35,13 +35,13 @@ namespace DarkHeresy2CharacterCreator.ViewModel
             throw new NotImplementedException();
         }
 
-        private void OnCancel(object obj)
+        private void OnCancel(object obj)           //TODO add fuctional to remove new created character
         {
             Window window = obj as Window;
             window.Close();
         }
 
-        private void OnNextWindow(object obj)
+        private void OnNextWindow(object obj)           //TODO add functional to save homeworld-based variables to character
         {
             Window window = obj as Window;
             window.Close();
