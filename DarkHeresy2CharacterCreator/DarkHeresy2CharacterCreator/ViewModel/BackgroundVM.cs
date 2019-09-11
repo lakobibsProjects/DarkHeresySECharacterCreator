@@ -14,13 +14,17 @@ namespace DarkHeresy2CharacterCreator.ViewModel
     [AddINotifyPropertyChangedInterface]
     class BackgroundVM
     {
+        #region Fields
         private readonly DelegateCommand nextWindowCommand;
         private readonly DelegateCommand cancelCommand;
         private readonly DelegateCommand previousWindowCommand;
-
+        #endregion
+        
+        #region Properties
         public ICommand NextWindowCommand => nextWindowCommand;
         public ICommand PreviousWindowCommand => previousWindowCommand;
         public ICommand CancelCommand => cancelCommand;
+        #endregion
 
         public BackgroundVM()
         {
@@ -29,6 +33,7 @@ namespace DarkHeresy2CharacterCreator.ViewModel
             previousWindowCommand = new DelegateCommand(OnPreviousWindow);
         }
 
+        #region  Command Handlers
         private void OnPreviousWindow(object obj)           //TODO add functional to remove background-based variables to character
         {
             Window window = obj as Window;
@@ -50,5 +55,6 @@ namespace DarkHeresy2CharacterCreator.ViewModel
             Window backgroundWindow = new Role();
             backgroundWindow.Show();
         }
+        #endregion
     }
 }

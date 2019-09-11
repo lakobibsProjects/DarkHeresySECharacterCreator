@@ -16,15 +16,20 @@ namespace DarkHeresy2CharacterCreator.ViewModel
     [AddINotifyPropertyChangedInterface]
     public class MainWindowVM
     {
+        #region Fields
         private readonly DelegateCommand newCharacterCommand;
         private readonly DelegateCommand closeApplicationCommand;
         private readonly DelegateCommand loadCharacterCommand;
         private readonly DelegateCommand deleteCharacterCommand;
+        #endregion Fields
+
+        #region Propreties
         public ICommand NewCharacterCommand => newCharacterCommand;
         public ICommand LoadCharacterCommand => loadCharacterCommand;
         public ICommand DeleteCharacterCommand => deleteCharacterCommand;
         public ICommand CloseApplicationCommand => closeApplicationCommand;
-                
+        #endregion
+        
         public MainWindowVM()
         {
             newCharacterCommand = new DelegateCommand(OnNewCharacter);
@@ -33,6 +38,7 @@ namespace DarkHeresy2CharacterCreator.ViewModel
             loadCharacterCommand = new DelegateCommand(OnLoadCharacter);
         }
 
+        #region Command Handlers
         private void OnLoadCharacter(object obj)
         {
             throw new NotImplementedException();
@@ -53,5 +59,6 @@ namespace DarkHeresy2CharacterCreator.ViewModel
             Window homeWorldWindow = new HomeWorld();
             homeWorldWindow.Show();
         }
+        #endregion
     }
 }

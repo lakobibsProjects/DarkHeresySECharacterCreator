@@ -15,13 +15,17 @@ namespace DarkHeresy2CharacterCreator.ViewModel
     [AddINotifyPropertyChangedInterface]
     public class HomeworldVM
     {
+        #region Fields
         private readonly DelegateCommand nextWindowCommand;
         private readonly DelegateCommand cancelCommand;
         private readonly DelegateCommand previousWindowCommand;
+        #endregion
 
+        #region Properties
         public ICommand NextWindowCommand => nextWindowCommand;
         public ICommand PreviousWindowCommand => previousWindowCommand;
         public ICommand CancelCommand => cancelCommand;
+        #endregion
 
         public HomeworldVM()
         {
@@ -30,6 +34,7 @@ namespace DarkHeresy2CharacterCreator.ViewModel
             previousWindowCommand = new DelegateCommand(OnPreviousWindow);
         }
 
+        #region Command Handlers
         private void OnPreviousWindow(object obj)
         {
             throw new NotImplementedException();
@@ -48,6 +53,6 @@ namespace DarkHeresy2CharacterCreator.ViewModel
             Window backgroundWindow = new Background();
             backgroundWindow.Show();
         }
-
+        #endregion
     }
 }
