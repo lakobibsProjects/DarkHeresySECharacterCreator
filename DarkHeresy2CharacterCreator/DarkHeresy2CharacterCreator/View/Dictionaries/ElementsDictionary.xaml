@@ -22,6 +22,7 @@
 
     <Style x:Key="BaseTextBlock" TargetType="TextBlock">
         <Setter Property="TextAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
     </Style>
 
     <Style x:Key="GeneralGrid" TargetType="Grid">

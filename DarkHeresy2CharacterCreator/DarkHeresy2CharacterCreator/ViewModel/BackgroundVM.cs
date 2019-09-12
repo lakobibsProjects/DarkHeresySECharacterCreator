@@ -1,8 +1,11 @@
-﻿using DarkHeresy2CharacterCreator.View.CharacterCreationView;
+﻿using DarkHeresy2CharacterCreator.Model.GeneralSuppliment;
+using DarkHeresy2CharacterCreator.Model.GeneralSuppliment.Collections;
+using DarkHeresy2CharacterCreator.View.CharacterCreationView;
 using DarkHeresy2CharacterCreator.ViewModel.Commands;
 using PropertyChanged;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,18 +15,23 @@ using System.Windows.Input;
 namespace DarkHeresy2CharacterCreator.ViewModel
 {
     [AddINotifyPropertyChangedInterface]
-    class BackgroundVM
+    public class BackgroundVM
     {
         #region Fields
         private readonly DelegateCommand nextWindowCommand;
         private readonly DelegateCommand cancelCommand;
         private readonly DelegateCommand previousWindowCommand;
+        public ObservableCollection<DarkHeresy2CharacterCreator.Model.GeneralSuppliment.Background> backgrounds;
+
+
         #endregion
-        
+
         #region Properties
         public ICommand NextWindowCommand => nextWindowCommand;
         public ICommand PreviousWindowCommand => previousWindowCommand;
         public ICommand CancelCommand => cancelCommand;
+        public ObservableCollection<DarkHeresy2CharacterCreator.Model.GeneralSuppliment.Background> Backgrounds { get { return backgrounds; } set { backgrounds = value; } }
+        public DarkHeresy2CharacterCreator.Model.GeneralSuppliment.Background SelectedBackground { get; set; }
         #endregion
 
         public BackgroundVM()
@@ -31,6 +39,19 @@ namespace DarkHeresy2CharacterCreator.ViewModel
             nextWindowCommand = new DelegateCommand(OnNextWindow);
             cancelCommand = new DelegateCommand(OnCancel);
             previousWindowCommand = new DelegateCommand(OnPreviousWindow);
+            try
+            {
+                backgrounds = BackgroundsCollection.Backgrounds;
+            }
+            catch (Exception e )
+            {
+                try
+                {
+                    MessageBox.Show(e.InnerException.InnerException.StackTrace);
+                }
+                catch { }
+                throw;
+            }
         }
 
         #region  Command Handlers
@@ -38,7 +59,7 @@ namespace DarkHeresy2CharacterCreator.ViewModel
         {
             Window window = obj as Window;
             window.Close();
-            Window backgroundWindow = new HomeWorld();
+            Window backgroundWindow = new View.CharacterCreationView.HomeWorld();
             backgroundWindow.Show();
         }
 
@@ -52,7 +73,7 @@ namespace DarkHeresy2CharacterCreator.ViewModel
         {
             Window window = obj as Window;
             window.Close();
-            Window backgroundWindow = new Role();
+            Window backgroundWindow = new View.CharacterCreationView.Role();
             backgroundWindow.Show();
         }
         #endregion

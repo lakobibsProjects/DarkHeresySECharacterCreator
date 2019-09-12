@@ -18,7 +18,7 @@ namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment.Collections
         /// </summary>
         public static ObservableCollection<HomeWorld> HomeWorlds = new ObservableCollection<HomeWorld>
         {
-            //TooDoo correct and add recomended backgrounds
+            //TODO correct and add recomended backgrounds
             #region Core Rulebook
             new HomeWorld("Feral World")
             {
