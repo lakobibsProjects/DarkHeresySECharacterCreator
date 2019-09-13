@@ -305,9 +305,8 @@ namespace DarkHeresy2CharacterCreator.Model.Talents
         #endregion Discriptions
         /// <summary>
         /// Collection of talents
-        /// </summary>
-        
-        public static ObservableCollection<Talent> Talents { get; set; } = new ObservableCollection<Talent>
+        /// </summary>        
+        public static ObservableCollection<Talent> Talents { get; set; } = new ObservableCollection<Talent> //TypeInitializeException. Need solve.
         {   
             #region Common talents discription
             /*new Talent(TalentName.Adamantium_Faith.ToString(), adamantiumFaithDiscription, AptitudeName.Willpower, AptitudeName.Defence, 3){
