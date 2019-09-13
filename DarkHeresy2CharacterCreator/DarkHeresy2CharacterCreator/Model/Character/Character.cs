@@ -115,6 +115,85 @@ namespace DarkHeresy2CharacterCreator.Model.Character
         #endregion CollectionProperties
         #endregion Properties
 
+        #region Add and remove general suppliments
+        public void AddHomeworld(HomeWorld homeworld)
+        {
+            this.HomeWorld = homeworld;
+            this.FateTreshold = homeworld.FateTreshold;
+            this.TotalWounds = homeworld.Wounds;
+            this.Aptitudes.Add(homeworld.HomeWorldAptitude);
+        }
+        public void RemoveHomeworld()
+        {
+            if(this.HomeWorld != null)
+            {
+                this.Aptitudes.Remove(homeworld.HomeWorldAptitude);
+                this.HomeWorld = null;
+                this.FateTreshold = 0;
+                this.TotalWounds = 0;
+            }
+        }
 
+        public void AddBackround(Background background)
+        {
+            this.Background = background;
+
+            foreach (var b in background.BackgroundSkills)            
+                Skills.Add(b.Item1);
+            
+            foreach (var t in background.BackgroundsTalents)            
+                Talents.Add(t.Item1);            
+
+            foreach (var item in background.BackgroundEquipment)            
+                Gear.Add(item.Item1);            
+
+            this.Aptitudes.Add(background.BackgroundAptitude.Item1);
+
+            if (background.Trait != null)
+                this.Traits.Add(background.Trait);
+        }
+        public void RemoveBackround()
+        {
+            if (background != null)
+            {
+                foreach (var b in background.BackgroundSkills)
+                    Skills.Remove(b.Item1);
+
+                foreach (var t in background.BackgroundsTalents)
+                    Talents.Remove(t.Item1);
+
+                foreach (var item in background.BackgroundEquipment)
+                    Gear.Remove(item.Item1);
+
+                this.Aptitudes.Remove(background.BackgroundAptitude.Item1);
+
+                if (background.Trait != null)
+                    this.Traits.Remove(background.Trait);
+
+                this.Background = null;
+            }
+        }
+
+        public void AddRole(Role role)
+        {
+            this.Role = role;
+
+            foreach (var a in role.Aptitudes)            
+                this.Aptitudes.Add(a.Item1);
+
+            this.Talents.Add(role.RoleTalent.Item1);
+        }
+
+        public void RemoveRole()
+        {
+            foreach (var a in role.Aptitudes)
+                this.Aptitudes.Remove(a.Item1);
+
+            this.Talents.Remove(role.RoleTalent.Item1);
+
+            this.Role = null;
+        }
+
+        #endregion
     }
 }
