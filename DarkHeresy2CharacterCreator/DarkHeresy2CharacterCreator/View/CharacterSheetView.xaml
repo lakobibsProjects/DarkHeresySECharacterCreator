@@ -4,8 +4,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DarkHeresy2CharacterCreator.View"
+        xmlns:vm="clr-namespace:DarkHeresy2CharacterCreator.ViewModel"
         mc:Ignorable="d"
-        Title="CharacterSheetView" Height="450" Width="800">
+        Title="{Binding Character.CharacterName}" Height="450" Width="800">
     <Grid Style="{DynamicResource GeneralGrid}">
         <Grid.RowDefinitions>
             <RowDefinition Height="15"/>
@@ -13,16 +14,24 @@
         </Grid.RowDefinitions>
         
         <Menu Grid.Row="0">
-            
+            <MenuItem Header="File">
+                <MenuItem Header="Open character"/>
+                <MenuItem Header="Create new character"/>
+                <Separator/>
+                <MenuItem Header="Exit"/>
+            </MenuItem>
         </Menu>
         
         <TabControl Grid.Row="1">
+            <TabControl.DataContext>
+                <vm:CharacterSheetVM/>
+            </TabControl.DataContext>
             <TabControl.Background>
                 <ImageBrush ImageSource="/Res/HorizontalWindowBackground.jpg"/>
             </TabControl.Background>
             <TabItem x:Name="CharacterSheet" Header="Character Sheet">
                 <Grid>
-                    
+                    <TextBlock Text="{Binding Character.CharacterName}" FontSize="30"/>
                 </Grid>
             </TabItem>
             <TabItem x:Name="Gear" Header="Gear">

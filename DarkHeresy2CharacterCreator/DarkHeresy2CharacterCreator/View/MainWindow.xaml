@@ -1,4 +1,5 @@
 ﻿<Window x:Class="DarkHeresy2CharacterCreator.View.MainWindow"
+        x:Name="CharacterCreatorWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -30,7 +31,8 @@
         <ListView Grid.Column="0"
                   Margin="5"
                   Opacity="0.5"
-                  ItemsSource="{Binding Characters}">            
+                  ItemsSource="{Binding Characters}"
+                  SelectedItem="{Binding SelectedCharacter}">            
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Grid>
@@ -57,7 +59,8 @@
             <Button x:Name="LoadCharacterButton" 
                     Content="Load" 
                     Style="{DynamicResource ResourceKey=BaseButton}"
-                    Command="{Binding LoadCharacterCommand}"/>
+                    Command="{Binding LoadCharacterCommand}"
+                    CommandParameter="{Binding ElementName=CharacterCreatorWindow}"/>
             <Button x:Name="DeleteCharacterButton" 
                     Content="Delete" 
                     Style="{DynamicResource ResourceKey=BaseButton}"
