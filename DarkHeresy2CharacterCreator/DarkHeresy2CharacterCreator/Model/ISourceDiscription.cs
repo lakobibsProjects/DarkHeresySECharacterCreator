@@ -9,7 +9,7 @@ namespace DarkHeresy2CharacterCreator.Model
     /// <summary>
     /// Interface to disriptable the source of the characters details
     /// </summary>
-    interface ISourceDiscription
+    public interface ISourceDiscription
     {
         SourceList SourceBook { get; set; }
         int SourcePage { get; set; }

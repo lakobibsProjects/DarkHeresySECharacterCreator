@@ -135,6 +135,7 @@
     <Compile Include="Model\Equipment\Interfaces\IWeapon.cs" />
     <Compile Include="Model\GeneralSuppliment\Background.cs" />
     <Compile Include="Model\GeneralSuppliment\Collections\BackgroundList.cs" />
+    <Compile Include="Model\GeneralSuppliment\Collections\BackgroundsCollection.cs" />
     <Compile Include="Model\GeneralSuppliment\Collections\HomeWorldList.cs" />
     <Compile Include="Model\GeneralSuppliment\Collections\RoleList.cs" />
     <Compile Include="Model\GeneralSuppliment\Divinations.cs" />

@@ -1,0 +1,84 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Projects\\C#\\DarkHeresy2CharacterCreator\\DarkHeresy2CharacterCreator\\Tests\\Tests.csproj": {}
+  },
+  "projects": {
+    "C:\\Projects\\C#\\DarkHeresy2CharacterCreator\\DarkHeresy2CharacterCreator\\DarkHeresy2CharacterCreator\\DarkHeresy2CharacterCreator.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Projects\\C#\\DarkHeresy2CharacterCreator\\DarkHeresy2CharacterCreator\\DarkHeresy2CharacterCreator\\DarkHeresy2CharacterCreator.csproj",
+        "projectName": "DarkHeresy2CharacterCreator",
+        "projectPath": "C:\\Projects\\C#\\DarkHeresy2CharacterCreator\\DarkHeresy2CharacterCreator\\DarkHeresy2CharacterCreator\\DarkHeresy2CharacterCreator.csproj"
+      },
+      "frameworks": {
+        "net47": {}
+      }
+    },
+    "C:\\Projects\\C#\\DarkHeresy2CharacterCreator\\DarkHeresy2CharacterCreator\\Tests\\Tests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Projects\\C#\\DarkHeresy2CharacterCreator\\DarkHeresy2CharacterCreator\\Tests\\Tests.csproj",
+        "projectName": "Tests",
+        "projectPath": "C:\\Projects\\C#\\DarkHeresy2CharacterCreator\\DarkHeresy2CharacterCreator\\Tests\\Tests.csproj",
+        "packagesPath": "C:\\Users\\lakobib\\.nuget\\packages\\",
+        "outputPath": "C:\\Projects\\C#\\DarkHeresy2CharacterCreator\\DarkHeresy2CharacterCreator\\Tests\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\lakobib\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "projectReferences": {
+              "C:\\Projects\\C#\\DarkHeresy2CharacterCreator\\DarkHeresy2CharacterCreator\\DarkHeresy2CharacterCreator\\DarkHeresy2CharacterCreator.csproj": {
+                "projectPath": "C:\\Projects\\C#\\DarkHeresy2CharacterCreator\\DarkHeresy2CharacterCreator\\DarkHeresy2CharacterCreator\\DarkHeresy2CharacterCreator.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            },
+            "PropertyChanged.Fody": {
+              "target": "Package",
+              "version": "[3.1.3, )"
+            },
+            "System.ValueTuple": {
+              "target": "Package",
+              "version": "[4.5.0, )"
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}

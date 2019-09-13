@@ -22,9 +22,22 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <DataGrid Grid.Column="0" Margin="5">
-            
-        </DataGrid>
+        <ListView Grid.Column="0"
+                  Margin="5"
+                  Opacity="0.5"
+                  ItemsSource="{Binding Homeworlds}"
+                  SelectedItem="{Binding SelectedHomeworld}">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Vertical" />
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}" FontSize="20" Margin="5"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
 
         <Grid Grid.Column="1">
             <Grid.ColumnDefinitions>
@@ -41,21 +54,70 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <TextBlock Grid.Column="0" Grid.Row="0" Style="{DynamicResource ResourceKey=BaseTextBlock}">Discription</TextBlock>
-            <TextBlock Grid.Column="0" Grid.Row="1" Style="{DynamicResource ResourceKey=BaseTextBlock}">Characteristic Modifires</TextBlock>
-            <TextBlock Grid.Column="0" Grid.Row="2" Style="{DynamicResource ResourceKey=BaseTextBlock}">Fate Treshhold</TextBlock>
-            <TextBlock Grid.Column="0" Grid.Row="3" Style="{DynamicResource ResourceKey=BaseTextBlock}">Home World Bonus</TextBlock>
-            <TextBlock Grid.Column="0" Grid.Row="4" Style="{DynamicResource ResourceKey=BaseTextBlock}">Home World Aptitude</TextBlock>
-            <TextBlock Grid.Column="0" Grid.Row="5" Style="{DynamicResource ResourceKey=BaseTextBlock}">Wounds</TextBlock>
-            <TextBlock Grid.Column="0" Grid.Row="6" Style="{DynamicResource ResourceKey=BaseTextBlock}">Recomended Background</TextBlock>
+            <TextBlock Grid.Column="0" 
+                       Grid.Row="0" 
+                       Style="{DynamicResource ResourceKey=BaseTextBlock}"
+                       Text="Discription"
+                       />
+            <TextBlock Grid.Column="0" 
+                       Grid.Row="1" 
+                       Style="{DynamicResource ResourceKey=BaseTextBlock}"
+                       Text="Characteristic Modifires"
+                       />
+            <TextBlock Grid.Column="0" 
+                       Grid.Row="2" 
+                       Style="{DynamicResource ResourceKey=BaseTextBlock}"
+                       Text="Fate Treshhold"
+                       />
+            <TextBlock Grid.Column="0" 
+                       Grid.Row="3" 
+                       Style="{DynamicResource ResourceKey=BaseTextBlock}"
+                       Text="Homeworld Bonus"
+                       />
+            <TextBlock Grid.Column="0" 
+                       Grid.Row="4" 
+                       Style="{DynamicResource ResourceKey=BaseTextBlock}"
+                       Text="Home World Aptitude"
+                       />
+            <TextBlock Grid.Column="0" 
+                       Grid.Row="5" 
+                       Style="{DynamicResource ResourceKey=BaseTextBlock}"
+                       Text="Wounds"
+                       />
+            <TextBlock Grid.Column="0"
+                       Grid.Row="6" 
+                       Style="{DynamicResource ResourceKey=BaseTextBlock}"
+                       Text="Recomended Background"
+                       />
 
-            <TextBlock Grid.Column="1" Grid.Row="0" Style="{DynamicResource ResourceKey=BaseTextBlock}"></TextBlock>
-            <TextBlock Grid.Column="1" Grid.Row="1" Style="{DynamicResource ResourceKey=BaseTextBlock}"></TextBlock>
-            <TextBlock Grid.Column="1" Grid.Row="2" Style="{DynamicResource ResourceKey=BaseTextBlock}"></TextBlock>
-            <TextBlock Grid.Column="1" Grid.Row="3" Style="{DynamicResource ResourceKey=BaseTextBlock}"></TextBlock>
-            <TextBlock Grid.Column="1" Grid.Row="4" Style="{DynamicResource ResourceKey=BaseTextBlock}"></TextBlock>
-            <TextBlock Grid.Column="1" Grid.Row="5" Style="{DynamicResource ResourceKey=BaseTextBlock}"></TextBlock>
-            <TextBlock Grid.Column="1" Grid.Row="6" Style="{DynamicResource ResourceKey=BaseTextBlock}"></TextBlock>
+            <TextBlock Grid.Column="1" 
+                       Grid.Row="0" 
+                       Style="{DynamicResource ResourceKey=BaseTextBlock}"
+                       Text="{Binding Path=SelectedHomeworld.Name}"/>
+            <TextBlock Grid.Column="1" 
+                       Grid.Row="1" 
+                       Style="{DynamicResource ResourceKey=BaseTextBlock}"
+                       Text=""/>
+            <TextBlock Grid.Column="1" 
+                       Grid.Row="2" 
+                       Style="{DynamicResource ResourceKey=BaseTextBlock}"
+                       Text="{Binding Path=SelectedHomeworld.FateTreshold}"/>
+            <TextBlock Grid.Column="1" 
+                       Grid.Row="3" 
+                       Style="{DynamicResource ResourceKey=BaseTextBlock}"
+                       Text="{Binding Path=SelectedHomeworld.HomeWorldBonus}"/>
+            <TextBlock Grid.Column="1" 
+                       Grid.Row="4" 
+                       Style="{DynamicResource ResourceKey=BaseTextBlock}"
+                       Text=""/>
+            <TextBlock Grid.Column="1" 
+                       Grid.Row="5" 
+                       Style="{DynamicResource ResourceKey=BaseTextBlock}"
+                       Text="{Binding Path=SelectedHomeworld.Wounds, StringFormat={}{0}+1d5 }"/>
+            <TextBlock Grid.Column="1" 
+                       Grid.Row="6" 
+                       Style="{DynamicResource ResourceKey=BaseTextBlock}"
+                       Text=""/>
 
             <StackPanel Orientation="Horizontal" Grid.ColumnSpan="2" Grid.Row="7" Margin="5" HorizontalAlignment="Center">
                 <Button  x:Name="canlceButton"

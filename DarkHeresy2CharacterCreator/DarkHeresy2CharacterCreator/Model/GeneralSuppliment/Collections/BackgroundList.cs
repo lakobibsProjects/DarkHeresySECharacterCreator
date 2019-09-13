@@ -8,17 +8,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment
+namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment.Collections
 {
     /// <summary>
     /// Instaniate a observableCollection of backgrounds
     /// </summary>
-    internal static class BackgroundList
+    public static class BackgroundList
     {
         /// <summary>
         /// Collection of backgrounds
         /// </summary>
-        internal static ObservableCollection<Background> Backgrounds { get; } = new ObservableCollection<Background>
+        public static ObservableCollection<Background> Backgrounds { get; } = new ObservableCollection<Background>
         {
             //TODO create mechanizm to add specialization
             #region Core Culebook
@@ -66,9 +66,9 @@ namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment
                 },
                 BackgroundEquipment = new List<ValueTuple<Equipment.Interfaces.IItem, Equipment.Interfaces.IItem>>
                 {
-                    (Equipment.Collections.WeaponCollection.Weapons.Where( w => w.Name == "Shotgun").First(), 
+                    (Equipment.Collections.WeaponCollection.Weapons.Where( w => w.Name == "Shotgun").First(),
                         Equipment.Collections.WeaponCollection.Weapons.Where( w => w.Name == "Shock Maul").First()),
-                    (Equipment.Collections.ArmorCollection.Armors.Where( a => a.Name == "Enforcer Light Carapace Armour").First(), 
+                    (Equipment.Collections.ArmorCollection.Armors.Where( a => a.Name == "Enforcer Light Carapace Armour").First(),
                         Equipment.Collections.ArmorCollection.Armors.Where( a => a.Name == "Carapace Chestplate").First()),
                     (Equipment.Collections.ToolsCollection.Tools.Where ( t => t.Name == "Stimm").First(), null),    //add number
                     (Equipment.Collections.ToolsCollection.Tools.Where ( t => t.Name == "Manacles").First(), null),
@@ -129,7 +129,7 @@ namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment
                 BackgroundAptitude = (AptitudeName.Knowledge, AptitudeName.Tech),
                 RecommendedRoles = new List<RoleName> { RoleName.Chirurgeon, RoleName.Hierophant, RoleName.Sage, RoleName.Seeker },
                 Trait = Traits.TraitList.Traits.Where (t => t.Name == "Mechanicus Implants").First() as Trait
-                
+
             },
             new Background("Adeptus Ministorum")
             {

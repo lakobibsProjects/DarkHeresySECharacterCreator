@@ -1,8 +1,10 @@
-﻿using DarkHeresy2CharacterCreator.View.CharacterCreationView;
+﻿using DarkHeresy2CharacterCreator.Model.GeneralSuppliment;
+using DarkHeresy2CharacterCreator.View.CharacterCreationView;
 using DarkHeresy2CharacterCreator.ViewModel.Commands;
 using PropertyChanged;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,6 +26,8 @@ namespace DarkHeresy2CharacterCreator.ViewModel
         public ICommand NextWindowCommand => nextWindowCommand;
         public ICommand PreviousWindowCommand => previousWindowCommand;
         public ICommand CancelCommand => cancelCommand;
+        public DarkHeresy2CharacterCreator.Model.GeneralSuppliment.Role SelectedRole { get; set; }
+        public ObservableCollection<DarkHeresy2CharacterCreator.Model.GeneralSuppliment.Role> Roles{ get; set; }
         #endregion
 
         public RoleVM()
@@ -31,6 +35,7 @@ namespace DarkHeresy2CharacterCreator.ViewModel
             nextWindowCommand = new DelegateCommand(OnNextWindow);
             cancelCommand = new DelegateCommand(OnCancel);
             previousWindowCommand = new DelegateCommand(OnPreviousWindow);
+            Roles = RoleList.Roles;
         }
 
         #region Comman Handlers
@@ -38,7 +43,7 @@ namespace DarkHeresy2CharacterCreator.ViewModel
         {
             Window window = obj as Window;
             window.Close();
-            Window backgroundWindow = new Background();
+            Window backgroundWindow = new View.CharacterCreationView.Background();
             backgroundWindow.Show();
         }
 

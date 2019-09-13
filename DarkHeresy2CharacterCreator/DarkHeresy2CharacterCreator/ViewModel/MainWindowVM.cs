@@ -10,6 +10,8 @@ using System.Drawing;
 using PropertyChanged;
 using System.Windows.Input;
 using DarkHeresy2CharacterCreator.View.CharacterCreationView;
+using System.Collections.ObjectModel;
+using DarkHeresy2CharacterCreator.Model.Character;
 
 namespace DarkHeresy2CharacterCreator.ViewModel
 {
@@ -21,6 +23,7 @@ namespace DarkHeresy2CharacterCreator.ViewModel
         private readonly DelegateCommand closeApplicationCommand;
         private readonly DelegateCommand loadCharacterCommand;
         private readonly DelegateCommand deleteCharacterCommand;
+        public ObservableCollection<ICharacter> characters;
         #endregion Fields
 
         #region Propreties
@@ -28,14 +31,16 @@ namespace DarkHeresy2CharacterCreator.ViewModel
         public ICommand LoadCharacterCommand => loadCharacterCommand;
         public ICommand DeleteCharacterCommand => deleteCharacterCommand;
         public ICommand CloseApplicationCommand => closeApplicationCommand;
+        public ObservableCollection<ICharacter> Characters { get { return characters; } set { characters = value; } }
         #endregion
-        
+
         public MainWindowVM()
         {
             newCharacterCommand = new DelegateCommand(OnNewCharacter);
             closeApplicationCommand = new DelegateCommand(OnCloseApplication);
             deleteCharacterCommand = new DelegateCommand(OnDeleteCaharacter);
             loadCharacterCommand = new DelegateCommand(OnLoadCharacter);
+            characters = CharactersList.Characters;
         }
 
         #region Command Handlers

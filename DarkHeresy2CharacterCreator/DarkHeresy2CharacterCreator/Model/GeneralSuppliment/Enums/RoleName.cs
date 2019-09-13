@@ -9,7 +9,7 @@ namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment
     /// <summary>
     /// Names of roles
     /// </summary>
-    enum RoleName
+    public enum RoleName
     {
         Assassin,
         Chirurgeon,

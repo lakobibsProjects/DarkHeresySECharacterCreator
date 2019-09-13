@@ -1,8 +1,10 @@
-﻿using DarkHeresy2CharacterCreator.View.CharacterCreationView;
+﻿using DarkHeresy2CharacterCreator.Model.GeneralSuppliment.Collections;
+using DarkHeresy2CharacterCreator.View.CharacterCreationView;
 using DarkHeresy2CharacterCreator.ViewModel.Commands;
 using PropertyChanged;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,12 +21,15 @@ namespace DarkHeresy2CharacterCreator.ViewModel
         private readonly DelegateCommand nextWindowCommand;
         private readonly DelegateCommand cancelCommand;
         private readonly DelegateCommand previousWindowCommand;
+        public ObservableCollection<DarkHeresy2CharacterCreator.Model.GeneralSuppliment.HomeWorld> homeworlds;
         #endregion
 
         #region Properties
         public ICommand NextWindowCommand => nextWindowCommand;
         public ICommand PreviousWindowCommand => previousWindowCommand;
         public ICommand CancelCommand => cancelCommand;
+        public ObservableCollection<DarkHeresy2CharacterCreator.Model.GeneralSuppliment.HomeWorld> Homeworlds { get { return homeworlds; } set { homeworlds = value; } }
+        public DarkHeresy2CharacterCreator.Model.GeneralSuppliment.HomeWorld SelectedHomeworld { get; set; }
         #endregion
 
         public HomeworldVM()
@@ -32,6 +37,7 @@ namespace DarkHeresy2CharacterCreator.ViewModel
             nextWindowCommand = new DelegateCommand(OnNextWindow);
             cancelCommand = new DelegateCommand(OnCancel);
             previousWindowCommand = new DelegateCommand(OnPreviousWindow);
+            homeworlds = HomeWorldList.HomeWorlds;
         }
 
         #region Command Handlers

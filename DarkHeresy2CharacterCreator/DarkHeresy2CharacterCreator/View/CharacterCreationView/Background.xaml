@@ -8,9 +8,6 @@
         xmlns:vm ="clr-namespace:DarkHeresy2CharacterCreator.ViewModel"
         mc:Ignorable="d"
         Title="Background" Height="450" Width="600">
-    <Window.Resources>
-        <vm:BackgroundVM x:Key="vm"/>
-    </Window.Resources>
     <Grid>
         <Grid.DataContext>
             <vm:BackgroundVM/>
@@ -22,12 +19,25 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        
-        <DataGrid Grid.Column="0" Margin="5">
-            
-        </DataGrid>
-        
-        <Grid Grid.Column="1">
+
+        <ListView Grid.Column="0"
+                  Margin="5"
+                  Opacity="0.5"
+                  ItemsSource="{Binding Backgrounds}"
+                  SelectedItem="{Binding SelectedBackground}">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Vertical" />
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}" FontSize="20" Margin="5"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <Grid Grid.Column="1" Margin="0 10 5 10">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
@@ -42,21 +52,63 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <TextBlock Grid.Column="0" Grid.Row="0" Style="{DynamicResource ResourceKey=BaseTextBlock}">Discription</TextBlock>
-            <TextBlock Grid.Column="0" Grid.Row="1" Style="{DynamicResource ResourceKey=BaseTextBlock}">Starting Skills</TextBlock>
-            <TextBlock Grid.Column="0" Grid.Row="2" Style="{DynamicResource ResourceKey=BaseTextBlock}">Starting Talents</TextBlock>
-            <TextBlock Grid.Column="0" Grid.Row="3" Style="{DynamicResource ResourceKey=BaseTextBlock}">Starting Equipment</TextBlock>
-            <TextBlock Grid.Column="0" Grid.Row="4" Style="{DynamicResource ResourceKey=BaseTextBlock}">Background Bonus</TextBlock>
-            <TextBlock Grid.Column="0" Grid.Row="5" Style="{DynamicResource ResourceKey=BaseTextBlock}">Background Aptitude</TextBlock>
-            <TextBlock Grid.Column="0" Grid.Row="6" Style="{DynamicResource ResourceKey=BaseTextBlock}">Recomended Roles</TextBlock>
+            <TextBlock Grid.Column="0" 
+                       Grid.Row="0" 
+                       Style="{DynamicResource ResourceKey=BaseTextBlock}"
+                       Text="Discription"/>
+            <TextBlock Grid.Column="0" 
+                       Grid.Row="1" 
+                       Style="{DynamicResource ResourceKey=BaseTextBlock}"
+                       Text="Starting Skills"/>
+            <TextBlock Grid.Column="0" 
+                       Grid.Row="2" 
+                       Style="{DynamicResource ResourceKey=BaseTextBlock}"
+                       Text="Starting Talents"/>
+            <TextBlock Grid.Column="0" 
+                       Grid.Row="3" 
+                       Style="{DynamicResource ResourceKey=BaseTextBlock}"
+                       Text="Starting Equipment"/>
+            <TextBlock Grid.Column="0" 
+                       Grid.Row="4" 
+                       Style="{DynamicResource ResourceKey=BaseTextBlock}"
+                       Text="Background Bonus"/>
+            <TextBlock Grid.Column="0" 
+                       Grid.Row="5" 
+                       Style="{DynamicResource ResourceKey=BaseTextBlock}"
+                       Text="Background Aptitude"/>
+            <TextBlock Grid.Column="0" 
+                       Grid.Row="6" 
+                       Style="{DynamicResource ResourceKey=BaseTextBlock}" 
+                       Text="Recomended Roles"/>
 
-            <TextBlock Grid.Column="1" Grid.Row="0" Style="{DynamicResource ResourceKey=BaseTextBlock}"></TextBlock>
-            <TextBlock Grid.Column="1" Grid.Row="1" Style="{DynamicResource ResourceKey=BaseTextBlock}"></TextBlock>
-            <TextBlock Grid.Column="1" Grid.Row="2" Style="{DynamicResource ResourceKey=BaseTextBlock}"></TextBlock>
-            <TextBlock Grid.Column="1" Grid.Row="3" Style="{DynamicResource ResourceKey=BaseTextBlock}"></TextBlock>
-            <TextBlock Grid.Column="1" Grid.Row="4" Style="{DynamicResource ResourceKey=BaseTextBlock}"></TextBlock>
-            <TextBlock Grid.Column="1" Grid.Row="5" Style="{DynamicResource ResourceKey=BaseTextBlock}"></TextBlock>
-            <TextBlock Grid.Column="1" Grid.Row="6" Style="{DynamicResource ResourceKey=BaseTextBlock}"></TextBlock>
+            <TextBlock Grid.Column="1" 
+                       Grid.Row="0" 
+                       Style="{DynamicResource ResourceKey=BaseTextBlock}"
+                       Text="{Binding Path=SelectedBackground.Name}"/>
+            <TextBlock Grid.Column="1" 
+                       Grid.Row="1" 
+                       Style="{DynamicResource ResourceKey=BaseTextBlock}"
+                       Text=""/>
+            <TextBlock Grid.Column="1" 
+                       Grid.Row="2" 
+                       Style="{DynamicResource ResourceKey=BaseTextBlock}"
+                       Text=""/>
+            <TextBlock Grid.Column="1" 
+                       Grid.Row="3" 
+                       Style="{DynamicResource ResourceKey=BaseTextBlock}"
+                       Text=""/>
+            <TextBlock Grid.Column="1" 
+                       Grid.Row="4" 
+                       Style="{DynamicResource ResourceKey=BaseTextBlock}"
+                       Text="{Binding Path=SelectedBackground.BackgroundBonuds}"/>
+            <TextBlock Grid.Column="1" 
+                       Grid.Row="5" 
+                       Style="{DynamicResource ResourceKey=BaseTextBlock}"
+                       Text=""/>
+            <TextBlock Grid.Column="1" 
+                       Grid.Row="6" 
+                       Style="{DynamicResource ResourceKey=BaseTextBlock}"
+                       Text=""/>
 
             <StackPanel Orientation="Horizontal" Grid.ColumnSpan="2" Grid.Row="7" Margin="5" HorizontalAlignment="Center">
                 <Button  x:Name="canlceButton"

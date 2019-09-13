@@ -13,7 +13,11 @@ namespace DarkHeresy2CharacterCreator.Model.Character
     {
         public static ObservableCollection<ICharacter> Characters = new ObservableCollection<ICharacter>()
         {
-
+            new Character()
+            {
+                CharacterName = "Unnamed Character",
+                TotalExpirience = 1000
+            }
         };
     }
 }

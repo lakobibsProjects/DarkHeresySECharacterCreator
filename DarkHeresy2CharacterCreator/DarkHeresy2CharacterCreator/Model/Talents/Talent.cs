@@ -12,7 +12,7 @@ using System.Web.UI;
 namespace DarkHeresy2CharacterCreator.Model.Talents
 {
     /// <summary>
-    /// Instantiate logic of talent
+    /// Instantiate logic of talent 
     /// </summary>
     [AddINotifyPropertyChangedInterface]
     public class Talent : ITalent

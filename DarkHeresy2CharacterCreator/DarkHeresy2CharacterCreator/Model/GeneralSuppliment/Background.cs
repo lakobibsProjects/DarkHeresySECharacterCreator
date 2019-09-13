@@ -35,11 +35,11 @@ namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment
         #region Properties
         public string Name { get { return name; } set { name = value; } }
         public string BackgroundBonuds { get => backgroundBonuds; set => backgroundBonuds = value; }
-        internal List<ValueTuple<AbstractSkill, AbstractSkill>> BackgroundSkills { get => backgroundSkills; set => backgroundSkills = value; }
-        internal List<ValueTuple<Talent, Talent>> BackgroundsTalents { get => backgroundsTalents; set => backgroundsTalents = value; }
-        internal List<ValueTuple<IItem, IItem>> BackgroundEquipment { get => backgroundEquipment; set => backgroundEquipment = value; }
-        internal ValueTuple<AptitudeName, AptitudeName> BackgroundAptitude { get => backgroundAptitude; set => backgroundAptitude = value; }
-        internal List<RoleName> RecommendedRoles { get => recommendedRoles; set => recommendedRoles = value; }
+        public List<ValueTuple<AbstractSkill, AbstractSkill>> BackgroundSkills { get => backgroundSkills; set => backgroundSkills = value; }
+        public List<ValueTuple<Talent, Talent>> BackgroundsTalents { get => backgroundsTalents; set => backgroundsTalents = value; }
+        public List<ValueTuple<IItem, IItem>> BackgroundEquipment { get => backgroundEquipment; set => backgroundEquipment = value; }
+        public ValueTuple<AptitudeName, AptitudeName> BackgroundAptitude { get => backgroundAptitude; set => backgroundAptitude = value; }
+        public List<RoleName> RecommendedRoles { get => recommendedRoles; set => recommendedRoles = value; }
         public SourceList SourceBook { get => sourceBook; set => sourceBook = value; }
         public int SourcePage { get => sourcePage; set => sourcePage = value; }
         public Trait Trait { get => trait; set => trait = value; }
