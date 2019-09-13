@@ -32,6 +32,7 @@ namespace DarkHeresy2CharacterCreator.ViewModel
         public ICommand DeleteCharacterCommand => deleteCharacterCommand;
         public ICommand CloseApplicationCommand => closeApplicationCommand;
         public ObservableCollection<ICharacter> Characters { get { return characters; } set { characters = value; } }
+        public static ICharacter SelectedCharacter { get; set; }
         #endregion
 
         public MainWindowVM()
@@ -46,12 +47,15 @@ namespace DarkHeresy2CharacterCreator.ViewModel
         #region Command Handlers
         private void OnLoadCharacter(object obj)
         {
-            throw new NotImplementedException();
+            Window characterSheet = new CharacterSheetView();
+            characterSheet.Show();
+            Window currentWindow = obj as Window;
+            currentWindow.Close();
         }
 
         private void OnDeleteCaharacter(object obj)
         {
-            throw new NotImplementedException();
+            Characters.Remove(SelectedCharacter);
         }
 
         private void OnCloseApplication(object obj)
