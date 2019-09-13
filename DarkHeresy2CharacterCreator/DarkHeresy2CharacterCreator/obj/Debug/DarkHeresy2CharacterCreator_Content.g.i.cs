@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("todoviewmodel.txt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("legendtodo.txt")]
 
 

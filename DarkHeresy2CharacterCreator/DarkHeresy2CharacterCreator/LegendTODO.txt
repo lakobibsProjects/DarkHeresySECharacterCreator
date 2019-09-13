@@ -1,0 +1,5 @@
+﻿PA - prealpfa. Changes, that must being solved to complete worked application.
+A - alpfa. Changes, that must meing solved to complete base functional of application.
+B - beta. Changes, that must meing solved to complete all required functional.
+R - relese.  Changes, that must meing solved torelese application
+U - undifiend. Changes, that not require to relese.
