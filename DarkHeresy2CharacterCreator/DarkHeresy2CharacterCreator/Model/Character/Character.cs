@@ -11,6 +11,7 @@ using DarkHeresy2CharacterCreator.Model.PsychicPowers;
 using DarkHeresy2CharacterCreator.Model.Skills;
 using DarkHeresy2CharacterCreator.Model.Talents;
 using DarkHeresy2CharacterCreator.Model.Traits;
+using NUnit.Framework.Internal;
 using PropertyChanged;
 
 namespace DarkHeresy2CharacterCreator.Model.Character
@@ -26,7 +27,7 @@ namespace DarkHeresy2CharacterCreator.Model.Character
         private HomeWorld homeworld;
         private Background background;
         private Role role;
-        private Divinations divination;
+        private int divination;
         private string playerName;
         private string gender;
         private int age;
@@ -51,20 +52,19 @@ namespace DarkHeresy2CharacterCreator.Model.Character
         private int criticalDamage;
         private int maxCarry;
         private int currentCarry;
-
-
+        
         #region CollectionProperties
         private ObservableCollection<IEliteAdvance> eliteAdvances;
         private ObservableCollection<string> allies;
         private ObservableCollection<string> enemies;
-        private ObservableCollection<ITrait> traits;
-        private ObservableCollection<IPsychicPower> psychicPowers;
-        private ObservableCollection<string> conditions;
-        private ObservableCollection<ICharacteristic> characteristics;
-        private ObservableCollection<AbstractSkill> skills;
-        private ObservableCollection<ITalent> talents;
-        private ObservableCollection<IItem> gear;
-        private ObservableCollection<AptitudeName> aptitudes;
+        private ObservableCollection<ITrait> traits = new ObservableCollection<ITrait>();
+        private ObservableCollection<IPsychicPower> psychicPowers = new ObservableCollection<IPsychicPower>();
+        private ObservableCollection<string> conditions = new ObservableCollection<string>();
+        private ObservableCollection<ICharacteristic> characteristics = new ObservableCollection<ICharacteristic>();
+        private ObservableCollection<AbstractSkill> skills = new ObservableCollection<AbstractSkill>();
+        private ObservableCollection<ITalent> talents = new ObservableCollection<ITalent>();
+        private ObservableCollection<IItem> gear = new ObservableCollection<IItem>();
+        private ObservableCollection<AptitudeName> aptitudes = new ObservableCollection<AptitudeName>();
         #endregion CollectionProperties
         #endregion
 
@@ -73,7 +73,7 @@ namespace DarkHeresy2CharacterCreator.Model.Character
         public HomeWorld HomeWorld { get => homeworld; set => homeworld = value; }
         public Background Background { get => background; set => background = value; }
         public Role Role { get => role; set => role = value; }
-        public Divinations Divination { get => divination; set => divination = value; }
+        public int Divination { get => divination; set => divination = value; }
         public string PlayerName { get => playerName; set => playerName = value; }
         public string Gender { get => gender; set => gender = value; }
         public int Age { get => age; set => age = value; }
@@ -115,19 +115,33 @@ namespace DarkHeresy2CharacterCreator.Model.Character
         #endregion CollectionProperties
         #endregion Properties
 
+        public Character()
+        {
+
+        }
+        
+        //think about remove (was created extensions with this methods)
         #region Add and remove general suppliments
         public void AddHomeworld(HomeWorld homeworld)
         {
-            this.HomeWorld = homeworld;
-            this.FateTreshold = homeworld.FateTreshold;
-            this.TotalWounds = homeworld.Wounds;
-            this.Aptitudes.Add(homeworld.HomeWorldAptitude);
+            try
+            {
+                this.HomeWorld = homeworld;
+                this.FateTreshold = homeworld.FateTreshold;
+                this.TotalWounds = homeworld.Wounds;
+                this.Aptitudes.Add(homeworld.HomeWorldAptitude);
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.StackTrace);
+            }
         }
         public void RemoveHomeworld()
         {
             if(this.HomeWorld != null)
             {
-                this.Aptitudes.Remove(homeworld.HomeWorldAptitude);
+                this.Aptitudes.Remove(HomeWorld.HomeWorldAptitude);
                 this.HomeWorld = null;
                 this.FateTreshold = 0;
                 this.TotalWounds = 0;

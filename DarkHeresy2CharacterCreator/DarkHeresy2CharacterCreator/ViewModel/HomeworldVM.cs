@@ -48,12 +48,14 @@ namespace DarkHeresy2CharacterCreator.ViewModel
 
         private void OnCancel(object obj)           //TODO add fuctional to remove new created character
         {
+            MainWindowVM.SelectedCharacter.RemoveHomeworld();
             Window window = obj as Window;
             window.Close();
         }
 
         private void OnNextWindow(object obj)           //TODO add functional to save homeworld-based variables to character
         {
+            MainWindowVM.SelectedCharacter.AddHomeworld(SelectedHomeworld);
             Window window = obj as Window;
             window.Close();
             Window backgroundWindow = new Background();

@@ -65,6 +65,9 @@ namespace DarkHeresy2CharacterCreator.ViewModel
 
         private void OnNewCharacter(object obj)
         {
+            Character newCharacter = new Character();            
+            Characters.Add(newCharacter);
+            SelectedCharacter = newCharacter;
             Window homeWorldWindow = new HomeWorld();
             homeWorldWindow.Show();
         }

@@ -23,7 +23,7 @@ namespace DarkHeresy2CharacterCreator.Model.Character
         HomeWorld HomeWorld { get; set; }
         Background Background { get; set; }
         Role Role { get; set; }
-        Divinations Divination { get; set; }
+        int Divination { get; set; }
         ObservableCollection<IEliteAdvance> EliteAdvances { get; set; }
         string PlayerName { get; set; }
         string Gender { get; set; }
@@ -61,5 +61,11 @@ namespace DarkHeresy2CharacterCreator.Model.Character
         ObservableCollection<IItem> Gear { get; set; }
         ObservableCollection<AptitudeName> Aptitudes { get; set; }
 
+        void AddBackround(Background background);
+        void AddHomeworld(HomeWorld homeworld);
+        void AddRole(Role role);
+        void RemoveBackround();
+        void RemoveHomeworld();
+        void RemoveRole();
     }
 }

@@ -1,13 +1,17 @@
 ﻿<Window x:Class="DarkHeresy2CharacterCreator.View.CharacterCreationView.SummaryCreationView"
-        x:Name="SummaryCreationView"
+        x:Name="SummaryCreation"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DarkHeresy2CharacterCreator.View.CharacterCreationView"
+        xmlns:vm="clr-namespace:DarkHeresy2CharacterCreator.ViewModel"
         mc:Ignorable="d"
         Title="Summary" Height="450" Width="800">
     <Grid>
+        <Grid.DataContext>
+            <vm:SummaryCreationViewModel x:Name="vm"/>
+        </Grid.DataContext>
         <Grid.Background>
             <ImageBrush ImageSource="/Res/HorizontalWindowBackground.jpg"/>
         </Grid.Background>
@@ -15,10 +19,70 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <WrapPanel x:Name="CharacterDiscriptionWP" Grid.Row="0" Margin="5">
-            <TextBlock Text="Name: " Style="{DynamicResource BaseTextBlock}" FontSize="16"/>
-            <TextBlock Text="{}"/><!--binding to character.characterName-->
-        </WrapPanel>
+        <Grid x:Name="CharacterDiscriptionGrid" Grid.Row="0" Margin="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Orientation="Vertical" Grid.Column="0">
+                <StackPanel Orientation="Horizontal"  Margin="0 3 0 3">
+                    <TextBlock Text="Name: " Style="{DynamicResource BaseTextBlock}"/>
+                    <TextBox Text="{Binding Path=CreatedCharacter.CharacterName, Mode=TwoWay}" Width="100"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal"  Margin="0 3 0 3">
+                    <TextBlock Text="Homeworld: " Style="{DynamicResource BaseTextBlock}"/>
+                    <TextBlock Text="{Binding Path=CreatedCharacter.HomeWorld.Name}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0 3 0 3" >
+                    <TextBlock Text="Background: " Style="{DynamicResource BaseTextBlock}"/>
+                    <TextBlock Text="{Binding Path=CreatedCharacter.Background.Name}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0 3 0 3">
+                    <TextBlock Text="Role: " Style="{DynamicResource BaseTextBlock}"/>
+                    <TextBlock Text="{Binding Path=CreatedCharacter.HomeWorld.Name}"/>
+                </StackPanel>
+            </StackPanel>
+            
+            <StackPanel Grid.Column="1">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Player Name: " Style="{DynamicResource BaseTextBlock}"/>
+                    <TextBox Text="{Binding Path=CreatedCharacter.PlayerName, Mode=TwoWay}" HorizontalAlignment="Stretch"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Gender: " Style="{DynamicResource BaseTextBlock}"/>
+                    <TextBox Text="{Binding Path=CreatedCharacter.Gender, Mode=TwoWay}" HorizontalAlignment="Stretch"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Age: " Style="{DynamicResource BaseTextBlock}"/>
+                    <TextBox Text="{Binding Path=CreatedCharacter.Age, Mode=TwoWay}" HorizontalAlignment="Stretch"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Build: " Style="{DynamicResource BaseTextBlock}"/>
+                    <TextBox Text="{Binding Path=CreatedCharacter.Build, Mode=TwoWay}" HorizontalAlignment="Stretch"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Hair: " Style="{DynamicResource BaseTextBlock}"/>
+                    <TextBox Text="{Binding Path=CreatedCharacter.Hair, Mode=TwoWay}"
+                             HorizontalAlignment="Stretch"/>
+                </StackPanel>
+            </StackPanel>
+            
+            <DockPanel Grid.Column="2">
+                <DockPanel DockPanel.Dock="Top">
+                    <TextBlock Text="Divination: " Style="{DynamicResource BaseTextBlock}" DockPanel.Dock="Left"/>
+                    <TextBlock Text="{Binding Divination.Prophecy}"/>
+                    <TextBlock/>
+                    <Button DockPanel.Dock="Right"
+                            Content="Roll"
+                            Command="{Binding SetDivinationCommand}"
+                            Width="25"
+                            HorizontalAlignment="Right"/>
+                </DockPanel>
+                <TextBlock Text="{Binding Divination.Effect}"/>
+            </DockPanel>
+        </Grid>
+        
         <Grid Grid.Row="1" Margin="5">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
@@ -132,21 +196,23 @@
                     </ListView.ItemTemplate>
                 </ListView>
             </StackPanel>
-            <ListView x:Name="SkillsLV"
-                      Grid.Column="1"
+            <StackPanel Grid.Column="1">
+                <TextBlock Text="Skills"/>
+                <ListView x:Name="SkillsLV"
                       ItemsSource="{Binding}"
                       Margin="5">
-                <ListView.ItemsPanel>
-                    <ItemsPanelTemplate>
-                        <StackPanel Orientation="Vertical" />
-                    </ItemsPanelTemplate>
-                </ListView.ItemsPanel>
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <TextBlock Text="{Binding Name}" FontSize="20" Margin="5"/>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+                    <ListView.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel Orientation="Vertical" />
+                        </ItemsPanelTemplate>
+                    </ListView.ItemsPanel>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Name}" FontSize="20" Margin="5"/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>                
+            </StackPanel>
             <Grid Grid.Column="2" Margin="5">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
