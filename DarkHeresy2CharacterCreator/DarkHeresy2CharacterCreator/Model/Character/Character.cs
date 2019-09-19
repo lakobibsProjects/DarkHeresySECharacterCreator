@@ -60,7 +60,7 @@ namespace DarkHeresy2CharacterCreator.Model.Character
         private ObservableCollection<ITrait> traits = new ObservableCollection<ITrait>();
         private ObservableCollection<IPsychicPower> psychicPowers = new ObservableCollection<IPsychicPower>();
         private ObservableCollection<string> conditions = new ObservableCollection<string>();
-        private ObservableCollection<ICharacteristic> characteristics = new ObservableCollection<ICharacteristic>();
+        private ObservableCollection<Characteristic> characteristics = new ObservableCollection<Characteristic>();
         private ObservableCollection<AbstractSkill> skills = new ObservableCollection<AbstractSkill>();
         private ObservableCollection<ITalent> talents = new ObservableCollection<ITalent>();
         private ObservableCollection<IItem> gear = new ObservableCollection<IItem>();
@@ -107,7 +107,7 @@ namespace DarkHeresy2CharacterCreator.Model.Character
         public ObservableCollection<ITrait> Traits { get => traits; set =>  traits= value; }
         public ObservableCollection<IPsychicPower> PsychicPowers { get => psychicPowers; set => psychicPowers = value; }
         public ObservableCollection<string> Conditions { get => conditions; set => conditions = value; }
-        public ObservableCollection<ICharacteristic> Characteristics { get => characteristics; set => characteristics = value; }
+        public ObservableCollection<Characteristic> Characteristics { get => characteristics; set => characteristics = value; }
         public ObservableCollection<AbstractSkill> Skills { get => skills; set => skills = value; }
         public ObservableCollection<ITalent> Talents { get => talents; set => talents = value; }
         public ObservableCollection<IItem> Gear { get => gear; set =>  gear = value; }
@@ -117,7 +117,8 @@ namespace DarkHeresy2CharacterCreator.Model.Character
 
         public Character()
         {
-
+            foreach (var c in CharacteristicList.Characteristics)            
+                characteristics.Add(c);                        
         }
         
         //think about remove (was created extensions with this methods)
@@ -130,6 +131,7 @@ namespace DarkHeresy2CharacterCreator.Model.Character
                 this.FateTreshold = homeworld.FateTreshold;
                 this.TotalWounds = homeworld.Wounds;
                 this.Aptitudes.Add(homeworld.HomeWorldAptitude);
+                
 
             }
             catch (Exception ex)

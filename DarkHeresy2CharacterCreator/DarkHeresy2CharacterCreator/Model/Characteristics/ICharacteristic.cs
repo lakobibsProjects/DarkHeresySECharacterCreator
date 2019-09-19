@@ -13,5 +13,6 @@ namespace DarkHeresy2CharacterCreator.Model.Characteristics
     public interface ICharacteristic : IAptitudeDependent, IPrerequisitable
     {
         CharacteristicName Name { get; }
+        int Value { get; set; }
     }
 }

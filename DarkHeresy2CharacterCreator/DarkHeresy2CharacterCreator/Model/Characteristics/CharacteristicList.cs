@@ -25,7 +25,8 @@ namespace DarkHeresy2CharacterCreator.Model.Characteristics
             new Characteristic(CharacteristicName.Strength, AptitudeName.Strength, AptitudeName.Offence),
             new Characteristic(CharacteristicName.Toughness, AptitudeName.Toughness, AptitudeName.Defence),
             new Characteristic(CharacteristicName.Weapon_Skill, AptitudeName.Weapon_Skill, AptitudeName.Offence),
-            new Characteristic(CharacteristicName.Willpower , AptitudeName.Willpower , AptitudeName.Psyker)
+            new Characteristic(CharacteristicName.Willpower , AptitudeName.Willpower , AptitudeName.Psyker),
+            new Characteristic(CharacteristicName.Influence, AptitudeName.None, AptitudeName.None)
         };
 
     }

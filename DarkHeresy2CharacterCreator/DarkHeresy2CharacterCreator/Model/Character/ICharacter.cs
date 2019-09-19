@@ -55,7 +55,7 @@ namespace DarkHeresy2CharacterCreator.Model.Character
         int CurrentCarry { get; set; }
 
         ObservableCollection<IPsychicPower> PsychicPowers { get; set; }
-        ObservableCollection<ICharacteristic> Characteristics { get; set; }
+        ObservableCollection<Characteristic> Characteristics { get; set; }
         ObservableCollection<AbstractSkill> Skills { get; set; }
         ObservableCollection<ITalent> Talents { get; set; }
         ObservableCollection<IItem> Gear { get; set; }

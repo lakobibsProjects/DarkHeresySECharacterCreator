@@ -15,6 +15,16 @@ namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment.Collections
     /// </summary>
     public static class BackgroundsCollection
     {
+        //TODO Add discriptions
+        #region Bonuses
+        private static readonly string adeptusAdministratumDiscription = "";
+        private static readonly string adeptusArbitesDiscription = "";
+        private static readonly string adeptusAstraTelepaticaDiscription = "";
+        private static readonly string adeptusMechanicusDiscription = "";
+        private static readonly string adeptusMinistorumDiscription = "";
+        private static readonly string imprialGuardDiscription = "";
+        private static readonly string outcastDiscription = "";
+        #endregion Bonuses
         /// <summary>
         /// Collection of backgrounds
         /// </summary>
@@ -238,15 +248,5 @@ namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment.Collections
 
         };
 
-        //TODO Add discriptions
-        #region Bonuses
-        private static readonly string adeptusAdministratumDiscription = "";
-        private static readonly string adeptusArbitesDiscription = "";
-        private static readonly string adeptusAstraTelepaticaDiscription = "";
-        private static readonly string adeptusMechanicusDiscription = "";
-        private static readonly string adeptusMinistorumDiscription = "";
-        private static readonly string imprialGuardDiscription = "";
-        private static readonly string outcastDiscription = "";
-        #endregion Bonuses
     }
 }

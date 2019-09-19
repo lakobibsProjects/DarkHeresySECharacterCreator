@@ -13,3 +13,4 @@ C:\Projects\C#\DarkHeresy2CharacterCreator\DarkHeresy2CharacterCreator\Tests\bin
 C:\Projects\C#\DarkHeresy2CharacterCreator\DarkHeresy2CharacterCreator\Tests\bin\Debug\netcoreapp2.1\DarkHeresy2CharacterCreator.pdb
 C:\Projects\C#\DarkHeresy2CharacterCreator\DarkHeresy2CharacterCreator\Tests\bin\Debug\netcoreapp2.1\DarkHeresy2CharacterCreator.exe.config
 C:\Projects\C#\DarkHeresy2CharacterCreator\DarkHeresy2CharacterCreator\Tests\obj\Debug\netcoreapp2.1\Tests.csproj.CopyComplete
+C:\Projects\C#\DarkHeresy2CharacterCreator\DarkHeresy2CharacterCreator\Tests\obj\Debug\netcoreapp2.1\Tests.csproj.Fody.CopyLocal.cache

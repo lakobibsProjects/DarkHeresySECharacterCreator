@@ -71,7 +71,7 @@
             <DockPanel Grid.Column="2">
                 <DockPanel DockPanel.Dock="Top">
                     <TextBlock Text="Divination: " Style="{DynamicResource BaseTextBlock}" DockPanel.Dock="Left"/>
-                    <TextBlock Text="{Binding Divination.Prophecy}"/>
+                    <TextBlock Text="{Binding Divination.Prophecy}" TextWrapping="Wrap"/>
                     <TextBlock/>
                     <Button DockPanel.Dock="Right"
                             Content="Roll"
@@ -79,7 +79,7 @@
                             Width="25"
                             HorizontalAlignment="Right"/>
                 </DockPanel>
-                <TextBlock Text="{Binding Divination.Effect}"/>
+                <TextBlock Text="{Binding Divination.Effect}" TextWrapping="Wrap"/>
             </DockPanel>
         </Grid>
         
@@ -108,9 +108,15 @@
                                 Grid.Row="0">
                         <TextBlock>
                             Weapon <LineBreak/> Skill (WS)
-                        </TextBlock>
-                        <TextBlock Text="0" Margin="5 0 5 0" VerticalAlignment="Center"/>
-                        <TextBlock Text="0" VerticalAlignment="Center"/>
+                        </TextBlock>                        
+                        <TextBlock Text="{Binding WeaponSkill.Value}" 
+                                   TextAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   Margin="5"/>
+                        <Button Content="Roll" 
+                                VerticalAlignment="Center"
+                                Command="{Binding SetCharateristic}"
+                                CommandParameter="{Binding WeaponSkill}"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" 
                                 Grid.Column="0"
@@ -118,88 +124,137 @@
                         <TextBlock>
                             Ballistic <LineBreak/> Skill (BS)
                         </TextBlock>
-                        <TextBlock Text="0" Margin="5 0 5 0" VerticalAlignment="Center"/>
-                        <TextBlock Text="0" VerticalAlignment="Center"/>
+                        <TextBlock Text="{Binding BallisticSkill.Value}" 
+                                   TextAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   Margin="5"/>
+                        <Button Content="Roll" 
+                                VerticalAlignment="Center"
+                                Command="{Binding SetCharateristic}"
+                                CommandParameter="{Binding BallisticSkill}"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" 
                                 Grid.Column="0"
                                 Grid.Row="2">
                         <TextBlock Text="Strength (S)"/>
-                        <TextBlock Text="0" Margin="5 0 5 0" VerticalAlignment="Center"/>
-                        <TextBlock Text="0" VerticalAlignment="Center"/>
+                        <TextBlock Text="{Binding Strength.Value}" 
+                                   TextAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   Margin="5"/>
+                        <Button Content="Roll" 
+                                VerticalAlignment="Center"
+                                Command="{Binding SetCharateristic}"
+                                CommandParameter="{Binding Strength}"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" 
                                 Grid.Column="0"
                                 Grid.Row="3">
                         <TextBlock Text="Toughness (T)"/>
-                        <TextBlock Text="0" Margin="5 0 5 0" VerticalAlignment="Center"/>
-                        <TextBlock Text="0" VerticalAlignment="Center"/>
+                        <TextBlock Text="{Binding Toughness.Value}" 
+                                   TextAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   Margin="5"/>
+                        <Button Content="Roll" 
+                                VerticalAlignment="Center"
+                                Command="{Binding SetCharateristic}"
+                                CommandParameter="{Binding Toughness}"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" 
                                 Grid.Column="0"
                                 Grid.Row="4">
                         <TextBlock Text="Agility (AG)"/>
-                        <TextBlock Text="0" Margin="5 0 5 0" VerticalAlignment="Center"/>
-                        <TextBlock Text="0" VerticalAlignment="Center"/>
+                        <TextBlock Text="{Binding Agility.Value}" 
+                                   TextAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   Margin="5"/>
+                        <Button Content="Roll" 
+                                VerticalAlignment="Center"
+                                Command="{Binding SetCharateristic}"
+                                CommandParameter="{Binding Agility}"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" 
                                 Grid.Column="1"
                                 Grid.Row="0">
-                        <TextBlock Text="Intelligence" VerticalAlignment="Center"/>
-                        <TextBlock Text="0" Margin="5 0 5 0" VerticalAlignment="Center"/>
-                        <TextBlock Text="0" VerticalAlignment="Center"/>
+                        <TextBlock Text="Intelligence (INT)" VerticalAlignment="Center"/>
+                        <TextBlock Text="{Binding Intelligence.Value}" 
+                                   TextAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   Margin="5"/>
+                        <Button Content="Roll" 
+                                VerticalAlignment="Center"
+                                Command="{Binding SetCharateristic}"
+                                CommandParameter="{Binding Intelligence}"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" 
                                 Grid.Column="1"
                                 Grid.Row="1">
                         <TextBlock Text="Perception (PER)" VerticalAlignment="Center"/>
-                        <TextBlock Text="0" Margin="5 0 5 0" VerticalAlignment="Center"/>
-                        <TextBlock Text="0" VerticalAlignment="Center"/>
+                        <TextBlock Text="{Binding Perception.Value}" 
+                                   TextAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   Margin="5"/>
+                        <Button Content="Roll" 
+                                VerticalAlignment="Center"
+                                Command="{Binding SetCharateristic}"
+                                CommandParameter="{Binding Perception}"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" 
                                 Grid.Column="1"
                                 Grid.Row="2">
                         <TextBlock Text="Willpower (WP)"/>
-                        <TextBlock Text="0" Margin="5 0 5 0" VerticalAlignment="Center"/>
-                        <TextBlock Text="0" VerticalAlignment="Center"/>
+                        <TextBlock Text="{Binding Willpower.Value}" 
+                                   TextAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   Margin="5"/>
+                        <Button Content="Roll" 
+                                VerticalAlignment="Center"
+                                Command="{Binding SetCharateristic}"
+                                CommandParameter="{Binding Willpower}"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" 
                                 Grid.Column="1"
                                 Grid.Row="3">
                         <TextBlock Text="Fellowship (FEL)"/>
-                        <TextBlock Text="0" Margin="5 0 5 0" VerticalAlignment="Center"/>
-                        <TextBlock Text="0" VerticalAlignment="Center"/>
+                        <TextBlock Text="{Binding Fellowship.Value}" 
+                                   TextAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   Margin="5"/>
+                        <Button Content="Roll" 
+                                VerticalAlignment="Center"
+                                Command="{Binding SetCharateristic}"
+                                CommandParameter="{Binding Fellowship}"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" 
                                 Grid.Column="1"
                                 Grid.Row="4">
                         <TextBlock Text="Influence (IFL)"/>
-                        <TextBlock Text="0" Margin="5 0 5 0" VerticalAlignment="Center"/>
-                        <TextBlock Text="0" VerticalAlignment="Center"/>
+                        <TextBlock Text="{Binding Influence.Value}" 
+                                   TextAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   Margin="5"/>
+                        <Button Content="Roll" 
+                                VerticalAlignment="Center"
+                                Command="{Binding SetCharateristic}"
+                                CommandParameter="{Binding Influence}"/>
                     </StackPanel>
                 </Grid>
                 <StackPanel Orientation="Horizontal" Margin="5">
                     <TextBlock Text="Fate:"/>
-                    <TextBlock Text="0" Margin="5 0"/>
+                    <TextBlock Text="{Binding CreatedCharacter.FateTreshold}" Margin="5 0"/>
                 </StackPanel>
                 <ListView x:Name="AptitudesLV"
-                          ItemsSource="{Binding}">
+                          ItemsSource="{Binding Aptitudes}">
                     <ListView.ItemsPanel>
                         <ItemsPanelTemplate>
                             <StackPanel Orientation="Vertical" />
                         </ItemsPanelTemplate>
                     </ListView.ItemsPanel>
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding Name}" FontSize="20" Margin="5"/>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
                 </ListView>
             </StackPanel>
             <StackPanel Grid.Column="1">
                 <TextBlock Text="Skills"/>
                 <ListView x:Name="SkillsLV"
-                      ItemsSource="{Binding}"
+                      ItemsSource="{Binding Skills}"
                       Margin="5">
                     <ListView.ItemsPanel>
                         <ItemsPanelTemplate>
@@ -208,7 +263,7 @@
                     </ListView.ItemsPanel>
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding Name}" FontSize="20" Margin="5"/>
+                            <TextBlock Text="{Binding}" FontSize="20" Margin="5"/>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>                
@@ -222,39 +277,29 @@
                 <StackPanel Grid.Row="0">
                     <TextBlock Text="Talents and Traits:"/>
                     <ListView x:Name="TalentsTraitsLV"
-                      ItemsSource="{Binding}">
+                      ItemsSource="{Binding TalentsAndTraits}">
                         <ListView.ItemsPanel>
                             <ItemsPanelTemplate>
                                 <StackPanel Orientation="Vertical" />
                             </ItemsPanelTemplate>
                         </ListView.ItemsPanel>
-                        <ListView.ItemTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding Name}" FontSize="20" Margin="5"/>
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
                     </ListView>
                 </StackPanel>
                 <StackPanel Grid.Row="1">
                     <TextBlock Text="Gear:"/>
                     <ListView x:Name="GearLV"
-                      ItemsSource="{Binding}">
+                      ItemsSource="{Binding Gear}">
                         <ListView.ItemsPanel>
                             <ItemsPanelTemplate>
                                 <StackPanel Orientation="Vertical" />
                             </ItemsPanelTemplate>
                         </ListView.ItemsPanel>
-                        <ListView.ItemTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding Name}" FontSize="20" Margin="5"/>
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
                     </ListView>
                 </StackPanel>
                 <StackPanel Grid.Row="2">
                     <TextBlock Text="Special Abilities:"/>
                     <ListView x:Name="SpecialAbilitiesLV"
-                      ItemsSource="{Binding}">
+                      ItemsSource="{Binding SpecialAbilities}">
                         <ListView.ItemsPanel>
                             <ItemsPanelTemplate>
                                 <StackPanel Orientation="Vertical" />
@@ -262,10 +307,7 @@
                         </ListView.ItemsPanel>
                         <ListView.ItemTemplate>
                             <DataTemplate>
-                                <StackPanel>
-                                    <TextBlock Text="{Binding Name}" VerticalAlignment="Center" FontSize="20" Margin="5"/>
-                                    <TextBlock Text="{Binding Discription}" FontSize="20" Margin="5"/>
-                                </StackPanel>
+                                <TextBlock Text="{Binding}" TextWrapping="Wrap"/>
                             </DataTemplate>
                         </ListView.ItemTemplate>
                     </ListView>

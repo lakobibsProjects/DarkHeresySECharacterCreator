@@ -13,14 +13,23 @@ namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment.Collections
     /// </summary>
     public static class HomeWorldList
     {
+
+            #region Bonuses
+            private static string feralWorldBonus = "";
+            private static string forgeWorldBonus = "";
+            private static string heighbornBonus = "";
+            private static string hiveWorldBonus = "";
+            private static string shrineWorldBonus = "";
+            private static string voidbornBonus = "";
+            #endregion
         /// <summary>
         /// Collection of homeworlds
         /// </summary>
         public static ObservableCollection<HomeWorld> HomeWorlds = new ObservableCollection<HomeWorld>
         {
-            //TODO correct and add recomended backgrounds
-            #region Core Rulebook
-            new HomeWorld("Feral World")
+        //TODO correct and add recomended backgrounds
+        #region Core Rulebook
+        new HomeWorld("Feral World")
             {
                 FateTreshold = 2,
                 EmperorsBlessing = 3,
@@ -83,13 +92,6 @@ namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment.Collections
             #endregion Core Rulebook
         };
 
-        #region Bonuses
-        private static string feralWorldBonus = "";
-        private static string forgeWorldBonus = "";
-        private static string heighbornBonus = "";
-        private static string hiveWorldBonus = "";
-        private static string shrineWorldBonus = "";
-        private static string voidbornBonus = "";
-        #endregion
+       
     }
 }
