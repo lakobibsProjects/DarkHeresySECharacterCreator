@@ -32,4 +32,3 @@ C:\Projects\C#\DarkHeresy2CharacterCreator\DarkHeresy2CharacterCreator\DarkHeres
 C:\Projects\C#\DarkHeresy2CharacterCreator\DarkHeresy2CharacterCreator\DarkHeresy2CharacterCreator\bin\Debug\nunit.framework.pdb
 C:\Projects\C#\DarkHeresy2CharacterCreator\DarkHeresy2CharacterCreator\DarkHeresy2CharacterCreator\bin\Debug\nunit.framework.xml
 C:\Projects\C#\DarkHeresy2CharacterCreator\DarkHeresy2CharacterCreator\DarkHeresy2CharacterCreator\obj\Debug\DarkHeresy2CharacterCreator.csproj.CopyComplete
-C:\Projects\C#\DarkHeresy2CharacterCreator\DarkHeresy2CharacterCreator\DarkHeresy2CharacterCreator\obj\Debug\DarkHeresy2CharacterCreator.csprojAssemblyReference.cache

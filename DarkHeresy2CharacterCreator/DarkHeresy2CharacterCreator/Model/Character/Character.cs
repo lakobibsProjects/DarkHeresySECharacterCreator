@@ -52,8 +52,10 @@ namespace DarkHeresy2CharacterCreator.Model.Character
         private int criticalDamage;
         private int maxCarry;
         private int currentCarry;
-        
-        #region CollectionProperties
+        private int insanity;
+        private int corruption;
+
+        #region CollectionFields
         private ObservableCollection<IEliteAdvance> eliteAdvances;
         private ObservableCollection<string> allies;
         private ObservableCollection<string> enemies;
@@ -65,8 +67,8 @@ namespace DarkHeresy2CharacterCreator.Model.Character
         private ObservableCollection<ITalent> talents = new ObservableCollection<ITalent>();
         private ObservableCollection<IItem> gear = new ObservableCollection<IItem>();
         private ObservableCollection<AptitudeName> aptitudes = new ObservableCollection<AptitudeName>();
-        #endregion CollectionProperties
-        #endregion
+        #endregion CollectionFields
+        #endregion Fields
 
         #region Properties
         public string CharacterName { get => characterName; set => characterName = value; }
@@ -98,6 +100,8 @@ namespace DarkHeresy2CharacterCreator.Model.Character
         public int CriticalDamage { get => criticalDamage; set => criticalDamage = value; }        
         public int MaxCarry { get => maxCarry; set => maxCarry = value; }
         public int CurrentCarry { get => currentCarry; set =>  currentCarry= value; }
+        public int Insanity { get => insanity; set => insanity = value; }
+        public int Corruption { get => corruption; set => corruption = value; }
 
 
         #region CollectionProperties

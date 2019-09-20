@@ -17,7 +17,7 @@ namespace DarkHeresy2CharacterCreator.Model.Character
     /// <summary>
     /// Interface with general fuctionality of character
     /// </summary>
-    public interface ICharacter 
+    public interface ICharacter
     {
         string CharacterName { get; set; }
         HomeWorld HomeWorld { get; set; }
@@ -31,7 +31,7 @@ namespace DarkHeresy2CharacterCreator.Model.Character
         string Build { get; set; }
         string Complexion { get; set; }
         string Hair { get; set; }
-        string Quirks{ get; set; }
+        string Quirks { get; set; }
         string Superstitions { get; set; }
         string Mementos { get; set; }
         ObservableCollection<string> Allies { get; set; }
@@ -40,7 +40,7 @@ namespace DarkHeresy2CharacterCreator.Model.Character
         int SpendExpirience { get; set; }
         int FateTreshold { get; set; }
         int CurrentFate { get; set; }
-        string MentalDisorders{ get; set; }
+        string MentalDisorders { get; set; }
         string Malignacies { get; set; }
         string Mutations { get; set; }
         ObservableCollection<ITrait> Traits { get; set; }
@@ -53,6 +53,8 @@ namespace DarkHeresy2CharacterCreator.Model.Character
         ObservableCollection<string> Conditions { get; set; }
         int MaxCarry { get; set; }
         int CurrentCarry { get; set; }
+        int Insanity { get; set; }
+        int Corruption { get; set; } 
 
         ObservableCollection<IPsychicPower> PsychicPowers { get; set; }
         ObservableCollection<Characteristic> Characteristics { get; set; }
