@@ -185,6 +185,7 @@
     <Compile Include="Model\Traits\TraitName.cs" />
     <Compile Include="ViewModel\BackgroundVM.cs" />
     <Compile Include="ViewModel\CharacterSheetVM.cs" />
+    <Compile Include="ViewModel\CharacterSheet\CharacterSheetVM.cs" />
     <Compile Include="ViewModel\Commands\DelegateCommand.cs" />
     <Compile Include="ViewModel\HomeworldVM.cs" />
     <Compile Include="ViewModel\MainWindowVM.cs" />

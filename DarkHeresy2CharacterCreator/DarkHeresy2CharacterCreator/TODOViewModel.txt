@@ -1,4 +1,4 @@
-﻿+PA1. Create all requiring VM
+﻿PA1. Create all requiring VM
 PA2. Add fuctionality to buttons
 	+Create button commands
 	+Add button commands in VM
