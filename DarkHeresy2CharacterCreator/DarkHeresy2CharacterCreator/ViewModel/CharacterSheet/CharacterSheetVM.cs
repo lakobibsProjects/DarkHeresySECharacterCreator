@@ -74,7 +74,10 @@ namespace DarkHeresy2CharacterCreator.ViewModel.CharacterSheet
                     characteristic.Value += 5;                
                 else                
                     characteristic.Value = 99;
+                characteristic.Rank++;
+                characteristic.ChangeAdvanceCost(Character.Aptitudes);
                 Character.SpendExpirience += characteristic.Cost;
+                
             }
         }
         

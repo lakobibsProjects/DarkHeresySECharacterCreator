@@ -260,11 +260,11 @@
                                 <Button Content="+" 
                                         VerticalAlignment="Center"
                                         Command="{Binding Increace}"
-                                        CommandParameter="{Binding Influence}"/>
+                                        CommandParameter="{Binding Influence.Value}"/>
                                 <Button Content="-" 
                                         VerticalAlignment="Center"
                                         Command="{Binding Decreace}"
-                                        CommandParameter="{Binding Influence}"/>
+                                        CommandParameter="{Binding Influence.Value}"/>
                             </StackPanel>
                         </Grid>
                     </StackPanel>

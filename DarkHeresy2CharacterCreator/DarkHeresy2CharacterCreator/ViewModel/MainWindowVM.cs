@@ -41,7 +41,15 @@ namespace DarkHeresy2CharacterCreator.ViewModel
             closeApplicationCommand = new DelegateCommand(OnCloseApplication);
             deleteCharacterCommand = new DelegateCommand(OnDeleteCaharacter);
             loadCharacterCommand = new DelegateCommand(OnLoadCharacter);
-            characters = CharactersList.Characters;
+            try
+            {
+                characters = CharactersList.Characters;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.InnerException.ToString());
+            }
+            
         }
 
         #region Command Handlers

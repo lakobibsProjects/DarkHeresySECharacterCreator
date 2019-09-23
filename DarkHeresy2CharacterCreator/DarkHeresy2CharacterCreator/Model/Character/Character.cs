@@ -122,11 +122,23 @@ namespace DarkHeresy2CharacterCreator.Model.Character
         public Character()
         {
             foreach (var c in CharacteristicList.Characteristics)            
-                characteristics.Add(c);                        
+                characteristics.Add(c);
+            
+            
         }
         
         //think about remove (was created extensions with this methods)
         #region Add and remove general suppliments
+        public void AptitudesChanged()
+        {
+            foreach (var item in Characteristics)
+                if (item != null) item.ChangeAdvanceCost(Aptitudes);
+            foreach (var item in Skills)
+                if (item != null) (item as IAptitudeDependent).ChangeAdvanceCost(Aptitudes);
+            foreach (var item in Talents)
+                if(item != null) item.ChangeAdvanceCost(Aptitudes);
+        }
+
         public void AddHomeworld(HomeWorld homeworld)
         {
             try
@@ -135,12 +147,12 @@ namespace DarkHeresy2CharacterCreator.Model.Character
                 this.FateTreshold = homeworld.FateTreshold;
                 this.TotalWounds = homeworld.Wounds;
                 this.Aptitudes.Add(homeworld.HomeWorldAptitude);
-                
+                AptitudesChanged();
 
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.StackTrace);
+                throw new Exception(ex.ToString());
             }
         }
         public void RemoveHomeworld()
@@ -151,6 +163,7 @@ namespace DarkHeresy2CharacterCreator.Model.Character
                 this.HomeWorld = null;
                 this.FateTreshold = 0;
                 this.TotalWounds = 0;
+                AptitudesChanged();
             }
         }
 
@@ -168,6 +181,7 @@ namespace DarkHeresy2CharacterCreator.Model.Character
                 Gear.Add(item.Item1);            
 
             this.Aptitudes.Add(background.BackgroundAptitude.Item1);
+            AptitudesChanged();
 
             if (background.Trait != null)
                 this.Traits.Add(background.Trait);
@@ -186,6 +200,7 @@ namespace DarkHeresy2CharacterCreator.Model.Character
                     Gear.Remove(item.Item1);
 
                 this.Aptitudes.Remove(background.BackgroundAptitude.Item1);
+                AptitudesChanged();
 
                 if (background.Trait != null)
                     this.Traits.Remove(background.Trait);
@@ -198,8 +213,11 @@ namespace DarkHeresy2CharacterCreator.Model.Character
         {
             this.Role = role;
 
-            foreach (var a in role.Aptitudes)            
+            foreach (var a in role.Aptitudes)
+            {
                 this.Aptitudes.Add(a.Item1);
+                AptitudesChanged();
+            }            
 
             this.Talents.Add(role.RoleTalent.Item1);
         }
@@ -207,7 +225,10 @@ namespace DarkHeresy2CharacterCreator.Model.Character
         public void RemoveRole()
         {
             foreach (var a in role.Aptitudes)
+            {
                 this.Aptitudes.Remove(a.Item1);
+                AptitudesChanged();
+            }
 
             this.Talents.Remove(role.RoleTalent.Item1);
 

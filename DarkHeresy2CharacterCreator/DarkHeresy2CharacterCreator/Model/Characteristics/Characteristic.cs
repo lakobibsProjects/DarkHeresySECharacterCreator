@@ -88,7 +88,7 @@ namespace DarkHeresy2CharacterCreator.Model.Characteristics
             int haveAptitudes = 0;
             foreach (AptitudeName a in charecterAptitudes)
                 if (a == FirstAptitude || a == SecondAptitude) haveAptitudes++;
-            Cost = costTable[rank - 1, haveAptitudes];
+            Cost = costTable[rank, haveAptitudes];
         }
     }
 }
