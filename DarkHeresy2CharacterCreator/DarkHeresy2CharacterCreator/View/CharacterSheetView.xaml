@@ -383,38 +383,92 @@
                 </Grid>
             </TabItem>
             <TabItem x:Name="Gear" Header="Gear">
+                <TabItem.DataContext>
+                    <vm:GearVM/>
+                </TabItem.DataContext>
                 <Grid>
                     <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="220"/>
                         <ColumnDefinition Width="220"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <StackPanel Grid.Row="0"
-                                Grid.Column="0"
+                                Grid.Column="1"
                                 Orientation="Vertical"
                                 Margin="5">
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="Catefories: " VerticalAlignment="Center"/>
-                            <ComboBox Width="150"/>
-                        </StackPanel>
+                        <TextBlock Text="Own items" 
+                                   Margin="3" 
+                                   HorizontalAlignment="Center"
+                                   FontWeight="Bold"/>                       
                         <StackPanel Orientation="Horizontal"
                                     Margin="0 5 0 5">
                             <TextBlock Text="Search: " VerticalAlignment="Center"/>
-                            <TextBox Width="150"/>
+                            <TextBox  x:Name="OwnItemSearchTB" 
+                                      Width="150"
+                                      IsEnabled="False"
+                                      Text="{Binding SelectedOwnItem,
+                                                     Mode=TwoWay,    
+                                                     UpdateSourceTrigger=PropertyChanged}"/>
+                            <!--Fix unabdatable-->
                         </StackPanel>
-                        <ListView Height="500"
-                                  Margin="0 5 5 5">
+                        <DataGrid Height="500"
+                                  Margin="0 5 5 5"
+                                  ItemsSource="{Binding OwnItems}"
+                                  SelectedItem="{Binding SelectedOwnItem}">
                             
-                        </ListView>
-                        <StackPanel Orientation="Horizontal">
-                            <Button Content="Remove"/>
-                            <Button Content="Remove all"/>
-                            <Button Content="Add"/>
-                            <Button Content="Add new"/>
+                        </DataGrid>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <Button Content="Remove"
+                                    Margin="5"
+                                    Command="{Binding RemoveItem}"
+                                    CommandParameter="{Binding SelectedOwnItem}"/>
+
+                            <Button Content="Add"
+                                    Margin="5"
+                                    Command="{Binding AddItem}"
+                                    CommandParameter="{Binding SelectedOwnItem}"/>
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel Grid.Row="0"
+                                Grid.Column="0"
+                                Orientation="Vertical"
+                                Margin="5">
+                        <TextBlock Text="Available items" 
+                                   Margin="3" 
+                                   HorizontalAlignment="Center"
+                                   FontWeight="Bold"/>
+
+                        <StackPanel Orientation="Horizontal"
+                                    Margin="0 5 0 5">
+                            <TextBlock Text="Search: " VerticalAlignment="Center"/>
+                            <TextBox x:Name="AvailableItemSearchTB" 
+                                     Width="150"
+                                     IsEnabled="False"
+                                     Text="{Binding SelectedAvailableItem, 
+                                                    Mode=TwoWay,
+                                                    UpdateSourceTrigger=PropertyChanged}"/>
+                            <!--Fix unabdatable-->
+                        </StackPanel>
+                        <DataGrid Height="500"
+                                  Margin="0 5 5 5"
+                                  ItemsSource="{Binding AvailableItems}"
+                                  SelectedItem="{Binding SelectedAvailableItem}">
+        
+                        </DataGrid>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <Button Content="Remove" 
+                                    Margin="5 3 10 3"
+                                    Command="{Binding RemoveItem}"
+                                    CommandParameter="{Binding SelectedAvailableItem}"/>
+                            <Button Content="Add" 
+                                    Margin="5 3 10 3"
+                                    Command="{Binding AddItem}"
+                                    CommandParameter="{Binding SelectedAvailableItem}"/>
                         </StackPanel>
                     </StackPanel>
                     <Grid x:Name="GearDiscriptionG" 
                           Grid.Row="0"
-                          Grid.Column="1">
+                          Grid.Column="2">
                         
                     </Grid>
                 </Grid>

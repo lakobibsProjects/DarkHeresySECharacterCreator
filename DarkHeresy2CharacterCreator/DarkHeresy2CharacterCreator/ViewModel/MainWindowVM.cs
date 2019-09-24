@@ -55,15 +55,19 @@ namespace DarkHeresy2CharacterCreator.ViewModel
         #region Command Handlers
         private void OnLoadCharacter(object obj)
         {
-            Window characterSheet = new CharacterSheetView();
-            characterSheet.Show();
-            Window currentWindow = obj as Window;
-            currentWindow.Close();
+            if (SelectedCharacter != null)
+            {
+                Window characterSheet = new CharacterSheetView();
+                characterSheet.Show();
+                Window currentWindow = obj as Window;
+                currentWindow.Close();
+            }
         }
 
         private void OnDeleteCaharacter(object obj)
         {
-            Characters.Remove(SelectedCharacter);
+            if(SelectedCharacter != null)
+                Characters.Remove(SelectedCharacter);
         }
 
         private void OnCloseApplication(object obj)
