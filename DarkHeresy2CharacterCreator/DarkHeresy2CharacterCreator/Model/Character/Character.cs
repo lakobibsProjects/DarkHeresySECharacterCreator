@@ -67,6 +67,7 @@ namespace DarkHeresy2CharacterCreator.Model.Character
         private ObservableCollection<ITalent> talents = new ObservableCollection<ITalent>();
         private ObservableCollection<IItem> gear = new ObservableCollection<IItem>();
         private ObservableCollection<AptitudeName> aptitudes = new ObservableCollection<AptitudeName>();
+        private ObservableCollection<Tuple<string, string, int>> advances = new ObservableCollection<Tuple<string, string, int>>();
         #endregion CollectionFields
         #endregion Fields
 
@@ -85,8 +86,8 @@ namespace DarkHeresy2CharacterCreator.Model.Character
         public string Quirks { get => quirks; set => quirks = value; }
         public string Superstitions { get => superstitions; set => superstitions = value; }
         public string Mementos { get => mementos; set => mementos = value; }
-        public int TotalExpirience { get => totalExpirience; set => totalExpirience = value; }
-        public int SpendExpirience { get => spendExpirience; set => spendExpirience = value; }
+        public int TotalExpirience { get => totalExpirience; set { totalExpirience = value; setNotSpedExp(value, NotSpendExp); } }
+        public int SpendExpirience { get => spendExpirience; set { spendExpirience = value; setNotSpedExp(0, value); } }
         public int FateTreshold { get => fateTreshold; set => fateTreshold = value; }
         public int CurrentFate { get => currentFate; set => currentFate = value; }
         public string MentalDisorders { get => mentalDisorders; set => mentalDisorders = value; }
@@ -102,6 +103,7 @@ namespace DarkHeresy2CharacterCreator.Model.Character
         public int CurrentCarry { get => currentCarry; set =>  currentCarry= value; }
         public int Insanity { get => insanity; set => insanity = value; }
         public int Corruption { get => corruption; set => corruption = value; }
+        public int NotSpendExp { get; private set; }
 
 
         #region CollectionProperties
@@ -116,6 +118,7 @@ namespace DarkHeresy2CharacterCreator.Model.Character
         public ObservableCollection<ITalent> Talents { get => talents; set => talents = value; }
         public ObservableCollection<IItem> Gear { get => gear; set =>  gear = value; }
         public ObservableCollection<AptitudeName> Aptitudes { get => aptitudes; set => aptitudes = value; }
+        public ObservableCollection<Tuple<string, string, int>> Advances { get => advances; set => advances = value; }
         #endregion CollectionProperties
         #endregion Properties
 
@@ -235,6 +238,21 @@ namespace DarkHeresy2CharacterCreator.Model.Character
             this.Role = null;
         }
 
+        public void AddAdvance(string name, string type, int cost)
+        {
+            Advances.Add(new Tuple<string, string, int>(name, type, cost));
+        }
+
+        public void RemoveAdvance(string name, string type, int cost)
+        {
+            Advances.Remove(new Tuple<string, string, int>(name, type, cost));
+        }
+
         #endregion
+
+        private void setNotSpedExp(int addExp = 0, int spendExp = 0)
+        {
+            NotSpendExp = NotSpendExp + addExp - spendExp;
+        }
     }
 }

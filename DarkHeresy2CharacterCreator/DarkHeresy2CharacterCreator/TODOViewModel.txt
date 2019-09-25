@@ -4,3 +4,10 @@ PA2. Add fuctionality to buttons
 	+Add button commands in VM
 	*Add fuctional to button commands
 PA3. Add bound with Model
+A4. CharacterSheet
+	CharacterSheet
+		Fix logic with +/- buttons
+	Gear
+		Fix probles with unchangable searchedTB
+		Add ComboBox to filtred lists by type of gear
+

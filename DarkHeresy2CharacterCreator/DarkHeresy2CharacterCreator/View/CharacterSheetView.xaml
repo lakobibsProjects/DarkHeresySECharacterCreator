@@ -101,15 +101,18 @@
                         </StackPanel>
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Text="Enemies: "/>
-                            <TextBlock Text="{}"/>  <!--Bind to string of Peers-->
+                            <TextBlock Text="{}"/>
+                            <!--Bind to string of Peers-->
                         </StackPanel>
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Text="Allies: "/>
-                            <TextBlock Text="{}"/>  <!--Bind to string of Enemies-->
+                            <TextBlock Text="{}"/>
+                            <!--Bind to string of Enemies-->
                         </StackPanel>
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Text="Elite Advances: "/>
-                            <TextBlock Text="{}"/>  <!--Bind to string of Elite Advances-->
+                            <TextBlock Text="{}"/>
+                            <!--Bind to string of Elite Advances-->
                         </StackPanel>
                     </StackPanel>
                     <StackPanel x:Name="CharacteristicksAndAptitudesSP"
@@ -399,7 +402,7 @@
                         <TextBlock Text="Own items" 
                                    Margin="3" 
                                    HorizontalAlignment="Center"
-                                   FontWeight="Bold"/>                       
+                                   FontWeight="Bold"/>
                         <StackPanel Orientation="Horizontal"
                                     Margin="0 5 0 5">
                             <TextBlock Text="Search: " VerticalAlignment="Center"/>
@@ -415,7 +418,7 @@
                                   Margin="0 5 5 5"
                                   ItemsSource="{Binding OwnItems}"
                                   SelectedItem="{Binding SelectedOwnItem}">
-                            
+
                         </DataGrid>
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                             <Button Content="Remove"
@@ -453,7 +456,7 @@
                                   Margin="0 5 5 5"
                                   ItemsSource="{Binding AvailableItems}"
                                   SelectedItem="{Binding SelectedAvailableItem}">
-        
+
                         </DataGrid>
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                             <Button Content="Remove" 
@@ -469,59 +472,106 @@
                     <Grid x:Name="GearDiscriptionG" 
                           Grid.Row="0"
                           Grid.Column="2">
-                        
+
                     </Grid>
                 </Grid>
             </TabItem>
             <TabItem x:Name="CharacterAdvancement" Header="Character Advancement">
+                <TabItem.DataContext>
+                    <vm:CharacterAdvancementVM/>
+                </TabItem.DataContext>
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="220"/>
-                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="73*"/>
+                        <ColumnDefinition Width="713*"/>
                     </Grid.ColumnDefinitions>
-                    <ListView Grid.Row="0"
-                              Grid.Column="0"
-                              Margin="5 5 10 10">
-                        
-                    </ListView>
+                    <StackPanel Grid.Row="0"
+                                Grid.Column="0"
+                                Margin="5 5 10 10">
+                        <TextBlock Text="Advancement"
+                                   HorizontalAlignment="Center"
+                                   FontWeight="Bold"
+                                   Margin="3"/>
+                        <DataGrid ItemsSource="{Binding Character.Advances}">
+
+                        </DataGrid>
+                    </StackPanel>
                     <Grid Grid.Row="0"
-                          Grid.Column="1">
+                          Grid.Column="1" Grid.ColumnSpan="2">
                         <StackPanel Orientation="Vertical">
                             <StackPanel Orientation="Horizontal"
                                         Margin="3">
                                 <TextBlock Text="Total Expirience: "/>
-                                <TextBlock Text="{}"/>
+                                <TextBlock Text="{Binding Character.TotalExpirience}"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal"
                                         Margin="3">
-                                <TextBlock Text="Spend Expirience"/>
-                                <TextBlock Text="{}"/>
+                                <TextBlock Text="Spend Expirience: "/>
+                                <TextBlock Text="{Binding Character.SpendExpirience}"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal"
                                         Margin="3">
-                                <TextBlock Text="Not Spend Expirience"/>
-                                <TextBlock Text="{}"/>
+                                <TextBlock Text="Not Spend Expirience: "/>
+                                <TextBlock Text="{Binding Character.NotSpendExp}"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal"
-                                        Margin="3">
-                                <Button Content="Add Expirience: "/>
-                                <TextBox Text="{}"/>
+                                        Margin="3">                               
+                                <TextBox x:Name="ExpToAdd"
+                                         Width="150"
+                                         Margin="5 0"
+                                         Text="{Binding ExpirienceToAdd, 
+                                                        Mode=TwoWay, 
+                                                        UpdateSourceTrigger=Default}"/>
+                                <Button Content="Add Expirience"
+                                        Command="{Binding AddExpierience}"
+                                        CommandParameter="{Binding ElementName=ExpToAdd}"/>
                             </StackPanel>
-                            <TextBlock Text="{}"/>
+                            <TextBlock />
                         </StackPanel>
                     </Grid>
                 </Grid>
             </TabItem>
             <!--Insert tabitem with fuctional of upgrad weapons and armors-->
             <TabItem x:Name="Talents" Header="Talents">
+                <TabItem.DataContext>
+                    <vm:TalentsVM/>
+                </TabItem.DataContext>
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="220"/>
+                        <ColumnDefinition Width="220"/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-                    <DataGrid Grid.Column="0"
-                              Margin="5"/>
-                    <TextBlock Grid.Column="1"/>
+                    <StackPanel Grid.Column="0"
+                                Margin="5">
+                        <TextBlock Text="All Talents"
+                                   Margin="3"
+                                   HorizontalAlignment="Center"
+                                   FontWeight="Bold"/>
+                        <DataGrid  Margin="3"
+                                   ItemsSource="{Binding AllTalents}"
+                                   SelectedItem="{Binding SelectedAvailableTalent}"/>
+                        <Button Content="Add"
+                                Margin="3"
+                                Command="{Binding AddTalent}"
+                                CommandParameter="{Binding SelectedAvailableTalent}"/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1"
+                                Margin="5">
+                        <TextBlock Text="Own Talents"
+                                    Margin="3"
+                                   HorizontalAlignment="Center"
+                                   FontWeight="Bold"/>
+                        <DataGrid  Margin="3"
+                                   ItemsSource="{Binding Character.Talents}"
+                                   SelectedItem="{Binding SelectedOwnTalent}"/>
+                        <Button Content="Remove"
+                                Margin="3"
+                                Command="{Binding RemoveTalent}"
+                                CommandParameter="{Binding SelectedOwnTalent}"/>
+                    </StackPanel>
+                    <TextBlock Grid.Column="2"/>
                 </Grid>
             </TabItem>
             <TabItem x:Name="Skills" Header="Skills">

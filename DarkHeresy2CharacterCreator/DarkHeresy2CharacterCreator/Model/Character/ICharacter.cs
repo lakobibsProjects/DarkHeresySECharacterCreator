@@ -62,10 +62,14 @@ namespace DarkHeresy2CharacterCreator.Model.Character
         ObservableCollection<ITalent> Talents { get; set; }
         ObservableCollection<IItem> Gear { get; set; }
         ObservableCollection<AptitudeName> Aptitudes { get; set; }
+        ObservableCollection<Tuple<string, string, int>> Advances { get; set; }
+        int NotSpendExp { get; }
 
+        void AddAdvance(string name, string type, int cost);
         void AddBackround(Background background);
         void AddHomeworld(HomeWorld homeworld);
         void AddRole(Role role);
+        void RemoveAdvance(string name, string type, int cost);
         void RemoveBackround();
         void RemoveHomeworld();
         void RemoveRole();
