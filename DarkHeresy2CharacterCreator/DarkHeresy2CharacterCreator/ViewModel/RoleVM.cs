@@ -27,16 +27,20 @@ namespace DarkHeresy2CharacterCreator.ViewModel
         public ICommand PreviousWindowCommand => previousWindowCommand;
         public ICommand CancelCommand => cancelCommand;
         public DarkHeresy2CharacterCreator.Model.GeneralSuppliment.Role SelectedRole { get; set; }
+        public bool RoleIsSelected { get { return SelectedRole != null; } }
         public ObservableCollection<DarkHeresy2CharacterCreator.Model.GeneralSuppliment.Role> Roles{ get; set; }
         public string TalentsString
         {
             get
             {
                 StringBuilder temp = new StringBuilder();
-                if (SelectedRole.RoleTalent.Item2 != null && SelectedRole.RoleTalent.Item1 != null)
-                    temp.Append(SelectedRole.RoleTalent.Item1.ToString()).Append(" or ").Append(SelectedRole.RoleTalent.Item2.ToString());
-                else if (SelectedRole.RoleTalent.Item1 != null)
-                    temp.Append(SelectedRole.RoleTalent.Item1.ToString());
+                if (SelectedRole != null)
+                {
+                    if (SelectedRole.RoleTalent.Item2 != null && SelectedRole.RoleTalent.Item1 != null)
+                        temp.Append(SelectedRole.RoleTalent.Item1.ToString()).Append(" or ").Append(SelectedRole.RoleTalent.Item2.ToString());
+                    else if (SelectedRole.RoleTalent.Item1 != null)
+                        temp.Append(SelectedRole.RoleTalent.Item1.ToString());
+                }
 
                 return temp.ToString().Substring(0, temp.Length);
             }
@@ -46,18 +50,21 @@ namespace DarkHeresy2CharacterCreator.ViewModel
             get
             {
                 StringBuilder temp = new StringBuilder();
-
-                if (SelectedRole.Aptitudes.Count > 0)
+                if (SelectedRole != null)
                 {
-                    foreach (var item in SelectedRole.Aptitudes)
+                    if (SelectedRole.Aptitudes.Count > 0)
                     {
-                            if (item.Item2 == null)
-                                temp.Append(item.Item1.ToString()).Append(", ");
-                            else
-                                temp.Append(item.Item1.ToString()).Append(" or ").Append(item.Item2.ToString()).Append(", ");        
+                        foreach (var item in SelectedRole.Aptitudes)
+                        {
+                                if (item.Item2 == null)
+                                    temp.Append(item.Item1.ToString()).Append(", ");
+                                else
+                                    temp.Append(item.Item1.ToString()).Append(" or ").Append(item.Item2.ToString()).Append(", ");        
+                        }
                     }
+                    return temp.ToString().Substring(0, temp.Length - 2);
                 }
-                return temp.ToString().Substring(0, temp.Length - 2);
+                return string.Empty;
             }
         }
         #endregion

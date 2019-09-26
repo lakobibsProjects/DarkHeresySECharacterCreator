@@ -137,7 +137,8 @@
                          Content=" Next &gt;   " 
                          Style="{DynamicResource ResourceKey=CharacterCreationButton}"
                          Command="{Binding NextWindowCommand}"
-                         CommandParameter="{Binding ElementName=BackgroundView}"/>
+                         CommandParameter="{Binding ElementName=BackgroundView}"
+                         IsEnabled="{Binding BackgroundIsSelected}"/>
             </StackPanel>
 
 

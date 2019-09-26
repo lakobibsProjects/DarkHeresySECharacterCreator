@@ -105,7 +105,8 @@
                          Style="{DynamicResource ResourceKey=CharacterCreationButton}"
                          VerticalAlignment="Center"
                          Command="{Binding NextWindowCommand}"
-                         CommandParameter="{Binding ElementName=RoleView}"/>
+                         CommandParameter="{Binding ElementName=RoleView}"
+                         IsEnabled="{Binding RoleIsSelected}"/>
                 <!--Content=" Next &gt;  -->
             </StackPanel>
 

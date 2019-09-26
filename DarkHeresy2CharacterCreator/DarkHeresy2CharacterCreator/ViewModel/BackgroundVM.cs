@@ -32,14 +32,19 @@ namespace DarkHeresy2CharacterCreator.ViewModel
         public ICommand CancelCommand => cancelCommand;
         public ObservableCollection<DarkHeresy2CharacterCreator.Model.GeneralSuppliment.Background> Backgrounds { get { return backgrounds; } set { backgrounds = value; } }
         public DarkHeresy2CharacterCreator.Model.GeneralSuppliment.Background SelectedBackground { get; set; }
+        public bool BackgroundIsSelected { get { return SelectedBackground != null; } }
         public string AptitudeString
         {
             get
             {
-                StringBuilder temp = new StringBuilder();
-                temp.Append(SelectedBackground.BackgroundAptitude.Item1.ToString()).Append(" or ").Append(SelectedBackground.BackgroundAptitude.Item2.ToString());
+                if (SelectedBackground != null)
+                {
+                    StringBuilder temp = new StringBuilder();
+                    temp.Append(SelectedBackground.BackgroundAptitude.Item1.ToString()).Append(" or ").Append(SelectedBackground.BackgroundAptitude.Item2.ToString());
 
-                return temp.ToString().Substring(0, temp.Length);
+                    return temp.ToString().Substring(0, temp.Length);
+                }
+                return string.Empty;
             }
         }
         public string SkillsString
@@ -47,23 +52,26 @@ namespace DarkHeresy2CharacterCreator.ViewModel
             get
             {
                 StringBuilder temp = new StringBuilder();
-
-                if (SelectedBackground.BackgroundSkills.Count > 0)
+                if (SelectedBackground != null)
                 {
-                    foreach (var item in SelectedBackground.BackgroundSkills)
+                    if (SelectedBackground.BackgroundSkills.Count > 0)
                     {
-
-                        if (item.Item1 != null)
+                        foreach (var item in SelectedBackground.BackgroundSkills)
                         {
-                            if (item.Item2 == null)
-                                temp.Append(item.Item1.Name.ToString()).Append(", ");
-                            else
-                                temp.Append(item.Item1.Name.ToString()).Append(" or ").Append(item.Item2.Name.ToString()).Append(", ");
-                        }
 
+                            if (item.Item1 != null)
+                            {
+                                if (item.Item2 == null)
+                                    temp.Append(item.Item1.Name.ToString()).Append(", ");
+                                else
+                                    temp.Append(item.Item1.Name.ToString()).Append(" or ").Append(item.Item2.Name.ToString()).Append(", ");
+                            }
+
+                        }
                     }
+                    return temp.ToString().Substring(0, temp.Length - 2);
                 }
-                return temp.ToString().Substring(0, temp.Length - 2);
+                return string.Empty;
             }
         }
         public string TalentsString
@@ -71,18 +79,21 @@ namespace DarkHeresy2CharacterCreator.ViewModel
             get
             {
                 StringBuilder temp = new StringBuilder();
-                string result = "";
-                if (SelectedBackground.BackgroundsTalents.Count > 0)
+                string result = string.Empty;
+                if (SelectedBackground != null)
                 {
-                    foreach (var item in SelectedBackground.BackgroundsTalents)
+                    if (SelectedBackground.BackgroundsTalents.Count > 0)
                     {
-                        if (item.Item1 != null)
+                        foreach (var item in SelectedBackground.BackgroundsTalents)
                         {
-                            if (item.Item2 == null)
-                                temp.Append(item.Item1.Name.ToString()).Append(", ");
-                            temp.Append(item.Item1.Name.ToString()).Append(" or ").Append(item.Item2.Name.ToString()).Append(", ");
+                            if (item.Item1 != null)
+                            {
+                                if (item.Item2 == null)
+                                    temp.Append(item.Item1.Name.ToString()).Append(", ");
+                                temp.Append(item.Item1.Name.ToString()).Append(" or ").Append(item.Item2.Name.ToString()).Append(", ");
 
-                            result = temp.ToString().Substring(0, temp.Length - 2);
+                                result = temp.ToString().Substring(0, temp.Length - 2);
+                            }
                         }
                     }
                 }
@@ -94,19 +105,22 @@ namespace DarkHeresy2CharacterCreator.ViewModel
             get
             {
                 StringBuilder temp = new StringBuilder();
-                string result = "";
-                if (SelectedBackground.BackgroundEquipment.Count > 0)
+                string result = string.Empty;
+                if (SelectedBackground != null)
                 {
-                    foreach (var item in SelectedBackground.BackgroundEquipment)
+                    if (SelectedBackground.BackgroundEquipment.Count > 0)
                     {
-                        if (item.Item1 != null)
+                        foreach (var item in SelectedBackground.BackgroundEquipment)
                         {
-                            if (item.Item2 == null)
-                                temp.Append(item.Item1.Name.ToString()).Append(", ");
-                            else
-                                temp.Append(item.Item1.Name.ToString()).Append(" or ").Append(item.Item2.Name.ToString()).Append(", ");
+                            if (item.Item1 != null)
+                            {
+                                if (item.Item2 == null)
+                                    temp.Append(item.Item1.Name.ToString()).Append(", ");
+                                else
+                                    temp.Append(item.Item1.Name.ToString()).Append(" or ").Append(item.Item2.Name.ToString()).Append(", ");
 
-                            result = temp.ToString().Substring(0, temp.Length - 2);
+                                result = temp.ToString().Substring(0, temp.Length - 2);
+                            }
                         }
                     }
                 }
@@ -118,13 +132,16 @@ namespace DarkHeresy2CharacterCreator.ViewModel
             get
             {
                 StringBuilder temp = new StringBuilder();
-                string result = "";
-                if (SelectedBackground.RecommendedRoles.Count > 0)
+                string result = string.Empty;
+                if (SelectedBackground != null)
                 {
-                    foreach (var item in SelectedBackground.RecommendedRoles)
+                    if (SelectedBackground.RecommendedRoles.Count > 0)
                     {
-                        temp.Append(item.ToString()).Append(", ");
-                        result = temp.ToString().Substring(0, temp.Length - 2);
+                        foreach (var item in SelectedBackground.RecommendedRoles)
+                        {
+                            temp.Append(item.ToString()).Append(", ");
+                            result = temp.ToString().Substring(0, temp.Length - 2);
+                        }
                     }
                 }
                 return result;

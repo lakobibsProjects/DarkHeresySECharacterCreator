@@ -154,7 +154,8 @@
                          Style="{DynamicResource ResourceKey=CharacterCreationButton}"
                          VerticalAlignment="Center"
                          Command="{Binding NextWindowCommand}"
-                         CommandParameter="{Binding ElementName=HomeworldWindow}"/>
+                         CommandParameter="{Binding ElementName=HomeworldWindow}"
+                         IsEnabled="{Binding HomeworldIsSelected}"/>
             </StackPanel>
 
             

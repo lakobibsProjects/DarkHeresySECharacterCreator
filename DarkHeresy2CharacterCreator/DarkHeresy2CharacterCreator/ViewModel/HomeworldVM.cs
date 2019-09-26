@@ -30,26 +30,41 @@ namespace DarkHeresy2CharacterCreator.ViewModel
         public ICommand CancelCommand => cancelCommand;
         public ObservableCollection<DarkHeresy2CharacterCreator.Model.GeneralSuppliment.HomeWorld> Homeworlds { get { return homeworlds; } set { homeworlds = value; } }
         public DarkHeresy2CharacterCreator.Model.GeneralSuppliment.HomeWorld SelectedHomeworld { get; set; }
+        public bool HomeworldIsSelected { get { return SelectedHomeworld != null; } }
         public string CharacteristicsString
         {
             get
             {
-                return string.Format("+{0}; +{1}; -{2} ", SelectedHomeworld.Characteristics[0].ToString().Replace("_", " "),
-                  SelectedHomeworld.Characteristics[1].ToString().Replace("_", " "), SelectedHomeworld.Characteristics[2].ToString().Replace("_", " "));
+                if (SelectedHomeworld != null)
+                
+                    return string.Format("+{0}; +{1}; -{2} ", SelectedHomeworld.Characteristics[0].ToString().Replace("_", " "),
+                        SelectedHomeworld.Characteristics[1].ToString().Replace("_", " "), SelectedHomeworld.Characteristics[2].ToString().Replace("_", " "));
+                return string.Empty;                
             }
         }
-        public string HomeworldAptitudeString { get { return SelectedHomeworld.HomeWorldAptitude.ToString(); } }
+        public string HomeworldAptitudeString
+        {
+            get
+            {
+                if (SelectedHomeworld != null)
+                    return SelectedHomeworld.HomeWorldAptitude.ToString();
+                return string.Empty;
+            }
+        }
         public string RecomendedBackgroundsString
         {
             get
             {
                 StringBuilder temp = new StringBuilder();
-                string result = "";
-                if (SelectedHomeworld.RekommendedBackgrouns.Length > 0)
+                string result = string.Empty;
+                if (SelectedHomeworld != null)
                 {
-                    foreach (var item in SelectedHomeworld.RekommendedBackgrouns)
-                        temp.Append(item.ToString()).Append(", ");
-                    result = temp.ToString().Substring(0, temp.Length - 2);
+                    if (SelectedHomeworld.RekommendedBackgrouns.Length > 0)
+                    {
+                        foreach (var item in SelectedHomeworld.RekommendedBackgrouns)
+                            temp.Append(item.ToString()).Append(", ");
+                        result = temp.ToString().Substring(0, temp.Length - 2);
+                    }
                 }
                 return result;
             }
