@@ -37,27 +37,7 @@ namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment
         internal AptitudeName HomeWorldAptitude { get => homeWorldAptitude; set => homeWorldAptitude = value; }
         internal Background[] RekommendedBackgrouns { get => rekommendedBackgrouns; set => rekommendedBackgrouns = value; }
         #endregion Properties
-        public string CharacteristicsString
-        {
-            get { return string.Format("+{0}; +{1}; -{2} ", this.Characteristics[0].ToString().Replace("_", " "),
-                    this.Characteristics[1].ToString().Replace("_", " "), this.Characteristics[2].ToString().Replace("_", " "));  }
-        }
-        public string HomeworldAptitudeString { get { return HomeWorldAptitude.ToString(); } }
-        public string RecomendedBackgroundsString
-        {
-            get
-            {
-                StringBuilder temp = new StringBuilder();
-                string result = "";
-                if (RekommendedBackgrouns.Length > 0)
-                {
-                    foreach (var item in RekommendedBackgrouns)
-                        temp.Append(item.ToString()).Append(", ");
-                    result = temp.ToString().Substring(0, temp.Length - 2);
-                }
-                return result;
-            }
-        }
+ 
         public HomeWorld(string name)
         {
             Name = name;

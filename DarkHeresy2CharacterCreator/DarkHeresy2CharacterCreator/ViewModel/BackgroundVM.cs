@@ -32,6 +32,104 @@ namespace DarkHeresy2CharacterCreator.ViewModel
         public ICommand CancelCommand => cancelCommand;
         public ObservableCollection<DarkHeresy2CharacterCreator.Model.GeneralSuppliment.Background> Backgrounds { get { return backgrounds; } set { backgrounds = value; } }
         public DarkHeresy2CharacterCreator.Model.GeneralSuppliment.Background SelectedBackground { get; set; }
+        public string AptitudeString
+        {
+            get
+            {
+                StringBuilder temp = new StringBuilder();
+                temp.Append(SelectedBackground.BackgroundAptitude.Item1.ToString()).Append(" or ").Append(SelectedBackground.BackgroundAptitude.Item2.ToString());
+
+                return temp.ToString().Substring(0, temp.Length);
+            }
+        }
+        public string SkillsString
+        {
+            get
+            {
+                StringBuilder temp = new StringBuilder();
+
+                if (SelectedBackground.BackgroundSkills.Count > 0)
+                {
+                    foreach (var item in SelectedBackground.BackgroundSkills)
+                    {
+
+                        if (item.Item1 != null)
+                        {
+                            if (item.Item2 == null)
+                                temp.Append(item.Item1.Name.ToString()).Append(", ");
+                            else
+                                temp.Append(item.Item1.Name.ToString()).Append(" or ").Append(item.Item2.Name.ToString()).Append(", ");
+                        }
+
+                    }
+                }
+                return temp.ToString().Substring(0, temp.Length - 2);
+            }
+        }
+        public string TalentsString
+        {
+            get
+            {
+                StringBuilder temp = new StringBuilder();
+                string result = "";
+                if (SelectedBackground.BackgroundsTalents.Count > 0)
+                {
+                    foreach (var item in SelectedBackground.BackgroundsTalents)
+                    {
+                        if (item.Item1 != null)
+                        {
+                            if (item.Item2 == null)
+                                temp.Append(item.Item1.Name.ToString()).Append(", ");
+                            temp.Append(item.Item1.Name.ToString()).Append(" or ").Append(item.Item2.Name.ToString()).Append(", ");
+
+                            result = temp.ToString().Substring(0, temp.Length - 2);
+                        }
+                    }
+                }
+                return result;
+            }
+        }
+        public string EquipmentString
+        {
+            get
+            {
+                StringBuilder temp = new StringBuilder();
+                string result = "";
+                if (SelectedBackground.BackgroundEquipment.Count > 0)
+                {
+                    foreach (var item in SelectedBackground.BackgroundEquipment)
+                    {
+                        if (item.Item1 != null)
+                        {
+                            if (item.Item2 == null)
+                                temp.Append(item.Item1.Name.ToString()).Append(", ");
+                            else
+                                temp.Append(item.Item1.Name.ToString()).Append(" or ").Append(item.Item2.Name.ToString()).Append(", ");
+
+                            result = temp.ToString().Substring(0, temp.Length - 2);
+                        }
+                    }
+                }
+                return result;
+            }
+        }
+        public string RolesString
+        {
+            get
+            {
+                StringBuilder temp = new StringBuilder();
+                string result = "";
+                if (SelectedBackground.RecommendedRoles.Count > 0)
+                {
+                    foreach (var item in SelectedBackground.RecommendedRoles)
+                    {
+                        temp.Append(item.ToString()).Append(", ");
+                        result = temp.ToString().Substring(0, temp.Length - 2);
+                    }
+                }
+                return result;
+            }
+        }
         #endregion
 
         public BackgroundVM()
