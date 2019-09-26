@@ -31,8 +31,8 @@
         <ListView Grid.Column="0"
                   Margin="5"
                   Opacity="0.5"
-                  ItemsSource="{Binding Characters}"
-                  SelectedItem="{Binding SelectedCharacter}">            
+                  ItemsSource="{Binding Characters, Mode=TwoWay}"
+                  SelectedItem="{Binding SelectedCharacter, Mode=TwoWay}">            
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Grid>

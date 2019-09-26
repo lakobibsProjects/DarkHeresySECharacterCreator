@@ -19,6 +19,7 @@ namespace DarkHeresy2CharacterCreator.Model.Characteristics
         private CharacteristicName name;
         private AptitudeName first;
         private AptitudeName second;
+        private int value;
         private int rank;
         private int cost;
         private readonly int[,] costTable = new int[,] { { 500, 750, 1000, 1500, 2500 }, { 250, 500, 750, 1000, 1500 }, { 100, 250, 500, 750, 1250 } };
@@ -40,6 +41,15 @@ namespace DarkHeresy2CharacterCreator.Model.Characteristics
         /// Cost to advance characteristic
         /// </summary>
         public int Cost { get { return cost; } private set { cost = value; } }
+        /// <summary>
+        /// Value of characteristic
+        /// </summary>
+        public int Value
+        {
+            get { return value; }
+            set { this.value = value; }
+        }
+
         /// <summary>
         /// Rank of characteristics advance
         /// </summary>
@@ -78,7 +88,7 @@ namespace DarkHeresy2CharacterCreator.Model.Characteristics
             int haveAptitudes = 0;
             foreach (AptitudeName a in charecterAptitudes)
                 if (a == FirstAptitude || a == SecondAptitude) haveAptitudes++;
-            Cost = costTable[rank - 1, haveAptitudes];
+            Cost = costTable[rank, haveAptitudes];
         }
     }
 }

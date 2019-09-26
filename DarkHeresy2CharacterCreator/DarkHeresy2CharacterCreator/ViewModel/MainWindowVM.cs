@@ -41,21 +41,33 @@ namespace DarkHeresy2CharacterCreator.ViewModel
             closeApplicationCommand = new DelegateCommand(OnCloseApplication);
             deleteCharacterCommand = new DelegateCommand(OnDeleteCaharacter);
             loadCharacterCommand = new DelegateCommand(OnLoadCharacter);
-            characters = CharactersList.Characters;
+            try
+            {
+                characters = CharactersList.Characters;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.InnerException.ToString());
+            }
+            
         }
 
         #region Command Handlers
         private void OnLoadCharacter(object obj)
         {
-            Window characterSheet = new CharacterSheetView();
-            characterSheet.Show();
-            Window currentWindow = obj as Window;
-            currentWindow.Close();
+            if (SelectedCharacter != null)
+            {
+                Window characterSheet = new CharacterSheetView();
+                characterSheet.Show();
+                Window currentWindow = obj as Window;
+                currentWindow.Close();
+            }
         }
 
         private void OnDeleteCaharacter(object obj)
         {
-            Characters.Remove(SelectedCharacter);
+            if(SelectedCharacter != null)
+                Characters.Remove(SelectedCharacter);
         }
 
         private void OnCloseApplication(object obj)
@@ -65,6 +77,9 @@ namespace DarkHeresy2CharacterCreator.ViewModel
 
         private void OnNewCharacter(object obj)
         {
+            Character newCharacter = new Character();            
+            Characters.Add(newCharacter);
+            SelectedCharacter = newCharacter;
             Window homeWorldWindow = new HomeWorld();
             homeWorldWindow.Show();
         }

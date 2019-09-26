@@ -23,5 +23,6 @@ namespace DarkHeresy2CharacterCreator.View
         {
             InitializeComponent();
         }
+       
     }
 }

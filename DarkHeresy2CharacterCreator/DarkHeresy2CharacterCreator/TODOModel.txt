@@ -32,7 +32,7 @@ PA16. Create methodes to explain array-like properties for appropriate classes:
 	*Homeworld
 	*Role
 	*Talent
-PA17. Add methodes to Charater, that add and remove creation-based properties
++PA17. Add methodes to Charater, that add and remove creation-based properties
 
 
 

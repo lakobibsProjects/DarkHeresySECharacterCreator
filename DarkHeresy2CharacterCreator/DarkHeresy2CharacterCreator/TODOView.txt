@@ -1,2 +1,2 @@
 PA1. Think about merge character creation view`s
-PA2. Add to character creation view`s SummaryWindow
++PA2. Add to character creation view`s SummaryWindow

@@ -1,0 +1,318 @@
+﻿<Window x:Class="DarkHeresy2CharacterCreator.View.CharacterCreationView.SummaryCreationView"
+        x:Name="SummaryCreation"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DarkHeresy2CharacterCreator.View.CharacterCreationView"
+        xmlns:vm="clr-namespace:DarkHeresy2CharacterCreator.ViewModel"
+        mc:Ignorable="d"
+        Title="Summary" Height="450" Width="800">
+    <Grid>
+        <Grid.DataContext>
+            <vm:SummaryCreationViewModel x:Name="vm"/>
+        </Grid.DataContext>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Res/HorizontalWindowBackground.jpg"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid x:Name="CharacterDiscriptionGrid" Grid.Row="0" Margin="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Orientation="Vertical" Grid.Column="0">
+                <StackPanel Orientation="Horizontal"  Margin="0 3 0 3">
+                    <TextBlock Text="Name: " Style="{DynamicResource BaseTextBlock}"/>
+                    <TextBox Text="{Binding Path=CreatedCharacter.CharacterName, Mode=TwoWay}" Width="100"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal"  Margin="0 3 0 3">
+                    <TextBlock Text="Homeworld: " Style="{DynamicResource BaseTextBlock}"/>
+                    <TextBlock Text="{Binding Path=CreatedCharacter.HomeWorld.Name}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0 3 0 3" >
+                    <TextBlock Text="Background: " Style="{DynamicResource BaseTextBlock}"/>
+                    <TextBlock Text="{Binding Path=CreatedCharacter.Background.Name}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0 3 0 3">
+                    <TextBlock Text="Role: " Style="{DynamicResource BaseTextBlock}"/>
+                    <TextBlock Text="{Binding Path=CreatedCharacter.HomeWorld.Name}"/>
+                </StackPanel>
+            </StackPanel>
+            
+            <StackPanel Grid.Column="1">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Player Name: " Style="{DynamicResource BaseTextBlock}"/>
+                    <TextBox Text="{Binding Path=CreatedCharacter.PlayerName, Mode=TwoWay}" HorizontalAlignment="Stretch"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Gender: " Style="{DynamicResource BaseTextBlock}"/>
+                    <TextBox Text="{Binding Path=CreatedCharacter.Gender, Mode=TwoWay}" HorizontalAlignment="Stretch"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Age: " Style="{DynamicResource BaseTextBlock}"/>
+                    <TextBox Text="{Binding Path=CreatedCharacter.Age, Mode=TwoWay}" HorizontalAlignment="Stretch"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Build: " Style="{DynamicResource BaseTextBlock}"/>
+                    <TextBox Text="{Binding Path=CreatedCharacter.Build, Mode=TwoWay}" HorizontalAlignment="Stretch"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Hair: " Style="{DynamicResource BaseTextBlock}"/>
+                    <TextBox Text="{Binding Path=CreatedCharacter.Hair, Mode=TwoWay}"
+                             HorizontalAlignment="Stretch"/>
+                </StackPanel>
+            </StackPanel>
+            
+            <DockPanel Grid.Column="2">
+                <DockPanel DockPanel.Dock="Top">
+                    <TextBlock Text="Divination: " Style="{DynamicResource BaseTextBlock}" DockPanel.Dock="Left"/>
+                    <TextBlock Text="{Binding Divination.Prophecy}" TextWrapping="Wrap"/>
+                    <TextBlock/>
+                    <Button DockPanel.Dock="Right"
+                            Content="Roll"
+                            Command="{Binding SetDivinationCommand}"
+                            Width="25"
+                            HorizontalAlignment="Right"/>
+                </DockPanel>
+                <TextBlock Text="{Binding Divination.Effect}" TextWrapping="Wrap"/>
+            </DockPanel>
+        </Grid>
+        
+        <Grid Grid.Row="1" Margin="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel x:Name="CharacteristicksAndAptitudesSP">
+                <TextBlock Text="Characteristics:"/>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Orientation="Horizontal" 
+                                Grid.Column="0"
+                                Grid.Row="0">
+                        <TextBlock>
+                            Weapon <LineBreak/> Skill (WS)
+                        </TextBlock>                        
+                        <TextBlock Text="{Binding WeaponSkill.Value}" 
+                                   TextAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   Margin="5"/>
+                        <Button Content="Roll" 
+                                VerticalAlignment="Center"
+                                Command="{Binding SetCharateristic}"
+                                CommandParameter="{Binding WeaponSkill}"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" 
+                                Grid.Column="0"
+                                Grid.Row="1">
+                        <TextBlock>
+                            Ballistic <LineBreak/> Skill (BS)
+                        </TextBlock>
+                        <TextBlock Text="{Binding BallisticSkill.Value}" 
+                                   TextAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   Margin="5"/>
+                        <Button Content="Roll" 
+                                VerticalAlignment="Center"
+                                Command="{Binding SetCharateristic}"
+                                CommandParameter="{Binding BallisticSkill}"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" 
+                                Grid.Column="0"
+                                Grid.Row="2">
+                        <TextBlock Text="Strength (S)"/>
+                        <TextBlock Text="{Binding Strength.Value}" 
+                                   TextAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   Margin="5"/>
+                        <Button Content="Roll" 
+                                VerticalAlignment="Center"
+                                Command="{Binding SetCharateristic}"
+                                CommandParameter="{Binding Strength}"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" 
+                                Grid.Column="0"
+                                Grid.Row="3">
+                        <TextBlock Text="Toughness (T)"/>
+                        <TextBlock Text="{Binding Toughness.Value}" 
+                                   TextAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   Margin="5"/>
+                        <Button Content="Roll" 
+                                VerticalAlignment="Center"
+                                Command="{Binding SetCharateristic}"
+                                CommandParameter="{Binding Toughness}"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" 
+                                Grid.Column="0"
+                                Grid.Row="4">
+                        <TextBlock Text="Agility (AG)"/>
+                        <TextBlock Text="{Binding Agility.Value}" 
+                                   TextAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   Margin="5"/>
+                        <Button Content="Roll" 
+                                VerticalAlignment="Center"
+                                Command="{Binding SetCharateristic}"
+                                CommandParameter="{Binding Agility}"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" 
+                                Grid.Column="1"
+                                Grid.Row="0">
+                        <TextBlock Text="Intelligence (INT)" VerticalAlignment="Center"/>
+                        <TextBlock Text="{Binding Intelligence.Value}" 
+                                   TextAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   Margin="5"/>
+                        <Button Content="Roll" 
+                                VerticalAlignment="Center"
+                                Command="{Binding SetCharateristic}"
+                                CommandParameter="{Binding Intelligence}"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" 
+                                Grid.Column="1"
+                                Grid.Row="1">
+                        <TextBlock Text="Perception (PER)" VerticalAlignment="Center"/>
+                        <TextBlock Text="{Binding Perception.Value}" 
+                                   TextAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   Margin="5"/>
+                        <Button Content="Roll" 
+                                VerticalAlignment="Center"
+                                Command="{Binding SetCharateristic}"
+                                CommandParameter="{Binding Perception}"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" 
+                                Grid.Column="1"
+                                Grid.Row="2">
+                        <TextBlock Text="Willpower (WP)"/>
+                        <TextBlock Text="{Binding Willpower.Value}" 
+                                   TextAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   Margin="5"/>
+                        <Button Content="Roll" 
+                                VerticalAlignment="Center"
+                                Command="{Binding SetCharateristic}"
+                                CommandParameter="{Binding Willpower}"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" 
+                                Grid.Column="1"
+                                Grid.Row="3">
+                        <TextBlock Text="Fellowship (FEL)"/>
+                        <TextBlock Text="{Binding Fellowship.Value}" 
+                                   TextAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   Margin="5"/>
+                        <Button Content="Roll" 
+                                VerticalAlignment="Center"
+                                Command="{Binding SetCharateristic}"
+                                CommandParameter="{Binding Fellowship}"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" 
+                                Grid.Column="1"
+                                Grid.Row="4">
+                        <TextBlock Text="Influence (IFL)"/>
+                        <TextBlock Text="{Binding Influence.Value}" 
+                                   TextAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   Margin="5"/>
+                        <Button Content="Roll" 
+                                VerticalAlignment="Center"
+                                Command="{Binding SetCharateristic}"
+                                CommandParameter="{Binding Influence}"/>
+                    </StackPanel>
+                </Grid>
+                <StackPanel Orientation="Horizontal" Margin="5">
+                    <TextBlock Text="Fate:"/>
+                    <TextBlock Text="{Binding CreatedCharacter.FateTreshold}" Margin="5 0"/>
+                </StackPanel>
+                <ListView x:Name="AptitudesLV"
+                          ItemsSource="{Binding Aptitudes}">
+                    <ListView.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel Orientation="Vertical" />
+                        </ItemsPanelTemplate>
+                    </ListView.ItemsPanel>
+                </ListView>
+            </StackPanel>
+            <StackPanel Grid.Column="1">
+                <TextBlock Text="Skills"/>
+                <ListView x:Name="SkillsLV"
+                      ItemsSource="{Binding Skills}"
+                      Margin="5">
+                    <ListView.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel Orientation="Vertical" />
+                        </ItemsPanelTemplate>
+                    </ListView.ItemsPanel>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding}" FontSize="20" Margin="5"/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>                
+            </StackPanel>
+            <Grid Grid.Column="2" Margin="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="0">
+                    <TextBlock Text="Talents and Traits:"/>
+                    <ListView x:Name="TalentsTraitsLV"
+                      ItemsSource="{Binding TalentsAndTraits}">
+                        <ListView.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Vertical" />
+                            </ItemsPanelTemplate>
+                        </ListView.ItemsPanel>
+                    </ListView>
+                </StackPanel>
+                <StackPanel Grid.Row="1">
+                    <TextBlock Text="Gear:"/>
+                    <ListView x:Name="GearLV"
+                      ItemsSource="{Binding Gear}">
+                        <ListView.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Vertical" />
+                            </ItemsPanelTemplate>
+                        </ListView.ItemsPanel>
+                    </ListView>
+                </StackPanel>
+                <StackPanel Grid.Row="2">
+                    <TextBlock Text="Special Abilities:"/>
+                    <ListView x:Name="SpecialAbilitiesLV"
+                      ItemsSource="{Binding SpecialAbilities}">
+                        <ListView.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Vertical" />
+                            </ItemsPanelTemplate>
+                        </ListView.ItemsPanel>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding}" TextWrapping="Wrap"/>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

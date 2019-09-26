@@ -13,21 +13,30 @@ namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment.Collections
     /// </summary>
     public static class HomeWorldList
     {
+
+            #region Bonuses
+            private static string feralWorldBonus = "";
+            private static string forgeWorldBonus = "";
+            private static string heighbornBonus = "";
+            private static string hiveWorldBonus = "";
+            private static string shrineWorldBonus = "";
+            private static string voidbornBonus = "";
+            #endregion
         /// <summary>
         /// Collection of homeworlds
         /// </summary>
         public static ObservableCollection<HomeWorld> HomeWorlds = new ObservableCollection<HomeWorld>
         {
-            //TODO correct and add recomended backgrounds
-            #region Core Rulebook
-            new HomeWorld("Feral World")
+        //TODO correct and add recomended backgrounds
+        #region Core Rulebook
+        new HomeWorld("Feral World")
             {
                 FateTreshold = 2,
                 EmperorsBlessing = 3,
                 HomeWorldBonus = feralWorldBonus,
                 Wounds = 9,
                 Characteristics = new CharacteristicName[3] { CharacteristicName.Strength, CharacteristicName.Toughness, CharacteristicName.Influence },
-                HomeWorldAptitude = AptitudeName.Toughness ,
+                HomeWorldAptitude = AptitudeName.Toughness,
                 RekommendedBackgrouns = new Background[]{ }
             },
             new HomeWorld("Forge World")
@@ -37,7 +46,7 @@ namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment.Collections
                 HomeWorldBonus = forgeWorldBonus,
                 Wounds = 8,
                 Characteristics = new CharacteristicName[3] { CharacteristicName.Intelligence, CharacteristicName.Toughness, CharacteristicName.Fellowship },
-                HomeWorldAptitude = AptitudeName.Intelligence ,
+                HomeWorldAptitude = AptitudeName.Intelligence,
                 RekommendedBackgrouns = new Background[]{ }
             },
             new HomeWorld("Highborn")
@@ -47,7 +56,7 @@ namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment.Collections
                 HomeWorldBonus = heighbornBonus,
                 Wounds = 9,
                 Characteristics = new CharacteristicName[3] { CharacteristicName.Fellowship, CharacteristicName.Influence, CharacteristicName.Toughness },
-                HomeWorldAptitude = AptitudeName.Fellowship ,
+                HomeWorldAptitude = AptitudeName.Fellowship,
                 RekommendedBackgrouns = new Background[]{ }
             },
             new HomeWorld("Hive World")
@@ -67,7 +76,7 @@ namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment.Collections
                 HomeWorldBonus = shrineWorldBonus,
                 Wounds = 7,
                 Characteristics = new CharacteristicName[3] { CharacteristicName.Fellowship, CharacteristicName.Willpower, CharacteristicName.Perception },
-                HomeWorldAptitude = AptitudeName.Willpower ,
+                HomeWorldAptitude = AptitudeName.Willpower,
                 RekommendedBackgrouns = new Background[]{ }
             },
             new HomeWorld("Voidborn")
@@ -77,19 +86,12 @@ namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment.Collections
                 HomeWorldBonus = voidbornBonus,
                 Wounds = 7,
                 Characteristics = new CharacteristicName[3] { CharacteristicName.Intelligence, CharacteristicName.Willpower, CharacteristicName.Strength },
-                HomeWorldAptitude = AptitudeName.Intelligence ,
+                HomeWorldAptitude = AptitudeName.Intelligence,
                 RekommendedBackgrouns = new Background[]{ }
             },
             #endregion Core Rulebook
         };
 
-        #region Bonuses
-        private static string feralWorldBonus = "";
-        private static string forgeWorldBonus = "";
-        private static string heighbornBonus = "";
-        private static string hiveWorldBonus = "";
-        private static string shrineWorldBonus = "";
-        private static string voidbornBonus = "";
-        #endregion
+       
     }
 }

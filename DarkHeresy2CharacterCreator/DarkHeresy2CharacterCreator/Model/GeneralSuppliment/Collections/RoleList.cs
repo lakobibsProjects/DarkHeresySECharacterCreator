@@ -13,6 +13,29 @@ namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment
     /// </summary>
     static class RoleList
     {
+        #region Role bonuses
+        private static readonly string assassinBonus = "Sure Kill: In addition to the normal uses of Fate points, when an Assassin successfully hits with an attack," +
+            " he may spend a Fate point to inflict additional damage equal to his degrees of success on the attack roll on the first hit the attack inflicts.";
+        private static readonly string chirurgeonBonus = "Dedicated Healer: In addition to the normal uses of Fate points, when a Chirurgeon character fails a test " +
+            "to provide First Aid, he can spend a Fate point to automatically succeed instead with the degrees of success equal to his Intelligence bonus.";
+        private static readonly string desperadoBonus = "Move and Shoot: Once per round, after performing a Move action, a Desperado character may perform a single Standard Attack " +
+            "with a Pistol weapon he is currently wielding as a Free Action.";
+        private static readonly string hierophantBonus = "Sway the Masses: In addition to the normal uses of Fate points, a Hierophant character may spend a Fate point " +
+            "to automatically succeed at a Charm, Command, or Intimidate skill test with a number of degrees of success equal to his Willpower bonus.";
+        private static readonly string mysticBonus = "Stare into the Warp: A Mystic character starts the game with the Psyker elite advance. " +
+            "It is recommended that a character who wishes to be a Mystic have a Willpower of at least 35.";
+        private static readonly string sageBonus = "Quest for Knowledge: In addition to the normal uses of Fate points, a Sage character may spend a Fate point " +
+            "to automatically succeed at a Logic or any Lore skill test with a number of degrees of success equal to his Intelligence bonus.";
+        private static readonly string seekerBonus = "Nothing Escapes My Sight: In addition to the normal uses of Fate points, a Seeker character " +
+            "may spend a Fate point to automatically succeed at an Awareness or Inquiry skill test with a number of degrees of success equal to his Perception bonus.";
+        private static readonly string warriorBonus = "Expert at Violence: In addition to the normal uses of Fate points, after making a successful attack test, " +
+            "but before determining hits, a Warrior character may spend a Fate point to substitute his Weapon Skill(for melee) or Ballistic Skill(for ranged) bonus" +
+            " for the degrees of success scored on the attack test.";
+        private static readonly string fanaticBonus = "";
+        private static readonly string penitentBonus = "";
+        private static readonly string aceBonus = "";
+        private static readonly string crusaderBonus = "";
+        #endregion
         /// <summary>
         /// Collection of roles
         /// </summary>
@@ -84,28 +107,6 @@ namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment
                 ),
         };
 
-        #region Role bonuses
-        private static readonly string assassinBonus = "Sure Kill: In addition to the normal uses of Fate points, when an Assassin successfully hits with an attack," +
-            " he may spend a Fate point to inflict additional damage equal to his degrees of success on the attack roll on the first hit the attack inflicts.";
-        private static readonly string chirurgeonBonus = "Dedicated Healer: In addition to the normal uses of Fate points, when a Chirurgeon character fails a test " +
-            "to provide First Aid, he can spend a Fate point to automatically succeed instead with the degrees of success equal to his Intelligence bonus.";
-        private static readonly string desperadoBonus = "Move and Shoot: Once per round, after performing a Move action, a Desperado character may perform a single Standard Attack " +
-            "with a Pistol weapon he is currently wielding as a Free Action.";
-        private static readonly string hierophantBonus = "Sway the Masses: In addition to the normal uses of Fate points, a Hierophant character may spend a Fate point " +
-            "to automatically succeed at a Charm, Command, or Intimidate skill test with a number of degrees of success equal to his Willpower bonus.";
-        private static readonly string mysticBonus = "Stare into the Warp: A Mystic character starts the game with the Psyker elite advance. " +
-            "It is recommended that a character who wishes to be a Mystic have a Willpower of at least 35.";
-        private static readonly string sageBonus = "Quest for Knowledge: In addition to the normal uses of Fate points, a Sage character may spend a Fate point " +
-            "to automatically succeed at a Logic or any Lore skill test with a number of degrees of success equal to his Intelligence bonus.";
-        private static readonly string seekerBonus = "Nothing Escapes My Sight: In addition to the normal uses of Fate points, a Seeker character " +
-            "may spend a Fate point to automatically succeed at an Awareness or Inquiry skill test with a number of degrees of success equal to his Perception bonus.";
-        private static readonly string warriorBonus = "Expert at Violence: In addition to the normal uses of Fate points, after making a successful attack test, " +
-            "but before determining hits, a Warrior character may spend a Fate point to substitute his Weapon Skill(for melee) or Ballistic Skill(for ranged) bonus" +
-            " for the degrees of success scored on the attack test.";
-        private static readonly string fanaticBonus = "";
-        private static readonly string penitentBonus = "";
-        private static readonly string aceBonus = "";
-        private static readonly string crusaderBonus = "";
-        #endregion
+     
     }
 }
