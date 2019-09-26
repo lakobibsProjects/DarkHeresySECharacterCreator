@@ -1,8 +1,29 @@
-﻿A1. Create logic  to add specialization in elements of collections;
-B2. Upgrade incapsulation;
+﻿B2. Upgrade incapsulation;
 B3. Upgrade names;
 U4. Create extension for string GetPrintableName;
 B5. Create logic for Psychic Powers;
+B6.A Update comments
+U9. Think about constructors
+B14. Add Elite Advances
+
+_______________________________________________________________________________
++PA8. Implement
+PA16. Create methodes to explain array-like properties for appropriate classes:
+	*Character
+	*Equipment
+	*Backgroun
+	*Homeworld
+	*Role
+	*Talent
++PA17. Add methodes to Charater, that add and remove creation-based properties
+_________________________________________________________________________________
+A13. Cast all to enums
+A1. Create logic  to add specialization in elements of collections;
+A10. Think about events to automaticly update cost when increace rank
+A7. Create Database
+A11. Create logic to operate with numeric values
+A12. Add discriptions
+A15. Fix TypeInitializationException in TalentList!
 A6. Add comments
 	+Character
 	+Characteristics
@@ -15,25 +36,6 @@ A6. Add comments
 	+Talents
 	+Traits
 	+Another
-B6.A Update comments
-A7. Create Database
-+PA8. Implement
-U9. Think about constructors
-A10. Think about events to automaticly update cost when increace rank
-A11. Create logic to operate with numeric values
-A12. Add discriptions
-B13. Cast all to enums
-B14. Add Elite Advances
-A15. Fix TypeInitializationException in TalentList!
-PA16. Create methodes to explain array-like properties for appropriate classes:
-	*Character
-	*Equipment
-	*Backgroun
-	*Homeworld
-	*Role
-	*Talent
-+PA17. Add methodes to Charater, that add and remove creation-based properties
-
 
 
 

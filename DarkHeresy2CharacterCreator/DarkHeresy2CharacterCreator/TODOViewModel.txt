@@ -1,10 +1,11 @@
-﻿PA1. Create all requiring VM
+﻿+PA1. Create all requiring VM
 PA2. Add fuctionality to buttons
 	+Create button commands
 	+Add button commands in VM
 	*Add fuctional to button commands
-PA3. Add bound with Model
++PA3. Add bound with Model
 A4. CharacterSheet
+	All - add discriptions
 	CharacterSheet
 		Fix logic with +/- buttons
 	Gear
