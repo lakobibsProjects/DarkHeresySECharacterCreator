@@ -126,8 +126,12 @@ namespace DarkHeresy2CharacterCreator.Model.Character
         {
             foreach (var c in CharacteristicList.Characteristics)            
                 characteristics.Add(c);
-            
-            
+            foreach (var s in SkillList.CommonSkills)
+                skills.Add(s);
+            foreach (var s in SkillList.SpecializedSkills)
+                skills.Add(s);
+
+
         }
         
         //think about remove (was created extensions with this methods)

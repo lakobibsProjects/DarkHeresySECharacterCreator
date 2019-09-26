@@ -575,14 +575,44 @@
                 </Grid>
             </TabItem>
             <TabItem x:Name="Skills" Header="Skills">
+                <TabItem.DataContext>
+                    <vm:SkillsVM/>
+                </TabItem.DataContext>
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="220"/>
+                        <ColumnDefinition Width="250"/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-                    <DataGrid Grid.Column="0"
-                              Margin="5"/>
-                    <TextBlock Grid.Column="1"/>
+                    <TabControl>
+                        <TabItem Header="Common Skills">
+                            <StackPanel>
+                                <DataGrid Grid.Column="0"
+                                          Margin="5"
+                                          MaxHeight="600"
+                                          ItemsSource="{Binding CommonSkills, Mode=TwoWay}"
+                                          SelectedItem="{Binding SelectedCommonSkill, 
+                                                                 UpdateSourceTrigger=PropertyChanged,
+                                                                 Mode=TwoWay,
+                                                                 TargetNullValue=CommonSkills[0]}"/>
+                                <Button Content="Increace Rank"
+                                        Command="{Binding IncreaceCommonSkillRank}"
+                                        CommandParameter="{Binding SelectedCommonSkill}"/>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem Header="Specialized Skills">
+                            <StackPanel>
+                                <DataGrid Grid.Column="0"
+                                          Margin="5"
+                                          MaxHeight="600"
+                                          ItemsSource="{Binding SpecializedSkills}"
+                                          SelectedItem="{Binding SelectedSpecializedSkill}"/>
+                                <Button Content="Increace Rank"
+                                        Command="{Binding IncreaceSpecializedSkillRank}"
+                                        CommandParameter="{Binding SelectedSpecializedSkill}"/>
+                            </StackPanel>
+                        </TabItem>
+                    </TabControl>
+                    <TextBlock Grid.Column="1"/>                                
                 </Grid>
             </TabItem>
             <!--<TabItem x:Name="PsychicPowers" Header="Psychic Powers">

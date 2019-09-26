@@ -185,6 +185,7 @@
     <Compile Include="Model\Traits\TraitName.cs" />
     <Compile Include="ViewModel\BackgroundVM.cs" />
     <Compile Include="ViewModel\CharacterSheet\CharacterAdvancementVM.cs" />
+    <Compile Include="ViewModel\CharacterSheet\SkillsVM.cs" />
     <Compile Include="ViewModel\CharacterSheet\TalentsVM.cs" />
     <Compile Include="ViewModel\Converters\BoolToVisibilityConverter.cs" />
     <Compile Include="ViewModel\CharacterSheet\CharacterSheetVM.cs" />
