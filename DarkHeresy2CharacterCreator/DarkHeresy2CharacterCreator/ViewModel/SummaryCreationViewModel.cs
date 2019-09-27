@@ -2,10 +2,12 @@
 using DarkHeresy2CharacterCreator.Model.Characteristics;
 using DarkHeresy2CharacterCreator.Model.DiceRoller;
 using DarkHeresy2CharacterCreator.Model.GeneralSuppliment;
+using DarkHeresy2CharacterCreator.Model.Skills;
 using DarkHeresy2CharacterCreator.ViewModel.Commands;
 using PropertyChanged;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +24,8 @@ namespace DarkHeresy2CharacterCreator.ViewModel
         private DelegateCommand setDivinationCommand;
         private DelegateCommand setCharateristic;
         private DelegateCommand getAptitudes;
+        private DelegateCommand setWounds;
+        private DelegateCommand setFateTreshhold;
         private Characteristic weaponSkill = CharacteristicList.Characteristics.Where(c => c.Name == CharacteristicName.Weapon_Skill).FirstOrDefault();
         private Characteristic ballisticSkill = CharacteristicList.Characteristics.Where(c => c.Name == CharacteristicName.Balistic_Skill).FirstOrDefault();
         private Characteristic strength = CharacteristicList.Characteristics.Where(c => c.Name == CharacteristicName.Strength).FirstOrDefault();
@@ -50,7 +54,8 @@ namespace DarkHeresy2CharacterCreator.ViewModel
         public ICommand SetDivinationCommand => setDivinationCommand;
         public ICommand SetCharateristic => setCharateristic;
         public ICommand GetAptitudes => getAptitudes;
-
+        public ICommand SetWounds => setWounds;
+        public ICommand SetFateTreshhold => setFateTreshhold;
         public Characteristic WeaponSkill { get => weaponSkill; set => weaponSkill = value; }
         public Characteristic BallisticSkill { get => ballisticSkill; set => ballisticSkill = value; }
         public Characteristic Strength { get => strength; set => strength = value; }
@@ -100,31 +105,30 @@ namespace DarkHeresy2CharacterCreator.ViewModel
             }
         }
 
-        public List<string> SpecialAbilities
+        public ObservableCollection<string> SpecialAbilities
         {
             get
             {
-                var result = new List<string>();
-                result.Add(CreatedCharacter.HomeWorld.HomeWorldBonus);         //null
-                result.Add(CreatedCharacter.Role.RoleBonus);                   //null
-                result.Add(CreatedCharacter.Background.BackgroundBonuds);     //null
+                var result = new ObservableCollection<string>();
+                result.Add(CreatedCharacter.HomeWorld.HomeWorldBonus);         
+                result.Add(CreatedCharacter.Role.RoleBonus);                   
+                result.Add(CreatedCharacter.Background.BackgroundBonuds);     
                 return result;
             }
         }
-        public List<string> Skills
+        public ObservableCollection<DGSkill> Skills
         {
             get
             {
-                var result = new List<string>();
+                var result = new ObservableCollection<DGSkill>();
                 foreach (var s in CreatedCharacter.Skills)
-                {
-                    if (s != null)
-                        result.Add(s.Name.ToString());
+                {                    
+                    if (s != null && s.Rank > 0)
+                        result.Add(new DGSkill (s));
                 }
                 return result;
             }
         }
-
         #endregion Properties
 
         #region Constructor
@@ -134,7 +138,8 @@ namespace DarkHeresy2CharacterCreator.ViewModel
             setDivinationCommand = new DelegateCommand(SetDivination);
             setCharateristic = new DelegateCommand(RollCharacteristic);
             getAptitudes = new DelegateCommand(ReturnAptitudes);
-
+            setWounds = new DelegateCommand(RollWounds);
+            setFateTreshhold = new DelegateCommand(RollEmperorsBlessing);
         }
 
         private void ReturnAptitudes(object obj)
@@ -150,6 +155,16 @@ namespace DarkHeresy2CharacterCreator.ViewModel
             Divination = new Divinations(CreatedCharacter.Divination);
         }
 
+        private void RollWounds(object wounds)
+        {
+            CreatedCharacter.TotalWounds = CreatedCharacter.HomeWorld.Wounds + DiceRoller.RollFive();
+        }
+
+        private void RollEmperorsBlessing(object obj)
+        {
+            CreatedCharacter.FateTreshold = DiceRoller.RollTen() > CreatedCharacter.HomeWorld.EmperorsBlessing ?
+                CreatedCharacter.HomeWorld.FateTreshold + 1 : CreatedCharacter.HomeWorld.FateTreshold;
+        }
         private void RollCharacteristic(object characteristic)
         {
             var c = characteristic as Characteristic;
@@ -163,5 +178,46 @@ namespace DarkHeresy2CharacterCreator.ViewModel
 
         #endregion Helped Methods
 
+    }
+
+
+    /// <summary>
+    /// Asistance class to correctable information in skills DataGrid
+    /// </summary>
+    [AddINotifyPropertyChangedInterface]
+    public class DGSkill
+    {
+        public string Name { get; set; }
+        public bool IsKnow { get; set; } = false;
+        public bool IsTrained { get; set; } = false;
+        public bool IsExperienced { get; set; } = false;
+        public bool IsVeteran { get; set; } = false;
+
+        public DGSkill(AbstractSkill basicSkill)
+        {
+            Name = basicSkill.Name.ToString();
+            if (basicSkill.Rank > Ranking.Unknown)
+                IsKnow = true;
+            if (basicSkill.Rank > Ranking.Known)
+                IsTrained = true;
+            if (basicSkill.Rank > Ranking.Trained)
+                IsExperienced = true;
+            if (basicSkill.Rank > Ranking.Experienced)
+                IsVeteran = true;
+        }
+        /// <summary>
+        /// Asistance class to correctable information in skills DataGrid
+        /// </summary>
+        [AddINotifyPropertyChangedInterface]
+        public class DGSpecialAbilities
+        {
+            string[] SpecialAbilites { get; set; } = new string[3];
+            public DGSpecialAbilities(ICharacter character)
+            {
+                SpecialAbilites[0] = character.HomeWorld.HomeWorldBonus;
+                SpecialAbilites[1] = character.Role.RoleBonus;
+                SpecialAbilites[2] = character.Background.BackgroundBonuds;
+            } 
+        }
     }
 }

@@ -11,4 +11,6 @@ A4. CharacterSheet
 	Gear
 		Fix probles with unchangable searchedTB
 		Add ComboBox to filtred lists by type of gear
+A5. Validator to SummaryViewModel
+A6. Talents and traits correction
 

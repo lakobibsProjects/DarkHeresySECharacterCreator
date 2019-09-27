@@ -37,6 +37,7 @@
                 <GridView>
                     <GridViewColumn Header="Character name" DisplayMemberBinding="{Binding CharacterName}"/>
                     <GridViewColumn Header="Expirience" DisplayMemberBinding="{Binding TotalExpirience}"/>
+                    <GridViewColumn Header="Player name" DisplayMemberBinding="{Binding PlayerName}"/>
                 </GridView>
             </ListView.View>
             <!--<ListView.ItemTemplate>
