@@ -32,10 +32,11 @@
                 </TabItem.DataContext>
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="252*"/>
+                        <ColumnDefinition Width="235*"/>
+                        <ColumnDefinition Width="16*"/>
+                        <ColumnDefinition Width="252*"/>
+                        <ColumnDefinition Width="251*"/>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"/>
@@ -44,7 +45,9 @@
                     </Grid.RowDefinitions>
                     <StackPanel Orientation="Vertical" 
                                 Grid.Row="0"
-                                Grid.Column="0" Grid.ColumnSpan="2">
+                                Grid.Column="0" Grid.ColumnSpan="3"
+                                ScrollViewer.CanContentScroll="True"
+                                ScrollViewer.VerticalScrollBarVisibility="Auto">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Text="Name: "/>
                             <TextBox Text="{Binding Character.CharacterName, Mode=TwoWay}"/>
@@ -64,7 +67,9 @@
                     </StackPanel>
                     <StackPanel Orientation="Vertical" 
                                 Grid.Row="0"
-                                Grid.Column="1">
+                                Grid.Column="1" Grid.ColumnSpan="2"
+                                                                ScrollViewer.CanContentScroll="True"
+                                ScrollViewer.VerticalScrollBarVisibility="Auto">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Text="Gender: "/>
                             <TextBox Text="{Binding Character.Gender}"/>
@@ -94,7 +99,9 @@
                     </StackPanel>
                     <StackPanel Orientation="Vertical" 
                                 Grid.Row="0"
-                                Grid.Column="2">
+                                Grid.Column="3"
+                                ScrollViewer.CanContentScroll="True"
+                                ScrollViewer.VerticalScrollBarVisibility="Auto">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Text="Player Name: "/>
                             <TextBox Text="{Binding Character.PlayerName}"/>
@@ -262,11 +269,11 @@
                                    Margin="5"/>
                                 <Button Content="+" 
                                         VerticalAlignment="Center"
-                                        Command="{Binding Increace}"
+                                        Command="{Binding InfluenceIncreace}"
                                         CommandParameter="{Binding Influence.Value}"/>
                                 <Button Content="-" 
                                         VerticalAlignment="Center"
-                                        Command="{Binding Decreace}"
+                                        Command="{Binding InfluenceDecreace}"
                                         CommandParameter="{Binding Influence.Value}"/>
                             </StackPanel>
                         </Grid>
@@ -274,7 +281,7 @@
                     <StackPanel x:Name="CommonSkillsSP"
                                 Grid.Row="1"
                                 Grid.Column="1"
-                                Margin="5">
+                                Margin="5" Grid.ColumnSpan="2">
                         <TextBlock Text="Common Skills: "/>
                         <ListView>
 
@@ -282,7 +289,7 @@
                     </StackPanel>
                     <StackPanel x:Name="SpecializedSkillsSP"
                                 Grid.Row="1"
-                                Grid.Column="2"
+                                Grid.Column="3"
                                 Margin="5">
                         <TextBlock Text="Specialized Skills: "/>
                         <ListView>
@@ -304,32 +311,18 @@
                     </StackPanel>
                     <StackPanel Grid.Row="2"
                                 Grid.Column="0"
-                                Margin="5" Grid.ColumnSpan="2">
+                                Margin="5" Grid.ColumnSpan="3">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Text="Expirience: "/>
-                            <TextBlock Text="{Binding Character.TotalExpirience}"/>
-                            <Button Content="+1"
-                                    Command="{Binding Increace}"
-                                    CommandParameter="{Binding Character.TotalExpirience}"/>
-                            <Button Content="+50"
-                                    Command="{Binding IncreaceExp}"
-                                    CommandParameter="{Binding Character.TotalExpirience}"/>
-                            <Separator Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}"  
-                                       BorderThickness="1" 
-                                       BorderBrush="Black"/>
-                            <Button Content="-1"
-                                    Command="{Binding Decreace}"
-                                    CommandParameter="{Binding Character.TotalExpirience}"/>
-                            <Button Content="-50"
-                                    Command="{Binding DecreaceExp}"
-                                    CommandParameter="{Binding Character.TotalExpirience}"/>
+                            <TextBlock Text="{Binding Character.TotalExpirience}"/>                            
                         </StackPanel>
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Text="Fate: "/>
                             <TextBlock Text="{Binding Character.FateTreshold}"/>
                             <Button Content="+"
                                     Command="{Binding Increace}"
-                                    CommandParameter="{Binding Character.FateTreshold}"/>
+                                    CommandParameter="{Binding Character.FateTreshold}"
+                                    VerticalAlignment="Center"/>
                             <Button Content="-" 
                                     Command="{Binding Decreace}"
                                     CommandParameter="{Binding Character.FateTreshold}"/>
@@ -357,12 +350,12 @@
                     </StackPanel>
                     <StackPanel Grid.Row="2"
                                 Grid.Column="1"
-                                Margin="5">
+                                Margin="5" Grid.ColumnSpan="2">
                         <TextBlock Text="Talents and Traits"/>
                         <ListView></ListView>
                     </StackPanel>
                     <StackPanel Grid.Row="2"
-                                Grid.Column="2"
+                                Grid.Column="3"
                                 Margin="5">
                         <TextBlock Text="Special Abilities"/>
                         <ListView></ListView>
@@ -516,7 +509,7 @@
                                 <TextBlock Text="{Binding Character.NotSpendExp}"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal"
-                                        Margin="3">                               
+                                        Margin="3">
                                 <TextBox x:Name="ExpToAdd"
                                          Width="150"
                                          Margin="5 0"
@@ -612,7 +605,7 @@
                             </StackPanel>
                         </TabItem>
                     </TabControl>
-                    <TextBlock Grid.Column="1"/>                                
+                    <TextBlock Grid.Column="1"/>
                 </Grid>
             </TabItem>
             <!--<TabItem x:Name="PsychicPowers" Header="Psychic Powers">

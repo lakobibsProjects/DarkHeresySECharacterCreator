@@ -26,11 +26,17 @@ namespace DarkHeresy2CharacterCreator.ViewModel.CharacterSheet
         private Characteristic willpower = CharacteristicList.Characteristics.Where(c => c.Name == CharacteristicName.Willpower).FirstOrDefault();
         private Characteristic fellowship = CharacteristicList.Characteristics.Where(c => c.Name == CharacteristicName.Fellowship).FirstOrDefault();
         private DelegateCommand upCharateristic;
-        private ArithmeticCommand increace;        
-        private ArithmeticCommand decreace;
-        private ArithmeticCommand increaceExp;
-        private ArithmeticCommand decreaceExp;
-
+        #region to refactoring (DRY)
+        // try to create assistant method with "switch" block 
+        private DelegateCommand influenceIncreace;        
+        private DelegateCommand influenceDecreace;
+        private DelegateCommand fateIncreace;
+        private DelegateCommand fateDecreace;
+        private DelegateCommand insanityIncreace;
+        private DelegateCommand insanityDecreace;
+        private DelegateCommand corruptionIncreace;
+        private DelegateCommand corruptionDecreace;
+        #endregion to refactoring (DRY)
         #endregion Fields
 
         #region Properties
@@ -46,10 +52,16 @@ namespace DarkHeresy2CharacterCreator.ViewModel.CharacterSheet
         public Characteristic Willpower { get => willpower; set => willpower = value; }
         public Characteristic Fellowship { get => fellowship; set => fellowship = value; }
         public ICommand UpCharateristic => upCharateristic;
-        public ICommand Increace => increace;
-        public ICommand Decreace => decreace;
-        public ICommand IncreaceExp => increaceExp;
-        public ICommand DecreaceExp => decreaceExp;
+        #region to refactoring (DRY)
+        public ICommand InfluenceIncreace => influenceIncreace;
+        public ICommand InfluenceDecreace => influenceDecreace;
+        public ICommand FateIncreace => fateIncreace;
+        public ICommand FateDecreace => fateDecreace;
+        public ICommand InsanityIncreace => insanityIncreace;
+        public ICommand InsanityDecreace => insanityDecreace;
+        public ICommand CorruptionIncreace => corruptionIncreace;
+        public ICommand CorruptionDecreace => corruptionDecreace;
+        #endregion to refactoring (DRY)
         #endregion
 
         #region Constructor
@@ -57,10 +69,16 @@ namespace DarkHeresy2CharacterCreator.ViewModel.CharacterSheet
         {
             Character = MainWindowVM.SelectedCharacter;
             upCharateristic = new DelegateCommand(IncreaceCharacteristic);
-            decreace = new ArithmeticCommand(v => v--);
-            increace = new ArithmeticCommand(v => v++);
-            decreaceExp = new ArithmeticCommand(v => v -= 50);
-            increaceExp = new ArithmeticCommand(v => v += 50);
+            #region to refactoring (DRY)
+            influenceIncreace = new DelegateCommand(obj => Character.Characteristics.Where(c => c.Name == CharacteristicName.Influence).FirstOrDefault().Value++);
+            influenceDecreace = new DelegateCommand(obj => Character.Characteristics.Where(c => c.Name == CharacteristicName.Influence).FirstOrDefault().Value--);
+            fateIncreace = new DelegateCommand(obj => Character.FateTreshold++);
+            fateDecreace = new DelegateCommand(obj => Character.FateTreshold--);
+            insanityIncreace = new DelegateCommand(obj => Character.Insanity++);
+            insanityDecreace = new DelegateCommand(obj => Character.Insanity--);
+            corruptionIncreace = new DelegateCommand(obj => Character.Corruption++);
+            corruptionDecreace = new DelegateCommand(obj => Character.Corruption--);
+            #endregion to refactoring (DRY)
         }
         #endregion Constructor
 
