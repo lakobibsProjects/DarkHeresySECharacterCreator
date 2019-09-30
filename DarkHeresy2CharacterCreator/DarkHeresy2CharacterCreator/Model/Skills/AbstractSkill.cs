@@ -76,8 +76,16 @@ namespace DarkHeresy2CharacterCreator.Model.Skills
         public void ChangeAdvanceCost(IEnumerable<AptitudeName> CharecterAptitudes)
         {
             int haveAptitudes = 0;
+            bool hasOneAptitude = false;
+            bool hasSecondAptitude = false;
             foreach (AptitudeName a in CharecterAptitudes)
-                if (a == FirstAptitude || a == SecondAptitude) haveAptitudes++;
+            {
+                if (a == FirstAptitude) hasOneAptitude = true;
+                if (a == SecondAptitude) hasSecondAptitude = true;
+            }
+            if (hasOneAptitude) haveAptitudes++;
+            if (hasSecondAptitude) haveAptitudes++;
+
             if (Rank < Ranking.Veteran)
                 Cost = costTable[haveAptitudes, (int)rank];                        
         }
@@ -89,7 +97,6 @@ namespace DarkHeresy2CharacterCreator.Model.Skills
                 character.SpendExpirience += Cost;
                 ChangeAdvanceCost(character.Aptitudes);
             }
-
         }
     }
 }

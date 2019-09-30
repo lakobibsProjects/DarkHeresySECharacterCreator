@@ -17,6 +17,7 @@ namespace DarkHeresy2CharacterCreator.Model.Character
             {
                 CharacterName = "Unnamed Character",
                 TotalExpirience = 1000
+                
             }
         };
     }

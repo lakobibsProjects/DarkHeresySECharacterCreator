@@ -57,6 +57,24 @@ namespace DarkHeresy2CharacterCreator.ViewModel
         {
             if (SelectedCharacter != null)
             {
+                if (SelectedCharacter.HomeWorld == null)
+                {
+                    Window homeWorldWindow = new HomeWorld();
+                    homeWorldWindow.Show();
+                    return;
+                }
+                if (SelectedCharacter.Background == null)
+                {
+                    Window backgroundWindow = new Background();
+                    backgroundWindow.Show();
+                    return;
+                }
+                if (SelectedCharacter.Role == null)
+                {
+                    Window roleWindow = new Role();
+                    roleWindow.Show();
+                    return;
+                }
                 Window characterSheet = new CharacterSheetView();
                 characterSheet.Show();
                 Window currentWindow = obj as Window;
