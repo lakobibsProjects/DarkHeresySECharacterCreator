@@ -573,8 +573,8 @@
                 </TabItem.DataContext>
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="250"/>
-                        <ColumnDefinition/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="2*"/>
                     </Grid.ColumnDefinitions>
                     <TabControl>
                         <TabItem Header="Common Skills">
@@ -586,7 +586,15 @@
                                           SelectedItem="{Binding SelectedCommonSkill, 
                                                                  UpdateSourceTrigger=PropertyChanged,
                                                                  Mode=TwoWay,
-                                                                 TargetNullValue=CommonSkills[0]}"/>
+                                                                 TargetNullValue=CommonSkills[0]}"
+                                          AutoGenerateColumns="False">
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+                                        <DataGridTextColumn Header="Rank" Binding="{Binding Rank}"/>
+                                        <DataGridTextColumn Header="Cost" Binding="{Binding Cost}"/>
+                                    </DataGrid.Columns>
+                                    
+                                </DataGrid>
                                 <Button Content="Increace Rank"
                                         Command="{Binding IncreaceCommonSkillRank}"
                                         CommandParameter="{Binding SelectedCommonSkill}"/>
@@ -598,7 +606,16 @@
                                           Margin="5"
                                           MaxHeight="600"
                                           ItemsSource="{Binding SpecializedSkills}"
-                                          SelectedItem="{Binding SelectedSpecializedSkill}"/>
+                                          SelectedItem="{Binding SelectedSpecializedSkill,
+                                                                 TargetNullValue=SpecializedSkills[0]}"
+                                          AutoGenerateColumns="False">
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+                                        <DataGridTextColumn Header="Specialization" Binding="{Binding Specialization}"/>
+                                        <DataGridTextColumn Header="Rank" Binding="{Binding Rank}"/>
+                                        <DataGridTextColumn Header="Cost" Binding="{Binding Cost}"/>
+                                    </DataGrid.Columns>
+                                </DataGrid>
                                 <Button Content="Increace Rank"
                                         Command="{Binding IncreaceSpecializedSkillRank}"
                                         CommandParameter="{Binding SelectedSpecializedSkill}"/>

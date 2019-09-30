@@ -129,8 +129,7 @@ namespace DarkHeresy2CharacterCreator.Model.Character
             foreach (var s in SkillList.CommonSkills)
                 skills.Add(s);
             foreach (var s in SkillList.SpecializedSkills)
-                skills.Add(s);
-
+                skills.Add(s);           
 
         }
         
