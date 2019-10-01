@@ -5,8 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DarkHeresy2CharacterCreator.View"
         xmlns:vm="clr-namespace:DarkHeresy2CharacterCreator.ViewModel.CharacterSheet"
+        xmlns:character="clr-namespace:DarkHeresy2CharacterCreator.ViewModel"
         mc:Ignorable="d"
         Title="{Binding Character.CharacterName}" Height="768" Width="1024">
+    <Window.Resources>
+        <character:MainWindowVM x:Key="CharacterInstance"/>
+    </Window.Resources>
     <Grid Style="{DynamicResource GeneralGrid}">
         <Grid.RowDefinitions>
             <RowDefinition Height="15"/>
@@ -314,37 +318,37 @@
                                 Margin="5" Grid.ColumnSpan="3">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Text="Expirience: "/>
-                            <TextBlock Text="{Binding Character.TotalExpirience}"/>                            
+                            <TextBlock Text="{Binding Character.TotalExpirience}"/>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Text="Fate: "/>
                             <TextBlock Text="{Binding Character.FateTreshold}"/>
                             <Button Content="+"
-                                    Command="{Binding Increace}"
+                                    Command="{Binding FateIncreace}"
                                     CommandParameter="{Binding Character.FateTreshold}"
                                     VerticalAlignment="Center"/>
                             <Button Content="-" 
-                                    Command="{Binding Decreace}"
+                                    Command="{Binding FateDecreace}"
                                     CommandParameter="{Binding Character.FateTreshold}"/>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Text="Insanity: "/>
                             <TextBlock Text="{Binding Character.Insanity}"/>
                             <Button Content="+" 
-                                    Command="{Binding Increace}"
+                                    Command="{Binding InsanityIncreace}"
                                     CommandParameter="{Binding Character.Insanity}"/>
                             <Button Content="-"
-                                    Command="{Binding Decreace}"
+                                    Command="{Binding InsanityDecreace}"
                                     CommandParameter="{Binding Character.Insanity}"/>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Text="Corruption: "/>
                             <TextBlock Text="{Binding Character.Corruption}"/>
                             <Button Content="+"
-                                    Command="{Binding Increace}"
+                                    Command="{Binding CorruptionIncreace}"
                                     CommandParameter="{Binding Character.Corruption}"/>
                             <Button Content="-"
-                                    Command="{Binding Decreace}"
+                                    Command="{Binding CorruptionDecreace}"
                                     CommandParameter="{Binding Character.Corruption}"/>
                         </StackPanel>
                     </StackPanel>
@@ -384,12 +388,58 @@
                 </TabItem.DataContext>
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="220"/>
-                        <ColumnDefinition Width="220"/>
+                        <ColumnDefinition Width="293"/>
+                        <ColumnDefinition Width="29"/>
+                        <ColumnDefinition Width="Auto"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
+
                     <StackPanel Grid.Row="0"
-                                Grid.Column="1"
+                                Grid.Column="0"
+                                Orientation="Vertical"
+                                Margin="5" Grid.ColumnSpan="2">
+                        <TextBlock Text="Available items" 
+                                   Margin="3" 
+                                   HorizontalAlignment="Center"
+                                   FontWeight="Bold"/>
+
+                        <StackPanel Orientation="Horizontal"
+                                    Margin="0 5 0 5">
+                            <TextBlock Text="Search: " VerticalAlignment="Center"/>
+                            <TextBox x:Name="AvailableItemSearchTB" 
+                                     Width="150"
+                                     IsEnabled="False"
+                                     Text="{Binding SelectedAvailableItem, 
+                                                    Mode=TwoWay,
+                                                    UpdateSourceTrigger=PropertyChanged}"/>
+
+                        </StackPanel>
+                        <DataGrid Height="500"
+                                  Margin="0 5 5 5"
+                                  ItemsSource="{Binding AvailableItems}"
+                                  SelectedItem="{Binding SelectedAvailableItem}"
+                                  AutoGenerateColumns="False">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+                                <DataGridTextColumn Header="Availability" Binding="{Binding Availability}"/>
+                                <DataGridTextColumn Header="Weight" Binding="{Binding Weight}"/>
+                                <DataGridCheckBoxColumn Header="IsEquiped" Binding="{Binding IsEquiped}"/>
+                                <DataGridTextColumn Header="Craftsmanship" Binding="{Binding Craftsmanship}"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <Button Content="Remove" 
+                                    Margin="5 3 10 3"
+                                    Command="{Binding RemoveItem}"
+                                    CommandParameter="{Binding SelectedAvailableItem}"/>
+                            <Button Content="Add" 
+                                    Margin="5 3 10 3"
+                                    Command="{Binding AddItem}"
+                                    CommandParameter="{Binding SelectedAvailableItem}"/>
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel Grid.Row="0"
+                                Grid.Column="2"
                                 Orientation="Vertical"
                                 Margin="5">
                         <TextBlock Text="Own items" 
@@ -405,14 +455,22 @@
                                       Text="{Binding SelectedOwnItem,
                                                      Mode=TwoWay,    
                                                      UpdateSourceTrigger=PropertyChanged}"/>
-                            <!--Fix unabdatable-->
+
                         </StackPanel>
                         <DataGrid Height="500"
-                                  Margin="0 5 5 5"
-                                  ItemsSource="{Binding OwnItems}"
+                                  Margin="5"
+                                  AutoGenerateColumns="False"
+                                  ItemsSource="{Binding Path=SelectedCharacter.Gear, Source={StaticResource ResourceKey=CharacterInstance}}"
                                   SelectedItem="{Binding SelectedOwnItem}">
-
-                        </DataGrid>
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+                                <DataGridTextColumn Header="Availability" Binding="{Binding Availability}"/>
+                                <DataGridTextColumn Header="Weight" Binding="{Binding Weight}"/>
+                                <DataGridCheckBoxColumn Header="IsEquiped" Binding="{Binding IsEquiped}"/>
+                                <DataGridTextColumn Header="Craftsmanship" Binding="{Binding Craftsmanship}"/>
+                            </DataGrid.Columns>
+                         </DataGrid>
+                            <!--ANE-->
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                             <Button Content="Remove"
                                     Margin="5"
@@ -425,46 +483,9 @@
                                     CommandParameter="{Binding SelectedOwnItem}"/>
                         </StackPanel>
                     </StackPanel>
-                    <StackPanel Grid.Row="0"
-                                Grid.Column="0"
-                                Orientation="Vertical"
-                                Margin="5">
-                        <TextBlock Text="Available items" 
-                                   Margin="3" 
-                                   HorizontalAlignment="Center"
-                                   FontWeight="Bold"/>
-
-                        <StackPanel Orientation="Horizontal"
-                                    Margin="0 5 0 5">
-                            <TextBlock Text="Search: " VerticalAlignment="Center"/>
-                            <TextBox x:Name="AvailableItemSearchTB" 
-                                     Width="150"
-                                     IsEnabled="False"
-                                     Text="{Binding SelectedAvailableItem, 
-                                                    Mode=TwoWay,
-                                                    UpdateSourceTrigger=PropertyChanged}"/>
-                            <!--Fix unabdatable-->
-                        </StackPanel>
-                        <DataGrid Height="500"
-                                  Margin="0 5 5 5"
-                                  ItemsSource="{Binding AvailableItems}"
-                                  SelectedItem="{Binding SelectedAvailableItem}">
-
-                        </DataGrid>
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                            <Button Content="Remove" 
-                                    Margin="5 3 10 3"
-                                    Command="{Binding RemoveItem}"
-                                    CommandParameter="{Binding SelectedAvailableItem}"/>
-                            <Button Content="Add" 
-                                    Margin="5 3 10 3"
-                                    Command="{Binding AddItem}"
-                                    CommandParameter="{Binding SelectedAvailableItem}"/>
-                        </StackPanel>
-                    </StackPanel>
                     <Grid x:Name="GearDiscriptionG" 
                           Grid.Row="0"
-                          Grid.Column="2">
+                          Grid.Column="3">
 
                     </Grid>
                 </Grid>
@@ -544,7 +565,14 @@
                                    FontWeight="Bold"/>
                         <DataGrid  Margin="3"
                                    ItemsSource="{Binding AllTalents}"
-                                   SelectedItem="{Binding SelectedAvailableTalent}"/>
+                                   SelectedItem="{Binding SelectedAvailableTalent}"
+                                   AutoGenerateColumns="False">
+                            <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+                            <DataGridTextColumn Header="Tier" Binding="{Binding Tier}"/>
+                            <DataGridTextColumn Header="Cost" Binding="{Binding Cost}"/>
+                            <DataGridTextColumn Header="FirstAptitude" Binding="{Binding FirstAptitude}"/>
+                            <DataGridTextColumn Header="SecondAptitude" Binding="{Binding SecondAptitude}"/>
+                        </DataGrid>
                         <Button Content="Add"
                                 Margin="3"
                                 Command="{Binding AddTalent}"
@@ -557,8 +585,15 @@
                                    HorizontalAlignment="Center"
                                    FontWeight="Bold"/>
                         <DataGrid  Margin="3"
-                                   ItemsSource="{Binding Character.Talents}"
-                                   SelectedItem="{Binding SelectedOwnTalent}"/>
+                                   ItemsSource="{Binding Path=SelectedCharacter.Talents, Source={StaticResource ResourceKey=CharacterInstance}}"
+                                   SelectedItem="{Binding SelectedOwnTalent}"
+                                   AutoGenerateColumns="False">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+                                <DataGridTextColumn Header="Tier" Binding="{Binding Tier}"/>
+                                <DataGridTextColumn Header="Cost" Binding="{Binding Cost}"/>                               
+                            </DataGrid.Columns>
+                        </DataGrid>
                         <Button Content="Remove"
                                 Margin="3"
                                 Command="{Binding RemoveTalent}"
@@ -593,7 +628,7 @@
                                         <DataGridTextColumn Header="Rank" Binding="{Binding Rank}"/>
                                         <DataGridTextColumn Header="Cost" Binding="{Binding Cost}"/>
                                     </DataGrid.Columns>
-                                    
+
                                 </DataGrid>
                                 <Button Content="Increace Rank"
                                         Command="{Binding IncreaceCommonSkillRank}"

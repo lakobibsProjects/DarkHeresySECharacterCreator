@@ -10,6 +10,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace DarkHeresy2CharacterCreator.ViewModel.CharacterSheet
@@ -19,7 +20,7 @@ namespace DarkHeresy2CharacterCreator.ViewModel.CharacterSheet
     {
         #region Fields
         private ObservableCollection<IItem> availableItems = new ObservableCollection<IItem>();
-        private ObservableCollection<IItem> ownItems = new ObservableCollection<IItem>();
+        //private ObservableCollection<IItem> ownItems = new ObservableCollection<IItem>();
         private string searchedAvailableItemName;
         private string searchedOwnItemName;
         private DelegateCommand removeItem;
@@ -46,22 +47,20 @@ namespace DarkHeresy2CharacterCreator.ViewModel.CharacterSheet
             set
             {
                 searchedOwnItemName = value;
-                FilterItemsCollection(searchedOwnItemName, OwnItems);
+                FilterItemsCollection(searchedOwnItemName, CharacterGear);
             }
         }
         public ObservableCollection<IItem> AvailableItems
         {
-            get
-            {
-                return availableItems;
-            }
+            get { return availableItems; }
             set { availableItems = value; }
         }
-        public ObservableCollection<IItem> OwnItems
-        {
+        //public ObservableCollection<IItem> OwnItems => Character.Gear;
+        /*{
             get { return ownItems; }
             set { ownItems = value; }
-        }
+        }*/
+        public ObservableCollection<IItem> CharacterGear => Character.Gear;
         public ICommand RemoveItem => removeItem;
         public ICommand AddItem => addItem;
 
@@ -70,11 +69,19 @@ namespace DarkHeresy2CharacterCreator.ViewModel.CharacterSheet
         #region Costructor
         public GearVM()
         {
-            Character = MainWindowVM.SelectedCharacter;
-            FillItemsCollection();
-            OwnItems = Character.Gear;
-            removeItem = new DelegateCommand(RemoveItemCommans);
-            addItem = new DelegateCommand(AddItemCommand);
+            try
+            {
+                Character = MainWindowVM.SelectedCharacter;
+                FillItemsCollection();
+                //ownItems = Character.Gear;
+                removeItem = new DelegateCommand(RemoveItemCommans);
+                addItem = new DelegateCommand(AddItemCommand);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
 
         }
         #endregion Costructor
@@ -82,19 +89,27 @@ namespace DarkHeresy2CharacterCreator.ViewModel.CharacterSheet
         #region Helped Methods
         private void FillItemsCollection()
         {
+            try
+            {
+                foreach (var item in ArmorCollection.Armors)
+                    availableItems.Add(item);
+                foreach (var item in CyberneticCollection.Cybernetics)
+                    availableItems.Add(item);
+                foreach (var item in DrugsAndConsumablesCollection.DrugsAndConsumables)
+                    availableItems.Add(item);
+                foreach (var item in GearCollection.Gear)
+                    availableItems.Add(item);
+                foreach (var item in ToolsCollection.Tools)
+                    availableItems.Add(item);
+                foreach (var item in WeaponCollection.Weapons)
+                    availableItems.Add(item);
 
-            foreach (var item in ArmorCollection.Armors)
-                availableItems.Add(item);
-            foreach (var item in CyberneticCollection.Cybernetics)
-                availableItems.Add(item);
-            foreach (var item in DrugsAndConsumablesCollection.DrugsAndConsumables)
-                availableItems.Add(item);
-            foreach (var item in GearCollection.Gear)
-                availableItems.Add(item);
-            foreach (var item in ToolsCollection.Tools)
-                availableItems.Add(item);
-            foreach (var item in WeaponCollection.Weapons)
-                availableItems.Add(item);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                throw;
+            }
         }
 
         private void FilterItemsCollection(string searchedItemName, ObservableCollection<IItem> items)

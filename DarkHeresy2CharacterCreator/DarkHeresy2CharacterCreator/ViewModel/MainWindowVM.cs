@@ -23,7 +23,7 @@ namespace DarkHeresy2CharacterCreator.ViewModel
         private readonly DelegateCommand closeApplicationCommand;
         private readonly DelegateCommand loadCharacterCommand;
         private readonly DelegateCommand deleteCharacterCommand;
-        public ObservableCollection<ICharacter> characters;
+        public ObservableCollection<ICharacter> characters = new ObservableCollection<ICharacter>();
         #endregion Fields
 
         #region Propreties
@@ -37,6 +37,7 @@ namespace DarkHeresy2CharacterCreator.ViewModel
 
         public MainWindowVM()
         {
+            
             newCharacterCommand = new DelegateCommand(OnNewCharacter);
             closeApplicationCommand = new DelegateCommand(OnCloseApplication);
             deleteCharacterCommand = new DelegateCommand(OnDeleteCaharacter);
@@ -44,6 +45,7 @@ namespace DarkHeresy2CharacterCreator.ViewModel
             try
             {
                 characters = CharactersList.Characters;
+                SelectedCharacter = Characters[0];
             }
             catch (Exception ex)
             {
