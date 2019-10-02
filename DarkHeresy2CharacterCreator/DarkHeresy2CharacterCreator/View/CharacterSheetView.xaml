@@ -603,7 +603,18 @@
                                 Command="{Binding RemoveTalent}"
                                 CommandParameter="{Binding SelectedOwnTalent}"/>
                     </StackPanel>
-                    <TextBlock Grid.Column="2"/>
+                    <StackPanel Grid.Column="2">
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock Text="{Binding SelectedAvailableTalent.Name}"
+                                       Padding="5"/>
+                            <TextBlock Text="{Binding SelectedAvailableTalent.Discription}" 
+                                       TextWrapping="Wrap"
+                                       Padding="5"
+                                       ScrollViewer.CanContentScroll="True"
+                                       ScrollViewer.VerticalScrollBarVisibility="Visible"
+                                       MaxHeight="600"/>
+                        </StackPanel>
+                    </StackPanel>
                 </Grid>
             </TabItem>
             <TabItem x:Name="Skills" Header="Skills">

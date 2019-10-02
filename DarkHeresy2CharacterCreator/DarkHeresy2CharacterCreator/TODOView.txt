@@ -1,2 +1,3 @@
 PA1. Think about merge character creation view`s
 +PA2. Add to character creation view`s SummaryWindow
+A3. Add discription of specialization of spicialized skills
