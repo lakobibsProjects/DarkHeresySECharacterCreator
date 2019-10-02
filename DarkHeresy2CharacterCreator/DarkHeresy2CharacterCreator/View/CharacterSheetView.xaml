@@ -5,8 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DarkHeresy2CharacterCreator.View"
         xmlns:vm="clr-namespace:DarkHeresy2CharacterCreator.ViewModel.CharacterSheet"
+        xmlns:character="clr-namespace:DarkHeresy2CharacterCreator.ViewModel"
+        xmlns:converters="clr-namespace:System.Windows.Converters;assembly=WindowsBase"
         mc:Ignorable="d"
         Title="{Binding Character.CharacterName}" Height="768" Width="1024">
+    <Window.Resources>
+        <character:MainWindowVM x:Key="CharacterInstance"/>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+    </Window.Resources>
     <Grid Style="{DynamicResource GeneralGrid}">
         <Grid.RowDefinitions>
             <RowDefinition Height="15"/>
@@ -32,10 +38,11 @@
                 </TabItem.DataContext>
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="252*"/>
+                        <ColumnDefinition Width="235*"/>
+                        <ColumnDefinition Width="16*"/>
+                        <ColumnDefinition Width="252*"/>
+                        <ColumnDefinition Width="251*"/>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"/>
@@ -44,7 +51,9 @@
                     </Grid.RowDefinitions>
                     <StackPanel Orientation="Vertical" 
                                 Grid.Row="0"
-                                Grid.Column="0" Grid.ColumnSpan="2">
+                                Grid.Column="0" Grid.ColumnSpan="3"
+                                ScrollViewer.CanContentScroll="True"
+                                ScrollViewer.VerticalScrollBarVisibility="Auto">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Text="Name: "/>
                             <TextBox Text="{Binding Character.CharacterName, Mode=TwoWay}"/>
@@ -64,7 +73,9 @@
                     </StackPanel>
                     <StackPanel Orientation="Vertical" 
                                 Grid.Row="0"
-                                Grid.Column="1">
+                                Grid.Column="1" Grid.ColumnSpan="2"
+                                                                ScrollViewer.CanContentScroll="True"
+                                ScrollViewer.VerticalScrollBarVisibility="Auto">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Text="Gender: "/>
                             <TextBox Text="{Binding Character.Gender}"/>
@@ -94,7 +105,9 @@
                     </StackPanel>
                     <StackPanel Orientation="Vertical" 
                                 Grid.Row="0"
-                                Grid.Column="2">
+                                Grid.Column="3"
+                                ScrollViewer.CanContentScroll="True"
+                                ScrollViewer.VerticalScrollBarVisibility="Auto">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Text="Player Name: "/>
                             <TextBox Text="{Binding Character.PlayerName}"/>
@@ -262,11 +275,11 @@
                                    Margin="5"/>
                                 <Button Content="+" 
                                         VerticalAlignment="Center"
-                                        Command="{Binding Increace}"
+                                        Command="{Binding InfluenceIncreace}"
                                         CommandParameter="{Binding Influence.Value}"/>
                                 <Button Content="-" 
                                         VerticalAlignment="Center"
-                                        Command="{Binding Decreace}"
+                                        Command="{Binding InfluenceDecreace}"
                                         CommandParameter="{Binding Influence.Value}"/>
                             </StackPanel>
                         </Grid>
@@ -274,7 +287,7 @@
                     <StackPanel x:Name="CommonSkillsSP"
                                 Grid.Row="1"
                                 Grid.Column="1"
-                                Margin="5">
+                                Margin="5" Grid.ColumnSpan="2">
                         <TextBlock Text="Common Skills: "/>
                         <ListView>
 
@@ -282,7 +295,7 @@
                     </StackPanel>
                     <StackPanel x:Name="SpecializedSkillsSP"
                                 Grid.Row="1"
-                                Grid.Column="2"
+                                Grid.Column="3"
                                 Margin="5">
                         <TextBlock Text="Specialized Skills: "/>
                         <ListView>
@@ -304,65 +317,51 @@
                     </StackPanel>
                     <StackPanel Grid.Row="2"
                                 Grid.Column="0"
-                                Margin="5" Grid.ColumnSpan="2">
+                                Margin="5" Grid.ColumnSpan="3">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Text="Expirience: "/>
                             <TextBlock Text="{Binding Character.TotalExpirience}"/>
-                            <Button Content="+1"
-                                    Command="{Binding Increace}"
-                                    CommandParameter="{Binding Character.TotalExpirience}"/>
-                            <Button Content="+50"
-                                    Command="{Binding IncreaceExp}"
-                                    CommandParameter="{Binding Character.TotalExpirience}"/>
-                            <Separator Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}"  
-                                       BorderThickness="1" 
-                                       BorderBrush="Black"/>
-                            <Button Content="-1"
-                                    Command="{Binding Decreace}"
-                                    CommandParameter="{Binding Character.TotalExpirience}"/>
-                            <Button Content="-50"
-                                    Command="{Binding DecreaceExp}"
-                                    CommandParameter="{Binding Character.TotalExpirience}"/>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Text="Fate: "/>
                             <TextBlock Text="{Binding Character.FateTreshold}"/>
                             <Button Content="+"
-                                    Command="{Binding Increace}"
-                                    CommandParameter="{Binding Character.FateTreshold}"/>
+                                    Command="{Binding FateIncreace}"
+                                    CommandParameter="{Binding Character.FateTreshold}"
+                                    VerticalAlignment="Center"/>
                             <Button Content="-" 
-                                    Command="{Binding Decreace}"
+                                    Command="{Binding FateDecreace}"
                                     CommandParameter="{Binding Character.FateTreshold}"/>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Text="Insanity: "/>
                             <TextBlock Text="{Binding Character.Insanity}"/>
                             <Button Content="+" 
-                                    Command="{Binding Increace}"
+                                    Command="{Binding InsanityIncreace}"
                                     CommandParameter="{Binding Character.Insanity}"/>
                             <Button Content="-"
-                                    Command="{Binding Decreace}"
+                                    Command="{Binding InsanityDecreace}"
                                     CommandParameter="{Binding Character.Insanity}"/>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Text="Corruption: "/>
                             <TextBlock Text="{Binding Character.Corruption}"/>
                             <Button Content="+"
-                                    Command="{Binding Increace}"
+                                    Command="{Binding CorruptionIncreace}"
                                     CommandParameter="{Binding Character.Corruption}"/>
                             <Button Content="-"
-                                    Command="{Binding Decreace}"
+                                    Command="{Binding CorruptionDecreace}"
                                     CommandParameter="{Binding Character.Corruption}"/>
                         </StackPanel>
                     </StackPanel>
                     <StackPanel Grid.Row="2"
                                 Grid.Column="1"
-                                Margin="5">
+                                Margin="5" Grid.ColumnSpan="2">
                         <TextBlock Text="Talents and Traits"/>
                         <ListView></ListView>
                     </StackPanel>
                     <StackPanel Grid.Row="2"
-                                Grid.Column="2"
+                                Grid.Column="3"
                                 Margin="5">
                         <TextBlock Text="Special Abilities"/>
                         <ListView></ListView>
@@ -391,12 +390,58 @@
                 </TabItem.DataContext>
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="220"/>
-                        <ColumnDefinition Width="220"/>
+                        <ColumnDefinition Width="293"/>
+                        <ColumnDefinition Width="29"/>
+                        <ColumnDefinition Width="Auto"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
+
                     <StackPanel Grid.Row="0"
-                                Grid.Column="1"
+                                Grid.Column="0"
+                                Orientation="Vertical"
+                                Margin="5" Grid.ColumnSpan="2">
+                        <TextBlock Text="Available items" 
+                                   Margin="3" 
+                                   HorizontalAlignment="Center"
+                                   FontWeight="Bold"/>
+
+                        <StackPanel Orientation="Horizontal"
+                                    Margin="0 5 0 5">
+                            <TextBlock Text="Search: " VerticalAlignment="Center"/>
+                            <TextBox x:Name="AvailableItemSearchTB" 
+                                     Width="150"
+                                     IsEnabled="False"
+                                     Text="{Binding SelectedAvailableItem, 
+                                                    Mode=TwoWay,
+                                                    UpdateSourceTrigger=PropertyChanged}"/>
+
+                        </StackPanel>
+                        <DataGrid Height="500"
+                                  Margin="0 5 5 5"
+                                  ItemsSource="{Binding AvailableItems}"
+                                  SelectedItem="{Binding SelectedAvailableItem}"
+                                  AutoGenerateColumns="False">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+                                <DataGridTextColumn Header="Availability" Binding="{Binding Availability}"/>
+                                <DataGridTextColumn Header="Weight" Binding="{Binding Weight}"/>
+                                <DataGridCheckBoxColumn Header="IsEquiped" Binding="{Binding IsEquiped}"/>
+                                <DataGridTextColumn Header="Craftsmanship" Binding="{Binding Craftsmanship}"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <Button Content="Remove" 
+                                    Margin="5 3 10 3"
+                                    Command="{Binding RemoveItem}"
+                                    CommandParameter="{Binding SelectedAvailableItem}"/>
+                            <Button Content="Add" 
+                                    Margin="5 3 10 3"
+                                    Command="{Binding AddItem}"
+                                    CommandParameter="{Binding SelectedAvailableItem}"/>
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel Grid.Row="0"
+                                Grid.Column="2"
                                 Orientation="Vertical"
                                 Margin="5">
                         <TextBlock Text="Own items" 
@@ -412,14 +457,22 @@
                                       Text="{Binding SelectedOwnItem,
                                                      Mode=TwoWay,    
                                                      UpdateSourceTrigger=PropertyChanged}"/>
-                            <!--Fix unabdatable-->
+
                         </StackPanel>
                         <DataGrid Height="500"
-                                  Margin="0 5 5 5"
-                                  ItemsSource="{Binding OwnItems}"
+                                  Margin="5"
+                                  AutoGenerateColumns="False"
+                                  ItemsSource="{Binding Path=SelectedCharacter.Gear, Source={StaticResource ResourceKey=CharacterInstance}}"
                                   SelectedItem="{Binding SelectedOwnItem}">
-
-                        </DataGrid>
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+                                <DataGridTextColumn Header="Availability" Binding="{Binding Availability}"/>
+                                <DataGridTextColumn Header="Weight" Binding="{Binding Weight}"/>
+                                <DataGridCheckBoxColumn Header="IsEquiped" Binding="{Binding IsEquiped}"/>
+                                <DataGridTextColumn Header="Craftsmanship" Binding="{Binding Craftsmanship}"/>
+                            </DataGrid.Columns>
+                         </DataGrid>
+                            <!--ANE-->
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                             <Button Content="Remove"
                                     Margin="5"
@@ -432,46 +485,9 @@
                                     CommandParameter="{Binding SelectedOwnItem}"/>
                         </StackPanel>
                     </StackPanel>
-                    <StackPanel Grid.Row="0"
-                                Grid.Column="0"
-                                Orientation="Vertical"
-                                Margin="5">
-                        <TextBlock Text="Available items" 
-                                   Margin="3" 
-                                   HorizontalAlignment="Center"
-                                   FontWeight="Bold"/>
-
-                        <StackPanel Orientation="Horizontal"
-                                    Margin="0 5 0 5">
-                            <TextBlock Text="Search: " VerticalAlignment="Center"/>
-                            <TextBox x:Name="AvailableItemSearchTB" 
-                                     Width="150"
-                                     IsEnabled="False"
-                                     Text="{Binding SelectedAvailableItem, 
-                                                    Mode=TwoWay,
-                                                    UpdateSourceTrigger=PropertyChanged}"/>
-                            <!--Fix unabdatable-->
-                        </StackPanel>
-                        <DataGrid Height="500"
-                                  Margin="0 5 5 5"
-                                  ItemsSource="{Binding AvailableItems}"
-                                  SelectedItem="{Binding SelectedAvailableItem}">
-
-                        </DataGrid>
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                            <Button Content="Remove" 
-                                    Margin="5 3 10 3"
-                                    Command="{Binding RemoveItem}"
-                                    CommandParameter="{Binding SelectedAvailableItem}"/>
-                            <Button Content="Add" 
-                                    Margin="5 3 10 3"
-                                    Command="{Binding AddItem}"
-                                    CommandParameter="{Binding SelectedAvailableItem}"/>
-                        </StackPanel>
-                    </StackPanel>
                     <Grid x:Name="GearDiscriptionG" 
                           Grid.Row="0"
-                          Grid.Column="2">
+                          Grid.Column="3">
 
                     </Grid>
                 </Grid>
@@ -516,7 +532,7 @@
                                 <TextBlock Text="{Binding Character.NotSpendExp}"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal"
-                                        Margin="3">                               
+                                        Margin="3">
                                 <TextBox x:Name="ExpToAdd"
                                          Width="150"
                                          Margin="5 0"
@@ -539,8 +555,8 @@
                 </TabItem.DataContext>
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="220"/>
-                        <ColumnDefinition Width="220"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
                     <StackPanel Grid.Column="0"
@@ -551,7 +567,16 @@
                                    FontWeight="Bold"/>
                         <DataGrid  Margin="3"
                                    ItemsSource="{Binding AllTalents}"
-                                   SelectedItem="{Binding SelectedAvailableTalent}"/>
+                                   SelectedItem="{Binding SelectedAvailableTalent}"
+                                   AutoGenerateColumns="False">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+                                <DataGridTextColumn Header="Tier" Binding="{Binding Tier}"/>
+                                <DataGridTextColumn Header="Cost" Binding="{Binding Cost}"/>
+                                <DataGridTextColumn Header="FirstAptitude" Binding="{Binding FirstAptitude}"/>
+                                <DataGridTextColumn Header="SecondAptitude" Binding="{Binding SecondAptitude}"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
                         <Button Content="Add"
                                 Margin="3"
                                 Command="{Binding AddTalent}"
@@ -564,14 +589,32 @@
                                    HorizontalAlignment="Center"
                                    FontWeight="Bold"/>
                         <DataGrid  Margin="3"
-                                   ItemsSource="{Binding Character.Talents}"
-                                   SelectedItem="{Binding SelectedOwnTalent}"/>
+                                   ItemsSource="{Binding Path=SelectedCharacter.Talents, Source={StaticResource ResourceKey=CharacterInstance}}"
+                                   SelectedItem="{Binding SelectedOwnTalent}"
+                                   AutoGenerateColumns="False">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+                                <DataGridTextColumn Header="Tier" Binding="{Binding Tier}"/>
+                                <DataGridTextColumn Header="Cost" Binding="{Binding Cost}"/>                               
+                            </DataGrid.Columns>
+                        </DataGrid>
                         <Button Content="Remove"
                                 Margin="3"
                                 Command="{Binding RemoveTalent}"
                                 CommandParameter="{Binding SelectedOwnTalent}"/>
                     </StackPanel>
-                    <TextBlock Grid.Column="2"/>
+                    <StackPanel Grid.Column="2">
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock Text="{Binding SelectedAvailableTalent.Name}"
+                                       Padding="5"/>
+                            <TextBlock Text="{Binding SelectedAvailableTalent.Discription}" 
+                                       TextWrapping="Wrap"
+                                       Padding="5"
+                                       ScrollViewer.CanContentScroll="True"
+                                       ScrollViewer.VerticalScrollBarVisibility="Visible"
+                                       MaxHeight="600"/>
+                        </StackPanel>
+                    </StackPanel>
                 </Grid>
             </TabItem>
             <TabItem x:Name="Skills" Header="Skills">
@@ -580,11 +623,11 @@
                 </TabItem.DataContext>
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="250"/>
-                        <ColumnDefinition/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="2*"/>
                     </Grid.ColumnDefinitions>
                     <TabControl>
-                        <TabItem Header="Common Skills">
+                        <TabItem x:Name="CommonSkillsTabItem" Header="Common Skills">
                             <StackPanel>
                                 <DataGrid Grid.Column="0"
                                           Margin="5"
@@ -593,26 +636,74 @@
                                           SelectedItem="{Binding SelectedCommonSkill, 
                                                                  UpdateSourceTrigger=PropertyChanged,
                                                                  Mode=TwoWay,
-                                                                 TargetNullValue=CommonSkills[0]}"/>
+                                                                 TargetNullValue=CommonSkills[0]}"
+                                          AutoGenerateColumns="False"
+                                          IsReadOnly="True">
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+                                        <DataGridTextColumn Header="Rank" Binding="{Binding Rank}"/>
+                                        <DataGridTextColumn Header="Cost" Binding="{Binding Cost}"/>
+                                    </DataGrid.Columns>
+
+                                </DataGrid>
                                 <Button Content="Increace Rank"
                                         Command="{Binding IncreaceCommonSkillRank}"
                                         CommandParameter="{Binding SelectedCommonSkill}"/>
                             </StackPanel>
                         </TabItem>
-                        <TabItem Header="Specialized Skills">
+                        <TabItem x:Name="SpecializedSkillsTabItem" Header="Specialized Skills">
                             <StackPanel>
                                 <DataGrid Grid.Column="0"
                                           Margin="5"
                                           MaxHeight="600"
                                           ItemsSource="{Binding SpecializedSkills}"
-                                          SelectedItem="{Binding SelectedSpecializedSkill}"/>
+                                          SelectedItem="{Binding SelectedSpecializedSkill,
+                                                                 TargetNullValue=SpecializedSkills[0]}"
+                                          AutoGenerateColumns="False"
+                                          IsReadOnly="True">
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+                                        <DataGridTextColumn Header="Specialization" Binding="{Binding Specialization}"/>
+                                        <DataGridTextColumn Header="Rank" Binding="{Binding Rank}"/>
+                                        <DataGridTextColumn Header="Cost" Binding="{Binding Cost}"/>
+                                    </DataGrid.Columns>
+                                </DataGrid>
                                 <Button Content="Increace Rank"
                                         Command="{Binding IncreaceSpecializedSkillRank}"
                                         CommandParameter="{Binding SelectedSpecializedSkill}"/>
                             </StackPanel>
                         </TabItem>
                     </TabControl>
-                    <TextBlock Grid.Column="1"/>                                
+                    <Grid Grid.Column="1">
+                        <StackPanel Visibility="{Binding Path=IsSelected, 
+                                                    ElementName=CommonSkillsTabItem, 
+                                                    Converter={StaticResource BooleanToVisibilityConverter}}"
+                                    Orientation="Vertical">
+                            <TextBlock Text="{Binding SelectedCommonSkill.Name}"
+                                       Padding="5"/>
+                            <TextBlock Text="{Binding SelectedCommonSkill.Discription}" 
+                                       TextWrapping="Wrap"
+                                       Padding="5"
+                                       ScrollViewer.CanContentScroll="True"
+                                       ScrollViewer.VerticalScrollBarVisibility="Visible"
+                                       MaxHeight="600"/>
+                        </StackPanel>
+                        <StackPanel Visibility="{Binding Path=IsSelected, 
+                                                    ElementName=SpecializedSkillsTabItem, 
+                                                    Converter={StaticResource BooleanToVisibilityConverter}}"
+                                    Orientation="Vertical">
+                            <TextBlock Text="{Binding SelectedSpecializedSkill.Name}"
+                                       Padding="5"/>
+                            <TextBlock Text="{Binding SelectedSpecializedSkill.Discription}" 
+                                       TextWrapping="Wrap"
+                                       Padding="5"
+                                       ScrollViewer.CanContentScroll="True"
+                                       ScrollViewer.VerticalScrollBarVisibility="Visible"
+                                       MaxHeight="600"/>
+                        </StackPanel>
+                            
+                       
+                    </Grid>
                 </Grid>
             </TabItem>
             <!--<TabItem x:Name="PsychicPowers" Header="Psychic Powers">

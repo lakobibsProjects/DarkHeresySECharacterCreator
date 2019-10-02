@@ -241,9 +241,18 @@
                 <StackPanel Orientation="Horizontal" Margin="5">
                     <TextBlock Text="Fate:"/>
                     <TextBlock Text="{Binding CreatedCharacter.FateTreshold}" Margin="5 0"/>
+                    <Button Content="Blessing" Command="{Binding SetFateTreshhold}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="5 0 5 5">
+                    <TextBlock Text="Wounds:"/>
+                    <TextBlock Text="{Binding CreatedCharacter.TotalWounds}" Margin="5 0"/>
+                    <Button Content="Roll" Command="{Binding SetWounds}"/>
                 </StackPanel>
                 <ListView x:Name="AptitudesLV"
-                          ItemsSource="{Binding Aptitudes}">
+                          ItemsSource="{Binding Aptitudes}"
+                          ScrollViewer.VerticalScrollBarVisibility="Visible"
+                          ScrollViewer.CanContentScroll="False"
+                          MaxHeight="90">
                     <ListView.ItemsPanel>
                         <ItemsPanelTemplate>
                             <StackPanel Orientation="Vertical" />
@@ -251,22 +260,35 @@
                     </ListView.ItemsPanel>
                 </ListView>
             </StackPanel>
-            <StackPanel Grid.Column="1">
-                <TextBlock Text="Skills"/>
-                <ListView x:Name="SkillsLV"
-                      ItemsSource="{Binding Skills}"
-                      Margin="5">
-                    <ListView.ItemsPanel>
-                        <ItemsPanelTemplate>
-                            <StackPanel Orientation="Vertical" />
-                        </ItemsPanelTemplate>
-                    </ListView.ItemsPanel>
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding}" FontSize="20" Margin="5"/>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>                
+            <StackPanel Grid.Column="1"
+                        Grid.Row="0">
+                <TextBlock Text="Skills" HorizontalAlignment="Center" FontWeight="Bold"/>
+                <DataGrid Margin="3" 
+                          AutoGenerateColumns="False"
+                          ItemsSource="{Binding Skills}">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Skill" IsReadOnly="True" Binding="{Binding Name}"/>
+                        <DataGridCheckBoxColumn  Header="Know" Binding="{Binding IsKnow}" IsReadOnly="True"/>
+                        <DataGridCheckBoxColumn Header="Trained" Binding="{Binding IsTrained}" IsReadOnly="True"/>
+                        <DataGridCheckBoxColumn Header="Experienced" Binding="{Binding IsExperienced}" IsReadOnly="True"/>
+                        <DataGridCheckBoxColumn Header="Veteran" Binding="{Binding IsVeteran}" IsReadOnly="True"/>
+                    </DataGrid.Columns>
+                    
+                </DataGrid>
+                    <!--<ListView x:Name="SkillsLV"
+                              ItemsSource="{Binding Skills}"
+                              Margin="5"
+                              ScrollViewer.VerticalScrollBarVisibility="Visible"
+                              ScrollViewer.CanContentScroll="False"
+                              MaxHeight="500">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn  Header="Skill" DisplayMemberBinding="{Binding Item1}"/>
+                                <GridViewColumn  Header="Rank" DisplayMemberBinding="{Binding Item2}"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>   -->          
+                 
             </StackPanel>
             <Grid Grid.Column="2" Margin="5">
                 <Grid.RowDefinitions>
@@ -276,41 +298,44 @@
                 </Grid.RowDefinitions>
                 <StackPanel Grid.Row="0">
                     <TextBlock Text="Talents and Traits:"/>
-                    <ListView x:Name="TalentsTraitsLV"
+                    <ScrollViewer>
+                        <ListBox ItemsSource="{Binding TalentsAndTraits}">
+                        
+                        </ListBox>                        
+                    </ScrollViewer>
+                    <!--<ListView x:Name="TalentsTraitsLV"
                       ItemsSource="{Binding TalentsAndTraits}">
                         <ListView.ItemsPanel>
                             <ItemsPanelTemplate>
                                 <StackPanel Orientation="Vertical" />
                             </ItemsPanelTemplate>
                         </ListView.ItemsPanel>
-                    </ListView>
+                    </ListView>-->
                 </StackPanel>
                 <StackPanel Grid.Row="1">
                     <TextBlock Text="Gear:"/>
-                    <ListView x:Name="GearLV"
-                      ItemsSource="{Binding Gear}">
-                        <ListView.ItemsPanel>
-                            <ItemsPanelTemplate>
-                                <StackPanel Orientation="Vertical" />
-                            </ItemsPanelTemplate>
-                        </ListView.ItemsPanel>
-                    </ListView>
+                    <ScrollViewer>
+                        <ListView x:Name="GearLV"
+                          ItemsSource="{Binding Gear}">
+                            <ListView.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <StackPanel Orientation="Vertical" />
+                                </ItemsPanelTemplate>
+                            </ListView.ItemsPanel>
+                        </ListView>                        
+                    </ScrollViewer>
                 </StackPanel>
                 <StackPanel Grid.Row="2">
                     <TextBlock Text="Special Abilities:"/>
-                    <ListView x:Name="SpecialAbilitiesLV"
-                      ItemsSource="{Binding SpecialAbilities}">
-                        <ListView.ItemsPanel>
-                            <ItemsPanelTemplate>
-                                <StackPanel Orientation="Vertical" />
-                            </ItemsPanelTemplate>
-                        </ListView.ItemsPanel>
-                        <ListView.ItemTemplate>
+                    <ListBox ItemsSource="{Binding SpecialAbilities}"
+                             MaxHeight="100"
+                             ScrollViewer.VerticalScrollBarVisibility="Visible">
+                        <ListBox.ItemTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding}" TextWrapping="Wrap"/>
+                                <TextBlock TextWrapping="Wrap" Text="{Binding}" MaxWidth="250"/>
                             </DataTemplate>
-                        </ListView.ItemTemplate>
-                    </ListView>
+                        </ListBox.ItemTemplate>
+                    </ListBox>                    
                 </StackPanel>
             </Grid>
         </Grid>

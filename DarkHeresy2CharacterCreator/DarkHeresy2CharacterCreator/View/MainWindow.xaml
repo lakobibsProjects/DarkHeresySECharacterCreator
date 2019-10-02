@@ -29,11 +29,19 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <ListView Grid.Column="0"
-                  Margin="5"
-                  Opacity="0.5"
+                  Margin="5"                  
                   ItemsSource="{Binding Characters, Mode=TwoWay}"
-                  SelectedItem="{Binding SelectedCharacter, Mode=TwoWay}">            
-            <ListView.ItemTemplate>
+                  SelectedItem="{Binding SelectedCharacter, Mode=TwoWay}"
+                  SelectedIndex="0" >
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Character name" DisplayMemberBinding="{Binding CharacterName}"/>
+                    <GridViewColumn Header="Expirience" DisplayMemberBinding="{Binding TotalExpirience}"/>
+                    <GridViewColumn Header="Player name" DisplayMemberBinding="{Binding PlayerName}"/>
+                </GridView>
+            </ListView.View>
+            <!--<ListView.ItemTemplate>
+                
                 <DataTemplate>
                     <Grid>
                         <Grid.ColumnDefinitions>
@@ -45,7 +53,7 @@
                         <TextBlock Grid.Column="1" Text="{Binding TotalExpirience}"/>
                     </Grid>
                 </DataTemplate>
-            </ListView.ItemTemplate>
+            </ListView.ItemTemplate>-->
         </ListView>
         <StackPanel Orientation="Vertical" 
                     Margin="5" 
@@ -57,7 +65,7 @@
                     Style="{DynamicResource ResourceKey=BaseButton}"
                     Command="{Binding NewCharacterCommand}"/>
             <Button x:Name="LoadCharacterButton" 
-                    Content="Load" 
+                    Content="Open" 
                     Style="{DynamicResource ResourceKey=BaseButton}"
                     Command="{Binding LoadCharacterCommand}"
                     CommandParameter="{Binding ElementName=CharacterCreatorWindow}"/>

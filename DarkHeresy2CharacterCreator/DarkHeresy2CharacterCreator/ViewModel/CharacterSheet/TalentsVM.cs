@@ -40,7 +40,7 @@ namespace DarkHeresy2CharacterCreator.ViewModel.CharacterSheet
         #region Constructor
         public TalentsVM()
         {
-            Character = MainWindowVM.SelectedCharacter;
+            Character = MainWindowVM.OpenedCharacter;
             addTalent = new DelegateCommand(obj => Character.Talents.Add(obj as Talent));
             removeTalent = new DelegateCommand(obj => Character.Talents.Remove(obj as Talent));
         }

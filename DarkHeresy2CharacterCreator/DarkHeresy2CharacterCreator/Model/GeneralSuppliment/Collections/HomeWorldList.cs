@@ -15,12 +15,16 @@ namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment.Collections
     {
 
             #region Bonuses
-            private static string feralWorldBonus = "";
-            private static string forgeWorldBonus = "";
-            private static string heighbornBonus = "";
-            private static string hiveWorldBonus = "";
-            private static string shrineWorldBonus = "";
-            private static string voidbornBonus = "";
+            private static string feralWorldBonus = "The Old Ways: In the hands of a feral world character, any Low-Tech weapon loses the Primitive quality " +
+            "(if it had it) and gains the Proven(3) quality.";
+            private static string forgeWorldBonus = "Omnissiah’s Chosen: A forge world character starts with either the Technical Knock or Weapon-Tech talent.";
+            private static string heighbornBonus = "Breeding Counts: Any time a highborn character would reduce his Influence, he reduces it by 1 less(to a minimum reduction of 1).";
+            private static string hiveWorldBonus = "Teeming Masses in Metal Mountains: A hive world character ignores crowds for purposes of movement," +
+            " treating them as open terrain.When in enclosed spaces, he also gains a +20 bonus to Navigate (Surface) tests.";
+            private static string shrineWorldBonus = "Faith in the Creed: Whenever a shrine world character spends a Fate point, he rolls 1d10." +
+            " On a result of 1, the character’s total number of Fate points is not reduced.";
+            private static string voidbornBonus = "Child of the Dark: A voidborn character starts with the Strong Minded talent, " +
+            "and gains a +30 bonus to tests for moving in a zero gravity environment.";
             #endregion
         /// <summary>
         /// Collection of homeworlds

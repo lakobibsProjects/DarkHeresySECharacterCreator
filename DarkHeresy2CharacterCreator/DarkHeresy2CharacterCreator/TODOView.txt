@@ -1,2 +1,5 @@
-PA1. Think about merge character creation view`s
++PA1. Think about merge character creation view`s
 +PA2. Add to character creation view`s SummaryWindow
+A3. Add discription of specialization of spicialized skills
+A4. Add search functional in Talents, Skills and Items TaItems in CharacterSheetView
+A5. Merge character cration View`s

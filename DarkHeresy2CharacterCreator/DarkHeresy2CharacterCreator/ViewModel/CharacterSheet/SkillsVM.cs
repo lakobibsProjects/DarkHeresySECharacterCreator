@@ -25,7 +25,7 @@ namespace DarkHeresy2CharacterCreator.ViewModel.CharacterSheet
         public AbstractSkill SelectedCommonSkill { get; set; }
         public AbstractSkill SelectedSpecializedSkill { get; set; }
         public ObservableCollection<AbstractSkill> CommonSkills { get; set; }
-        public ObservableCollection<AbstractSkill> SpecializedSkills { get; set; }
+        public ObservableCollection<SpecializedSkill> SpecializedSkills { get; set; }
         public ICommand IncreaceCommonSkillRank => increaceCommonSkillRank;
         public ICommand IncreaceSpecializedSkillRank => increaceSpecializedSkillRank;
         #endregion Propeties
@@ -33,9 +33,9 @@ namespace DarkHeresy2CharacterCreator.ViewModel.CharacterSheet
         #region Constructor
         public SkillsVM()
         {
-            Character = MainWindowVM.SelectedCharacter;
-            increaceCommonSkillRank = new DelegateCommand(obj => Character.Skills.Where( s => s.Name == SelectedCommonSkill.Name).FirstOrDefault().Rank++);
-            increaceSpecializedSkillRank = new DelegateCommand(obj => Character.Skills.Where(s => s.Name == SelectedSpecializedSkill.Name).FirstOrDefault().Rank++);
+            Character = MainWindowVM.OpenedCharacter;
+            increaceCommonSkillRank = new DelegateCommand(obj => Character.Skills.Where( s => s.Name == SelectedCommonSkill.Name).FirstOrDefault().IncreaceRank(Character));
+            increaceSpecializedSkillRank = new DelegateCommand(obj => Character.Skills.Where(s => s.Name == SelectedSpecializedSkill.Name).FirstOrDefault().IncreaceRank(Character));
             InitializeCollections();
         }
         #endregion Constructor
@@ -43,10 +43,11 @@ namespace DarkHeresy2CharacterCreator.ViewModel.CharacterSheet
         #region Helped Methods
         private void InitializeCollections()
         {
-            var commonSkillsQuerry = Character.Skills.Where(s => s is CommonSkill);
-            var specializedSkillsQuery = Character.Skills.Where(s => s is SpecializedSkill);
+            
+            var specializedSkillsQuery = Character.Skills.Where(s => s is SpecializedSkill).Select(s => (SpecializedSkill)s );
+            var commonSkillsQuerry = Character.Skills.Where(s => s is CommonSkill).Except(Character.Skills.Where(s => s is SpecializedSkill));
             CommonSkills = new ObservableCollection<AbstractSkill>(commonSkillsQuerry);
-            SpecializedSkills = new ObservableCollection<AbstractSkill>(specializedSkillsQuery);
+            SpecializedSkills = new ObservableCollection<SpecializedSkill>(specializedSkillsQuery);
         }
         #endregion Helped Methods
 

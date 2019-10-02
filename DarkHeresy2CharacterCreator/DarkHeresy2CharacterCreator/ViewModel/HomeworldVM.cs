@@ -30,6 +30,45 @@ namespace DarkHeresy2CharacterCreator.ViewModel
         public ICommand CancelCommand => cancelCommand;
         public ObservableCollection<DarkHeresy2CharacterCreator.Model.GeneralSuppliment.HomeWorld> Homeworlds { get { return homeworlds; } set { homeworlds = value; } }
         public DarkHeresy2CharacterCreator.Model.GeneralSuppliment.HomeWorld SelectedHomeworld { get; set; }
+        public bool HomeworldIsSelected { get { return SelectedHomeworld != null; } }
+        public string CharacteristicsString
+        {
+            get
+            {
+                if (SelectedHomeworld != null)
+                
+                    return string.Format("+{0}; +{1}; -{2} ", SelectedHomeworld.Characteristics[0].ToString().Replace("_", " "),
+                        SelectedHomeworld.Characteristics[1].ToString().Replace("_", " "), SelectedHomeworld.Characteristics[2].ToString().Replace("_", " "));
+                return string.Empty;                
+            }
+        }
+        public string HomeworldAptitudeString
+        {
+            get
+            {
+                if (SelectedHomeworld != null)
+                    return SelectedHomeworld.HomeWorldAptitude.ToString();
+                return string.Empty;
+            }
+        }
+        public string RecomendedBackgroundsString
+        {
+            get
+            {
+                StringBuilder temp = new StringBuilder();
+                string result = string.Empty;
+                if (SelectedHomeworld != null)
+                {
+                    if (SelectedHomeworld.RekommendedBackgrouns.Length > 0)
+                    {
+                        foreach (var item in SelectedHomeworld.RekommendedBackgrouns)
+                            temp.Append(item.ToString()).Append(", ");
+                        result = temp.ToString().Substring(0, temp.Length - 2);
+                    }
+                }
+                return result;
+            }
+        }
         #endregion
 
         public HomeworldVM()
@@ -48,14 +87,14 @@ namespace DarkHeresy2CharacterCreator.ViewModel
 
         private void OnCancel(object obj)           //TODO add fuctional to remove new created character
         {
-            MainWindowVM.SelectedCharacter.RemoveHomeworld();
+            MainWindowVM.OpenedCharacter.RemoveHomeworld();
             Window window = obj as Window;
             window.Close();
         }
 
         private void OnNextWindow(object obj)           //TODO add functional to save homeworld-based variables to character
         {
-            MainWindowVM.SelectedCharacter.AddHomeworld(SelectedHomeworld);
+            MainWindowVM.OpenedCharacter.AddHomeworld(SelectedHomeworld);
             Window window = obj as Window;
             window.Close();
             Window backgroundWindow = new Background();

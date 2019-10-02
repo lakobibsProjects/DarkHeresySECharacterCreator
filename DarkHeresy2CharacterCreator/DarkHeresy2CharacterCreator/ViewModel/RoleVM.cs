@@ -27,7 +27,46 @@ namespace DarkHeresy2CharacterCreator.ViewModel
         public ICommand PreviousWindowCommand => previousWindowCommand;
         public ICommand CancelCommand => cancelCommand;
         public DarkHeresy2CharacterCreator.Model.GeneralSuppliment.Role SelectedRole { get; set; }
+        public bool RoleIsSelected { get { return SelectedRole != null; } }
         public ObservableCollection<DarkHeresy2CharacterCreator.Model.GeneralSuppliment.Role> Roles{ get; set; }
+        public string TalentsString
+        {
+            get
+            {
+                StringBuilder temp = new StringBuilder();
+                if (SelectedRole != null)
+                {
+                    if (SelectedRole.RoleTalent.Item2 != null && SelectedRole.RoleTalent.Item1 != null)
+                        temp.Append(SelectedRole.RoleTalent.Item1.ToString()).Append(" or ").Append(SelectedRole.RoleTalent.Item2.ToString());
+                    else if (SelectedRole.RoleTalent.Item1 != null)
+                        temp.Append(SelectedRole.RoleTalent.Item1.ToString());
+                }
+
+                return temp.ToString().Substring(0, temp.Length);
+            }
+        }
+        public string AptitudesString
+        {
+            get
+            {
+                StringBuilder temp = new StringBuilder();
+                if (SelectedRole != null)
+                {
+                    if (SelectedRole.Aptitudes.Count > 0)
+                    {
+                        foreach (var item in SelectedRole.Aptitudes)
+                        {
+                                if (item.Item2 == null)
+                                    temp.Append(item.Item1.ToString()).Append(", ");
+                                else
+                                    temp.Append(item.Item1.ToString()).Append(" or ").Append(item.Item2.ToString()).Append(", ");        
+                        }
+                    }
+                    return temp.ToString().Substring(0, temp.Length - 2);
+                }
+                return string.Empty;
+            }
+        }
         #endregion
 
         public RoleVM()
@@ -41,7 +80,7 @@ namespace DarkHeresy2CharacterCreator.ViewModel
         #region Command Handlers
         private void OnPreviousWindow(object obj)           //TODO add functional to remove role-based variables to character
         {
-            MainWindowVM.SelectedCharacter.RemoveRole();
+            MainWindowVM.OpenedCharacter.RemoveRole();
             Window window = obj as Window;
             window.Close();
             Window backgroundWindow = new View.CharacterCreationView.Background();
@@ -50,16 +89,16 @@ namespace DarkHeresy2CharacterCreator.ViewModel
 
         private void OnCancel(object obj)           //TODO add fuctional to remove new created character
         {
-            MainWindowVM.SelectedCharacter.RemoveHomeworld();
-            MainWindowVM.SelectedCharacter.RemoveBackround();
-            MainWindowVM.SelectedCharacter.RemoveRole();
+            MainWindowVM.OpenedCharacter.RemoveHomeworld();
+            MainWindowVM.OpenedCharacter.RemoveBackround();
+            MainWindowVM.OpenedCharacter.RemoveRole();
             Window window = obj as Window;
             window.Close();
         }
 
         private void OnNextWindow(object obj)           //TODO add functional to save role-based variables to character and add character to collection
         {
-            MainWindowVM.SelectedCharacter.AddRole(SelectedRole);
+            MainWindowVM.OpenedCharacter.AddRole(SelectedRole);
             Window summaryWindow = new View.CharacterCreationView.SummaryCreationView();
             summaryWindow.Show();
             Window window = obj as Window;

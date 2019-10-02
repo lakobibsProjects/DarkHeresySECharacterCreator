@@ -23,7 +23,7 @@ namespace DarkHeresy2CharacterCreator.ViewModel
         private readonly DelegateCommand closeApplicationCommand;
         private readonly DelegateCommand loadCharacterCommand;
         private readonly DelegateCommand deleteCharacterCommand;
-        public ObservableCollection<ICharacter> characters;
+        public ObservableCollection<ICharacter> characters = new ObservableCollection<ICharacter>();
         #endregion Fields
 
         #region Propreties
@@ -32,11 +32,13 @@ namespace DarkHeresy2CharacterCreator.ViewModel
         public ICommand DeleteCharacterCommand => deleteCharacterCommand;
         public ICommand CloseApplicationCommand => closeApplicationCommand;
         public ObservableCollection<ICharacter> Characters { get { return characters; } set { characters = value; } }
-        public static ICharacter SelectedCharacter { get; set; }
+        public ICharacter SelectedCharacter { get; set; }
+        public static ICharacter OpenedCharacter { get; set; }
         #endregion
 
         public MainWindowVM()
         {
+            
             newCharacterCommand = new DelegateCommand(OnNewCharacter);
             closeApplicationCommand = new DelegateCommand(OnCloseApplication);
             deleteCharacterCommand = new DelegateCommand(OnDeleteCaharacter);
@@ -57,6 +59,25 @@ namespace DarkHeresy2CharacterCreator.ViewModel
         {
             if (SelectedCharacter != null)
             {
+                OpenedCharacter = SelectedCharacter;
+                if (SelectedCharacter.HomeWorld == null)
+                {
+                    Window homeWorldWindow = new HomeWorld();
+                    homeWorldWindow.Show();
+                    return;
+                }
+                if (SelectedCharacter.Background == null)
+                {
+                    Window backgroundWindow = new Background();
+                    backgroundWindow.Show();
+                    return;
+                }
+                if (SelectedCharacter.Role == null)
+                {
+                    Window roleWindow = new Role();
+                    roleWindow.Show();
+                    return;
+                }                
                 Window characterSheet = new CharacterSheetView();
                 characterSheet.Show();
                 Window currentWindow = obj as Window;
@@ -79,7 +100,7 @@ namespace DarkHeresy2CharacterCreator.ViewModel
         {
             Character newCharacter = new Character();            
             Characters.Add(newCharacter);
-            SelectedCharacter = newCharacter;
+            OpenedCharacter = newCharacter;
             Window homeWorldWindow = new HomeWorld();
             homeWorldWindow.Show();
         }

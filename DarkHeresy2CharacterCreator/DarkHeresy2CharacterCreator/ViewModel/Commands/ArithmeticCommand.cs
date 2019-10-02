@@ -7,7 +7,7 @@ using System.Windows.Input;
 
 namespace DarkHeresy2CharacterCreator.ViewModel.Commands
 {
-    public class ArithmeticCommand :ICommand
+    public class ArithmeticCommand : ICommand
     {
         private readonly Action<int?> executeAction;
 
