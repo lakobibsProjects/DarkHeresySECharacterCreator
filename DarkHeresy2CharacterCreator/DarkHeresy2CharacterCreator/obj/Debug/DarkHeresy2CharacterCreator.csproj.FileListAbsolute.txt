@@ -32,4 +32,7 @@ C:\Projects\C#\DarkHeresy2CharacterCreator\DarkHeresy2CharacterCreator\DarkHeres
 C:\Projects\C#\DarkHeresy2CharacterCreator\DarkHeresy2CharacterCreator\DarkHeresy2CharacterCreator\obj\Debug\DarkHeresy2CharacterCreator.csproj.CopyComplete
 C:\Projects\C#\DarkHeresy2CharacterCreator\DarkHeresy2CharacterCreator\DarkHeresy2CharacterCreator\obj\Debug\DarkHeresy2CharacterCreator.exe
 C:\Projects\C#\DarkHeresy2CharacterCreator\DarkHeresy2CharacterCreator\DarkHeresy2CharacterCreator\obj\Debug\DarkHeresy2CharacterCreator.pdb
+C:\Projects\C#\DarkHeresy2CharacterCreator\DarkHeresy2CharacterCreator\DarkHeresy2CharacterCreator\bin\Debug\System.Collections.NonGeneric.dll
+C:\Projects\C#\DarkHeresy2CharacterCreator\DarkHeresy2CharacterCreator\DarkHeresy2CharacterCreator\bin\Debug\System.ComponentModel.Primitives.dll
+C:\Projects\C#\DarkHeresy2CharacterCreator\DarkHeresy2CharacterCreator\DarkHeresy2CharacterCreator\bin\Debug\System.ComponentModel.TypeConverter.dll
 C:\Projects\C#\DarkHeresy2CharacterCreator\DarkHeresy2CharacterCreator\DarkHeresy2CharacterCreator\obj\Debug\DarkHeresy2CharacterCreator.csprojAssemblyReference.cache

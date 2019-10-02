@@ -71,7 +71,7 @@ namespace DarkHeresy2CharacterCreator.ViewModel.CharacterSheet
         {
             try
             {
-                Character = MainWindowVM.SelectedCharacter;
+                Character = MainWindowVM.OpenedCharacter;
                 FillItemsCollection();
                 //ownItems = Character.Gear;
                 removeItem = new DelegateCommand(RemoveItemCommans);

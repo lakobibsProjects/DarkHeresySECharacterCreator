@@ -33,7 +33,7 @@ namespace DarkHeresy2CharacterCreator.ViewModel.CharacterSheet
         #region Constructor
         public SkillsVM()
         {
-            Character = MainWindowVM.SelectedCharacter;
+            Character = MainWindowVM.OpenedCharacter;
             increaceCommonSkillRank = new DelegateCommand(obj => Character.Skills.Where( s => s.Name == SelectedCommonSkill.Name).FirstOrDefault().IncreaceRank(Character));
             increaceSpecializedSkillRank = new DelegateCommand(obj => Character.Skills.Where(s => s.Name == SelectedSpecializedSkill.Name).FirstOrDefault().IncreaceRank(Character));
             InitializeCollections();

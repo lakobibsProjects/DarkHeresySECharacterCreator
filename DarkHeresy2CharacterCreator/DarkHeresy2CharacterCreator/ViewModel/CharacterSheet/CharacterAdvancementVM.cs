@@ -27,7 +27,7 @@ namespace DarkHeresy2CharacterCreator.ViewModel.CharacterSheet
         #region Constructor
         public CharacterAdvancementVM()
         {
-            Character = MainWindowVM.SelectedCharacter;
+            Character = MainWindowVM.OpenedCharacter;
             addExpierience = new DelegateCommand(obj => Character.TotalExpirience += ExpirienceToAdd);
         }
         #endregion Constructor

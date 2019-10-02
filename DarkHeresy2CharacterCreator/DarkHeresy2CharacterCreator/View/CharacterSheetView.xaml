@@ -6,10 +6,12 @@
         xmlns:local="clr-namespace:DarkHeresy2CharacterCreator.View"
         xmlns:vm="clr-namespace:DarkHeresy2CharacterCreator.ViewModel.CharacterSheet"
         xmlns:character="clr-namespace:DarkHeresy2CharacterCreator.ViewModel"
+        xmlns:converters="clr-namespace:System.Windows.Converters;assembly=WindowsBase"
         mc:Ignorable="d"
         Title="{Binding Character.CharacterName}" Height="768" Width="1024">
     <Window.Resources>
         <character:MainWindowVM x:Key="CharacterInstance"/>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
     </Window.Resources>
     <Grid Style="{DynamicResource GeneralGrid}">
         <Grid.RowDefinitions>
@@ -553,8 +555,8 @@
                 </TabItem.DataContext>
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="220"/>
-                        <ColumnDefinition Width="220"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
                     <StackPanel Grid.Column="0"
@@ -567,11 +569,13 @@
                                    ItemsSource="{Binding AllTalents}"
                                    SelectedItem="{Binding SelectedAvailableTalent}"
                                    AutoGenerateColumns="False">
-                            <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
-                            <DataGridTextColumn Header="Tier" Binding="{Binding Tier}"/>
-                            <DataGridTextColumn Header="Cost" Binding="{Binding Cost}"/>
-                            <DataGridTextColumn Header="FirstAptitude" Binding="{Binding FirstAptitude}"/>
-                            <DataGridTextColumn Header="SecondAptitude" Binding="{Binding SecondAptitude}"/>
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+                                <DataGridTextColumn Header="Tier" Binding="{Binding Tier}"/>
+                                <DataGridTextColumn Header="Cost" Binding="{Binding Cost}"/>
+                                <DataGridTextColumn Header="FirstAptitude" Binding="{Binding FirstAptitude}"/>
+                                <DataGridTextColumn Header="SecondAptitude" Binding="{Binding SecondAptitude}"/>
+                            </DataGrid.Columns>
                         </DataGrid>
                         <Button Content="Add"
                                 Margin="3"
@@ -612,7 +616,7 @@
                         <ColumnDefinition Width="2*"/>
                     </Grid.ColumnDefinitions>
                     <TabControl>
-                        <TabItem Header="Common Skills">
+                        <TabItem x:Name="CommonSkillsTabItem" Header="Common Skills">
                             <StackPanel>
                                 <DataGrid Grid.Column="0"
                                           Margin="5"
@@ -622,7 +626,8 @@
                                                                  UpdateSourceTrigger=PropertyChanged,
                                                                  Mode=TwoWay,
                                                                  TargetNullValue=CommonSkills[0]}"
-                                          AutoGenerateColumns="False">
+                                          AutoGenerateColumns="False"
+                                          IsReadOnly="True">
                                     <DataGrid.Columns>
                                         <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
                                         <DataGridTextColumn Header="Rank" Binding="{Binding Rank}"/>
@@ -635,7 +640,7 @@
                                         CommandParameter="{Binding SelectedCommonSkill}"/>
                             </StackPanel>
                         </TabItem>
-                        <TabItem Header="Specialized Skills">
+                        <TabItem x:Name="SpecializedSkillsTabItem" Header="Specialized Skills">
                             <StackPanel>
                                 <DataGrid Grid.Column="0"
                                           Margin="5"
@@ -643,7 +648,8 @@
                                           ItemsSource="{Binding SpecializedSkills}"
                                           SelectedItem="{Binding SelectedSpecializedSkill,
                                                                  TargetNullValue=SpecializedSkills[0]}"
-                                          AutoGenerateColumns="False">
+                                          AutoGenerateColumns="False"
+                                          IsReadOnly="True">
                                     <DataGrid.Columns>
                                         <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
                                         <DataGridTextColumn Header="Specialization" Binding="{Binding Specialization}"/>
@@ -657,7 +663,36 @@
                             </StackPanel>
                         </TabItem>
                     </TabControl>
-                    <TextBlock Grid.Column="1"/>
+                    <Grid Grid.Column="1">
+                        <StackPanel Visibility="{Binding Path=IsSelected, 
+                                                    ElementName=CommonSkillsTabItem, 
+                                                    Converter={StaticResource BooleanToVisibilityConverter}}"
+                                    Orientation="Vertical">
+                            <TextBlock Text="{Binding SelectedCommonSkill.Name}"
+                                       Padding="5"/>
+                            <TextBlock Text="{Binding SelectedCommonSkill.Discription}" 
+                                       TextWrapping="Wrap"
+                                       Padding="5"
+                                       ScrollViewer.CanContentScroll="True"
+                                       ScrollViewer.VerticalScrollBarVisibility="Visible"
+                                       MaxHeight="600"/>
+                        </StackPanel>
+                        <StackPanel Visibility="{Binding Path=IsSelected, 
+                                                    ElementName=SpecializedSkillsTabItem, 
+                                                    Converter={StaticResource BooleanToVisibilityConverter}}"
+                                    Orientation="Vertical">
+                            <TextBlock Text="{Binding SelectedSpecializedSkill.Name}"
+                                       Padding="5"/>
+                            <TextBlock Text="{Binding SelectedSpecializedSkill.Discription}" 
+                                       TextWrapping="Wrap"
+                                       Padding="5"
+                                       ScrollViewer.CanContentScroll="True"
+                                       ScrollViewer.VerticalScrollBarVisibility="Visible"
+                                       MaxHeight="600"/>
+                        </StackPanel>
+                            
+                       
+                    </Grid>
                 </Grid>
             </TabItem>
             <!--<TabItem x:Name="PsychicPowers" Header="Psychic Powers">

@@ -67,7 +67,7 @@ namespace DarkHeresy2CharacterCreator.ViewModel.CharacterSheet
         #region Constructor
         public CharacterSheetVM()
         {
-            Character = MainWindowVM.SelectedCharacter;
+            Character = MainWindowVM.OpenedCharacter;
             upCharateristic = new DelegateCommand(IncreaceCharacteristic);
             #region to refactoring (DRY)
             influenceIncreace = new DelegateCommand(obj => Character.Characteristics.Where(c => c.Name == CharacteristicName.Influence).FirstOrDefault().Value++);

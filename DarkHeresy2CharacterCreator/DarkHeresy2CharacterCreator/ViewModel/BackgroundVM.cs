@@ -172,7 +172,7 @@ namespace DarkHeresy2CharacterCreator.ViewModel
         #region  Command Handlers
         private void OnPreviousWindow(object obj)           //TODO add functional to remove background-based variables to character
         {
-            MainWindowVM.SelectedCharacter.RemoveBackround();
+            MainWindowVM.OpenedCharacter.RemoveBackround();
             Window window = obj as Window;
             window.Close();
             Window backgroundWindow = new View.CharacterCreationView.HomeWorld();
@@ -181,15 +181,15 @@ namespace DarkHeresy2CharacterCreator.ViewModel
 
         private void OnCancel(object obj)           //TODO add fuctional to remove new created character
         {
-            MainWindowVM.SelectedCharacter.RemoveHomeworld();
-            MainWindowVM.SelectedCharacter.RemoveBackround();
+            MainWindowVM.OpenedCharacter.RemoveHomeworld();
+            MainWindowVM.OpenedCharacter.RemoveBackround();
             Window window = obj as Window;
             window.Close();
         }
 
         private void OnNextWindow(object obj)           //TODO add functional to save background-based variables to character
         {
-            MainWindowVM.SelectedCharacter.AddBackround(SelectedBackground);
+            MainWindowVM.OpenedCharacter.AddBackround(SelectedBackground);
             Window window = obj as Window;
             window.Close();
             Window backgroundWindow = new View.CharacterCreationView.Role();

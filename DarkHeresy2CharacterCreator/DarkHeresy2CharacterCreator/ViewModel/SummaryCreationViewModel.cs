@@ -134,7 +134,7 @@ namespace DarkHeresy2CharacterCreator.ViewModel
         #region Constructor
         public SummaryCreationViewModel()
         {
-            CreatedCharacter = MainWindowVM.SelectedCharacter;
+            CreatedCharacter = MainWindowVM.OpenedCharacter;
             setDivinationCommand = new DelegateCommand(SetDivination);
             setCharateristic = new DelegateCommand(RollCharacteristic);
             getAptitudes = new DelegateCommand(ReturnAptitudes);

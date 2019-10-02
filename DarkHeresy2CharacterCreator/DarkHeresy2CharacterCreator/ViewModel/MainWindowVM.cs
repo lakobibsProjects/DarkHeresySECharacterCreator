@@ -32,7 +32,8 @@ namespace DarkHeresy2CharacterCreator.ViewModel
         public ICommand DeleteCharacterCommand => deleteCharacterCommand;
         public ICommand CloseApplicationCommand => closeApplicationCommand;
         public ObservableCollection<ICharacter> Characters { get { return characters; } set { characters = value; } }
-        public static ICharacter SelectedCharacter { get; set; }
+        public ICharacter SelectedCharacter { get; set; }
+        public static ICharacter OpenedCharacter { get; set; }
         #endregion
 
         public MainWindowVM()
@@ -45,7 +46,6 @@ namespace DarkHeresy2CharacterCreator.ViewModel
             try
             {
                 characters = CharactersList.Characters;
-                SelectedCharacter = Characters[0];
             }
             catch (Exception ex)
             {
@@ -59,6 +59,7 @@ namespace DarkHeresy2CharacterCreator.ViewModel
         {
             if (SelectedCharacter != null)
             {
+                OpenedCharacter = SelectedCharacter;
                 if (SelectedCharacter.HomeWorld == null)
                 {
                     Window homeWorldWindow = new HomeWorld();
@@ -76,7 +77,7 @@ namespace DarkHeresy2CharacterCreator.ViewModel
                     Window roleWindow = new Role();
                     roleWindow.Show();
                     return;
-                }
+                }                
                 Window characterSheet = new CharacterSheetView();
                 characterSheet.Show();
                 Window currentWindow = obj as Window;
@@ -99,7 +100,7 @@ namespace DarkHeresy2CharacterCreator.ViewModel
         {
             Character newCharacter = new Character();            
             Characters.Add(newCharacter);
-            SelectedCharacter = newCharacter;
+            OpenedCharacter = newCharacter;
             Window homeWorldWindow = new HomeWorld();
             homeWorldWindow.Show();
         }
