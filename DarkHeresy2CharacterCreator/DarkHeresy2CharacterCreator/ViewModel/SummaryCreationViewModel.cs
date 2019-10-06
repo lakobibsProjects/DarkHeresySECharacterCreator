@@ -1,4 +1,5 @@
-﻿using DarkHeresy2CharacterCreator.Model.Character;
+﻿using DarkHeresy2CharacterCreator.Model;
+using DarkHeresy2CharacterCreator.Model.Character;
 using DarkHeresy2CharacterCreator.Model.Characteristics;
 using DarkHeresy2CharacterCreator.Model.DiceRoller;
 using DarkHeresy2CharacterCreator.Model.GeneralSuppliment;
@@ -11,6 +12,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace DarkHeresy2CharacterCreator.ViewModel
@@ -26,6 +28,13 @@ namespace DarkHeresy2CharacterCreator.ViewModel
         private DelegateCommand getAptitudes;
         private DelegateCommand setWounds;
         private DelegateCommand setFateTreshhold;
+        private DelegateCommand changeHomeworldCommand;
+        private DelegateCommand changeBackgroundCommand;
+        private DelegateCommand changeRoleCommand;
+        private DelegateCommand exitCommand;
+        private DelegateCommand saveAndExitCommand;
+        private DelegateCommand openAddAvailableAptitudeWindowCommand;
+        private DelegateCommand addAptitudeCommand;
         private Characteristic weaponSkill = CharacteristicList.Characteristics.Where(c => c.Name == CharacteristicName.Weapon_Skill).FirstOrDefault();
         private Characteristic ballisticSkill = CharacteristicList.Characteristics.Where(c => c.Name == CharacteristicName.Balistic_Skill).FirstOrDefault();
         private Characteristic strength = CharacteristicList.Characteristics.Where(c => c.Name == CharacteristicName.Strength).FirstOrDefault();
@@ -51,11 +60,23 @@ namespace DarkHeresy2CharacterCreator.ViewModel
             get { return createdcharacter; }
             set { createdcharacter = value; }
         }
+        public bool SummaryIsNotCompleted => CreatedCharacter.Background != null && CreatedCharacter.HomeWorld != null && CreatedCharacter.Role != null;
+        #region Commands
         public ICommand SetDivinationCommand => setDivinationCommand;
         public ICommand SetCharateristic => setCharateristic;
         public ICommand GetAptitudes => getAptitudes;
         public ICommand SetWounds => setWounds;
         public ICommand SetFateTreshhold => setFateTreshhold;
+        public ICommand ChangeHomeworldCommand => changeHomeworldCommand;
+        public ICommand ChangeBackgroundCommand => changeBackgroundCommand;
+        public ICommand ChangeRoleCommand => changeRoleCommand;
+        public ICommand ExitCommand => exitCommand;
+        public ICommand SaveAndExitCommand => saveAndExitCommand;
+        public ICommand OpenAddAvailableAptitudeWindowCommand => openAddAvailableAptitudeWindowCommand;
+        public ICommand AddAptitudeCommand => addAptitudeCommand;
+        #endregion Commands
+
+        #region Array-like properties
         public Characteristic WeaponSkill { get => weaponSkill; set => weaponSkill = value; }
         public Characteristic BallisticSkill { get => ballisticSkill; set => ballisticSkill = value; }
         public Characteristic Strength { get => strength; set => strength = value; }
@@ -66,16 +87,7 @@ namespace DarkHeresy2CharacterCreator.ViewModel
         public Characteristic Agility { get => agility; set => agility = value; }
         public Characteristic Willpower { get => willpower; set => willpower = value; }
         public Characteristic Fellowship { get => fellowship; set => fellowship = value; }
-        public List<string> Aptitudes
-        {
-            get
-            {
-                var result = new List<string>();
-                foreach (var a in CreatedCharacter.Aptitudes)
-                    result.Add(a.ToString());
-                return result;
-            }
-        }
+
         public List<string> TalentsAndTraits
         {
             get
@@ -110,9 +122,12 @@ namespace DarkHeresy2CharacterCreator.ViewModel
             get
             {
                 var result = new ObservableCollection<string>();
-                result.Add(CreatedCharacter.HomeWorld.HomeWorldBonus);         
-                result.Add(CreatedCharacter.Role.RoleBonus);                   
-                result.Add(CreatedCharacter.Background.BackgroundBonuds);     
+                if(createdcharacter.HomeWorld != null)
+                    result.Add(CreatedCharacter.HomeWorld.HomeWorldBonus);
+                if (createdcharacter.Role != null)
+                    result.Add(CreatedCharacter.Role.RoleBonus);
+                if (createdcharacter.Background != null)
+                    result.Add(CreatedCharacter.Background.BackgroundBonuds);     
                 return result;
             }
         }
@@ -129,17 +144,55 @@ namespace DarkHeresy2CharacterCreator.ViewModel
                 return result;
             }
         }
+        #endregion Array-like properties
+        #region Aptitudes bind properties
+        public List<string> Aptitudes
+        {
+            get
+            {
+                List<string> result = new List<string>();
+                foreach (var a in CreatedCharacter.Aptitudes)
+                    result.Add(a.ToString());
+
+                return result.GroupBy(x => x).Select(y => y.FirstOrDefault()).ToList();
+            }
+        }
+        public List<string> AvailableAptitudes
+        {
+            get
+            {
+                List<string> result = new List<string>();
+                foreach(var apt in (AptitudeName[])Enum.GetValues(typeof(AptitudeName)))                
+                    result.Add(apt.ToString());
+                
+                return result.Except(Aptitudes).ToList();
+            }
+        }
+        public int NotEnoughAptitude => 7 - Aptitudes.Count;
+        public bool AptitudesIsComplete => !(NotEnoughAptitude == 0);
+        public string SelectedAvailableAptitude { get; set; }
+        #endregion Aptitudes bind properties
         #endregion Properties
 
         #region Constructor
         public SummaryCreationViewModel()
         {
             CreatedCharacter = MainWindowVM.OpenedCharacter;
+            #region Initialization commands
             setDivinationCommand = new DelegateCommand(SetDivination);
             setCharateristic = new DelegateCommand(RollCharacteristic);
             getAptitudes = new DelegateCommand(ReturnAptitudes);
             setWounds = new DelegateCommand(RollWounds);
             setFateTreshhold = new DelegateCommand(RollEmperorsBlessing);
+            changeHomeworldCommand = new DelegateCommand(obj => CreatedCharacter.HomeWorld = null); ;
+            changeBackgroundCommand = new DelegateCommand(obj => CreatedCharacter.Background = null);
+            changeRoleCommand = new DelegateCommand(obj => CreatedCharacter.Role = null);
+            exitCommand = new DelegateCommand(OnExit);
+            saveAndExitCommand = new DelegateCommand(OnSaveAndAxit);
+            openAddAvailableAptitudeWindowCommand = new DelegateCommand(OpenAddAvailableAptitudeWindow);
+            addAptitudeCommand = new DelegateCommand(AddAvailableAptitude);
+
+            #endregion
         }
 
         private void ReturnAptitudes(object obj)
@@ -175,7 +228,39 @@ namespace DarkHeresy2CharacterCreator.ViewModel
                     cc.Value = c.Value;
             }
         }
+        private void OnSaveAndAxit(object obj)
+        {
+            Window window = obj as Window;
+            window.Close();
+        }
 
+        private void OnExit(object obj)
+        {
+            //MainWindowVM.OpenedCharacter = null;
+            MainWindowVM.OpenedCharacter.RemoveHomeworld();
+            MainWindowVM.OpenedCharacter.RemoveBackround();
+            MainWindowVM.OpenedCharacter.RemoveRole();
+            Window window = obj as Window;
+            window.Close();
+        }
+        private void OpenAddAvailableAptitudeWindow(object obj)
+        {
+            Window addAptitudeWindow = new View.AddAptitudeWindow();
+            addAptitudeWindow.Show();
+        }
+        private void AddAvailableAptitude(object obj)
+        {
+            if(SelectedAvailableAptitude != null)
+            {
+                foreach (var apt in (AptitudeName[])Enum.GetValues(typeof(AptitudeName)))
+                {
+                    if (apt.ToString() == SelectedAvailableAptitude)                    
+                        CreatedCharacter.Aptitudes.Add(apt);                    
+                }
+                Window window = obj as Window;
+                window.Close();
+            }
+        }
         #endregion Helped Methods
 
     }

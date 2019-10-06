@@ -33,6 +33,10 @@ namespace DarkHeresy2CharacterCreator.ViewModel
         public ObservableCollection<DarkHeresy2CharacterCreator.Model.GeneralSuppliment.Background> Backgrounds { get { return backgrounds; } set { backgrounds = value; } }
         public DarkHeresy2CharacterCreator.Model.GeneralSuppliment.Background SelectedBackground { get; set; }
         public bool BackgroundIsSelected { get { return SelectedBackground != null; } }
+        public bool BackgroundIsNotCompleted
+        {
+            get { return MainWindowVM.OpenedCharacter.HomeWorld != null && MainWindowVM.OpenedCharacter.Background == null; }
+        }
         public string AptitudeString
         {
             get
@@ -151,25 +155,22 @@ namespace DarkHeresy2CharacterCreator.ViewModel
 
         public BackgroundVM()
         {
-            nextWindowCommand = new DelegateCommand(OnNextWindow);
+            nextWindowCommand = new DelegateCommand(OnNextStep);
             cancelCommand = new DelegateCommand(OnCancel);
-            previousWindowCommand = new DelegateCommand(OnPreviousWindow);
-            try
-            {
-                backgrounds = BackgroundsCollection.Backgrounds;
-            }
-            catch (Exception e )
-            {
-                try
-                {
-                    MessageBox.Show(e.InnerException.InnerException.StackTrace);
-                }
-                catch { }
-                throw;
-            }
+            previousWindowCommand = new DelegateCommand(OnPreviousStep);
+            backgrounds = BackgroundsCollection.Backgrounds;
+
         }
 
         #region  Command Handlers
+        private void OnPreviousStep(object obj)
+        {
+            MainWindowVM.OpenedCharacter.RemoveBackround();
+        }
+        private void OnNextStep(object obj)
+        {
+            MainWindowVM.OpenedCharacter.AddBackround(SelectedBackground);
+        }
         private void OnPreviousWindow(object obj)           //TODO add functional to remove background-based variables to character
         {
             MainWindowVM.OpenedCharacter.RemoveBackround();

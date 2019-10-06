@@ -31,6 +31,10 @@ namespace DarkHeresy2CharacterCreator.ViewModel
         public ObservableCollection<DarkHeresy2CharacterCreator.Model.GeneralSuppliment.HomeWorld> Homeworlds { get { return homeworlds; } set { homeworlds = value; } }
         public DarkHeresy2CharacterCreator.Model.GeneralSuppliment.HomeWorld SelectedHomeworld { get; set; }
         public bool HomeworldIsSelected { get { return SelectedHomeworld != null; } }
+        public bool HomeworldIsNotCompleted
+        {
+            get { return MainWindowVM.OpenedCharacter.HomeWorld == null; }
+        }
         public string CharacteristicsString
         {
             get
@@ -73,13 +77,21 @@ namespace DarkHeresy2CharacterCreator.ViewModel
 
         public HomeworldVM()
         {
-            nextWindowCommand = new DelegateCommand(OnNextWindow);
+            nextWindowCommand = new DelegateCommand(OnNextStep);
             cancelCommand = new DelegateCommand(OnCancel);
-            previousWindowCommand = new DelegateCommand(OnPreviousWindow);
+            previousWindowCommand = new DelegateCommand(OnPreviousStep);
             homeworlds = HomeWorldList.HomeWorlds;
         }
 
         #region Command Handlers
+        private void OnNextStep(object obj)
+        {
+            MainWindowVM.OpenedCharacter.AddHomeworld(SelectedHomeworld);
+        }
+        private void OnPreviousStep (object obj)
+        {
+            throw new NotImplementedException();
+        }
         private void OnPreviousWindow(object obj)
         {
             throw new NotImplementedException();

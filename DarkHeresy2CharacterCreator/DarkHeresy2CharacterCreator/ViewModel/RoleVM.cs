@@ -28,6 +28,10 @@ namespace DarkHeresy2CharacterCreator.ViewModel
         public ICommand CancelCommand => cancelCommand;
         public DarkHeresy2CharacterCreator.Model.GeneralSuppliment.Role SelectedRole { get; set; }
         public bool RoleIsSelected { get { return SelectedRole != null; } }
+        public bool RoleIsNotCompleted
+        {
+            get { return MainWindowVM.OpenedCharacter.HomeWorld != null && MainWindowVM.OpenedCharacter.Background != null && MainWindowVM.OpenedCharacter.Role == null; }
+        }
         public ObservableCollection<DarkHeresy2CharacterCreator.Model.GeneralSuppliment.Role> Roles{ get; set; }
         public string TalentsString
         {
@@ -77,7 +81,15 @@ namespace DarkHeresy2CharacterCreator.ViewModel
             Roles = RoleList.Roles;
         }
 
-        #region Command Handlers
+        #region Command Handlers  
+        private void OnPreviousStep(object obj)
+        {
+            MainWindowVM.OpenedCharacter.RemoveBackround();
+        }
+        private void OnNextStep(object obj)
+        {
+            MainWindowVM.OpenedCharacter.AddRole(SelectedRole);
+        }
         private void OnPreviousWindow(object obj)           //TODO add functional to remove role-based variables to character
         {
             MainWindowVM.OpenedCharacter.RemoveRole();

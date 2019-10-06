@@ -101,8 +101,8 @@ namespace DarkHeresy2CharacterCreator.ViewModel
             Character newCharacter = new Character();            
             Characters.Add(newCharacter);
             OpenedCharacter = newCharacter;
-            Window homeWorldWindow = new HomeWorld();
-            homeWorldWindow.Show();
+            Window characterCreationWindow = new CharacterCreationWindow();
+            characterCreationWindow.Show();
         }
         #endregion
     }

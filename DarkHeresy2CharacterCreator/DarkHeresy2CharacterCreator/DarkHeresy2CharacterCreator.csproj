@@ -76,6 +76,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="View\AddAptitudeWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\CharacterCreationView\Background.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -89,6 +93,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\CharacterCreationView\SummaryCreationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\CharacterCreationWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -207,6 +215,9 @@
     <Compile Include="ViewModel\MainWindowVM.cs" />
     <Compile Include="ViewModel\RoleVM.cs" />
     <Compile Include="ViewModel\SummaryCreationViewModel.cs" />
+    <Compile Include="View\AddAptitudeWindow.xaml.cs">
+      <DependentUpon>AddAptitudeWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\CharacterCreationView\Background.xaml.cs">
       <DependentUpon>Background.xaml</DependentUpon>
     </Compile>
@@ -218,6 +229,9 @@
     </Compile>
     <Compile Include="View\CharacterCreationView\SummaryCreationView.xaml.cs">
       <DependentUpon>SummaryCreationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CharacterCreationWindow.xaml.cs">
+      <DependentUpon>CharacterCreationWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\CharacterSheetView.xaml.cs">
       <DependentUpon>CharacterSheetView.xaml</DependentUpon>
