@@ -9,7 +9,10 @@
         xmlns:cvr="clr-namespace:DarkHeresy2CharacterCreator.ViewModel.Converters"
         xmlns:converters="clr-namespace:System.Windows.Converters;assembly=WindowsBase"
         mc:Ignorable="d"
-        Title="Creation of new character" Height="500" Width="800">
+        Title="Creation of new character" 
+        Height="500" 
+        Width="800"
+        WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <vm:HomeworldVM x:Key="hwvm"/>
         <vm:BackgroundVM x:Key="bgvm"/>
@@ -176,14 +179,18 @@
                          Command="{Binding Source={StaticResource creationVM}, 
                             Path=ShowBackgroundViewCommand}"
                          CommandParameter="{Binding ElementName=HomeworldWindow}"
-                         IsEnabled="{Binding HomeworldIsSelected}"/>
+                         Visibility="{Binding Source={StaticResource creationVM},
+                                Path=CreationIsNotComplete,
+                                Converter={StaticResource BooleanToVisibilityConverter}}" />
                     <Button Content="   To summary   " 
                             Style="{DynamicResource ResourceKey=CharacterCreationButton}"
                             VerticalAlignment="Center"
                             Command="{Binding Source={StaticResource creationVM},
                                     Path=ShowSummaryViewCommand}"
                             CommandParameter="{Binding ElementName=RoleView}"
-                            IsEnabled="False"/>
+                            Visibility="{Binding Source={StaticResource creationVM},
+                                Path=CreaitonIsComplete,
+                                Converter={StaticResource BooleanToVisibilityConverter}}"/>
                 </StackPanel>
             </Grid>
         </Grid>
@@ -317,14 +324,18 @@
                             Command="{Binding Source={StaticResource creationVM}, 
                                 Path=ShowRoleViewCommand}"
                             CommandParameter="{Binding ElementName=BackgroundView}"
-                            IsEnabled="{Binding BackgroundIsSelected}"/>
+                            Visibility="{Binding Source={StaticResource creationVM},
+                                Path=CreationIsNotComplete,
+                                Converter={StaticResource BooleanToVisibilityConverter}}"/>
                     <Button Content="   To summary   " 
                             Style="{DynamicResource ResourceKey=CharacterCreationButton}"
                             VerticalAlignment="Center"
                             Command="{Binding Source={StaticResource creationVM},
                                     Path=ShowSummaryViewCommand}"
                             CommandParameter="{Binding ElementName=RoleView}"
-                            IsEnabled="False"/>
+                            Visibility="{Binding Source={StaticResource creationVM},
+                                Path=CreaitonIsComplete,
+                                Converter={StaticResource BooleanToVisibilityConverter}}"/>
                 </StackPanel>
             </Grid>
         </Grid>

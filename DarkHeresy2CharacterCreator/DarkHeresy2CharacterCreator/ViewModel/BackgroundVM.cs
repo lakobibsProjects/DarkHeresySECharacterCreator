@@ -33,7 +33,6 @@ namespace DarkHeresy2CharacterCreator.ViewModel
         public ObservableCollection<DarkHeresy2CharacterCreator.Model.GeneralSuppliment.Background> Backgrounds { get { return backgrounds; } set { backgrounds = value; } }
         public DarkHeresy2CharacterCreator.Model.GeneralSuppliment.Background SelectedBackground { get; set; }
         public bool BackgroundIsSelected => SelectedBackground != null;
-        public bool CharacterIsCompleted => BackgroundIsSelected && MainWindowVM.OpenedCharacter.HomeWorld != null && MainWindowVM.OpenedCharacter.Role != null;
         public string AptitudeString
         {
             get

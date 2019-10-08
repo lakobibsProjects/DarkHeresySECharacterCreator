@@ -30,8 +30,7 @@ namespace DarkHeresy2CharacterCreator.ViewModel
         public ICommand CancelCommand => cancelCommand; //not use
         public ObservableCollection<DarkHeresy2CharacterCreator.Model.GeneralSuppliment.HomeWorld> Homeworlds { get { return homeworlds; } set { homeworlds = value; } }
         public DarkHeresy2CharacterCreator.Model.GeneralSuppliment.HomeWorld SelectedHomeworld { get; set; }
-        public bool HomeworldIsSelected { get { return SelectedHomeworld != null; } }
-        public bool CharacterIsCompleted => HomeworldIsSelected && MainWindowVM.OpenedCharacter.Background != null && MainWindowVM.OpenedCharacter.Role != null;
+        public bool HomeworldIsSelected =>  SelectedHomeworld != null;
         public string CharacteristicsString
         {
             get

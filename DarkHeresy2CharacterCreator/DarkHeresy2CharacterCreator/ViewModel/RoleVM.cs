@@ -28,7 +28,6 @@ namespace DarkHeresy2CharacterCreator.ViewModel
         public ICommand CancelCommand => cancelCommand; //not use
         public DarkHeresy2CharacterCreator.Model.GeneralSuppliment.Role SelectedRole { get; set; }
         public bool RoleIsSelected => SelectedRole != null;
-        public bool CharacterIsCompleted => RoleIsSelected && MainWindowVM.OpenedCharacter.HomeWorld != null && MainWindowVM.OpenedCharacter.Background != null;
         public ObservableCollection<DarkHeresy2CharacterCreator.Model.GeneralSuppliment.Role> Roles{ get; set; }
         public string TalentsString
         {

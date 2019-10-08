@@ -7,7 +7,11 @@
         xmlns:local="clr-namespace:DarkHeresy2CharacterCreator.View"
         xmlns:vm="clr-namespace:DarkHeresy2CharacterCreator.ViewModel"
         mc:Ignorable="d"
-        Title="Add Aptitude" Height="289.197" Width="293.906">
+        Title="Add Aptitude" 
+        Height="290" 
+        Width="290"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize">
     <Grid>
         <Grid.DataContext>
             <vm:SummaryCreationViewModel/>
@@ -22,7 +26,7 @@
                       SelectedItem="{Binding SelectedAvailableAptitude}"
                       ScrollViewer.VerticalScrollBarVisibility="Visible"
                       ScrollViewer.CanContentScroll="False"
-                      MaxHeight="90"
+                      MaxHeight="200"
                       SelectedIndex="0">
                 <ListView.ItemsPanel>
                     <ItemsPanelTemplate>
@@ -33,7 +37,7 @@
             <Button Content="Add selected aptitude" 
                     Margin="0 5"
                     Command="{Binding AddAvailableAptitudeCommand}"
-                    CommandParameter="{Binding}"/>
+                    CommandParameter="{Binding AddAvailableAptitudeWindow}"/>
         </StackPanel>
     </Grid>
 </Window>

@@ -32,6 +32,8 @@ namespace DarkHeresy2CharacterCreator.ViewModel
         public bool HomewroldViewIsVisible { get; set; } = true;
         public bool RoleViewIsVisible { get; set; } = false;
         public bool SummaryViewIsVisible { get; set; } = false;
+        public bool CreaitonIsComplete { get; set; } = false;
+        public bool CreationIsNotComplete => !CreaitonIsComplete;
         #endregion
 
         public CreationViewModel()
@@ -75,6 +77,7 @@ namespace DarkHeresy2CharacterCreator.ViewModel
             HomewroldViewIsVisible = false;
             RoleViewIsVisible = false;
             SummaryViewIsVisible = true;
+            CreaitonIsComplete = true;
         }
         private void OnCancel(object obj)
         {
