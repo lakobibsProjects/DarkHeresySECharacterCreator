@@ -18,23 +18,20 @@ namespace DarkHeresy2CharacterCreator.ViewModel
     public class HomeworldVM
     {
         #region Fields
-        private readonly DelegateCommand nextWindowCommand;
+        private readonly DelegateCommand nextWindowCommand; //not use
         private readonly DelegateCommand cancelCommand;
-        private readonly DelegateCommand previousWindowCommand;
+        private readonly DelegateCommand previousWindowCommand; //not use
         public ObservableCollection<DarkHeresy2CharacterCreator.Model.GeneralSuppliment.HomeWorld> homeworlds;
         #endregion
 
         #region Properties
-        public ICommand NextWindowCommand => nextWindowCommand;
-        public ICommand PreviousWindowCommand => previousWindowCommand;
-        public ICommand CancelCommand => cancelCommand;
+        public ICommand NextWindowCommand => nextWindowCommand; //not use
+        public ICommand PreviousWindowCommand => previousWindowCommand; //not use
+        public ICommand CancelCommand => cancelCommand; //not use
         public ObservableCollection<DarkHeresy2CharacterCreator.Model.GeneralSuppliment.HomeWorld> Homeworlds { get { return homeworlds; } set { homeworlds = value; } }
         public DarkHeresy2CharacterCreator.Model.GeneralSuppliment.HomeWorld SelectedHomeworld { get; set; }
         public bool HomeworldIsSelected { get { return SelectedHomeworld != null; } }
-        public bool HomeworldIsNotCompleted
-        {
-            get { return MainWindowVM.OpenedCharacter.HomeWorld == null; }
-        }
+        public bool CharacterIsCompleted => HomeworldIsSelected && MainWindowVM.OpenedCharacter.Background != null && MainWindowVM.OpenedCharacter.Role != null;
         public string CharacteristicsString
         {
             get
@@ -77,34 +74,28 @@ namespace DarkHeresy2CharacterCreator.ViewModel
 
         public HomeworldVM()
         {
-            nextWindowCommand = new DelegateCommand(OnNextStep);
-            cancelCommand = new DelegateCommand(OnCancel);
-            previousWindowCommand = new DelegateCommand(OnPreviousStep);
+            if (MainWindowVM.OpenedCharacter.HomeWorld != null)
+                MainWindowVM.OpenedCharacter.RemoveHomeworld();
+            nextWindowCommand = new DelegateCommand(OnNextWindow); //not use
+            cancelCommand = new DelegateCommand(OnCancel); //not use
+            previousWindowCommand = new DelegateCommand(OnPreviousWindow); //not use
             homeworlds = HomeWorldList.HomeWorlds;
         }
 
         #region Command Handlers
-        private void OnNextStep(object obj)
-        {
-            MainWindowVM.OpenedCharacter.AddHomeworld(SelectedHomeworld);
-        }
-        private void OnPreviousStep (object obj)
-        {
-            throw new NotImplementedException();
-        }
-        private void OnPreviousWindow(object obj)
+        private void OnPreviousWindow(object obj) //not use
         {
             throw new NotImplementedException();
         }
 
-        private void OnCancel(object obj)           //TODO add fuctional to remove new created character
+        private void OnCancel(object obj) //not use           //TODO add fuctional to remove new created character
         {
             MainWindowVM.OpenedCharacter.RemoveHomeworld();
             Window window = obj as Window;
             window.Close();
         }
 
-        private void OnNextWindow(object obj)           //TODO add functional to save homeworld-based variables to character
+        private void OnNextWindow(object obj)  //not use          //TODO add functional to save homeworld-based variables to character
         {
             MainWindowVM.OpenedCharacter.AddHomeworld(SelectedHomeworld);
             Window window = obj as Window;

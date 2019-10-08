@@ -18,25 +18,22 @@ namespace DarkHeresy2CharacterCreator.ViewModel
     public class BackgroundVM
     {
         #region Fields
-        private readonly DelegateCommand nextWindowCommand;
-        private readonly DelegateCommand cancelCommand;
-        private readonly DelegateCommand previousWindowCommand;
+        private readonly DelegateCommand nextWindowCommand; //not use
+        private readonly DelegateCommand cancelCommand; //not use
+        private readonly DelegateCommand previousWindowCommand; //not use
         public ObservableCollection<DarkHeresy2CharacterCreator.Model.GeneralSuppliment.Background> backgrounds;
 
 
         #endregion
 
         #region Properties
-        public ICommand NextWindowCommand => nextWindowCommand;
-        public ICommand PreviousWindowCommand => previousWindowCommand;
-        public ICommand CancelCommand => cancelCommand;
+        public ICommand NextWindowCommand => nextWindowCommand; //not use
+        public ICommand PreviousWindowCommand => previousWindowCommand; //not use
+        public ICommand CancelCommand => cancelCommand; //not use
         public ObservableCollection<DarkHeresy2CharacterCreator.Model.GeneralSuppliment.Background> Backgrounds { get { return backgrounds; } set { backgrounds = value; } }
         public DarkHeresy2CharacterCreator.Model.GeneralSuppliment.Background SelectedBackground { get; set; }
-        public bool BackgroundIsSelected { get { return SelectedBackground != null; } }
-        public bool BackgroundIsNotCompleted
-        {
-            get { return MainWindowVM.OpenedCharacter.HomeWorld != null && MainWindowVM.OpenedCharacter.Background == null; }
-        }
+        public bool BackgroundIsSelected => SelectedBackground != null;
+        public bool CharacterIsCompleted => BackgroundIsSelected && MainWindowVM.OpenedCharacter.HomeWorld != null && MainWindowVM.OpenedCharacter.Role != null;
         public string AptitudeString
         {
             get
@@ -155,23 +152,17 @@ namespace DarkHeresy2CharacterCreator.ViewModel
 
         public BackgroundVM()
         {
-            nextWindowCommand = new DelegateCommand(OnNextStep);
-            cancelCommand = new DelegateCommand(OnCancel);
-            previousWindowCommand = new DelegateCommand(OnPreviousStep);
+            if (MainWindowVM.OpenedCharacter.Background != null)
+                MainWindowVM.OpenedCharacter.RemoveBackround();
+            nextWindowCommand = new DelegateCommand(OnNextWindow); //not use
+            cancelCommand = new DelegateCommand(OnCancel); //not use
+            previousWindowCommand = new DelegateCommand(OnPreviousWindow); //not use
             backgrounds = BackgroundsCollection.Backgrounds;
 
         }
 
         #region  Command Handlers
-        private void OnPreviousStep(object obj)
-        {
-            MainWindowVM.OpenedCharacter.RemoveBackround();
-        }
-        private void OnNextStep(object obj)
-        {
-            MainWindowVM.OpenedCharacter.AddBackround(SelectedBackground);
-        }
-        private void OnPreviousWindow(object obj)           //TODO add functional to remove background-based variables to character
+        private void OnPreviousWindow(object obj) //not use           //TODO add functional to remove background-based variables to character
         {
             MainWindowVM.OpenedCharacter.RemoveBackround();
             Window window = obj as Window;
@@ -180,7 +171,7 @@ namespace DarkHeresy2CharacterCreator.ViewModel
             backgroundWindow.Show();
         }
 
-        private void OnCancel(object obj)           //TODO add fuctional to remove new created character
+        private void OnCancel(object obj) //not use           //TODO add fuctional to remove new created character
         {
             MainWindowVM.OpenedCharacter.RemoveHomeworld();
             MainWindowVM.OpenedCharacter.RemoveBackround();
@@ -188,7 +179,7 @@ namespace DarkHeresy2CharacterCreator.ViewModel
             window.Close();
         }
 
-        private void OnNextWindow(object obj)           //TODO add functional to save background-based variables to character
+        private void OnNextWindow(object obj) //not use           //TODO add functional to save background-based variables to character
         {
             MainWindowVM.OpenedCharacter.AddBackround(SelectedBackground);
             Window window = obj as Window;

@@ -17,21 +17,18 @@ namespace DarkHeresy2CharacterCreator.ViewModel
     class RoleVM
     {
         #region Fields
-        private readonly DelegateCommand nextWindowCommand;
-        private readonly DelegateCommand cancelCommand;
-        private readonly DelegateCommand previousWindowCommand;
+        private readonly DelegateCommand nextWindowCommand; //not use
+        private readonly DelegateCommand cancelCommand; //not use
+        private readonly DelegateCommand previousWindowCommand; //not use
         #endregion
 
         #region Properties
-        public ICommand NextWindowCommand => nextWindowCommand;
-        public ICommand PreviousWindowCommand => previousWindowCommand;
-        public ICommand CancelCommand => cancelCommand;
+        public ICommand NextWindowCommand => nextWindowCommand; //not use
+        public ICommand PreviousWindowCommand => previousWindowCommand; //not use
+        public ICommand CancelCommand => cancelCommand; //not use
         public DarkHeresy2CharacterCreator.Model.GeneralSuppliment.Role SelectedRole { get; set; }
-        public bool RoleIsSelected { get { return SelectedRole != null; } }
-        public bool RoleIsNotCompleted
-        {
-            get { return MainWindowVM.OpenedCharacter.HomeWorld != null && MainWindowVM.OpenedCharacter.Background != null && MainWindowVM.OpenedCharacter.Role == null; }
-        }
+        public bool RoleIsSelected => SelectedRole != null;
+        public bool CharacterIsCompleted => RoleIsSelected && MainWindowVM.OpenedCharacter.HomeWorld != null && MainWindowVM.OpenedCharacter.Background != null;
         public ObservableCollection<DarkHeresy2CharacterCreator.Model.GeneralSuppliment.Role> Roles{ get; set; }
         public string TalentsString
         {
@@ -75,22 +72,18 @@ namespace DarkHeresy2CharacterCreator.ViewModel
 
         public RoleVM()
         {
-            nextWindowCommand = new DelegateCommand(OnNextWindow);
-            cancelCommand = new DelegateCommand(OnCancel);
-            previousWindowCommand = new DelegateCommand(OnPreviousWindow);
+            if (MainWindowVM.OpenedCharacter.Role != null)
+                MainWindowVM.OpenedCharacter.RemoveRole();
+            nextWindowCommand = new DelegateCommand(OnNextWindow); //not use
+            cancelCommand = new DelegateCommand(OnCancel); //not use
+            previousWindowCommand = new DelegateCommand(OnPreviousWindow); //not use
             Roles = RoleList.Roles;
+
         }
 
         #region Command Handlers  
-        private void OnPreviousStep(object obj)
-        {
-            MainWindowVM.OpenedCharacter.RemoveBackround();
-        }
-        private void OnNextStep(object obj)
-        {
-            MainWindowVM.OpenedCharacter.AddRole(SelectedRole);
-        }
-        private void OnPreviousWindow(object obj)           //TODO add functional to remove role-based variables to character
+ 
+        private void OnPreviousWindow(object obj) //not use           //TODO add functional to remove role-based variables to character
         {
             MainWindowVM.OpenedCharacter.RemoveRole();
             Window window = obj as Window;
@@ -99,7 +92,7 @@ namespace DarkHeresy2CharacterCreator.ViewModel
             backgroundWindow.Show();
         }
 
-        private void OnCancel(object obj)           //TODO add fuctional to remove new created character
+        private void OnCancel(object obj) //not use           //TODO add fuctional to remove new created character
         {
             MainWindowVM.OpenedCharacter.RemoveHomeworld();
             MainWindowVM.OpenedCharacter.RemoveBackround();
@@ -108,7 +101,7 @@ namespace DarkHeresy2CharacterCreator.ViewModel
             window.Close();
         }
 
-        private void OnNextWindow(object obj)           //TODO add functional to save role-based variables to character and add character to collection
+        private void OnNextWindow(object obj) //not use           //TODO add functional to save role-based variables to character and add character to collection
         {
             MainWindowVM.OpenedCharacter.AddRole(SelectedRole);
             Window summaryWindow = new View.CharacterCreationView.SummaryCreationView();

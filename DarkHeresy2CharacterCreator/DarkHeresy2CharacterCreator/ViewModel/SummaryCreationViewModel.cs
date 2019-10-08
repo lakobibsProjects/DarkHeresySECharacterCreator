@@ -60,7 +60,7 @@ namespace DarkHeresy2CharacterCreator.ViewModel
             get { return createdcharacter; }
             set { createdcharacter = value; }
         }
-        public bool SummaryIsNotCompleted => CreatedCharacter.Background != null && CreatedCharacter.HomeWorld != null && CreatedCharacter.Role != null;
+        public static Visibility SummaryIsNotCompleted { get; set; } /*=> CreatedCharacter.Background != null && CreatedCharacter.HomeWorld != null && CreatedCharacter.Role != null;*/
         #region Commands
         public ICommand SetDivinationCommand => setDivinationCommand;
         public ICommand SetCharateristic => setCharateristic;
@@ -178,13 +178,14 @@ namespace DarkHeresy2CharacterCreator.ViewModel
         public SummaryCreationViewModel()
         {
             CreatedCharacter = MainWindowVM.OpenedCharacter;
+            SummaryIsNotCompleted = Visibility.Collapsed;
             #region Initialization commands
             setDivinationCommand = new DelegateCommand(SetDivination);
             setCharateristic = new DelegateCommand(RollCharacteristic);
             getAptitudes = new DelegateCommand(ReturnAptitudes);
             setWounds = new DelegateCommand(RollWounds);
             setFateTreshhold = new DelegateCommand(RollEmperorsBlessing);
-            changeHomeworldCommand = new DelegateCommand(obj => CreatedCharacter.HomeWorld = null); ;
+            changeHomeworldCommand = new DelegateCommand(obj => CreatedCharacter.HomeWorld = null); 
             changeBackgroundCommand = new DelegateCommand(obj => CreatedCharacter.Background = null);
             changeRoleCommand = new DelegateCommand(obj => CreatedCharacter.Role = null);
             exitCommand = new DelegateCommand(OnExit);
@@ -195,6 +196,7 @@ namespace DarkHeresy2CharacterCreator.ViewModel
             #endregion
         }
 
+        //WTF
         private void ReturnAptitudes(object obj)
         {
             var temp = CreatedCharacter.Aptitudes;
@@ -236,10 +238,10 @@ namespace DarkHeresy2CharacterCreator.ViewModel
 
         private void OnExit(object obj)
         {
-            //MainWindowVM.OpenedCharacter = null;
-            MainWindowVM.OpenedCharacter.RemoveHomeworld();
+            CharactersList.Characters.Remove(MainWindowVM.OpenedCharacter);
+            /*MainWindowVM.OpenedCharacter.RemoveHomeworld();
             MainWindowVM.OpenedCharacter.RemoveBackround();
-            MainWindowVM.OpenedCharacter.RemoveRole();
+            MainWindowVM.OpenedCharacter.RemoveRole();*/
             Window window = obj as Window;
             window.Close();
         }

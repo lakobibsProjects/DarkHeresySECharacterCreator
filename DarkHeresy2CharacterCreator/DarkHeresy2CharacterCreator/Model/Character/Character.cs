@@ -230,12 +230,13 @@ namespace DarkHeresy2CharacterCreator.Model.Character
 
         public void RemoveRole()
         {
+            
             foreach (var a in role.Aptitudes)
             {
                 this.Aptitudes.Remove(a.Item1);
                 AptitudesChanged();
             }
-
+            
             this.Talents.Remove(role.RoleTalent.Item1);
 
             this.Role = null;
