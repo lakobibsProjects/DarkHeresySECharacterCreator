@@ -1,4 +1,5 @@
 ﻿using DarkHeresy2CharacterCreator.Model.Character;
+using DarkHeresy2CharacterCreator.Model.GeneralSuppliment;
 using DarkHeresy2CharacterCreator.ViewModel.Commands;
 using PropertyChanged;
 using System;
@@ -15,14 +16,20 @@ namespace DarkHeresy2CharacterCreator.ViewModel
     class CreationViewModel
     {
         #region Fields
-        private readonly DelegateCommand showBackgroundViewCommand;
-        private readonly DelegateCommand showHomewroldViewCommand;
-        private readonly DelegateCommand showRoleViewCommand;
-        private readonly DelegateCommand showSummaryViewCommand;
-        private readonly DelegateCommand cancelCommand;
+        private ICharacter createdcharacter;
+        private readonly RelayCommand showBackgroundViewCommand;
+        private readonly RelayCommand showHomewroldViewCommand;
+        private readonly RelayCommand showRoleViewCommand;
+        private readonly RelayCommand showSummaryViewCommand;
+        private readonly RelayCommand cancelCommand;
         #endregion Fields
 
         #region Propreties
+        public ICharacter CreatedCharacter
+        {
+            get { return createdcharacter; }
+            set { createdcharacter = value; }
+        }
         public ICommand ShowBackgroundViewCommand => showBackgroundViewCommand;
         public ICommand ShowRoleViewCommand => showRoleViewCommand;
         public ICommand ShowSummaryViewCommand => showSummaryViewCommand;
@@ -38,16 +45,41 @@ namespace DarkHeresy2CharacterCreator.ViewModel
 
         public CreationViewModel()
         {
-            showBackgroundViewCommand = new DelegateCommand(OnShowBackgroundView);
-            showHomewroldViewCommand = new DelegateCommand(OnShowHomewroldView);
-            showRoleViewCommand = new DelegateCommand(OnShowRoleView);
-            showSummaryViewCommand = new DelegateCommand(OnShowSummaryView);
-            cancelCommand = new DelegateCommand(OnCancel);
+            CreatedCharacter = MainWindowVM.OpenedCharacter;
+            showBackgroundViewCommand = new RelayCommand(OnShowBackgroundView);
+            showHomewroldViewCommand = new RelayCommand(OnShowHomewroldView);
+            showRoleViewCommand = new RelayCommand(OnShowRoleView);
+            showSummaryViewCommand = new RelayCommand(OnShowSummaryView);
+            cancelCommand = new RelayCommand(OnCancel);
         }
 
         #region Command Handlers
+        private void OnShowHomewroldView(object obj)
+        {
+            if(CreatedCharacter.HomeWorld != null)
+                CreatedCharacter.RemoveHomeworld();
+            BackgroundViewIsVisible = false;
+            HomewroldViewIsVisible = true;
+            RoleViewIsVisible = false;
+            SummaryViewIsVisible = false;
+        }
+        private void OnShowBackgroundView(object obj)
+        {
+            if (CreatedCharacter.Background != null)
+                CreatedCharacter.RemoveBackround();
+            if (obj is HomeWorld)
+                CreatedCharacter.AddHomeworld((HomeWorld)obj);            
+            BackgroundViewIsVisible = true;
+            HomewroldViewIsVisible = false;
+            RoleViewIsVisible = false;
+            SummaryViewIsVisible = false;
+        }
         private void OnShowRoleView(object obj)
         {
+            if (CreatedCharacter.Role != null)
+                CreatedCharacter.RemoveRole();
+            if (obj is Background)
+                CreatedCharacter.AddBackround((Background)obj);
             BackgroundViewIsVisible = false;
             HomewroldViewIsVisible = false;
             RoleViewIsVisible = true;
@@ -55,24 +87,14 @@ namespace DarkHeresy2CharacterCreator.ViewModel
 
             
         }
-        private void OnShowBackgroundView(object obj)
-        {
-            BackgroundViewIsVisible = true;
-            HomewroldViewIsVisible = false;
-            RoleViewIsVisible = false;
-            SummaryViewIsVisible = false;
-
-
-        }
-        private void OnShowHomewroldView(object obj)
-        {
-            BackgroundViewIsVisible = false;
-            HomewroldViewIsVisible = true;
-            RoleViewIsVisible = false;
-            SummaryViewIsVisible = false;
-        }
         private void OnShowSummaryView(object obj)
         {
+            if (obj is HomeWorld)
+                CreatedCharacter.AddHomeworld((HomeWorld)obj);
+            if (obj is Background)
+                CreatedCharacter.AddBackround((Background)obj);
+            if (obj is Role)
+                CreatedCharacter.AddRole((Role)obj);
             BackgroundViewIsVisible = false;
             HomewroldViewIsVisible = false;
             RoleViewIsVisible = false;
@@ -81,7 +103,7 @@ namespace DarkHeresy2CharacterCreator.ViewModel
         }
         private void OnCancel(object obj)
         {
-            CharactersList.Characters.Remove(MainWindowVM.OpenedCharacter);
+            CharactersList.Characters.Remove(CreatedCharacter);
             /*if(MainWindowVM.OpenedCharacter.Background != null)
                 MainWindowVM.OpenedCharacter.RemoveBackround();
             if (MainWindowVM.OpenedCharacter.HomeWorld != null)

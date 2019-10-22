@@ -204,12 +204,15 @@
     <Compile Include="ViewModel\CharacterSheet\CharacterAdvancementVM.cs" />
     <Compile Include="ViewModel\CharacterSheet\SkillsVM.cs" />
     <Compile Include="ViewModel\CharacterSheet\TalentsVM.cs" />
-    <Compile Include="ViewModel\Converters\AptitudeNameToString.cs" />
+    <Compile Include="ViewModel\Commands\RelayCommand.cs" />
     <Compile Include="ViewModel\Converters\ArrayToStringConverter.cs" />
     <Compile Include="ViewModel\CharacterSheet\CharacterSheetVM.cs" />
     <Compile Include="ViewModel\CharacterSheet\GearVM.cs" />
     <Compile Include="ViewModel\Commands\ArithmeticCommand.cs" />
     <Compile Include="ViewModel\Commands\DelegateCommand.cs" />
+    <Compile Include="ViewModel\Converters\EnumConverter.cs" />
+    <Compile Include="ViewModel\Converters\MultiCommandConverter.cs" />
+    <Compile Include="ViewModel\Converters\MultiParameterConverter.cs" />
     <Compile Include="ViewModel\CreationViewModel.cs" />
     <Compile Include="ViewModel\HomeworldVM.cs" />
     <Compile Include="ViewModel\MainWindowVM.cs" />

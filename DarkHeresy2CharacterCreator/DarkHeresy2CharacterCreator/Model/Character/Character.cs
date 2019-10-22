@@ -177,8 +177,8 @@ namespace DarkHeresy2CharacterCreator.Model.Character
         {
             this.Background = background;
 
-            foreach (var b in background.BackgroundSkills)            
-                Skills.Add(b.Item1);
+            foreach (var b in background.BackgroundSkills)
+                (Skills.Where(s => s.Name == b.Item1.Name).First()).Rank = Ranking.Known;
             
             foreach (var t in background.BackgroundsTalents)            
                 Talents.Add(t.Item1);            

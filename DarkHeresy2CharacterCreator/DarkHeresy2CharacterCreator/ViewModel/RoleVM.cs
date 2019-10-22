@@ -17,9 +17,9 @@ namespace DarkHeresy2CharacterCreator.ViewModel
     class RoleVM
     {
         #region Fields
-        private readonly DelegateCommand nextWindowCommand; //not use
-        private readonly DelegateCommand cancelCommand; //not use
-        private readonly DelegateCommand previousWindowCommand; //not use
+        private readonly RelayCommand nextWindowCommand; //not use
+        private readonly RelayCommand cancelCommand; //not use
+        private readonly RelayCommand previousWindowCommand; //not use
         #endregion
 
         #region Properties
@@ -73,9 +73,9 @@ namespace DarkHeresy2CharacterCreator.ViewModel
         {
             if (MainWindowVM.OpenedCharacter.Role != null)
                 MainWindowVM.OpenedCharacter.RemoveRole();
-            nextWindowCommand = new DelegateCommand(OnNextWindow); //not use
-            cancelCommand = new DelegateCommand(OnCancel); //not use
-            previousWindowCommand = new DelegateCommand(OnPreviousWindow); //not use
+            nextWindowCommand = new RelayCommand(OnNextWindow); //not use
+            cancelCommand = new RelayCommand(OnCancel); //not use
+            previousWindowCommand = new RelayCommand(OnPreviousWindow); //not use
             Roles = RoleList.Roles;
 
         }

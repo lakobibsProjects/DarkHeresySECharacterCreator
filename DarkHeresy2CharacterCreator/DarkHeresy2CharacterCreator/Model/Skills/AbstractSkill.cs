@@ -36,7 +36,7 @@ namespace DarkHeresy2CharacterCreator.Model.Skills
         public Ranking Rank
         {
             get { return rank; }
-            protected set { rank = value;  }
+            set { rank = value; }
         }
         public AptitudeName FirstAptitude { get { return first; } protected set { first = value; } }
         public AptitudeName SecondAptitude { get { return second; } protected set { second = value; } }

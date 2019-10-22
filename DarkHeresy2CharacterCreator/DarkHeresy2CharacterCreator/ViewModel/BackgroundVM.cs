@@ -18,9 +18,9 @@ namespace DarkHeresy2CharacterCreator.ViewModel
     public class BackgroundVM
     {
         #region Fields
-        private readonly DelegateCommand nextWindowCommand; //not use
-        private readonly DelegateCommand cancelCommand; //not use
-        private readonly DelegateCommand previousWindowCommand; //not use
+        private readonly RelayCommand nextWindowCommand; //not use
+        private readonly RelayCommand cancelCommand; //not use
+        private readonly RelayCommand previousWindowCommand; //not use
         public ObservableCollection<DarkHeresy2CharacterCreator.Model.GeneralSuppliment.Background> backgrounds;
 
 
@@ -153,9 +153,9 @@ namespace DarkHeresy2CharacterCreator.ViewModel
         {
             if (MainWindowVM.OpenedCharacter.Background != null)
                 MainWindowVM.OpenedCharacter.RemoveBackround();
-            nextWindowCommand = new DelegateCommand(OnNextWindow); //not use
-            cancelCommand = new DelegateCommand(OnCancel); //not use
-            previousWindowCommand = new DelegateCommand(OnPreviousWindow); //not use
+            nextWindowCommand = new RelayCommand(OnNextWindow); //not use
+            cancelCommand = new RelayCommand(OnCancel); //not use
+            previousWindowCommand = new RelayCommand(OnPreviousWindow); //not use
             backgrounds = BackgroundsCollection.Backgrounds;
 
         }

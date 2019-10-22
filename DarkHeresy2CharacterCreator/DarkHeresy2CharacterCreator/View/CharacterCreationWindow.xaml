@@ -18,6 +18,10 @@
         <vm:BackgroundVM x:Key="bgvm"/>
         <vm:RoleVM x:Key="rvm"/>
         <vm:CreationViewModel x:Key="creationVM"/>
+        <vm:SummaryCreationViewModel x:Key="summaryCreationVM"/>
+        <cvr:MultiCommandConverter x:Key="multiCommandConverter"/>
+        <cvr:EnumConverter x:Key="enumConverter"/>
+        <cvr:MultiParameterConverter x:Key="multyParameterConverter"/>
         <Style x:Key="SeparatorStyle"
            TargetType="{x:Type Border}">
             <Setter Property="BorderThickness" Value="1,0,0,0"/>
@@ -47,7 +51,8 @@
                 <ColumnDefinition Width="2*"/>
                 <ColumnDefinition Width="3*"/>
             </Grid.ColumnDefinitions>
-            <ListView Grid.Column="0"
+            <ListView x:Name="HomeworldsLV"
+                    Grid.Column="0"
                   Margin="5"
                   Opacity="0.5"
                   ItemsSource="{Binding Homeworlds}"
@@ -178,7 +183,7 @@
                          VerticalAlignment="Center"
                          Command="{Binding Source={StaticResource creationVM}, 
                             Path=ShowBackgroundViewCommand}"
-                         CommandParameter="{Binding ElementName=HomeworldWindow}"
+                         CommandParameter="{Binding ElementName=HomeworldsLV, Path=SelectedItem}"
                          Visibility="{Binding Source={StaticResource creationVM},
                                 Path=CreationIsNotComplete,
                                 Converter={StaticResource BooleanToVisibilityConverter}}" />
@@ -187,7 +192,7 @@
                             VerticalAlignment="Center"
                             Command="{Binding Source={StaticResource creationVM},
                                     Path=ShowSummaryViewCommand}"
-                            CommandParameter="{Binding ElementName=RoleView}"
+                            CommandParameter="{Binding ElementName=HomeworldsLV, Path=SelectedItem}"
                             Visibility="{Binding Source={StaticResource creationVM},
                                 Path=CreaitonIsComplete,
                                 Converter={StaticResource BooleanToVisibilityConverter}}"/>
@@ -206,12 +211,13 @@
                 <ColumnDefinition Width="3*"/>
             </Grid.ColumnDefinitions>
 
-            <ListView Grid.Column="0"
-                  Margin="5"
-                  Opacity="0.5"
-                  ItemsSource="{Binding Backgrounds}"
-                  SelectedItem="{Binding SelectedBackground}"
-                  SelectedIndex="0">
+            <ListView x:Name="BackgroundLV"
+                      Grid.Column="0"
+                      Margin="5"
+                      Opacity="0.5"
+                      ItemsSource="{Binding Backgrounds}"
+                      SelectedItem="{Binding SelectedBackground}"
+                      SelectedIndex="0">
                 <ListView.ItemsPanel>
                     <ItemsPanelTemplate>
                         <StackPanel Orientation="Vertical" />
@@ -323,7 +329,7 @@
                             Style="{DynamicResource ResourceKey=CharacterCreationButton}"
                             Command="{Binding Source={StaticResource creationVM}, 
                                 Path=ShowRoleViewCommand}"
-                            CommandParameter="{Binding ElementName=BackgroundView}"
+                            CommandParameter="{Binding ElementName=BackgroundLV, Path=SelectedItem}"
                             Visibility="{Binding Source={StaticResource creationVM},
                                 Path=CreationIsNotComplete,
                                 Converter={StaticResource BooleanToVisibilityConverter}}"/>
@@ -332,7 +338,7 @@
                             VerticalAlignment="Center"
                             Command="{Binding Source={StaticResource creationVM},
                                     Path=ShowSummaryViewCommand}"
-                            CommandParameter="{Binding ElementName=RoleView}"
+                            CommandParameter="{Binding ElementName=BackgroundLV, Path=SelectedItem}"
                             Visibility="{Binding Source={StaticResource creationVM},
                                 Path=CreaitonIsComplete,
                                 Converter={StaticResource BooleanToVisibilityConverter}}"/>
@@ -351,12 +357,13 @@
                 <ColumnDefinition Width="3*"/>
             </Grid.ColumnDefinitions>
 
-            <ListView Grid.Column="0"
-                  Margin="5"
-                  Opacity="0.5"
-                  ItemsSource="{Binding Roles}"
-                  SelectedItem="{Binding SelectedRole}"
-                  SelectedIndex="0">
+            <ListView x:Name="RoleLV"
+                      Grid.Column="0"
+                      Margin="5"
+                      Opacity="0.5"
+                      ItemsSource="{Binding Roles}"
+                      SelectedItem="{Binding SelectedRole}"
+                      SelectedIndex="0">
                 <ListView.ItemsPanel>
                     <ItemsPanelTemplate>
                         <StackPanel Orientation="Vertical" />
@@ -430,13 +437,23 @@
                             VerticalAlignment="Center"
                             Command="{Binding Source={StaticResource creationVM},
                                     Path=ShowBackgroundViewCommand}"
-                            CommandParameter="{Binding ElementName=RoleView}"/>
+                            CommandParameter="{Binding ElementName=RoleLV, Path=SelectedItem}"/>
                     <Button Content="   To summary   " 
                             Style="{DynamicResource ResourceKey=CharacterCreationButton}"
-                            VerticalAlignment="Center"
-                            Command="{Binding Source={StaticResource creationVM},
-                                    Path=ShowSummaryViewCommand}"
-                            CommandParameter="{Binding ElementName=RoleView}"/>
+                            VerticalAlignment="Center">
+                        <Button.Command>
+                            <MultiBinding Converter="{StaticResource multiCommandConverter}">
+                                <Binding Source="{StaticResource creationVM}" Path="ShowSummaryViewCommand"/>
+                                <Binding Source="{StaticResource summaryCreationVM}" Path="RefreshCommand"/>
+					        </MultiBinding>
+				        </Button.Command>
+                        <Button.CommandParameter>
+                            <MultiBinding Converter="{StaticResource  multyParameterConverter}">
+                                <Binding Source="{StaticResource rvm}" Path="SelectedRole"/>
+                                <Binding Source="{StaticResource rvm}" Path="SelectedRole"/>
+                            </MultiBinding>
+                        </Button.CommandParameter>
+                    </Button>
                     <!--Content=" Next &gt;  -->
                 </StackPanel>
             </Grid>
@@ -690,7 +707,7 @@
                         <Button Content="Roll" Command="{Binding SetWounds}"/>
                     </StackPanel>
                     <ListView x:Name="AptitudesLV"
-                          ItemsSource="{Binding Aptitudes}"
+                          ItemsSource="{Binding CreatedCharacter.Aptitudes}"                             
                           ScrollViewer.VerticalScrollBarVisibility="Visible"
                           ScrollViewer.CanContentScroll="False"
                           MaxHeight="90">
@@ -699,6 +716,11 @@
                                 <StackPanel Orientation="Vertical" />
                             </ItemsPanelTemplate>
                         </ListView.ItemsPanel>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Converter={StaticResource enumConverter}}" />
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
                     </ListView>
                     <Button Content="Add free aptitude" 
                             VerticalAlignment="Center" 
@@ -708,33 +730,18 @@
                 </StackPanel>
                 <StackPanel Grid.Column="1"
                         Grid.Row="0">
-                    <TextBlock Text="Skills" HorizontalAlignment="Center" FontWeight="Bold"/>
-                    <DataGrid Margin="3" 
-                              AutoGenerateColumns="False"
-                              ItemsSource="{Binding Skills}">
-                        <DataGrid.Columns>
-                            <DataGridTextColumn Header="Skill" IsReadOnly="True" Binding="{Binding Name}"/>
-                            <DataGridCheckBoxColumn  Header="Know" Binding="{Binding IsKnow}" IsReadOnly="True"/>
-                            <DataGridCheckBoxColumn Header="Trained" Binding="{Binding IsTrained}" IsReadOnly="True"/>
-                            <DataGridCheckBoxColumn Header="Experienced" Binding="{Binding IsExperienced}" IsReadOnly="True"/>
-                            <DataGridCheckBoxColumn Header="Veteran" Binding="{Binding IsVeteran}" IsReadOnly="True"/>
-                        </DataGrid.Columns>
-                    </DataGrid>
-                    
-                    <!--<ListView x:Name="SkillsLV"
-                              ItemsSource="{Binding Skills}"
-                              Margin="5"
-                              ScrollViewer.VerticalScrollBarVisibility="Visible"
-                              ScrollViewer.CanContentScroll="False"
-                              MaxHeight="500">
-                        <ListView.View>
-                            <GridView>
-                                <GridViewColumn  Header="Skill" DisplayMemberBinding="{Binding Item1}"/>
-                                <GridViewColumn  Header="Rank" DisplayMemberBinding="{Binding Item2}"/>
-                            </GridView>
-                        </ListView.View>
-                    </ListView>   -->
-
+                    <TextBlock Text="Knowed Skills" HorizontalAlignment="Center" FontWeight="Bold"/>
+                    <ScrollViewer>
+                        <DataGrid Margin="3" 
+                                  MaxHeight="250"
+                                  AutoGenerateColumns="False"
+                                  ItemsSource="{Binding Skills, UpdateSourceTrigger=PropertyChanged}" >
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Skill" IsReadOnly="True" Binding="{Binding Name}" FontSize="12"/>
+                                <DataGridTextColumn Header="Rank" IsReadOnly="True" Binding="{Binding Rank}" FontSize="12"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </ScrollViewer>
                 </StackPanel>
                 <Grid Grid.Column="2" Margin="5">
                     <Grid.RowDefinitions>
@@ -762,26 +769,25 @@
                         <TextBlock Text="Gear:"/>
                         <ScrollViewer>
                             <ListView x:Name="GearLV"
-                          ItemsSource="{Binding Gear}">
+                                ItemsSource="{Binding Gear}">
                                 <ListView.ItemsPanel>
                                     <ItemsPanelTemplate>
-                                        <StackPanel Orientation="Vertical" />
+                                        <StackPanel Orientation="Vertical"/>
                                     </ItemsPanelTemplate>
                                 </ListView.ItemsPanel>
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Name}"/>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
                             </ListView>
                         </ScrollViewer>
                     </StackPanel>
                     <StackPanel Grid.Row="2">
                         <TextBlock Text="Special Abilities:"/>
-                        <ListBox ItemsSource="{Binding SpecialAbilities}"
-                             MaxHeight="100"
-                             ScrollViewer.VerticalScrollBarVisibility="Visible">
-                            <ListBox.ItemTemplate>
-                                <DataTemplate>
-                                    <TextBlock TextWrapping="Wrap" Text="{Binding}" MaxWidth="250"/>
-                                </DataTemplate>
-                            </ListBox.ItemTemplate>
-                        </ListBox>
+                        <TextBlock Text="{Binding CreatedCharacter.Background.BackgroundBonuds}" TextWrapping="Wrap"/>
+                        <TextBlock Text="{Binding CreatedCharacter.HomeWorld.HomeWorldBonus}" TextWrapping="Wrap"/>
+                        <TextBlock Text="{Binding CreatedCharacter.Role.RoleBonus}" TextWrapping="Wrap"/>                       
                     </StackPanel>
                 </Grid>
             </Grid>
@@ -791,13 +797,16 @@
                        HorizontalAlignment="Right">
                 <Button Content="Change Homeworld"
                         Command="{Binding Source={StaticResource creationVM},
-                            Path=ShowHomewroldViewCommand}"/>
+                            Path=ShowHomewroldViewCommand}"
+                        CommandParameter="{Binding CreatedCharacter.HomeWorld}"/>
                 <Button Content="Change Background"
                         Command="{Binding Source={StaticResource creationVM},
-                            Path=ShowBackgroundViewCommand}"/>
+                            Path=ShowBackgroundViewCommand}"
+                        CommandParameter="{Binding CreatedCharacter.Background}"/>
                 <Button Content="Change Role"
                         Command="{Binding Source={StaticResource creationVM},
-                            Path=ShowRoleViewCommand}"/>
+                            Path=ShowRoleViewCommand}"
+                        CommandParameter="{Binding CreatedCharacter.Role}"/>
                 <Border Style="{StaticResource SeparatorStyle}"/>
                 <Button Content="  Exit  "
                         Command="{Binding ExitCommand}"

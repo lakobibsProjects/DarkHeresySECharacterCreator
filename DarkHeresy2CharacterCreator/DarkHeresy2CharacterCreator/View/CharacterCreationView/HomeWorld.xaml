@@ -11,8 +11,7 @@
         Title="HomeWorld" Height="450" Width="600">
     <Window.Resources>
         <vm:HomeworldVM x:Key="vm"/>
-        <cvr:ArrayToStringConverter x:Key="ArrayToStringConverter"/>
-        <cvr:AptitudeNameToString x:Key="AptitudeNameToString"/>
+        <cvr:ArrayToStringConverter x:Key="ArrayToStringConverter"/>        
     </Window.Resources>
     <Grid>
         <Grid x:Name="HomeworldGrid" Visibility="{Binding HomeworldIsSelected}">

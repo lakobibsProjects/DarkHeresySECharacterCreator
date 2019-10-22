@@ -9,10 +9,12 @@ using PropertyChanged;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Data;
 using System.Windows.Input;
 
 namespace DarkHeresy2CharacterCreator.ViewModel
@@ -23,18 +25,25 @@ namespace DarkHeresy2CharacterCreator.ViewModel
         #region Fields
         private ICharacter createdcharacter;
         private Divinations divination;
-        private DelegateCommand setDivinationCommand;
-        private DelegateCommand setCharateristic;
-        private DelegateCommand getAptitudes;
-        private DelegateCommand setWounds;
-        private DelegateCommand setFateTreshhold;
-        private DelegateCommand changeHomeworldCommand;
-        private DelegateCommand changeBackgroundCommand;
-        private DelegateCommand changeRoleCommand;
-        private DelegateCommand exitCommand;
-        private DelegateCommand saveAndExitCommand;
-        private DelegateCommand openAddAvailableAptitudeWindowCommand;
-        private DelegateCommand addAptitudeCommand;
+        private RelayCommand setDivinationCommand;
+        private RelayCommand setCharateristic;
+        private RelayCommand setWounds;
+        private RelayCommand setFateTreshhold;
+        private RelayCommand changeHomeworldCommand;
+        private RelayCommand changeBackgroundCommand;
+        private RelayCommand changeRoleCommand;
+        private RelayCommand exitCommand;
+        private RelayCommand saveAndExitCommand;
+        private RelayCommand openAddAvailableAptitudeWindowCommand;
+        private RelayCommand addAptitudeCommand;
+        private RelayCommand refreshCommand;
+        private ICollectionView skills;
+        private ICollectionView aptitudes;
+        private ICollectionView availableAptitudes;
+        private ICollectionView gear;
+        private ICollectionView talentsAndTraits;
+        private ICollectionView specialAbilities;
+
         private Characteristic weaponSkill = CharacteristicList.Characteristics.Where(c => c.Name == CharacteristicName.Weapon_Skill).FirstOrDefault();
         private Characteristic ballisticSkill = CharacteristicList.Characteristics.Where(c => c.Name == CharacteristicName.Balistic_Skill).FirstOrDefault();
         private Characteristic strength = CharacteristicList.Characteristics.Where(c => c.Name == CharacteristicName.Strength).FirstOrDefault();
@@ -53,18 +62,14 @@ namespace DarkHeresy2CharacterCreator.ViewModel
             get { return divination; }
             set { divination = value; }
         }
-
-
         public ICharacter CreatedCharacter
         {
             get { return createdcharacter; }
             set { createdcharacter = value; }
-        }
-        public static Visibility SummaryIsNotCompleted { get; set; } /*=> CreatedCharacter.Background != null && CreatedCharacter.HomeWorld != null && CreatedCharacter.Role != null;*/
+        }        
         #region Commands
         public ICommand SetDivinationCommand => setDivinationCommand;
         public ICommand SetCharateristic => setCharateristic;
-        public ICommand GetAptitudes => getAptitudes;
         public ICommand SetWounds => setWounds;
         public ICommand SetFateTreshhold => setFateTreshhold;
         public ICommand ChangeHomeworldCommand => changeHomeworldCommand;
@@ -74,6 +79,7 @@ namespace DarkHeresy2CharacterCreator.ViewModel
         public ICommand SaveAndExitCommand => saveAndExitCommand;
         public ICommand OpenAddAvailableAptitudeWindowCommand => openAddAvailableAptitudeWindowCommand;
         public ICommand AddAptitudeCommand => addAptitudeCommand;
+        public ICommand RefreshCommand => refreshCommand;
         #endregion Commands
 
         #region Array-like properties
@@ -88,87 +94,18 @@ namespace DarkHeresy2CharacterCreator.ViewModel
         public Characteristic Willpower { get => willpower; set => willpower = value; }
         public Characteristic Fellowship { get => fellowship; set => fellowship = value; }
 
-        public List<string> TalentsAndTraits
-        {
-            get
-            {
-                var result = new List<string>();
-                foreach (var t in CreatedCharacter.Talents)
-                {
-                    if(t != null && t.Discription != null)
-                        result.Add(t.Discription);
-                }
-                foreach (var t in CreatedCharacter.Traits)
-                    result.Add(t.Discription);
-                return result;
-            }
-        }
-        public List<string> Gear
-        {
-            get
-            {
-                var result = new List<string>();
-                foreach (var g in CreatedCharacter.Gear)    //correct gearList and backgroungGearList (switch to enum)
-                {
-                    if (g != null)                    
-                        result.Add(g.Name);
-                }
-                return result;
-            }
-        }
+        public ICollectionView TalentsAndTraits { get { return talentsAndTraits; } }
+        public ICollectionView Gear { get { return gear; } }
 
-        public ObservableCollection<string> SpecialAbilities
-        {
-            get
-            {
-                var result = new ObservableCollection<string>();
-                if(createdcharacter.HomeWorld != null)
-                    result.Add(CreatedCharacter.HomeWorld.HomeWorldBonus);
-                if (createdcharacter.Role != null)
-                    result.Add(CreatedCharacter.Role.RoleBonus);
-                if (createdcharacter.Background != null)
-                    result.Add(CreatedCharacter.Background.BackgroundBonuds);     
-                return result;
-            }
-        }
-        public ObservableCollection<DGSkill> Skills
-        {
-            get
-            {
-                var result = new ObservableCollection<DGSkill>();
-                foreach (var s in CreatedCharacter.Skills)
-                {                    
-                    if (s != null && s.Rank > 0)
-                        result.Add(new DGSkill (s));
-                }
-                return result;
-            }
-        }
+        public ICollectionView SpecialAbilities { get { return specialAbilities; } }
+        
+
+        public ICollectionView Skills { get { return skills; }  }
         #endregion Array-like properties
         #region Aptitudes bind properties
-        public List<string> Aptitudes
-        {
-            get
-            {
-                List<string> result = new List<string>();
-                foreach (var a in CreatedCharacter.Aptitudes)
-                    result.Add(a.ToString());
-
-                return result.GroupBy(x => x).Select(y => y.FirstOrDefault()).ToList();
-            }
-        }
-        public List<string> AvailableAptitudes
-        {
-            get
-            {
-                List<string> result = new List<string>();
-                foreach(var apt in (AptitudeName[])Enum.GetValues(typeof(AptitudeName)))                
-                    result.Add(apt.ToString());
-                
-                return result.Except(Aptitudes).ToList();
-            }
-        }
-        public int NotEnoughAptitude => 7 - Aptitudes.Count;
+        public ICollectionView Aptitudes { get { return aptitudes; } }
+        public ICollectionView AvailableAptitudes { get { return availableAptitudes; } }
+        public int NotEnoughAptitude => Aptitudes == null ? 7 : 7 - 0;
         public bool AptitudesIsComplete => !(NotEnoughAptitude == 0);
         public string SelectedAvailableAptitude { get; set; }
         #endregion Aptitudes bind properties
@@ -178,29 +115,114 @@ namespace DarkHeresy2CharacterCreator.ViewModel
         public SummaryCreationViewModel()
         {
             CreatedCharacter = MainWindowVM.OpenedCharacter;
-            SummaryIsNotCompleted = Visibility.Collapsed;
+            //TalentsAndTraits = new ObservableCollection<string>();
+            //Gear = new ObservableCollection<string>();           
+            //Aptitudes = new ObservableCollection<string>();
+            //SpecialAbilities = new ObservableCollection<string>();
+            //AvailableAptitudes = new ObservableCollection<string>();
+
+            skills = CollectionViewSource.GetDefaultView(CreatedCharacter.Skills);
+            skills.Filter = skillsFilter;
+            aptitudes = CollectionViewSource.GetDefaultView(CreatedCharacter.Aptitudes);
+            availableAptitudes = CollectionViewSource.GetDefaultView((AptitudeName[])Enum.GetValues(typeof(AptitudeName)));
+            availableAptitudes.Filter = availableAptitudesFilter;
+            gear = CollectionViewSource.GetDefaultView(CreatedCharacter.Gear);
+            talentsAndTraits = CollectionViewSource.GetDefaultView(new ObservableCollection<string>().
+                Concat(CreatedCharacter.Talents.Select(t => t == null ? string.Empty : t.Discription)).
+                Concat(CreatedCharacter.Traits.Select(t => t == null ? string.Empty : t.Discription)));
+
             #region Initialization commands
-            setDivinationCommand = new DelegateCommand(SetDivination);
-            setCharateristic = new DelegateCommand(RollCharacteristic);
-            getAptitudes = new DelegateCommand(ReturnAptitudes);
-            setWounds = new DelegateCommand(RollWounds);
-            setFateTreshhold = new DelegateCommand(RollEmperorsBlessing);
-            changeHomeworldCommand = new DelegateCommand(obj => CreatedCharacter.HomeWorld = null); 
-            changeBackgroundCommand = new DelegateCommand(obj => CreatedCharacter.Background = null);
-            changeRoleCommand = new DelegateCommand(obj => CreatedCharacter.Role = null);
-            exitCommand = new DelegateCommand(OnExit);
-            saveAndExitCommand = new DelegateCommand(OnSaveAndAxit);
-            openAddAvailableAptitudeWindowCommand = new DelegateCommand(OpenAddAvailableAptitudeWindow);
-            addAptitudeCommand = new DelegateCommand(AddAvailableAptitude);
-
+            setDivinationCommand = new RelayCommand(SetDivination);
+            setCharateristic = new RelayCommand(RollCharacteristic);           
+            setWounds = new RelayCommand(RollWounds);
+            setFateTreshhold = new RelayCommand(RollEmperorsBlessing);
+            changeHomeworldCommand = new RelayCommand(obj => CreatedCharacter.HomeWorld = null); 
+            changeBackgroundCommand = new RelayCommand(obj => CreatedCharacter.Background = null);
+            changeRoleCommand = new RelayCommand(obj => CreatedCharacter.Role = null);
+            exitCommand = new RelayCommand(OnExit);
+            saveAndExitCommand = new RelayCommand(OnSaveAndAxit);
+            openAddAvailableAptitudeWindowCommand = new RelayCommand(OpenAddAvailableAptitudeWindow);
+            addAptitudeCommand = new RelayCommand(AddAvailableAptitude);
+            refreshCommand = new RelayCommand(Refresh);
             #endregion
+            
         }
 
-        //WTF
-        private void ReturnAptitudes(object obj)
+        private bool skillsFilter(object item)
         {
-            var temp = CreatedCharacter.Aptitudes;
+            AbstractSkill skill = item as AbstractSkill;
+            return skill.Rank != Ranking.Unknown;
         }
+
+        private bool availableAptitudesFilter(object item)
+        {
+            string aptitude = item as string;
+            return !Aptitudes.Contains(aptitude);
+        }
+
+        private void Refresh(object obj)
+        {
+
+            //TalentsAndTraits.Clear();
+            //Gear.Clear();           
+            //Aptitudes.Clear();
+            //SpecialAbilities.Clear();
+            //AvailableAptitudes.Clear();
+            Role role = obj as Role;
+            skills.Refresh();
+            aptitudes.Refresh();      
+            availableAptitudes.Refresh();
+            gear.Refresh();
+            talentsAndTraits.Refresh();
+            /*if (specialAbilities == null)
+            {
+                specialAbilities = CollectionViewSource.GetDefaultView(new ObservableCollection<string>()
+                {
+                    CreatedCharacter.Background.BackgroundBonuds,
+                    CreatedCharacter.HomeWorld.HomeWorldBonus,
+                    role.RoleBonus
+                });
+            }
+            if(specialAbilities != null) specialAbilities.Refresh(); */
+            
+            /*foreach (var t in CreatedCharacter.Talents)
+            {
+                if (t != null && t.Discription != null)
+                    TalentsAndTraits.Add(t.Discription);
+            }
+            foreach (var t in CreatedCharacter.Traits)
+                TalentsAndTraits.Add(t.Discription);*/
+
+
+            /*foreach (var g in CreatedCharacter.Gear)    //correct gearList and backgroungGearList (switch to enum)
+            {
+                if (g != null)
+                    Gear.Add(g.Name);
+            }*/
+
+
+            /*var specialAbilities = new ObservableCollection<string>();
+*/
+
+            
+           /* foreach (var item in notDuplicateAptitudes)
+                Aptitudes.Add(item.ToString());*/
+            
+            //Aptitudes =  (ObservableCollection<string>)(aptitudes.GroupBy(x => x).Select(y => y.FirstOrDefault()));     // cast exception
+
+           /* foreach (var apt in (AptitudeName[])Enum.GetValues(typeof(AptitudeName)))
+            {
+                foreach(var a in Aptitudes)
+                {
+                    if (AvailableAptitudes.Contains(a)) 
+                        break;
+                    
+                    if (apt.ToString() != a && !AvailableAptitudes.Contains(a))
+                        AvailableAptitudes.Add(apt.ToString());
+                }
+            }*/
+        }
+
         #endregion Constructor
 
         #region Helped Methods
@@ -239,9 +261,6 @@ namespace DarkHeresy2CharacterCreator.ViewModel
         private void OnExit(object obj)
         {
             CharactersList.Characters.Remove(MainWindowVM.OpenedCharacter);
-            /*MainWindowVM.OpenedCharacter.RemoveHomeworld();
-            MainWindowVM.OpenedCharacter.RemoveBackround();
-            MainWindowVM.OpenedCharacter.RemoveRole();*/
             Window window = obj as Window;
             window.Close();
         }
@@ -266,45 +285,5 @@ namespace DarkHeresy2CharacterCreator.ViewModel
         #endregion Helped Methods
 
     }
-
-
-    /// <summary>
-    /// Asistance class to correctable information in skills DataGrid
-    /// </summary>
-    [AddINotifyPropertyChangedInterface]
-    public class DGSkill
-    {
-        public string Name { get; set; }
-        public bool IsKnow { get; set; } = false;
-        public bool IsTrained { get; set; } = false;
-        public bool IsExperienced { get; set; } = false;
-        public bool IsVeteran { get; set; } = false;
-
-        public DGSkill(AbstractSkill basicSkill)
-        {
-            Name = basicSkill.Name.ToString();
-            if (basicSkill.Rank > Ranking.Unknown)
-                IsKnow = true;
-            if (basicSkill.Rank > Ranking.Known)
-                IsTrained = true;
-            if (basicSkill.Rank > Ranking.Trained)
-                IsExperienced = true;
-            if (basicSkill.Rank > Ranking.Experienced)
-                IsVeteran = true;
-        }
-        /// <summary>
-        /// Asistance class to correctable information in skills DataGrid
-        /// </summary>
-        [AddINotifyPropertyChangedInterface]
-        public class DGSpecialAbilities
-        {
-            string[] SpecialAbilites { get; set; } = new string[3];
-            public DGSpecialAbilities(ICharacter character)
-            {
-                SpecialAbilites[0] = character.HomeWorld.HomeWorldBonus;
-                SpecialAbilites[1] = character.Role.RoleBonus;
-                SpecialAbilites[2] = character.Background.BackgroundBonuds;
-            } 
-        }
-    }
+  
 }
