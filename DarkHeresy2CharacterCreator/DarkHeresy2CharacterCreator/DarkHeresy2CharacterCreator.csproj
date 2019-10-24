@@ -61,6 +61,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -122,6 +123,8 @@
     <Compile Include="Model\Characteristics\CharacteristicList.cs" />
     <Compile Include="Model\Character\CharacterCompleteCreationExtension.cs" />
     <Compile Include="Model\Character\CharactersList.cs" />
+    <Compile Include="Model\Character\Class1.cs" />
+    <Compile Include="Model\Character\ItemCollectionToJsonConveter.cs" />
     <Compile Include="Model\Enums\ActionLong.cs" />
     <Compile Include="Model\Enums\AptitudeName.cs" />
     <Compile Include="Model\Characteristics\Characteristic.cs" />
@@ -168,6 +171,9 @@
     <Compile Include="Model\Enums\LocationName.cs" />
     <Compile Include="Model\IPrerequisitable.cs" />
     <Compile Include="Model\ISourceDiscription.cs" />
+    <Compile Include="Model\JsonConverters\BackgroundToJsonConverter.cs" />
+    <Compile Include="Model\JsonConverters\HomeworldToJsonConverter.cs" />
+    <Compile Include="Model\JsonConverters\RoleToJsonCoverter.cs" />
     <Compile Include="Model\PsychicPowers\AttackPsychicPower.cs" />
     <Compile Include="Model\PsychicPowers\IPsychicPower.cs" />
     <Compile Include="Model\PsychicPowers\PsychicPower.cs" />
@@ -195,6 +201,7 @@
     <Compile Include="Model\Traits\Trait.cs" />
     <Compile Include="Model\Traits\TraitList.cs" />
     <Compile Include="Model\Traits\TraitName.cs" />
+    <Compile Include="Services\FileIOService.cs" />
     <Compile Include="ViewModel\BackgroundVM.cs" />
     <Compile Include="ViewModel\CharacterSheet\CharacterAdvancementVM.cs" />
     <Compile Include="ViewModel\CharacterSheet\SkillsVM.cs" />

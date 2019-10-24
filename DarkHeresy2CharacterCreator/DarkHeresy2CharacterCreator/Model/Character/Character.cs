@@ -7,10 +7,12 @@ using System.Threading.Tasks;
 using DarkHeresy2CharacterCreator.Model.Characteristics;
 using DarkHeresy2CharacterCreator.Model.Equipment.Interfaces;
 using DarkHeresy2CharacterCreator.Model.GeneralSuppliment;
+using DarkHeresy2CharacterCreator.Model.JsonConverters;
 using DarkHeresy2CharacterCreator.Model.PsychicPowers;
 using DarkHeresy2CharacterCreator.Model.Skills;
 using DarkHeresy2CharacterCreator.Model.Talents;
 using DarkHeresy2CharacterCreator.Model.Traits;
+using Newtonsoft.Json;
 using NUnit.Framework.Internal;
 using PropertyChanged;
 
@@ -59,12 +61,12 @@ namespace DarkHeresy2CharacterCreator.Model.Character
         private ObservableCollection<IEliteAdvance> eliteAdvances;
         private ObservableCollection<string> allies;
         private ObservableCollection<string> enemies;
-        private ObservableCollection<ITrait> traits = new ObservableCollection<ITrait>();
-        private ObservableCollection<IPsychicPower> psychicPowers = new ObservableCollection<IPsychicPower>();
+        private ObservableCollection<Trait> traits = new ObservableCollection<Trait>();
+        private ObservableCollection<PsychicPower> psychicPowers = new ObservableCollection<PsychicPower>();
         private ObservableCollection<string> conditions = new ObservableCollection<string>();
         private ObservableCollection<Characteristic> characteristics = new ObservableCollection<Characteristic>();
         private ObservableCollection<AbstractSkill> skills = new ObservableCollection<AbstractSkill>();
-        private ObservableCollection<ITalent> talents = new ObservableCollection<ITalent>();
+        private ObservableCollection<Talent> talents = new ObservableCollection<Talent>();        
         private ObservableCollection<IItem> gear = new ObservableCollection<IItem>();
         private ObservableCollection<AptitudeName> aptitudes = new ObservableCollection<AptitudeName>();
         private ObservableCollection<Tuple<string, string, int>> advances = new ObservableCollection<Tuple<string, string, int>>();
@@ -73,8 +75,11 @@ namespace DarkHeresy2CharacterCreator.Model.Character
 
         #region Properties
         public string CharacterName { get => characterName; set => characterName = value; }
+        [JsonConverter(typeof(HomeworldToJsonConverter))]
         public HomeWorld HomeWorld { get => homeworld; set => homeworld = value; }
+        [JsonConverter(typeof(BackgroundToJsonConverter))]
         public Background Background { get => background; set => background = value; }
+        [JsonConverter(typeof(RoleToJsonCoverter))]
         public Role Role { get => role; set => role = value; }
         public int Divination { get => divination; set => divination = value; }
         public string PlayerName { get => playerName; set => playerName = value; }
@@ -110,12 +115,16 @@ namespace DarkHeresy2CharacterCreator.Model.Character
         public ObservableCollection<IEliteAdvance> EliteAdvances { get => eliteAdvances; set => eliteAdvances = value; }
         public ObservableCollection<string> Allies { get => allies; set => allies = value; }
         public ObservableCollection<string> Enemies { get => enemies; set => enemies = value; }
-        public ObservableCollection<ITrait> Traits { get => traits; set =>  traits= value; }
-        public ObservableCollection<IPsychicPower> PsychicPowers { get => psychicPowers; set => psychicPowers = value; }
+        public ObservableCollection<Trait> Traits { get => traits; set =>  traits= value; }
+        public ObservableCollection<PsychicPower> PsychicPowers { get => psychicPowers; set => psychicPowers = value; }
         public ObservableCollection<string> Conditions { get => conditions; set => conditions = value; }
         public ObservableCollection<Characteristic> Characteristics { get => characteristics; set => characteristics = value; }
-        public ObservableCollection<AbstractSkill> Skills { get => skills; set => skills = value; }
-        public ObservableCollection<ITalent> Talents { get => talents; set => talents = value; }
+        public ObservableCollection<CommonSkill> CommonSkills { get; set; } = new ObservableCollection<CommonSkill>();
+        public ObservableCollection<SpecializedSkill> SpecializedSkills { get; set; } = new ObservableCollection<SpecializedSkill>();
+        [JsonIgnoreAttribute]
+        public ObservableCollection<AbstractSkill> Skills => new ObservableCollection<AbstractSkill>(new List<AbstractSkill>().Concat(CommonSkills).Concat(SpecializedSkills));
+        public ObservableCollection<Talent> Talents { get => talents; set => talents = value; }
+        [JsonConverter(typeof(ItemCollectionToJsonConveter))]
         public ObservableCollection<IItem> Gear { get => gear; set =>  gear = value; }
         public ObservableCollection<AptitudeName> Aptitudes { get => aptitudes; set => aptitudes = value; }
         public ObservableCollection<Tuple<string, string, int>> Advances { get => advances; set => advances = value; }
@@ -127,9 +136,9 @@ namespace DarkHeresy2CharacterCreator.Model.Character
             foreach (var c in CharacteristicList.Characteristics)            
                 characteristics.Add(c);
             foreach (var s in SkillList.CommonSkills)
-                skills.Add(s);
+                CommonSkills.Add((CommonSkill)s);
             foreach (var s in SkillList.SpecializedSkills)
-                skills.Add(s);           
+                SpecializedSkills.Add((SpecializedSkill)s);           
 
         }
         

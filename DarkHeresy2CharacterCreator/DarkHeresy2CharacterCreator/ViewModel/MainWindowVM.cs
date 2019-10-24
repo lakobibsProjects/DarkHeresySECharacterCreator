@@ -12,6 +12,8 @@ using System.Windows.Input;
 using DarkHeresy2CharacterCreator.View.CharacterCreationView;
 using System.Collections.ObjectModel;
 using DarkHeresy2CharacterCreator.Model.Character;
+using System.ComponentModel;
+using DarkHeresy2CharacterCreator.Services;
 
 namespace DarkHeresy2CharacterCreator.ViewModel
 {
@@ -22,8 +24,11 @@ namespace DarkHeresy2CharacterCreator.ViewModel
         private readonly DelegateCommand newCharacterCommand;
         private readonly DelegateCommand closeApplicationCommand;
         private readonly DelegateCommand loadCharacterCommand;
+
+        public FileIOService FileIOService { get; private set; }
+
         private readonly DelegateCommand deleteCharacterCommand;
-        public ObservableCollection<ICharacter> characters = new ObservableCollection<ICharacter>();
+        public static ObservableCollection<ICharacter> characters = new ObservableCollection<ICharacter>();
         #endregion Fields
 
         #region Propreties
@@ -31,9 +36,10 @@ namespace DarkHeresy2CharacterCreator.ViewModel
         public ICommand LoadCharacterCommand => loadCharacterCommand;
         public ICommand DeleteCharacterCommand => deleteCharacterCommand;
         public ICommand CloseApplicationCommand => closeApplicationCommand;
-        public ObservableCollection<ICharacter> Characters { get { return characters; } set { characters = value; } }
-        public ICharacter SelectedCharacter { get; set; }
-        public static ICharacter OpenedCharacter { get; set; }
+        //public static ObservableCollection<ICharacter> Characters { get { return characters; } set { characters = value; } }
+        //public static ObservableCollection<ICharacter> Characters { get; set; }
+        public Character SelectedCharacter { get; set; }
+        public static Character OpenedCharacter { get; set; }
         #endregion
 
         public MainWindowVM()
@@ -43,14 +49,28 @@ namespace DarkHeresy2CharacterCreator.ViewModel
             closeApplicationCommand = new DelegateCommand(OnCloseApplication);
             deleteCharacterCommand = new DelegateCommand(OnDeleteCaharacter);
             loadCharacterCommand = new DelegateCommand(OnLoadCharacter);
+            /*FileIOService = new FileIOService(CharactersList.CHARACTERLISTPATH);
             try
             {
-                characters = CharactersList.Characters;
+                Characters = FileIOService.LoadData();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.InnerException.ToString());
+                MessageBox.Show(ex.Message);
+                Application.Current.Shutdown();
+            }*/
+            /*try
+            {
+                CharactersList charactersList = new CharactersList();
+                //characters = charactersList.Characters;
+                Characters = charactersList.Characters;
+                
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                Application.Current.Shutdown();
+            }*/
             
         }
 
@@ -87,8 +107,20 @@ namespace DarkHeresy2CharacterCreator.ViewModel
 
         private void OnDeleteCaharacter(object obj)
         {
-            if(SelectedCharacter != null)
-                Characters.Remove(SelectedCharacter);
+            try
+            {
+                if (SelectedCharacter != null)
+                {
+                    CharactersList.Characters.RemoveAt(CharactersList.Characters.IndexOf(SelectedCharacter));
+                    CharactersList.CharactersIO.SaveData(CharactersList.Characters);
+                }                                 
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                Application.Current.Shutdown();
+            }
         }
 
         private void OnCloseApplication(object obj)
@@ -99,7 +131,16 @@ namespace DarkHeresy2CharacterCreator.ViewModel
         private void OnNewCharacter(object obj)
         {
             Character newCharacter = new Character();            
-            Characters.Add(newCharacter);
+            try
+            {
+                CharactersList.Characters.Add(newCharacter);
+                CharactersList.CharactersIO.SaveData(CharactersList.Characters); 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                Application.Current.Shutdown();
+            }
             OpenedCharacter = newCharacter;
             Window homeWorldWindow = new HomeWorld();
             homeWorldWindow.Show();

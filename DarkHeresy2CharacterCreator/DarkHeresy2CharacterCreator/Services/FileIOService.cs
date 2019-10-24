@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
@@ -10,45 +11,46 @@ using System.Threading.Tasks;
 
 namespace DarkHeresy2CharacterCreator.Services
 {
-    class FileIOService
+    public class FileIOService
     {
         private readonly string PATH;
 
-        public BindingList<Character> LoadData()
+        public ObservableCollection<Character> LoadData()
         {
             var fileExists = File.Exists(PATH);
             if (!fileExists)
             {
                 File.CreateText(PATH).Dispose();
-                return new BindingList<Character>();
+                return new ObservableCollection<Character>();
             }
             using (var reader = File.OpenText(PATH))
             {
                 var fileText = reader.ReadToEnd();
-                return JsonConvert.DeserializeObject<BindingList<Character>>(fileText);
+                return fileText == string.Empty ? new ObservableCollection<Character>() : JsonConvert.DeserializeObject<ObservableCollection<Character>>(fileText);
             }
         }
 
-        public void SaveData(BindingList<Character> todoDataList)
+        public void SaveData(ObservableCollection<Character> characters)
         {
             using (StreamWriter writer = File.CreateText(PATH))
             {
-                string output = JsonConvert.SerializeObject(todoDataList);
+                string output = JsonConvert.SerializeObject(characters, Formatting.Indented);
                 writer.Write(output);
             }
         }
-        public void SaveData(object todoDataList)
+        /*public void SaveData(object character)
         {
             using (StreamWriter writer = File.CreateText(PATH))
             {
-                string output = JsonConvert.SerializeObject(todoDataList);
+                string output = JsonConvert.SerializeObject(character, Formatting.Indented);
                 writer.Write(output);
             }
-        }
+        }*/
 
         public FileIOService(string path)
         {
             PATH = path;
         }
+
     }
 }
