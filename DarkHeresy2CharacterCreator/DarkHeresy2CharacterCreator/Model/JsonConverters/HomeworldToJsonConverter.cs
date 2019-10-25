@@ -3,6 +3,7 @@ using DarkHeresy2CharacterCreator.Model.GeneralSuppliment.Collections;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,11 +19,15 @@ namespace DarkHeresy2CharacterCreator.Model.JsonConverters
 
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
-            //if (existingValue != null)
-                return HomeWorldList.HomeWorlds.Where(b => b.Name == reader.Value).FirstOrDefault();
+            ObservableCollection<HomeWorld> homeworlds = HomeWorldList.HomeWorlds;
+            var serachedHomewrold = reader.Value.ToString();
+            foreach (var item in homeworlds)
+            {
+                if (item.Name == serachedHomewrold)
+                    return item;
+            }
 
-            //return null;
-
+            return null;
         }
 
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)

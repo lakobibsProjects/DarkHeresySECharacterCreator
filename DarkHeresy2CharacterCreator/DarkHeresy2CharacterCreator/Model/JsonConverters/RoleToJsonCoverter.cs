@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,11 +18,15 @@ namespace DarkHeresy2CharacterCreator.Model.JsonConverters
 
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
-            //if (existingValue != null)
-                return RoleList.Roles.Where(b => b.Name == reader.Value).FirstOrDefault();
+            ObservableCollection<Role> roles = RoleList.Roles;
+            var serachedRole = reader.Value.ToString();
+            foreach (var item in roles)
+            {
+                if (item.Name == serachedRole)
+                    return item;
+            }
 
-           // return null;
-
+            return null;
         }
 
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)

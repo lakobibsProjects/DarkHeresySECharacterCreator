@@ -21,11 +21,14 @@ namespace DarkHeresy2CharacterCreator.Model.JsonConverters
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
             ObservableCollection<Background> bgs = BackgroundsCollection.Backgrounds;
-            //if (existingValue != null)            
-                return BackgroundsCollection.Backgrounds.Where(b => b.Name == reader.Value.ToString()).FirstOrDefault();                
+                var serachedBackground = reader.Value.ToString();
+            foreach (var item in bgs)
+            {
+                if (item.Name == serachedBackground)
+                    return item;                
+            }          
             
-            //return null;
-
+            return null;                         
         }
 
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)

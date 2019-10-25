@@ -21,7 +21,7 @@ namespace DarkHeresy2CharacterCreator.Model.Character
     /// <summary>
     /// Complete character
     /// </summary>
-    [AddINotifyPropertyChangedInterface]
+    [AddINotifyPropertyChangedInterface]    //, JsonConverter(typeof(CharacterToJsonConverter))
     public class Character : ICharacter
     {
         #region Fields
