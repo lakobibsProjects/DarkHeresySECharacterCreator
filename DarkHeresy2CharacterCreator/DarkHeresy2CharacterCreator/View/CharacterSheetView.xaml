@@ -1,4 +1,5 @@
 ﻿<Window x:Class="DarkHeresy2CharacterCreator.View.CharacterSheetView"
+        x:Name="CharacterWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -14,9 +15,16 @@
         <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
     </Window.Resources>
     <Grid Style="{DynamicResource GeneralGrid}">
+        <Grid.DataContext>
+            <vm:CharacterWindowVM x:Name="characterVM"/>
+        </Grid.DataContext>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Res/HorizontalWindowBackground.jpg"/>
+        </Grid.Background>
         <Grid.RowDefinitions>
-            <RowDefinition Height="15"/>
+            <RowDefinition Height="20"/>
             <RowDefinition/>
+            <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
 
         <Menu Grid.Row="0">
@@ -730,5 +738,34 @@
             </TabItem>-->
         </TabControl>
 
+        <StackPanel Grid.Row="2"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Center">
+            <Button Content="Change Character"
+                    VerticalAlignment="Center"
+                    MinWidth="100"
+                    Width="100"
+                    Margin="3"
+                    Command="{Binding ChangeCharacterCommand}"
+                    CommandParameter="{Binding ElementName=CharacterWindow}"/>
+            <Button Content="Save"
+                    VerticalAlignment="Center"
+                    MinWidth="40"
+                    Width="100"
+                    Margin="3"
+                    Command="{Binding SaveCommand}"/>
+            <Button Content="Save and Exit"
+                    VerticalAlignment="Center"
+                    MinWidth="80"
+                    Width="100"
+                    Margin="3"
+                    Command="{Binding SaveAndExitCommand}"/>
+            <Button Content="Exit"
+                    VerticalAlignment="Center"
+                    MinWidth="40"
+                    Width="100"
+                    Margin="3"
+                    Command="{Binding ExitCommand}"/>
+        </StackPanel>
     </Grid>
 </Window>

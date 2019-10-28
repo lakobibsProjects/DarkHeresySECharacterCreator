@@ -123,8 +123,7 @@
     <Compile Include="Model\Characteristics\CharacteristicList.cs" />
     <Compile Include="Model\Character\CharacterCompleteCreationExtension.cs" />
     <Compile Include="Model\Character\CharactersList.cs" />
-    <Compile Include="Model\Character\Class1.cs" />
-    <Compile Include="Model\Character\ItemCollectionToJsonConveter.cs" />
+    <Compile Include="Model\JsonConverters\ItemCollectionToJsonConveter.cs" />
     <Compile Include="Model\Enums\ActionLong.cs" />
     <Compile Include="Model\Enums\AptitudeName.cs" />
     <Compile Include="Model\Characteristics\Characteristic.cs" />
@@ -206,6 +205,7 @@
     <Compile Include="Services\FileIOService.cs" />
     <Compile Include="ViewModel\BackgroundVM.cs" />
     <Compile Include="ViewModel\CharacterSheet\CharacterAdvancementVM.cs" />
+    <Compile Include="ViewModel\CharacterSheet\CharacterWindowVM.cs" />
     <Compile Include="ViewModel\CharacterSheet\SkillsVM.cs" />
     <Compile Include="ViewModel\CharacterSheet\TalentsVM.cs" />
     <Compile Include="ViewModel\Converters\AptitudeNameToString.cs" />

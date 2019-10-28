@@ -1,4 +1,5 @@
-﻿using DarkHeresy2CharacterCreator.Model.Characteristics;
+﻿
+using DarkHeresy2CharacterCreator.Model.Characteristics;
 using DarkHeresy2CharacterCreator.Model.Equipment.Interfaces;
 using DarkHeresy2CharacterCreator.Model.GeneralSuppliment;
 using DarkHeresy2CharacterCreator.Model.PsychicPowers;

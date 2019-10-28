@@ -202,7 +202,6 @@ namespace DarkHeresy2CharacterCreator.ViewModel
             {
                 if (CreatedCharacter != null)
                 {
-                    //CharactersList.Characters.Add(CreatedCharacter);
                     CharactersList.CharactersIO.SaveData(CharactersList.Characters);
                 }
             }
