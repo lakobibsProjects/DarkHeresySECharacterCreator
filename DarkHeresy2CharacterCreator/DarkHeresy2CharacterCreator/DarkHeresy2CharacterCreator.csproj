@@ -172,6 +172,7 @@
     <Compile Include="Model\IPrerequisitable.cs" />
     <Compile Include="Model\ISourceDiscription.cs" />
     <Compile Include="Model\JsonConverters\BackgroundToJsonConverter.cs" />
+    <Compile Include="Model\JsonConverters\CharacteristicsToJsonConverter.cs" />
     <Compile Include="Model\JsonConverters\CharacterToJsonConverter.cs" />
     <Compile Include="Model\JsonConverters\HomeworldToJsonConverter.cs" />
     <Compile Include="Model\JsonConverters\RoleToJsonCoverter.cs" />

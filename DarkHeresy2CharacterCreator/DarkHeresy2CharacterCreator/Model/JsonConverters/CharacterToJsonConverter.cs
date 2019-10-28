@@ -11,6 +11,7 @@ using DarkHeresy2CharacterCreator.Model.GeneralSuppliment.Collections;
 
 namespace DarkHeresy2CharacterCreator.Model.JsonConverters
 {
+    //Not work. Fix later. Or delete.
     internal class CharacterToJsonConverter : JsonConverter<DarkHeresy2CharacterCreator.Model.Character.Character>
     {
         /// <summary>

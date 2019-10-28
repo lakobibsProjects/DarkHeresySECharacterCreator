@@ -12,9 +12,19 @@ using System.Web.Script.Serialization;
 
 namespace DarkHeresy2CharacterCreator.Model.Character
 {
+    /// <summary>
+    /// Convert ObservableCollection<IItem> to Json and back
+    /// </summary>
     class ItemCollectionToJsonConveter : JsonConverter<ObservableCollection<IItem>>
     {
         //modify method to work with names of items
+        /// <summary>
+        ///     Reads the JSON representation exemplar of the ObservableCollection<IItem> class.
+        /// </summary>
+        /// <param name="reader">The <see cref="T:Newtonsoft.Json.JsonReader" /> to read from.</param>
+        /// <param name="objectType">Type of the object.</param>
+        /// <param name="existingValue">The existing value of object being read.</param>
+        /// <param name="serializer">The calling serializer.</param>
         public override ObservableCollection<IItem> ReadJson(JsonReader reader, Type objectType, ObservableCollection<IItem> existingValue, bool hasExistingValue, JsonSerializer serializer)
         {
             ObservableCollection<IItem> result = new ObservableCollection<IItem>();
@@ -38,7 +48,12 @@ namespace DarkHeresy2CharacterCreator.Model.Character
             }
             return result;
         }
-
+        /// <summary>
+        /// Reads the JSON representation exemplar of the ObservableCollection<IItem> class.
+        /// </summary>
+        /// <param name="writer">The <see cref="T:Newtonsoft.Json.JsonWriter" /> to read from.</param>
+        /// <param name="value">Value of object that being write</param>
+        /// <param name="serializer">The calling serializer.</param>
         public override void WriteJson(JsonWriter writer, ObservableCollection<IItem> value, JsonSerializer serializer)
         {
             writer.WriteValue(new JavaScriptSerializer().Serialize(value.Where(i => i != null).Select(i => i.Name == null ? string.Empty : i.Name)));
