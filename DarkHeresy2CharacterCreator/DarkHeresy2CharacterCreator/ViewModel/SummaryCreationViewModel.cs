@@ -16,6 +16,9 @@ using System.Windows.Input;
 
 namespace DarkHeresy2CharacterCreator.ViewModel
 {
+    /// <summary>
+    /// ViewModel for SummaryCreationWindow
+    /// </summary>
     [AddINotifyPropertyChangedInterface]
     public class SummaryCreationViewModel
     {
@@ -217,7 +220,7 @@ namespace DarkHeresy2CharacterCreator.ViewModel
 
     }
 
-
+    //remove and change to simple binding to collection of skills that contains in exemplar of character
     /// <summary>
     /// Asistance class to correctable information in skills DataGrid
     /// </summary>

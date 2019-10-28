@@ -42,8 +42,7 @@ namespace DarkHeresy2CharacterCreator.ViewModel.CharacterSheet
 
         #region Helped Methods
         private void InitializeCollections()
-        {
-            
+        {            
             var specializedSkillsQuery = Character.SpecializedSkills;
             var commonSkillsQuerry = Character.CommonSkills;
             CommonSkills = new ObservableCollection<AbstractSkill>(commonSkillsQuerry);

@@ -20,7 +20,7 @@ ________________________________________________________________________________
 A13. Cast all to enums
 A1. Create logic  to add specialization in elements of collections;
 A10. Think about events to automaticly update cost when increace rank
-A7. Create Database
++A7. Create Database (Collection of characters now contains as Json file)
 A11. Create logic to operate with numeric values
 A12. Add discriptions
 A15. Fix TypeInitializationException in TalentList!

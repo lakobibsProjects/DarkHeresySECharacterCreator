@@ -36,8 +36,6 @@ namespace DarkHeresy2CharacterCreator.ViewModel
         public ICommand LoadCharacterCommand => loadCharacterCommand;
         public ICommand DeleteCharacterCommand => deleteCharacterCommand;
         public ICommand CloseApplicationCommand => closeApplicationCommand;
-        //public static ObservableCollection<ICharacter> Characters { get { return characters; } set { characters = value; } }
-        //public static ObservableCollection<ICharacter> Characters { get; set; }
         public Character SelectedCharacter { get; set; }
         public static Character OpenedCharacter { get; set; }
         #endregion
@@ -48,30 +46,7 @@ namespace DarkHeresy2CharacterCreator.ViewModel
             newCharacterCommand = new DelegateCommand(OnNewCharacter);
             closeApplicationCommand = new DelegateCommand(OnCloseApplication);
             deleteCharacterCommand = new DelegateCommand(OnDeleteCaharacter);
-            loadCharacterCommand = new DelegateCommand(OnLoadCharacter);
-            /*FileIOService = new FileIOService(CharactersList.CHARACTERLISTPATH);
-            try
-            {
-                Characters = FileIOService.LoadData();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                Application.Current.Shutdown();
-            }*/
-            /*try
-            {
-                CharactersList charactersList = new CharactersList();
-                //characters = charactersList.Characters;
-                Characters = charactersList.Characters;
-                
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                Application.Current.Shutdown();
-            }*/
-            
+            loadCharacterCommand = new DelegateCommand(OnLoadCharacter);            
         }
 
         #region Command Handlers
