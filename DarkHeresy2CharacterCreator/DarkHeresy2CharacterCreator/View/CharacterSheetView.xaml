@@ -9,6 +9,7 @@
         xmlns:character="clr-namespace:DarkHeresy2CharacterCreator.ViewModel"
         xmlns:converters="clr-namespace:System.Windows.Converters;assembly=WindowsBase"
         mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
         Title="{Binding Character.CharacterName}" Height="768" Width="1024">
     <Window.Resources>
         <character:MainWindowVM x:Key="CharacterInstance"/>
