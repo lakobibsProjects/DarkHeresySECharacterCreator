@@ -1,4 +1,6 @@
-﻿using PropertyChanged;
+﻿using DarkHeresy2CharacterCreator.Model.JsonConverters;
+using Newtonsoft.Json;
+using PropertyChanged;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,7 +14,7 @@ namespace DarkHeresy2CharacterCreator.Model.Characteristics
     /// <summary>
     /// Comlete characteristic
     /// </summary>
-    [AddINotifyPropertyChangedInterface]
+    [AddINotifyPropertyChangedInterface, JsonConverter(typeof(CharacteristicsToJsonConverter))]
     public class Characteristic
     {
         #region Fields

@@ -1,4 +1,5 @@
-﻿using DarkHeresy2CharacterCreator.Model.Characteristics;
+﻿
+using DarkHeresy2CharacterCreator.Model.Characteristics;
 using DarkHeresy2CharacterCreator.Model.Equipment.Interfaces;
 using DarkHeresy2CharacterCreator.Model.GeneralSuppliment;
 using DarkHeresy2CharacterCreator.Model.PsychicPowers;
@@ -23,7 +24,7 @@ namespace DarkHeresy2CharacterCreator.Model.Character
         HomeWorld HomeWorld { get; set; }
         Background Background { get; set; }
         Role Role { get; set; }
-        int Divination { get; set; }
+        int Divination { get; set; }        
         ObservableCollection<IEliteAdvance> EliteAdvances { get; set; }
         string PlayerName { get; set; }
         string Gender { get; set; }
@@ -43,7 +44,7 @@ namespace DarkHeresy2CharacterCreator.Model.Character
         string MentalDisorders { get; set; }
         string Malignacies { get; set; }
         string Mutations { get; set; }
-        ObservableCollection<ITrait> Traits { get; set; }
+        ObservableCollection<Trait> Traits { get; set; }
         int[] Movements { get; set; }
         int FatiqueTreshold { get; }
         int CurrentFatique { get; set; }
@@ -56,14 +57,16 @@ namespace DarkHeresy2CharacterCreator.Model.Character
         int Insanity { get; set; }
         int Corruption { get; set; } 
 
-        ObservableCollection<IPsychicPower> PsychicPowers { get; set; }
+        ObservableCollection<PsychicPower> PsychicPowers { get; set; }
         ObservableCollection<Characteristic> Characteristics { get; set; }
-        ObservableCollection<AbstractSkill> Skills { get; set; }
-        ObservableCollection<ITalent> Talents { get; set; }
+        //ObservableCollection<AbstractSkill> Skills { get; set; }
+        ObservableCollection<Talent> Talents { get; set; }
         ObservableCollection<IItem> Gear { get; set; }
         ObservableCollection<AptitudeName> Aptitudes { get; set; }
         ObservableCollection<Tuple<string, string, int>> Advances { get; set; }
         int NotSpendExp { get; }
+        ObservableCollection<CommonSkill> CommonSkills { get; set; }
+        ObservableCollection<SpecializedSkill> SpecializedSkills { get; set; }
 
         void AddAdvance(string name, string type, int cost);
         void AddBackround(Background background);

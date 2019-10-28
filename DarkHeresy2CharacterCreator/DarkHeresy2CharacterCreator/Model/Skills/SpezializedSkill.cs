@@ -11,7 +11,7 @@ namespace DarkHeresy2CharacterCreator.Model.Skills
     /// Instantiate logic of skill with specialization
     /// </summary>
     [AddINotifyPropertyChangedInterface]
-    class SpecializedSkill : CommonSkill
+    public class SpecializedSkill : CommonSkill
     {
         String specialization;
         String specializationDiscription;

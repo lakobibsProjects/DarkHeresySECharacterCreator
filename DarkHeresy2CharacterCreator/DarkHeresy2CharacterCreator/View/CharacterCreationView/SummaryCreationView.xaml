@@ -18,6 +18,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="40"/>
         </Grid.RowDefinitions>
         <Grid x:Name="CharacterDiscriptionGrid" Grid.Row="0" Margin="5">
             <Grid.ColumnDefinitions>
@@ -274,20 +275,7 @@
                         <DataGridCheckBoxColumn Header="Veteran" Binding="{Binding IsVeteran}" IsReadOnly="True"/>
                     </DataGrid.Columns>
                     
-                </DataGrid>
-                    <!--<ListView x:Name="SkillsLV"
-                              ItemsSource="{Binding Skills}"
-                              Margin="5"
-                              ScrollViewer.VerticalScrollBarVisibility="Visible"
-                              ScrollViewer.CanContentScroll="False"
-                              MaxHeight="500">
-                        <ListView.View>
-                            <GridView>
-                                <GridViewColumn  Header="Skill" DisplayMemberBinding="{Binding Item1}"/>
-                                <GridViewColumn  Header="Rank" DisplayMemberBinding="{Binding Item2}"/>
-                            </GridView>
-                        </ListView.View>
-                    </ListView>   -->          
+                </DataGrid>                  
                  
             </StackPanel>
             <Grid Grid.Column="2" Margin="5">
@@ -303,14 +291,6 @@
                         
                         </ListBox>                        
                     </ScrollViewer>
-                    <!--<ListView x:Name="TalentsTraitsLV"
-                      ItemsSource="{Binding TalentsAndTraits}">
-                        <ListView.ItemsPanel>
-                            <ItemsPanelTemplate>
-                                <StackPanel Orientation="Vertical" />
-                            </ItemsPanelTemplate>
-                        </ListView.ItemsPanel>
-                    </ListView>-->
                 </StackPanel>
                 <StackPanel Grid.Row="1">
                     <TextBlock Text="Gear:"/>
@@ -339,5 +319,22 @@
                 </StackPanel>
             </Grid>
         </Grid>
+        <StackPanel Grid.Row="2" 
+                    Grid.ColumnSpan="4"
+                    HorizontalAlignment="Center"
+                    Orientation="Horizontal">
+            <Button Content="Exit"
+                    VerticalAlignment="Center"
+                    Width="85"
+                    Margin="5"
+                    Command="{Binding ExitCommand}"
+                    CommandParameter="{Binding ElementName=SummaryCreation}"/>
+            <Button Content="Save and Exit"
+                    VerticalAlignment="Center"
+                    Width="85"
+                    Margin="5"
+                    Command="{Binding SaveAndExitCommand}"
+                    CommandParameter="{Binding ElementName=SummaryCreation}"/>
+        </StackPanel>
     </Grid>
 </Window>

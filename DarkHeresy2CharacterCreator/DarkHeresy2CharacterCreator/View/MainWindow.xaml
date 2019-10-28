@@ -6,13 +6,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"        
         xmlns:local="clr-namespace:DarkHeresy2CharacterCreator"
         xmlns:vm="clr-namespace:DarkHeresy2CharacterCreator.ViewModel"
+        xmlns:cl="clr-namespace:DarkHeresy2CharacterCreator.Model.Character"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         Title="CharacterCreator" Height="290" Width="450"
         Background="#980002">
 
     <Window.Resources>        
-        <vm:MainWindowVM x:Name="VM" x:Key="vm"/>        
+        <vm:MainWindowVM x:Name="VM" x:Key="vm"/>
+        <cl:CharactersList x:Key="characters"/>
     </Window.Resources>
     <Grid>
         <Grid.DataContext>
@@ -30,7 +32,7 @@
         </Grid.ColumnDefinitions>
         <ListView Grid.Column="0"
                   Margin="5"                  
-                  ItemsSource="{Binding Characters, Mode=TwoWay}"
+                  ItemsSource="{Binding Source={StaticResource characters}, Path=Characters, Mode=TwoWay}"
                   SelectedItem="{Binding SelectedCharacter, Mode=TwoWay}"
                   SelectedIndex="0" >
             <ListView.View>

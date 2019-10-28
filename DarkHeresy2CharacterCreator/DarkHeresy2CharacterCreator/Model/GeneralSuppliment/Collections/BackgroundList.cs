@@ -13,7 +13,7 @@ namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment.Collections
     /// <summary>
     /// Instaniate a observableCollection of backgrounds
     /// </summary>
-    public static class BackgroundList
+    public static class BackgroundCollection
     {
         //TODO Add discriptions
         #region Bonuses

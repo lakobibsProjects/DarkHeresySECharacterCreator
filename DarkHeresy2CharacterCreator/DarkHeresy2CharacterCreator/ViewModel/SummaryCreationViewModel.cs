@@ -11,6 +11,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace DarkHeresy2CharacterCreator.ViewModel
@@ -19,13 +20,15 @@ namespace DarkHeresy2CharacterCreator.ViewModel
     public class SummaryCreationViewModel
     {
         #region Fields
-        private ICharacter createdcharacter;
+        private Character createdcharacter;
         private Divinations divination;
         private DelegateCommand setDivinationCommand;
         private DelegateCommand setCharateristic;
         private DelegateCommand getAptitudes;
         private DelegateCommand setWounds;
         private DelegateCommand setFateTreshhold;
+        private DelegateCommand exitCommand;
+        private DelegateCommand saveAndExitCommand;
         private Characteristic weaponSkill = CharacteristicList.Characteristics.Where(c => c.Name == CharacteristicName.Weapon_Skill).FirstOrDefault();
         private Characteristic ballisticSkill = CharacteristicList.Characteristics.Where(c => c.Name == CharacteristicName.Balistic_Skill).FirstOrDefault();
         private Characteristic strength = CharacteristicList.Characteristics.Where(c => c.Name == CharacteristicName.Strength).FirstOrDefault();
@@ -46,7 +49,7 @@ namespace DarkHeresy2CharacterCreator.ViewModel
         }
 
 
-        public ICharacter CreatedCharacter
+        public Character CreatedCharacter
         {
             get { return createdcharacter; }
             set { createdcharacter = value; }
@@ -56,6 +59,9 @@ namespace DarkHeresy2CharacterCreator.ViewModel
         public ICommand GetAptitudes => getAptitudes;
         public ICommand SetWounds => setWounds;
         public ICommand SetFateTreshhold => setFateTreshhold;
+
+        public ICommand ExitCommand => exitCommand;
+        public ICommand SaveAndExitCommand => saveAndExitCommand;
         public Characteristic WeaponSkill { get => weaponSkill; set => weaponSkill = value; }
         public Characteristic BallisticSkill { get => ballisticSkill; set => ballisticSkill = value; }
         public Characteristic Strength { get => strength; set => strength = value; }
@@ -137,15 +143,12 @@ namespace DarkHeresy2CharacterCreator.ViewModel
             CreatedCharacter = MainWindowVM.OpenedCharacter;
             setDivinationCommand = new DelegateCommand(SetDivination);
             setCharateristic = new DelegateCommand(RollCharacteristic);
-            getAptitudes = new DelegateCommand(ReturnAptitudes);
             setWounds = new DelegateCommand(RollWounds);
             setFateTreshhold = new DelegateCommand(RollEmperorsBlessing);
+            exitCommand = new DelegateCommand(OnExit);
+            saveAndExitCommand = new DelegateCommand(OnSaveAndExit);
         }
 
-        private void ReturnAptitudes(object obj)
-        {
-            var temp = CreatedCharacter.Aptitudes;
-        }
         #endregion Constructor
 
         #region Helped Methods
@@ -175,7 +178,41 @@ namespace DarkHeresy2CharacterCreator.ViewModel
                     cc.Value = c.Value;
             }
         }
-
+        private void OnExit(object obj)
+        {
+            try
+            {
+                if (CreatedCharacter != null && CharactersList.Characters.Contains(CreatedCharacter))
+                {
+                    CharactersList.Characters.Remove(CreatedCharacter);
+                    CharactersList.CharactersIO.SaveData(CharactersList.Characters);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                Application.Current.Shutdown();
+            }
+            Window window = obj as Window;
+            window.Close();
+        }
+        private void OnSaveAndExit(object obj)
+        {
+            try
+            {
+                if (CreatedCharacter != null)
+                {
+                    CharactersList.CharactersIO.SaveData(CharactersList.Characters);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                Application.Current.Shutdown();
+            }
+            Window window = obj as Window;
+            window.Close();
+        }
         #endregion Helped Methods
 
     }

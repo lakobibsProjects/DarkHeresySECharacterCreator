@@ -39,6 +39,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="nunit.framework, Version=3.12.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
       <HintPath>..\packages\NUnit.3.12.0\lib\net45\nunit.framework.dll</HintPath>
     </Reference>
@@ -58,6 +61,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -119,6 +123,7 @@
     <Compile Include="Model\Characteristics\CharacteristicList.cs" />
     <Compile Include="Model\Character\CharacterCompleteCreationExtension.cs" />
     <Compile Include="Model\Character\CharactersList.cs" />
+    <Compile Include="Model\JsonConverters\ItemCollectionToJsonConveter.cs" />
     <Compile Include="Model\Enums\ActionLong.cs" />
     <Compile Include="Model\Enums\AptitudeName.cs" />
     <Compile Include="Model\Characteristics\Characteristic.cs" />
@@ -165,6 +170,11 @@
     <Compile Include="Model\Enums\LocationName.cs" />
     <Compile Include="Model\IPrerequisitable.cs" />
     <Compile Include="Model\ISourceDiscription.cs" />
+    <Compile Include="Model\JsonConverters\BackgroundToJsonConverter.cs" />
+    <Compile Include="Model\JsonConverters\CharacteristicsToJsonConverter.cs" />
+    <Compile Include="Model\JsonConverters\CharacterToJsonConverter.cs" />
+    <Compile Include="Model\JsonConverters\HomeworldToJsonConverter.cs" />
+    <Compile Include="Model\JsonConverters\RoleToJsonCoverter.cs" />
     <Compile Include="Model\PsychicPowers\AttackPsychicPower.cs" />
     <Compile Include="Model\PsychicPowers\IPsychicPower.cs" />
     <Compile Include="Model\PsychicPowers\PsychicPower.cs" />
@@ -192,8 +202,10 @@
     <Compile Include="Model\Traits\Trait.cs" />
     <Compile Include="Model\Traits\TraitList.cs" />
     <Compile Include="Model\Traits\TraitName.cs" />
+    <Compile Include="Services\FileIOService.cs" />
     <Compile Include="ViewModel\BackgroundVM.cs" />
     <Compile Include="ViewModel\CharacterSheet\CharacterAdvancementVM.cs" />
+    <Compile Include="ViewModel\CharacterSheet\CharacterWindowVM.cs" />
     <Compile Include="ViewModel\CharacterSheet\SkillsVM.cs" />
     <Compile Include="ViewModel\CharacterSheet\TalentsVM.cs" />
     <Compile Include="ViewModel\Converters\AptitudeNameToString.cs" />

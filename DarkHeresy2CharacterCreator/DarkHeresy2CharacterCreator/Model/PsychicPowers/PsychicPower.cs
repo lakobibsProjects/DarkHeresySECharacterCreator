@@ -9,7 +9,7 @@ using System.Web.UI;
 
 namespace DarkHeresy2CharacterCreator.Model.PsychicPowers
 {
-    class PsychicPower : IPsychicPower
+    public class PsychicPower : IPsychicPower
     {
         #region Fields
         private string name;
