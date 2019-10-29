@@ -28,7 +28,7 @@ namespace DarkHeresy2CharacterCreator.ViewModel.CharacterSheet
         private DelegateCommand upCharateristic;
         #region to refactoring (DRY)
         // try to create assistant method with "switch" block 
-        private DelegateCommand influenceIncreace;        
+        private DelegateCommand influenceIncreace;
         private DelegateCommand influenceDecreace;
         private DelegateCommand fateIncreace;
         private DelegateCommand fateDecreace;
@@ -88,16 +88,16 @@ namespace DarkHeresy2CharacterCreator.ViewModel.CharacterSheet
             Characteristic characteristic = obj as Characteristic;
             if ((Character.TotalExpirience - Character.SpendExpirience) >= characteristic.Cost && characteristic.Rank < 6)
             {
-                if(characteristic.Value < 95)                
-                    characteristic.Value += 5;                
-                else                
+                if (characteristic.Value < 95)
+                    characteristic.Value += 5;
+                else
                     characteristic.Value = 99;
                 characteristic.Rank++;
                 characteristic.ChangeAdvanceCost(Character.Aptitudes);
-                Character.SpendExpirience += characteristic.Cost;                
+                Character.SpendExpirience += characteristic.Cost;
             }
         }
-        
+
         #endregion Commands
 
     }

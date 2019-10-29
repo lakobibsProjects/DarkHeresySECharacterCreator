@@ -121,12 +121,12 @@ namespace DarkHeresy2CharacterCreator.ViewModel.CharacterSheet
         #endregion Helped Methods
 
         #region Commands
-        private void AddItemCommand (object obj)
+        private void AddItemCommand(object obj)
         {
             IItem item = obj as IItem;
-            if (obj != null)            
+            if (obj != null)
                 Character.Gear.Add(item);
-            
+
         }
         private void RemoveItemCommans(object obj)
         {

@@ -845,7 +845,7 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 {
                     WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Concussive").Select(n=>n).FirstOrDefault(),   //add numeric   
                     WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Proven").Select(n=>n).FirstOrDefault()        //add numeric   
-                }                             
+                }
 
             },
             #endregion Grenades
@@ -873,7 +873,7 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 Penetration = 2,
                 Weight = 13,
                 Availability = Availability.Scarce,
-                SpecialQualities = new WeaponSpecialQualitie[2] 
+                SpecialQualities = new WeaponSpecialQualitie[2]
                 {
                     WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Tearing").Select(n=>n).FirstOrDefault(),
                     WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Two-Handed").Select(n=>n).FirstOrDefault()
@@ -889,7 +889,7 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 Penetration = 2,
                 Weight = 6,
                 Availability = Availability.Average,
-                SpecialQualities = new WeaponSpecialQualitie[2] 
+                SpecialQualities = new WeaponSpecialQualitie[2]
                 {
                     WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Tearing").Select(n=>n).FirstOrDefault(),
                     WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Balanced").Select(n=>n).FirstOrDefault()
@@ -925,7 +925,7 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 Penetration = 2,
                 Weight = 5,
                 Availability = Availability.Near_Unique,
-                SpecialQualities = new WeaponSpecialQualitie[2] 
+                SpecialQualities = new WeaponSpecialQualitie[2]
                 {
                     WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Force").Select(n=>n).FirstOrDefault(),
                     WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Balanced").Select(n=>n).FirstOrDefault(),
@@ -958,7 +958,7 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 Penetration = 0,
                 Weight = 7,
                 Availability = Availability.Scarce,
-                SpecialQualities = new WeaponSpecialQualitie[2] 
+                SpecialQualities = new WeaponSpecialQualitie[2]
                 {
                     WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Unbalanced").Select(n=>n).FirstOrDefault(),
                     WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Two-Handed").Select(n=>n).FirstOrDefault()
@@ -986,7 +986,7 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 Penetration = 0,
                 Weight = 0,
                 Availability = Availability.Plentiful,
-                SpecialQualities = new WeaponSpecialQualitie[2] 
+                SpecialQualities = new WeaponSpecialQualitie[2]
                 {
                     WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Primitive").Select(n=>n).FirstOrDefault(),   //add numeric
                     WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Unbalanced").Select(n=>n).FirstOrDefault()
@@ -1025,23 +1025,23 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 Penetration = 0,
                 Weight = 3,
                 Availability = Availability.Common,
-                SpecialQualities = new WeaponSpecialQualitie[2] 
+                SpecialQualities = new WeaponSpecialQualitie[2]
                 {
                     WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Primitive").Select(n=>n).FirstOrDefault(),    //add numeric
                     WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Two-Handed").Select(n=>n).FirstOrDefault()
-                }     
+                }
             },
             new Weapon("Staff")
             {
                 Type = WeaponType.Low_Tech,
                 Class = WeaponClass.Melee,
-                Range = 0, 
+                Range = 0,
                 Damage = new Tuple<int, int, int>(1, 10, 0),
                 DamageType = DamageType.Impact,
                 Penetration = 0,
                 Weight = 3,
                 Availability = Availability.Plentiful,
-                SpecialQualities = new WeaponSpecialQualitie[3] 
+                SpecialQualities = new WeaponSpecialQualitie[3]
                 {
                     WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Balanced").Select(n=>n).FirstOrDefault(),
                     WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Primitive").Select(n=>n).FirstOrDefault(),    //add numeric
@@ -1082,7 +1082,7 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 Penetration = 1,
                 Weight = 4.5,
                 Availability = Availability.Scarce,
-                SpecialQualities = new WeaponSpecialQualitie[3] 
+                SpecialQualities = new WeaponSpecialQualitie[3]
                 {
                     WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Concussive").Select(n=>n).FirstOrDefault(),   //add numeric
                     WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Primitive").Select(n=>n).FirstOrDefault(),   //add numeric
@@ -1099,7 +1099,7 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 Penetration = 0,
                 Weight = 2,
                 Availability = Availability.Average,
-                SpecialQualities = new WeaponSpecialQualitie[2] 
+                SpecialQualities = new WeaponSpecialQualitie[2]
                 {
                     WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Flexible").Select(n=>n).FirstOrDefault(),
                     WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Primitive").Select(n=>n).FirstOrDefault()     //add numeric
@@ -1117,7 +1117,7 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 Penetration = 6,
                 Weight = 8,
                 Availability = Availability.Extremely_Rare,
-                SpecialQualities = new WeaponSpecialQualitie[3] 
+                SpecialQualities = new WeaponSpecialQualitie[3]
                 {
                     WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Power Filed").Select(n=>n).FirstOrDefault(),
                     WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Unwieldly").Select(n=>n).FirstOrDefault(),
@@ -1225,7 +1225,7 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 Penetration = 0,
                 Weight = 3,
                 Availability = Availability.Rare,
-                SpecialQualities = new WeaponSpecialQualitie[2] 
+                SpecialQualities = new WeaponSpecialQualitie[2]
                 {
                     WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Shoking").Select(n=>n).FirstOrDefault(),
                     WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Flexible").Select(n=>n).FirstOrDefault()

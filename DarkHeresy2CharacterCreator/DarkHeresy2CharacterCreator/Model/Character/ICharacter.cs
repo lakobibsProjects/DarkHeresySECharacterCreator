@@ -24,7 +24,7 @@ namespace DarkHeresy2CharacterCreator.Model.Character
         HomeWorld HomeWorld { get; set; }
         Background Background { get; set; }
         Role Role { get; set; }
-        int Divination { get; set; }        
+        int Divination { get; set; }
         ObservableCollection<IEliteAdvance> EliteAdvances { get; set; }
         string PlayerName { get; set; }
         string Gender { get; set; }
@@ -55,7 +55,7 @@ namespace DarkHeresy2CharacterCreator.Model.Character
         int MaxCarry { get; set; }
         int CurrentCarry { get; set; }
         int Insanity { get; set; }
-        int Corruption { get; set; } 
+        int Corruption { get; set; }
 
         ObservableCollection<PsychicPower> PsychicPowers { get; set; }
         ObservableCollection<Characteristic> Characteristics { get; set; }

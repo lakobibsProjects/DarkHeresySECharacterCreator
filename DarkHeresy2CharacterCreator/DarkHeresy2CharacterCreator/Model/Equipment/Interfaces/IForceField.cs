@@ -9,7 +9,7 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Interfaces
     /// <summary>
     /// General functionality of force fields
     /// </summary>
-    interface IForceField :IItem
+    interface IForceField : IItem
     {
         int ProtectionRating { get; }
     }

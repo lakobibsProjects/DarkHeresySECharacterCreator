@@ -29,7 +29,7 @@ namespace DarkHeresy2CharacterCreator.Model.Character
             CharactersIO = new FileIOService(CHARACTERLISTPATH);
             try
             {
-                 Characters = CharactersIO.LoadData();
+                Characters = CharactersIO.LoadData();
             }
             catch (Exception ex)
             {
@@ -37,13 +37,5 @@ namespace DarkHeresy2CharacterCreator.Model.Character
                 Application.Current.Shutdown();
             }
         }
-        /*{
-            new Character()
-            {
-                CharacterName = "Unnamed Character",
-                TotalExpirience = 1000
-                
-            }
-        };*/
     }
 }

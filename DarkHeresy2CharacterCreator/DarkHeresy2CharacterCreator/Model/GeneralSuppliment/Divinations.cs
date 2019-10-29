@@ -200,7 +200,7 @@ namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment
         /// Return divination
         /// </summary>
         /// <param name="roll">result of roll of d100</param>
- 
+
         public Divinations(int roll)
         {
             if (roll < 1 || roll > 100)

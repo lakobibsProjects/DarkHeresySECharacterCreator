@@ -11,6 +11,6 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Interfaces
     /// </summary>
     public interface IWeaponModification : IItem
     {
-       WeaponClass appropriateWeaponClass{get;}
+        WeaponClass appropriateWeaponClass { get; }
     }
 }

@@ -28,7 +28,7 @@ namespace DarkHeresy2CharacterCreator.ViewModel
         public ICommand CancelCommand => cancelCommand;
         public DarkHeresy2CharacterCreator.Model.GeneralSuppliment.Role SelectedRole { get; set; }
         public bool RoleIsSelected { get { return SelectedRole != null; } }
-        public ObservableCollection<DarkHeresy2CharacterCreator.Model.GeneralSuppliment.Role> Roles{ get; set; }
+        public ObservableCollection<DarkHeresy2CharacterCreator.Model.GeneralSuppliment.Role> Roles { get; set; }
         public string TalentsString
         {
             get
@@ -56,10 +56,10 @@ namespace DarkHeresy2CharacterCreator.ViewModel
                     {
                         foreach (var item in SelectedRole.Aptitudes)
                         {
-                                if (item.Item2 == null)
-                                    temp.Append(item.Item1.ToString()).Append(", ");
-                                else
-                                    temp.Append(item.Item1.ToString()).Append(" or ").Append(item.Item2.ToString()).Append(", ");        
+                            if (item.Item2 == null)
+                                temp.Append(item.Item1.ToString()).Append(", ");
+                            else
+                                temp.Append(item.Item1.ToString()).Append(" or ").Append(item.Item2.ToString()).Append(", ");
                         }
                     }
                     return temp.ToString().Substring(0, temp.Length - 2);

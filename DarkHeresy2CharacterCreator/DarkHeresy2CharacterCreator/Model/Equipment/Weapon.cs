@@ -33,7 +33,7 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment
         #endregion Fields
 
         #region Properties
-        public WeaponType Type  { get => type; set => type = value; }
+        public WeaponType Type { get => type; set => type = value; }
 
         public WeaponClass Class { get => weaponClass; set => weaponClass = value; }
 

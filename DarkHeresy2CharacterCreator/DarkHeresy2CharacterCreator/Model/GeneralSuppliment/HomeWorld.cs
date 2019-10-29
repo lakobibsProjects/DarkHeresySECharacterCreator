@@ -37,12 +37,12 @@ namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment
         internal AptitudeName HomeWorldAptitude { get => homeWorldAptitude; set => homeWorldAptitude = value; }
         internal Background[] RekommendedBackgrouns { get => rekommendedBackgrouns; set => rekommendedBackgrouns = value; }
         #endregion Properties
- 
+
         public HomeWorld(string name)
         {
             Name = name;
 
-        }         
+        }
 
     }
 }

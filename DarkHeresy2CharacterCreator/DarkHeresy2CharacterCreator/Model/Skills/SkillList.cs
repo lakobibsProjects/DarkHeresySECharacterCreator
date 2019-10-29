@@ -700,35 +700,35 @@ namespace DarkHeresy2CharacterCreator.Model.Skills
         internal static ObservableCollection<AbstractSkill> SpecializedSkills { get; } = new ObservableCollection<AbstractSkill>
         {
             #region CommonLore
-            new SpecializedSkill(skillName:SkillName.Common_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge, 
+            new SpecializedSkill(skillName:SkillName.Common_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
                 CommonLoreSpecializations.Adepta_Sororitas.ToString(), adeptaSororitasLoreDiscription){ Discription = commonLoreDiscription },
-            new SpecializedSkill(skillName:SkillName.Common_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge, 
+            new SpecializedSkill(skillName:SkillName.Common_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
                 CommonLoreSpecializations.Adeptus_Arbites.ToString(), adeptusArbitesLoreDiscription){ Discription = commonLoreDiscription },
-            new SpecializedSkill(skillName:SkillName.Common_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge, 
+            new SpecializedSkill(skillName:SkillName.Common_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
                 CommonLoreSpecializations.Adeptus_Astra_Telepatica.ToString(), adeptusAstraTelepaticsLoreDiscription){ Discription = commonLoreDiscription },
-            new SpecializedSkill(skillName:SkillName.Common_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge, 
+            new SpecializedSkill(skillName:SkillName.Common_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
                 CommonLoreSpecializations.Adeptus_Mechanicus.ToString(), adeptusMechanicusLoreDiscription){ Discription = commonLoreDiscription },
-            new SpecializedSkill(skillName:SkillName.Common_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge, 
+            new SpecializedSkill(skillName:SkillName.Common_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
                 CommonLoreSpecializations.Administratum.ToString(), administratumLoreDiscription){ Discription = commonLoreDiscription },
-            new SpecializedSkill(skillName:SkillName.Common_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge, 
+            new SpecializedSkill(skillName:SkillName.Common_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
                 CommonLoreSpecializations.Askelon_Sector.ToString(), askelonSectorLoreDiscription){ Discription = commonLoreDiscription },
-            new SpecializedSkill(skillName:SkillName.Common_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge, 
+            new SpecializedSkill(skillName:SkillName.Common_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
                 CommonLoreSpecializations.Chartist_Captains.ToString(), chartistCaptainsLoreDiscription){ Discription = commonLoreDiscription },
-            new SpecializedSkill(skillName:SkillName.Common_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge, 
+            new SpecializedSkill(skillName:SkillName.Common_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
                 CommonLoreSpecializations.Collegia_Titanicus.ToString(), collegiaTitanicusLoreDiscription){ Discription = commonLoreDiscription },
-            new SpecializedSkill(skillName:SkillName.Common_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge, 
+            new SpecializedSkill(skillName:SkillName.Common_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
                 CommonLoreSpecializations.Ecclesiarchy.ToString(), ecclesiarchyLoreDiscription){ Discription = commonLoreDiscription },
-            new SpecializedSkill(skillName:SkillName.Common_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge, 
+            new SpecializedSkill(skillName:SkillName.Common_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
                 CommonLoreSpecializations.Adeptus_Astartes.ToString(), adeptusAstartesLoreDiscription){ Discription = commonLoreDiscription },
-            new SpecializedSkill(skillName:SkillName.Common_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge, 
+            new SpecializedSkill(skillName:SkillName.Common_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
                 CommonLoreSpecializations.Imperial_Creed.ToString(), imperialCreedLoreDiscription){ Discription = commonLoreDiscription },
-            new SpecializedSkill(skillName:SkillName.Common_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge, 
+            new SpecializedSkill(skillName:SkillName.Common_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
                 CommonLoreSpecializations.imperial_Guard.ToString(), imperialGuardLoreDiscription){ Discription = commonLoreDiscription },
-            new SpecializedSkill(skillName:SkillName.Common_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge, 
+            new SpecializedSkill(skillName:SkillName.Common_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
                 CommonLoreSpecializations.Imperial_Navy.ToString(), imperialNavyLoreDiscription){ Discription = commonLoreDiscription },
-            new SpecializedSkill(skillName:SkillName.Common_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge, 
+            new SpecializedSkill(skillName:SkillName.Common_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
                 CommonLoreSpecializations.Imperium.ToString(), imperiumLoreDiscription){ Discription = commonLoreDiscription },
-            new SpecializedSkill(skillName:SkillName.Common_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge, 
+            new SpecializedSkill(skillName:SkillName.Common_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
                 CommonLoreSpecializations.Navigators.ToString(), navigatorsLoreDiscription){ Discription = commonLoreDiscription },
             new SpecializedSkill(skillName:SkillName.Common_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
                 CommonLoreSpecializations.Planetary_Defence_Forces.ToString(), planetaryDefenceForcesLoreDiscription){ Discription = commonLoreDiscription },
@@ -1003,6 +1003,6 @@ namespace DarkHeresy2CharacterCreator.Model.Skills
             #endregion Trades
         };
 
-       
+
     }
 }

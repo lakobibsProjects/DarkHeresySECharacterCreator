@@ -19,7 +19,7 @@ namespace DarkHeresy2CharacterCreator.Model.Talents
         string Discription { get; set; }
         SourceList SourceBook { get; }
         int SourcePage { get; }
-        List<ValueTuple<IPrerequisitable, int>> Prerequisites { get; }
-        ObservableCollection<string> Specializations { get; }        
+        ObservableCollection<ValueTuple<Type, string, string, int>> Prerequisites { get; }
+        ObservableCollection<string> Specializations { get; }
     }
 }

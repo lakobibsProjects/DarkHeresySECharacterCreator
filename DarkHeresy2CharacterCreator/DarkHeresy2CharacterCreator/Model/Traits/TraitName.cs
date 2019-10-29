@@ -24,7 +24,7 @@ namespace DarkHeresy2CharacterCreator.Model.Traits
         Dark_sight,
         Deadly_Natural_Weapon,
         Fear,
-        Flyer, 
+        Flyer,
         From_Beyond,
         Hoverer,
         Incorporeal,
@@ -60,5 +60,5 @@ namespace DarkHeresy2CharacterCreator.Model.Traits
         Unnatural_Senses,
         Warp_Instability,
         Warp_Weapons
-    }        
+    }
 }

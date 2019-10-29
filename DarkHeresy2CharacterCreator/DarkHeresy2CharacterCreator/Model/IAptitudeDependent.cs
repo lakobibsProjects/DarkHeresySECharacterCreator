@@ -15,6 +15,6 @@ namespace DarkHeresy2CharacterCreator.Model
         AptitudeName FirstAptitude { get; }
         AptitudeName SecondAptitude { get; }
         int Cost { get; }
-        void ChangeAdvanceCost(IEnumerable<AptitudeName> CharecterAptitudes);       
+        void ChangeAdvanceCost(IEnumerable<AptitudeName> CharecterAptitudes);
     }
 }

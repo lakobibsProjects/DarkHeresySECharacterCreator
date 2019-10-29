@@ -31,7 +31,7 @@ namespace DarkHeresy2CharacterCreator.Model.PsychicPowers
         public int Cost { get { return cost; } protected set { cost = value; } }
         public object[] Prerequisites { get { return prerequisites; } protected set { prerequisites = value; } }
 
-        public ActionLong Action  { get { return action; } protected set { action = value; } }
+        public ActionLong Action { get { return action; } protected set { action = value; } }
 
         public Tuple<int, Characteristics.CharacteristicName> FocusPower { get { return focusPower; } protected set { focusPower = value; } }
 
@@ -53,6 +53,7 @@ namespace DarkHeresy2CharacterCreator.Model.PsychicPowers
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(pror));
         }
+
         #endregion
     }
 }

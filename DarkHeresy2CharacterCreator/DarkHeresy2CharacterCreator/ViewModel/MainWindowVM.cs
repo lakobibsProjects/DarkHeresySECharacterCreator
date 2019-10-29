@@ -42,11 +42,11 @@ namespace DarkHeresy2CharacterCreator.ViewModel
 
         public MainWindowVM()
         {
-            
+
             newCharacterCommand = new DelegateCommand(OnNewCharacter);
             closeApplicationCommand = new DelegateCommand(OnCloseApplication);
             deleteCharacterCommand = new DelegateCommand(OnDeleteCaharacter);
-            loadCharacterCommand = new DelegateCommand(OnLoadCharacter);            
+            loadCharacterCommand = new DelegateCommand(OnLoadCharacter);
         }
 
         #region Command Handlers
@@ -72,7 +72,7 @@ namespace DarkHeresy2CharacterCreator.ViewModel
                     Window roleWindow = new Role();
                     roleWindow.Show();
                     return;
-                }                
+                }
                 Window characterSheet = new CharacterSheetView();
                 characterSheet.Show();
                 Window currentWindow = obj as Window;
@@ -88,8 +88,8 @@ namespace DarkHeresy2CharacterCreator.ViewModel
                 {
                     CharactersList.Characters.RemoveAt(CharactersList.Characters.IndexOf(SelectedCharacter));
                     CharactersList.CharactersIO.SaveData(CharactersList.Characters);
-                }                                 
-                
+                }
+
             }
             catch (Exception ex)
             {
@@ -105,11 +105,11 @@ namespace DarkHeresy2CharacterCreator.ViewModel
 
         private void OnNewCharacter(object obj)
         {
-            Character newCharacter = new Character();            
+            Character newCharacter = new Character();
             try
             {
                 CharactersList.Characters.Add(newCharacter);
-                CharactersList.CharactersIO.SaveData(CharactersList.Characters); 
+                CharactersList.CharactersIO.SaveData(CharactersList.Characters);
             }
             catch (Exception ex)
             {

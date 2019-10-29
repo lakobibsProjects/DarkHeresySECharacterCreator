@@ -26,7 +26,7 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 MaxAgility = 100,
                 Weight = 5,
                 Availability = Availability.Common,
-                LocationCovered = new LocationName[3]{ LocationName.Body, LocationName.Left_Arm, LocationName.Right_Arm }                
+                LocationCovered = new LocationName[3]{ LocationName.Body, LocationName.Left_Arm, LocationName.Right_Arm }
             },
             new Armor("Imperial Robes")
             {

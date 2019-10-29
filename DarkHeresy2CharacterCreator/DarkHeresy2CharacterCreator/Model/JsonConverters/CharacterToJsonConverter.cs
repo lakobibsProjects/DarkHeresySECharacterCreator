@@ -23,10 +23,10 @@ namespace DarkHeresy2CharacterCreator.Model.JsonConverters
         /// <param name="serializer">The calling serializer.</param>
         public override DarkHeresy2CharacterCreator.Model.Character.Character ReadJson(JsonReader reader, Type objectType, DarkHeresy2CharacterCreator.Model.Character.Character existingValue, bool hasExistingValue, JsonSerializer serializer)
         {
-            Character.Character character =  JsonConvert.DeserializeObject<Character.Character>(reader.Value.ToString());// existingValue;
-            
+            Character.Character character = JsonConvert.DeserializeObject<Character.Character>(reader.Value.ToString());// existingValue;
+
             while (reader.Read())
-            {  
+            {
                 var val = (reader.Value as string) ?? string.Empty;
                 if (val.StartsWith("bg "))
                     character.Background = BackgroundCollection.Backgrounds.Where(b => b.Name == val.Substring(3)).FirstOrDefault();
@@ -40,7 +40,7 @@ namespace DarkHeresy2CharacterCreator.Model.JsonConverters
 
         public override void WriteJson(JsonWriter writer, DarkHeresy2CharacterCreator.Model.Character.Character value, JsonSerializer serializer)
         {
-            writer.WriteValue(value );
+            writer.WriteValue(value);
             foreach (var item in value.GetType().GetProperties())
             {
                 var type = item.PropertyType;
@@ -56,7 +56,7 @@ namespace DarkHeresy2CharacterCreator.Model.JsonConverters
                         writer.WriteValue(string.Format("rl {0}", ((Role)item.GetValue(value)).Name));
                 }
                 /*if (type == typeof(int) || type == typeof(string))                
-                    writer.WriteValue(item.GetValue(value));  */              
+                    writer.WriteValue(item.GetValue(value));  */
 
             }
         }

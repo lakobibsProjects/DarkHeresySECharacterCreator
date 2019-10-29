@@ -33,7 +33,7 @@ namespace DarkHeresy2CharacterCreator.Model.JsonConverters
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
             string temp = reader.Value.ToString();
-            string name = temp.Substring(0, temp.IndexOf("Value: ") - 2).Substring(temp.IndexOf("Name: ") + 6);          
+            string name = temp.Substring(0, temp.IndexOf("Value: ") - 2).Substring(temp.IndexOf("Name: ") + 6);
             int value = int.Parse(temp.Substring(0, temp.IndexOf("Rank: ") - 2).Substring(temp.IndexOf("Value: ") + 7));
             int rank = int.Parse(temp.Substring(temp.IndexOf("Rank: ") + 6).Trim());
 
@@ -60,8 +60,8 @@ namespace DarkHeresy2CharacterCreator.Model.JsonConverters
             if (value != null)
             {
                 Characteristic characteristic = value as Characteristic;
-                    writer.WriteValue(string.Format("Name: {0}, Value: {1}, Rank: {2}",
-                        characteristic.Name, characteristic.Value, characteristic.Rank));                
+                writer.WriteValue(string.Format("Name: {0}, Value: {1}, Rank: {2}",
+                    characteristic.Name, characteristic.Value, characteristic.Rank));
             }
         }
     }
