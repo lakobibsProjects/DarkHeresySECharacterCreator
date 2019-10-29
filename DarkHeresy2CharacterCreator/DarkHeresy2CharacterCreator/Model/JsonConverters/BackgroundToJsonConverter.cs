@@ -8,6 +8,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace DarkHeresy2CharacterCreator.Model.JsonConverters
 {
@@ -34,15 +35,25 @@ namespace DarkHeresy2CharacterCreator.Model.JsonConverters
         /// <param name="serializer">The calling serializer.</param>
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
-            ObservableCollection<Background> bgs = BackgroundsCollection.Backgrounds;
-                var serachedBackground = reader.Value.ToString();
-            foreach (var item in bgs)
+            try
             {
-                if (item.Name == serachedBackground)
-                    return item;                
-            }          
-            
-            return null;                         
+                ObservableCollection<Background> bgs = BackgroundsCollection.Backgrounds;
+                var serachedBackground = reader.Value.ToString();
+                foreach (var item in bgs)
+                {
+                    if (item.Name == serachedBackground)
+                        return item;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.InnerException.Message);
+                MessageBox.Show(ex.InnerException.InnerException.Message);
+                Application.Current.Shutdown();
+            }
+
+            return null;
         }
 
         /// <summary>
@@ -53,12 +64,12 @@ namespace DarkHeresy2CharacterCreator.Model.JsonConverters
         /// <param name="serializer">The calling serializer.</param>
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
-            if(value != null)
+            if (value != null)
             {
                 Background background = value as Background;
                 writer.WriteValue(background.Name);
             }
-            
+
         }
     }
 }

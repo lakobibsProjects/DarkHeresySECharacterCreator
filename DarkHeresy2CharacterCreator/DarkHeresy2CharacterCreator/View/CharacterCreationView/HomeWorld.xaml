@@ -8,6 +8,7 @@
         xmlns:vm="clr-namespace:DarkHeresy2CharacterCreator.ViewModel"
         xmlns:cvr="clr-namespace:DarkHeresy2CharacterCreator.ViewModel.Converters"
         mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
         Title="HomeWorld" Height="450" Width="600">
     <Window.Resources>
         <vm:HomeworldVM x:Key="vm"/>

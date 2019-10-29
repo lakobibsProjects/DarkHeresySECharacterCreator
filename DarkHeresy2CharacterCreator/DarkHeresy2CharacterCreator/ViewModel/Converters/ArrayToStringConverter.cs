@@ -17,7 +17,7 @@ namespace DarkHeresy2CharacterCreator.ViewModel.Converters
             string result;
             foreach (var item in value as ObservableCollection<object>)
                 temp.Append(item.ToString()).Append(", ");
-            result = temp.ToString().Substring(0, temp.Length-2);
+            result = temp.ToString().Substring(0, temp.Length - 2);
             return result;
         }
 

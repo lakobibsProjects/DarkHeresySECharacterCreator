@@ -56,9 +56,9 @@ namespace DarkHeresy2CharacterCreator.Model.DiceRoller
         {
             if (numberOfDices < 1)
                 throw new ArgumentException("Number of dices cannot being lower 1");
-            int[] temp = new int [numberOfDices];
+            int[] temp = new int[numberOfDices];
             for (int i = 0; i < numberOfDices; i++)
-                temp[i] = new Random().Next(1, 6);            
+                temp[i] = new Random().Next(1, 6);
             return temp;
         }
         #endregion Five

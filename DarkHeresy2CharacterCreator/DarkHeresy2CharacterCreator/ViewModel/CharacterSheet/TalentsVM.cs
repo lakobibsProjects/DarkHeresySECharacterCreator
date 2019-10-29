@@ -28,7 +28,7 @@ namespace DarkHeresy2CharacterCreator.ViewModel.CharacterSheet
         public ICommand AddTalent => addTalent;
         public ICommand RemoveTalent => removeTalent;
         public ITalent SelectedAvailableTalent { get; set; }
-        public ITalent SelectedOwnTalent{ get; set; }
+        public ITalent SelectedOwnTalent { get; set; }
         public ObservableCollection<Talent> AllTalents
         {
             get { return allTalents; }

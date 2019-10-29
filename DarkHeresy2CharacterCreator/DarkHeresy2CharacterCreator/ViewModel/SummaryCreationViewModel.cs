@@ -16,6 +16,9 @@ using System.Windows.Input;
 
 namespace DarkHeresy2CharacterCreator.ViewModel
 {
+    /// <summary>
+    /// ViewModel for SummaryCreationWindow
+    /// </summary>
     [AddINotifyPropertyChangedInterface]
     public class SummaryCreationViewModel
     {
@@ -89,7 +92,7 @@ namespace DarkHeresy2CharacterCreator.ViewModel
                 var result = new List<string>();
                 foreach (var t in CreatedCharacter.Talents)
                 {
-                    if(t != null && t.Discription != null)
+                    if (t != null && t.Discription != null)
                         result.Add(t.Discription);
                 }
                 foreach (var t in CreatedCharacter.Traits)
@@ -104,7 +107,7 @@ namespace DarkHeresy2CharacterCreator.ViewModel
                 var result = new List<string>();
                 foreach (var g in CreatedCharacter.Gear)    //correct gearList and backgroungGearList (switch to enum)
                 {
-                    if (g != null)                    
+                    if (g != null)
                         result.Add(g.Name);
                 }
                 return result;
@@ -116,9 +119,9 @@ namespace DarkHeresy2CharacterCreator.ViewModel
             get
             {
                 var result = new ObservableCollection<string>();
-                result.Add(CreatedCharacter.HomeWorld.HomeWorldBonus);         
-                result.Add(CreatedCharacter.Role.RoleBonus);                   
-                result.Add(CreatedCharacter.Background.BackgroundBonuds);     
+                result.Add(CreatedCharacter.HomeWorld.HomeWorldBonus);
+                result.Add(CreatedCharacter.Role.RoleBonus);
+                result.Add(CreatedCharacter.Background.BackgroundBonuds);
                 return result;
             }
         }
@@ -128,9 +131,9 @@ namespace DarkHeresy2CharacterCreator.ViewModel
             {
                 var result = new ObservableCollection<DGSkill>();
                 foreach (var s in CreatedCharacter.Skills)
-                {                    
+                {
                     if (s != null && s.Rank > 0)
-                        result.Add(new DGSkill (s));
+                        result.Add(new DGSkill(s));
                 }
                 return result;
             }
@@ -217,7 +220,7 @@ namespace DarkHeresy2CharacterCreator.ViewModel
 
     }
 
-
+    //remove and change to simple binding to collection of skills that contains in exemplar of character
     /// <summary>
     /// Asistance class to correctable information in skills DataGrid
     /// </summary>
@@ -254,7 +257,7 @@ namespace DarkHeresy2CharacterCreator.ViewModel
                 SpecialAbilites[0] = character.HomeWorld.HomeWorldBonus;
                 SpecialAbilites[1] = character.Role.RoleBonus;
                 SpecialAbilites[2] = character.Background.BackgroundBonuds;
-            } 
+            }
         }
     }
 }

@@ -34,7 +34,7 @@ namespace DarkHeresy2CharacterCreator.ViewModel.CharacterSheet
         public SkillsVM()
         {
             Character = MainWindowVM.OpenedCharacter;
-            increaceCommonSkillRank = new DelegateCommand(obj => Character.CommonSkills.Where( s => s.Name == SelectedCommonSkill.Name).FirstOrDefault().IncreaceRank(Character));
+            increaceCommonSkillRank = new DelegateCommand(obj => Character.CommonSkills.Where(s => s.Name == SelectedCommonSkill.Name).FirstOrDefault().IncreaceRank(Character));
             increaceSpecializedSkillRank = new DelegateCommand(obj => Character.SpecializedSkills.Where(s => s.Name == SelectedSpecializedSkill.Name).FirstOrDefault().IncreaceRank(Character));
             InitializeCollections();
         }
@@ -43,7 +43,6 @@ namespace DarkHeresy2CharacterCreator.ViewModel.CharacterSheet
         #region Helped Methods
         private void InitializeCollections()
         {
-            
             var specializedSkillsQuery = Character.SpecializedSkills;
             var commonSkillsQuerry = Character.CommonSkills;
             CommonSkills = new ObservableCollection<AbstractSkill>(commonSkillsQuerry);

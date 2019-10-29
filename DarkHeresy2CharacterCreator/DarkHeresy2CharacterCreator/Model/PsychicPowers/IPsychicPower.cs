@@ -20,6 +20,6 @@ namespace DarkHeresy2CharacterCreator.Model.PsychicPowers
         string Subtype { get; }
         string Effect { get; }
         PsychisSchools School { get; }
-        
+
     }
 }

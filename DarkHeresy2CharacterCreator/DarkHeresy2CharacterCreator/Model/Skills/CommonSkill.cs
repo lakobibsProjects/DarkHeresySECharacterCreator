@@ -14,14 +14,14 @@ namespace DarkHeresy2CharacterCreator.Model.Skills
     /// </summary>
     [AddINotifyPropertyChangedInterface]
     public class CommonSkill : AbstractSkill
-    {      
+    {
         public CommonSkill(SkillName skillName, AptitudeName firstAptitude, AptitudeName secondAptitude, Ranking skillRank = 0)
         {
             Name = skillName;
             Rank = skillRank;
             FirstAptitude = firstAptitude;
             SecondAptitude = secondAptitude;
-        }       
+        }
 
     }
 }

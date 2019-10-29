@@ -30,7 +30,7 @@ namespace DarkHeresy2CharacterCreator.Model.Characteristics
         /// <summary>
         /// Name of characteristic
         /// </summary>
-        public CharacteristicName Name { get { return name; } protected set {name = value;} }
+        public CharacteristicName Name { get { return name; } protected set { name = value; } }
         /// <summary>
         /// Aptitude of characteristic
         /// </summary>
@@ -92,5 +92,6 @@ namespace DarkHeresy2CharacterCreator.Model.Characteristics
                 if (a == FirstAptitude || a == SecondAptitude) haveAptitudes++;
             Cost = costTable[rank, haveAptitudes];
         }
+
     }
 }

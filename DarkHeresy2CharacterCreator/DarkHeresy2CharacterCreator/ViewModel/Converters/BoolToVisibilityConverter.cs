@@ -13,17 +13,17 @@ namespace DarkHeresy2CharacterCreator.ViewModel.Converters
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if (value is Boolean && (bool)value)            
+            if (value is Boolean && (bool)value)
                 return Visibility.Visible;
-            
+
             return Visibility.Collapsed;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if (value is Visibility && (Visibility)value == Visibility.Visible)            
+            if (value is Visibility && (Visibility)value == Visibility.Visible)
                 return true;
-            
+
             return false;
         }
     }

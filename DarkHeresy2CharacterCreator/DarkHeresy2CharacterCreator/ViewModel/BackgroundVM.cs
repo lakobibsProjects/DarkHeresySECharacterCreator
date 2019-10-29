@@ -154,19 +154,8 @@ namespace DarkHeresy2CharacterCreator.ViewModel
             nextWindowCommand = new DelegateCommand(OnNextWindow);
             cancelCommand = new DelegateCommand(OnCancel);
             previousWindowCommand = new DelegateCommand(OnPreviousWindow);
-            try
-            {
-                backgrounds = BackgroundsCollection.Backgrounds;
-            }
-            catch (Exception e )
-            {
-                try
-                {
-                    MessageBox.Show(e.InnerException.InnerException.StackTrace);
-                }
-                catch { }
-                throw;
-            }
+            backgrounds = BackgroundsCollection.Backgrounds;
+
         }
 
         #region  Command Handlers

@@ -11,7 +11,7 @@ namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment
     /// <summary>
     /// Instaniate a observableCollection of roles
     /// </summary>
-    static class RoleList
+    public static class RoleList
     {
         #region Role bonuses
         private static readonly string assassinBonus = "Sure Kill: In addition to the normal uses of Fate points, when an Assassin successfully hits with an attack," +
@@ -45,8 +45,8 @@ namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment
                 {
                     (AptitudeName.Agility, null), (AptitudeName.Balistic_Skill, AptitudeName.Weapon_Skill),
                     (AptitudeName.Fieldcraft, null), (AptitudeName.Finesse, null), (AptitudeName.Perception, null)
-                }, 
-                (TalentList.Talents.FirstOrDefault(p => p.Name == TalentName.Jaded.ToString().Replace('_',' ')), 
+                },
+                (TalentList.Talents.FirstOrDefault(p => p.Name == TalentName.Jaded.ToString().Replace('_',' ')),
                 TalentList.Talents.FirstOrDefault(p => p.Name == TalentName.Leap_Up.ToString().Replace('_',' ')))
                 ),
             new Role(RoleName.Chirurgeon.ToString(), chirurgeonBonus, new List<ValueTuple<AptitudeName, AptitudeName?>>
@@ -79,7 +79,7 @@ namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment
                     (AptitudeName.Perception, null), (AptitudeName.Willpower, null)
                 },
                 (TalentList.Talents.FirstOrDefault(p => p.Name == TalentName.Resistance.ToString().Replace('_',' ')),   //need logic to choise specialization
-                TalentList.Talents.FirstOrDefault(p => p.Name == TalentName.Warp_Sense.ToString().Replace('_',' ')))     
+                TalentList.Talents.FirstOrDefault(p => p.Name == TalentName.Warp_Sense.ToString().Replace('_',' ')))
                 ),
             new Role(RoleName.Sage.ToString(), sageBonus, new List<ValueTuple<AptitudeName, AptitudeName?>>
                 {
@@ -87,7 +87,7 @@ namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment
                     (AptitudeName.Perception, null), (AptitudeName.Willpower, null)
                 },
                 (TalentList.Talents.FirstOrDefault(p => p.Name == TalentName.Ambidextrous.ToString().Replace('_',' ')),
-                TalentList.Talents.FirstOrDefault(p => p.Name == TalentName.Clues_from_the_Crowds.ToString().Replace('_',' ')))    
+                TalentList.Talents.FirstOrDefault(p => p.Name == TalentName.Clues_from_the_Crowds.ToString().Replace('_',' ')))
                 ),
             new Role(RoleName.Seeker.ToString(), seekerBonus, new List<ValueTuple<AptitudeName, AptitudeName?>>
                 {
@@ -107,6 +107,6 @@ namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment
                 ),
         };
 
-     
+
     }
 }

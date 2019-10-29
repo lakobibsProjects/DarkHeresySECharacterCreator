@@ -13,5 +13,5 @@ A4. CharacterSheet
 		Add ComboBox to filtred lists by type of gear
 A5. Validator to SummaryViewModel
 A6. Talents and traits correction
-A7. Fix bag ANE with selected character
++A7. Fix bag ANE with selected character
 

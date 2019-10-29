@@ -82,7 +82,7 @@ namespace DarkHeresy2CharacterCreator.Model.Character
 
         public static void RemoveRole(this Character character)
         {
-            if(character.Role != null)
+            if (character.Role != null)
             {
                 var removedRole = character.Role;
 

@@ -36,10 +36,10 @@ namespace DarkHeresy2CharacterCreator.ViewModel
             get
             {
                 if (SelectedHomeworld != null)
-                
+
                     return string.Format("+{0}; +{1}; -{2} ", SelectedHomeworld.Characteristics[0].ToString().Replace("_", " "),
                         SelectedHomeworld.Characteristics[1].ToString().Replace("_", " "), SelectedHomeworld.Characteristics[2].ToString().Replace("_", " "));
-                return string.Empty;                
+                return string.Empty;
             }
         }
         public string HomeworldAptitudeString

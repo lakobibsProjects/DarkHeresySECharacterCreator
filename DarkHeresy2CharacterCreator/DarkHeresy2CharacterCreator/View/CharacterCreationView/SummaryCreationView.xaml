@@ -7,6 +7,7 @@
         xmlns:local="clr-namespace:DarkHeresy2CharacterCreator.View.CharacterCreationView"
         xmlns:vm="clr-namespace:DarkHeresy2CharacterCreator.ViewModel"
         mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
         Title="Summary" Height="450" Width="800">
     <Grid>
         <Grid.DataContext>

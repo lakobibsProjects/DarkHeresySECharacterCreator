@@ -11,7 +11,7 @@ namespace DarkHeresy2CharacterCreator.Model.Skills
     /// </summary>
     enum ScholasticLoreSpecializations
     {
-        Astromancy, 
+        Astromancy,
         Beasts,
         Bureaucracy,
         Chymistry,

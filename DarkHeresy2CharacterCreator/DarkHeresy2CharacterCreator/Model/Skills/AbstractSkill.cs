@@ -22,7 +22,7 @@ namespace DarkHeresy2CharacterCreator.Model.Skills
         private AptitudeName first;
         private AptitudeName second;
         private int bonus = -20;
-        private readonly int[,] costTable = new int[,] { { 300, 600, 900, 1200 } , { 200, 400, 600, 800 }, { 100, 200, 300, 400 } };
+        private readonly int[,] costTable = new int[,] { { 300, 600, 900, 1200 }, { 200, 400, 600, 800 }, { 100, 200, 300, 400 } };
         private int cost;
         private string discription;
         #endregion Fields
@@ -30,13 +30,13 @@ namespace DarkHeresy2CharacterCreator.Model.Skills
         public SkillName Name
         {
             get { return name; }
-            set { name = value;  }
+            set { name = value; }
         }
 
         public Ranking Rank
         {
             get { return rank; }
-            protected set { rank = value;  }
+            protected set { rank = value; }
         }
         public AptitudeName FirstAptitude { get { return first; } protected set { first = value; } }
         public AptitudeName SecondAptitude { get { return second; } protected set { second = value; } }
@@ -44,7 +44,8 @@ namespace DarkHeresy2CharacterCreator.Model.Skills
         public int SkillBonus
         {
             get { return bonus; }
-            private set {
+            private set
+            {
                 switch (Rank)
                 {
                     case Ranking.Unknown:
@@ -87,11 +88,11 @@ namespace DarkHeresy2CharacterCreator.Model.Skills
             if (hasSecondAptitude) haveAptitudes++;
 
             if (Rank < Ranking.Veteran)
-                Cost = costTable[haveAptitudes, (int)rank];                        
+                Cost = costTable[haveAptitudes, (int)rank];
         }
         public void IncreaceRank(ICharacter character)
         {
-            if(Rank < Ranking.Veteran && character.NotSpendExp >= Cost)
+            if (Rank < Ranking.Veteran && character.NotSpendExp >= Cost)
             {
                 Rank++;
                 character.SpendExpirience += Cost;
