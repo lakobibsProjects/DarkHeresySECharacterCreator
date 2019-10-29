@@ -1,4 +1,5 @@
 ﻿using DarkHeresy2CharacterCreator.Model.PsychicPowers;
+using DarkHeresy2CharacterCreator.Model.Skills;
 using PropertyChanged;
 using System;
 using System.Collections.Generic;
@@ -84,12 +85,44 @@ namespace DarkHeresy2CharacterCreator.Model.Talents
             Cost = costTable[haveAptitudes, tier - 1];
         }
         //todo: rewrite
+        /// <summary>
+        /// Can character take a talent
+        /// </summary>
+        /// <param name="character">Character than request access</param>
+        /// <returns></returns>
         public bool PrerequisiteAccess(Character.Character character)
         {
             bool hasAccess = false;
+            int prerquisiteAccessed = 0;
             foreach (var item in Prerequisites)
             {
-
+                switch (item.Item1.Name)
+                {
+                    case "Talent":          //todo: update with specialization
+                        if (character.Talents.Contains(TalentList.Talents.Where(t => t.Name == item.Item2).FirstOrDefault()))                        
+                            prerquisiteAccessed++;                        
+                        break;
+                    case "Characteristic":
+                        if (character.Characteristics.Where(c => c.Name.ToString() == item.Item2).FirstOrDefault().Value >= item.Item4)
+                            prerquisiteAccessed++;
+                        break;
+                    case "Trait":
+                        if (character.Traits.Contains(Traits.TraitList.Traits.Where(t => t.Name == item.Item2).FirstOrDefault()))
+                            prerquisiteAccessed++;
+                        break;
+                    case "Item":
+                        if(character.Gear.Where(i => i.Name == item.Item2).FirstOrDefault() != null)
+                            prerquisiteAccessed++;
+                        break;
+                    case "CommonSkills":
+                        if (character.CommonSkills.Where(c => c.Name.ToString() == item.Item2).FirstOrDefault().Rank >= (Ranking)item.Item4)
+                            prerquisiteAccessed++;
+                        break;
+                    case "SpecializedSkills":          //todo: update with specialization
+                        if (character.SpecializedSkills.Where(c => c.Name.ToString() == item.Item2).FirstOrDefault().Rank >= (Ranking)item.Item4)
+                            prerquisiteAccessed++;
+                        break;
+                }
             }
 
             return hasAccess;
