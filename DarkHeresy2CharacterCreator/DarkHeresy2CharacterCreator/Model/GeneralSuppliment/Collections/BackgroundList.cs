@@ -57,7 +57,7 @@ namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment.Collections
                     (Equipment.Collections.ToolsCollection.Tools.Where ( t => t.Name == "Medi-kit").First(), null)
                 },
                 BackgroundAptitude = (AptitudeName.Knowledge, AptitudeName.Social),
-                RecommendedRoles = new List<RoleName> { RoleName.Chirurgeon, RoleName.Hierophant, RoleName.Sage, RoleName.Seeker }
+                RecommendedRoles = new List<string> { RoleName.Chirurgeon.ToString(), RoleName.Hierophant.ToString(), RoleName.Sage.ToString(), RoleName.Seeker.ToString() }
             },
             new Background("Adeptus Arbites")
             {
@@ -86,7 +86,7 @@ namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment.Collections
                     (Equipment.Collections.ToolsCollection.Tools.Where ( t => t.Name == "Lho Stiks").First(), null),
                 },
                 BackgroundAptitude = (AptitudeName.Offence, AptitudeName.Defence),
-                RecommendedRoles = new List<RoleName> { RoleName.Assassin, RoleName.Desperado, RoleName.Warrior, RoleName.Seeker }
+                RecommendedRoles = new List<string> { RoleName.Assassin.ToString(), RoleName.Desperado.ToString(), RoleName.Warrior.ToString(), RoleName.Seeker.ToString() }
             },
             new Background("Adeptus Astra Telepatica")
             {
@@ -112,7 +112,7 @@ namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment.Collections
                     (Equipment.Collections.ToolsCollection.Tools.Where ( t => t.Name == "Micro Bead").First(), Equipment.Collections.ToolsCollection.Tools.Where ( t => t.Name == "Psy Focus").First()),
                 },
                 BackgroundAptitude = (AptitudeName.Defence, AptitudeName.Psyker),
-                RecommendedRoles = new List<RoleName> { RoleName.Chirurgeon, RoleName.Mystic, RoleName.Sage, RoleName.Seeker }
+                RecommendedRoles = new List<string> { RoleName.Chirurgeon.ToString(), RoleName.Mystic.ToString(), RoleName.Sage.ToString(), RoleName.Seeker.ToString() }
             },
             new Background("Adeptus Mechanicus")
             {
@@ -138,7 +138,7 @@ namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment.Collections
                     (Equipment.Collections.ToolsCollection.Tools.Where ( t => t.Name == "Monotask Servoskull").First(), Equipment.Collections.ToolsCollection.Tools.Where ( t => t.Name == "Utility Mechandendrite").First()),
                 },
                 BackgroundAptitude = (AptitudeName.Knowledge, AptitudeName.Tech),
-                RecommendedRoles = new List<RoleName> { RoleName.Chirurgeon, RoleName.Hierophant, RoleName.Sage, RoleName.Seeker },
+                RecommendedRoles = new List<string> { RoleName.Chirurgeon.ToString(), RoleName.Hierophant.ToString(), RoleName.Sage.ToString(), RoleName.Seeker.ToString() },
                 Trait = Traits.TraitList.Traits.Where (t => t.Name == "Mechanicus Implants").First() as Trait
 
             },
@@ -166,7 +166,7 @@ namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment.Collections
                     (Equipment.Collections.ToolsCollection.Tools.Where ( t => t.Name == "Monotask Sevoskull").First(), null)
                 },
                 BackgroundAptitude = (AptitudeName.Leadship, AptitudeName.Social),
-                RecommendedRoles = new List<RoleName> { RoleName.Chirurgeon, RoleName.Hierophant, RoleName.Warrior, RoleName.Seeker }
+                RecommendedRoles = new List<string> { RoleName.Chirurgeon.ToString(), RoleName.Hierophant.ToString(), RoleName.Warrior.ToString(), RoleName.Seeker.ToString() }
             },
             new Background("Imperial Guard")
             {
@@ -194,7 +194,7 @@ namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment.Collections
                     (Equipment.Collections.ToolsCollection.Tools.Where ( t => t.Name == "Magnoculars").First(), null)
                 },
                 BackgroundAptitude = (AptitudeName.Fieldcraft, AptitudeName.Leadship),
-                RecommendedRoles = new List<RoleName> { RoleName.Assassin, RoleName.Desperado, RoleName.Hierophant, RoleName.Warrior }
+                RecommendedRoles = new List<string> { RoleName.Assassin.ToString(), RoleName.Desperado.ToString(), RoleName.Hierophant.ToString(), RoleName.Warrior.ToString() }
             },
             new Background("Outcast")
             {
@@ -220,7 +220,7 @@ namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment.Collections
                     (Equipment.Collections.ToolsCollection.Tools.Where ( t => t.Name == "Obscura").First(), Equipment.Collections.ToolsCollection.Tools.Where ( t => t.Name == "Slaught").First()),
                 },
                 BackgroundAptitude = (AptitudeName.Fieldcraft, AptitudeName.Social),
-                RecommendedRoles = new List<RoleName> { RoleName.Assassin, RoleName.Desperado, RoleName.Seeker }
+                RecommendedRoles = new List<string> { RoleName.Assassin.ToString(), RoleName.Desperado.ToString(), RoleName.Seeker.ToString() }
             },            
             #endregion
 

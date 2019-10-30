@@ -15,15 +15,21 @@ namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment.Collections
     /// </summary>
     public static class BackgroundsCollection
     {
-        //TODO Add discriptions
         #region Bonuses
-        private static readonly string adeptusAdministratumDiscription = "";
-        private static readonly string adeptusArbitesDiscription = "";
-        private static readonly string adeptusAstraTelepaticaDiscription = "";
-        private static readonly string adeptusMechanicusDiscription = "";
-        private static readonly string adeptusMinistorumDiscription = "";
-        private static readonly string imprialGuardDiscription = "";
-        private static readonly string outcastDiscription = "";
+        private static readonly string adeptusAdministratumBonus = "Master of Paperwork: An Adeptus Administratum character counts the Availability of all items " +
+            "as one level more available(Very Rare items count as Rare, Average items count as Common, etc.).";
+        private static readonly string adeptusArbitesBonus = "The Face of the Law: An Arbitrator can re-roll any Intimidation and Interrogation test," +
+            " and can substitute his Willpower bonus for his degrees of success on these tests.";
+        private static readonly string adeptusAstraTelepaticaBonus = "The Constant Threat: When the character or an ally within 10 metres triggers" +
+            " a roll on Table Psychic Phenomenon, the Adeptus Astra Telepathica character can increase or decrease the result by amount" +
+            " equal to his Willpower bonus. Tested on Terra: If the character takes the Psyker elite advance during character creation, he also gains the Sanctioned trait.";
+        private static readonly string adeptusMechanicusBonus = "Replace the Weak Flesh: An Adeptus Mechanicus character counts the Availability of all " +
+            "cybernetics as two levels more available(Rare items count as Average, Very Rare items count as Scarce, etc.).";
+        private static readonly string adeptusMinistorumBonus = "Faith is All: When spending a Fate point to gain a + 10 bonus to any one test, " +
+            "an Adeptus Ministorum  character gains a +20 bonus instead.";
+        private static readonly string imprialGuardBonus = "Hammer of the Emperor: When attacking a target that an ally attacked since the end " +
+            "of the Guardsman’s last turn, the Guardsman can re-roll any results of 1 or 2 on damage rolls.";
+        private static readonly string outcastBonus = "Never Quit: An Outcast character counts his Toughness bonus as two higher for purposes of determining Fatigue.";
         #endregion Bonuses
         /// <summary>
         /// Collection of backgrounds
@@ -34,7 +40,7 @@ namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment.Collections
             #region Core Culebook
             new Background("Adeptus Administratum")
             {
-                BackgroundBonuds = adeptusAdministratumDiscription,
+                BackgroundBonuds = adeptusAdministratumBonus,
                 BackgroundSkills = new List<ValueTuple<AbstractSkill, AbstractSkill>>
                 {
                     (Skills.SkillList.CommonSkills.Where( s => s.Name == Skills.SkillName.Commerce).FirstOrDefault(), Skills.SkillList.CommonSkills.Where( s => s.Name == Skills.SkillName.Medicae).First()),
@@ -58,11 +64,11 @@ namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment.Collections
                     (Equipment.Collections.ToolsCollection.Tools.Where ( t => t.Name == "Medi-kit").FirstOrDefault(), null)
                 },
                 BackgroundAptitude = (AptitudeName.Knowledge, AptitudeName.Social),
-                RecommendedRoles = new List<RoleName> { RoleName.Chirurgeon, RoleName.Hierophant, RoleName.Sage, RoleName.Seeker }
+                RecommendedRoles = new List<string> { RoleName.Chirurgeon.ToString(), RoleName.Hierophant.ToString(), RoleName.Sage.ToString(), RoleName.Seeker.ToString() }
             },
             new Background("Adeptus Arbites")
             {
-                BackgroundBonuds = adeptusArbitesDiscription,
+                BackgroundBonuds = adeptusArbitesBonus,
                 BackgroundSkills = new List<ValueTuple<AbstractSkill, AbstractSkill>>
                 {
                     (Skills.SkillList.CommonSkills.Where( s => s.Name == Skills.SkillName.Inquiry).FirstOrDefault(),
@@ -89,11 +95,11 @@ namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment.Collections
                     (Equipment.Collections.ToolsCollection.Tools.Where ( t => t.Name == "Lho Stiks").FirstOrDefault(), null),
                 },
                 BackgroundAptitude = (AptitudeName.Offence, AptitudeName.Defence),
-                RecommendedRoles = new List<RoleName> { RoleName.Assassin, RoleName.Desperado, RoleName.Warrior, RoleName.Seeker }
+                RecommendedRoles = new List<string> { RoleName.Assassin.ToString(), RoleName.Desperado.ToString(), RoleName.Warrior.ToString(), RoleName.Seeker.ToString() }
             },
             new Background("Adeptus Astra Telepatica")
             {
-                BackgroundBonuds = adeptusAstraTelepaticaDiscription,
+                BackgroundBonuds = adeptusAstraTelepaticaBonus,
                 BackgroundSkills = new List<ValueTuple<AbstractSkill, AbstractSkill>>
                 {
                     (Skills.SkillList.CommonSkills.Where( s => s.Name == Skills.SkillName.Deceive).FirstOrDefault(),
@@ -120,11 +126,11 @@ namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment.Collections
                         Equipment.Collections.ToolsCollection.Tools.Where ( t => t.Name == "Psy Focus").FirstOrDefault()),
                 },
                 BackgroundAptitude = (AptitudeName.Defence, AptitudeName.Psyker),
-                RecommendedRoles = new List<RoleName> { RoleName.Chirurgeon, RoleName.Mystic, RoleName.Sage, RoleName.Seeker }
+                RecommendedRoles = new List<string> { RoleName.Chirurgeon.ToString(), RoleName.Mystic.ToString(), RoleName.Sage.ToString(), RoleName.Seeker.ToString() }
             },
             new Background("Adeptus Mechanicus")
             {
-                BackgroundBonuds = adeptusMechanicusDiscription,
+                BackgroundBonuds = adeptusMechanicusBonus,
                 BackgroundSkills = new List<ValueTuple<AbstractSkill, AbstractSkill>>
                 {
                     (Skills.SkillList.CommonSkills.Where( s => s.Name == Skills.SkillName.Awarness).FirstOrDefault(),
@@ -149,13 +155,13 @@ namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment.Collections
                         Equipment.Collections.ToolsCollection.Tools.Where ( t => t.Name == "Utility Mechandendrite").FirstOrDefault()),
                 },
                 BackgroundAptitude = (AptitudeName.Knowledge, AptitudeName.Tech),
-                RecommendedRoles = new List<RoleName> { RoleName.Chirurgeon, RoleName.Hierophant, RoleName.Sage, RoleName.Seeker },
+                RecommendedRoles = new List<string> { RoleName.Chirurgeon.ToString(), RoleName.Hierophant.ToString(), RoleName.Sage.ToString(), RoleName.Seeker.ToString() },
                 Trait = Traits.TraitList.Traits.Where (t => t.Name == "Mechanicus Implants").FirstOrDefault() as Trait
 
             },
             new Background("Adeptus Ministorum")
             {
-                BackgroundBonuds = adeptusMinistorumDiscription,
+                BackgroundBonuds = adeptusMinistorumBonus,
                 BackgroundSkills = new List<ValueTuple<AbstractSkill, AbstractSkill>>
                 {
                     (Skills.SkillList.CommonSkills.Where( s => s.Name == Skills.SkillName.Inquiry).FirstOrDefault(),
@@ -181,11 +187,11 @@ namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment.Collections
                     (Equipment.Collections.ToolsCollection.Tools.Where ( t => t.Name == "Monotask Sevoskull").FirstOrDefault(), null)
                 },
                 BackgroundAptitude = (AptitudeName.Leadship, AptitudeName.Social),
-                RecommendedRoles = new List<RoleName> { RoleName.Chirurgeon, RoleName.Hierophant, RoleName.Warrior, RoleName.Seeker }
+                RecommendedRoles = new List<string> { RoleName.Chirurgeon.ToString(), RoleName.Hierophant.ToString(), RoleName.Warrior.ToString(), RoleName.Seeker.ToString() }
             },
             new Background("Imperial Guard")
             {
-                BackgroundBonuds = imprialGuardDiscription,
+                BackgroundBonuds = imprialGuardBonus,
                 BackgroundSkills = new List<ValueTuple<AbstractSkill, AbstractSkill>>
                 {
                     (Skills.SkillList.CommonSkills.Where( s => s.Name == Skills.SkillName.Athletics).FirstOrDefault(), null),
@@ -211,11 +217,11 @@ namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment.Collections
                     (Equipment.Collections.ToolsCollection.Tools.Where ( t => t.Name == "Magnoculars").FirstOrDefault(), null)
                 },
                 BackgroundAptitude = (AptitudeName.Fieldcraft, AptitudeName.Leadship),
-                RecommendedRoles = new List<RoleName> { RoleName.Assassin, RoleName.Desperado, RoleName.Hierophant, RoleName.Warrior }
+                RecommendedRoles = new List<string> { RoleName.Assassin.ToString(), RoleName.Desperado.ToString(), RoleName.Hierophant.ToString(), RoleName.Warrior.ToString() }
             },
             new Background("Outcast")
             {
-                BackgroundBonuds = outcastDiscription,
+                BackgroundBonuds = outcastBonus,
                 BackgroundSkills = new List<ValueTuple<AbstractSkill, AbstractSkill>>
                 {
                     (Skills.SkillList.CommonSkills.Where( s => s.Name == Skills.SkillName.Acrobatics).FirstOrDefault(),
@@ -242,7 +248,7 @@ namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment.Collections
                         Equipment.Collections.ToolsCollection.Tools.Where ( t => t.Name == "Slaught").FirstOrDefault()),
                 },
                 BackgroundAptitude = (AptitudeName.Fieldcraft, AptitudeName.Social),
-                RecommendedRoles = new List<RoleName> { RoleName.Assassin, RoleName.Desperado, RoleName.Seeker }
+                RecommendedRoles = new List<string> { RoleName.Assassin.ToString(), RoleName.Desperado.ToString(), RoleName.Seeker.ToString() }
             },            
             #endregion
 

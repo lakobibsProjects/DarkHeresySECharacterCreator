@@ -27,7 +27,7 @@ namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment
         private List<ValueTuple<IItem, IItem>> backgroundEquipment;
         private string backgroundBonuds;
         private ValueTuple<AptitudeName, AptitudeName> backgroundAptitude;
-        private List<RoleName> recommendedRoles;
+        private List<string> recommendedRoles;
         private SourceList sourceBook = SourceList.Core_Rulebook_2_edition;
         private int sourcePage = 44;
         private Trait trait;
@@ -39,7 +39,7 @@ namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment
         public List<ValueTuple<Talent, Talent>> BackgroundsTalents { get => backgroundsTalents; set => backgroundsTalents = value; }
         public List<ValueTuple<IItem, IItem>> BackgroundEquipment { get => backgroundEquipment; set => backgroundEquipment = value; }
         public ValueTuple<AptitudeName, AptitudeName> BackgroundAptitude { get => backgroundAptitude; set => backgroundAptitude = value; }
-        public List<RoleName> RecommendedRoles { get => recommendedRoles; set => recommendedRoles = value; }
+        public List<string> RecommendedRoles { get => recommendedRoles; set => recommendedRoles = value; }
         public SourceList SourceBook { get => sourceBook; set => sourceBook = value; }
         public int SourcePage { get => sourcePage; set => sourcePage = value; }
         public Trait Trait { get => trait; set => trait = value; }

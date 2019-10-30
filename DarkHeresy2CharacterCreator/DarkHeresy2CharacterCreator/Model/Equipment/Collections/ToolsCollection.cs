@@ -1,4 +1,5 @@
-﻿using DarkHeresy2CharacterCreator.Model.Equipment.Interfaces;
+﻿using DarkHeresy2CharacterCreator.Model.Equipment.Enums;
+using DarkHeresy2CharacterCreator.Model.Equipment.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -13,49 +14,6 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
     /// </summary>
     public static class ToolsCollection
     {
-        /// <summary>
-        /// Collection of tools
-        /// </summary>
-        public static ObservableCollection<IItem> Tools = new ObservableCollection<IItem>
-        {
-            new Item("Auspex/Scanner", Availability.Scarce, 0.5, auspexScannecDiscription),
-            new Item("Auto Quill", Availability.Scarce, 0, autoQuillDiscription),
-            new Item("Clip/Drop Harness", Availability.Common, 2, clipDropHarnessDiscription),
-            new Item("Combi-Tool", Availability.Rare, 1, combiToolDiscription),
-            new Item("Comm Leech", Availability.Very_Rare, 1, commLeechDiscription),
-            new Item("Dataslate", Availability.Common, 0.5, dataslateDiscription),
-            new Item("Demolition Kit", Availability.Very_Rare, 4, demolitionKitDiscription),
-            new Item("Diagnostor", Availability.Rare, 4, diagnostorDiscription),
-            new Item("Disguise Kit", Availability.Very_Rare, 2, disguiseKitDiscription),
-            new Item("Excruciator Kit", Availability.Very_Rare, 2, excruciatorKitDiscription),
-            new Item("Field Suture", Availability.Average, 0.5, fieldSutureDiscription),
-            new Item("Glow Globe/Stablight", Availability.Abundant, 0.5, glowGlobeStablightDiscription),
-            new Item("Gapnel and Line", Availability.Common, 2, grapnelAndLineDiscription),
-            new Item("Grv Chute", Availability.Rare, 15, gravChuteDiscription),
-            new Item("Hand-Held Targeter", Availability.Scarce, 0.5, handHeldTargeterDiscription),
-            new Item("Inhaler/Injector", Availability.Common, 0.5, inhalerInjectorDiscription),
-            new Item("Lascutter", Availability.Average, 4, lascutterDiscription),
-            new Item("Laud Hailer", Availability.Scarce, 4, laudHailerDiscription),
-            new Item("Magboots", Availability.Rare, 2, magbootsDiscription),
-            new Item("Magnoculars", Availability.Average, 0.5, magnocularsDiscription),
-            new Item("Manacles", Availability.Plentiful, 1, ManaclesDiscription),
-            new Item("Medi Kit", Availability.Common, 2, mediKitDiscription),
-            new Item("Micro-bead", Availability.Average, 0, microBeadDiscription),
-            new Item("Monotask Servo-Skull", Availability.Rare, 2, monotaskServoSkullDiscription),
-            new Item("Multicompass", Availability.Near_Unique, 4, multicompassDiscription),
-            new Item("Miltikey", Availability.Scarce, 0, multikeyDiscription),
-            new Item("Null Rod", Availability.Near_Unique, 1, nullRodDiscription),
-            new Item("Pict Recorder", Availability.Average, 1, pictRecorderDiscription),
-            new Item("Psy Focus", Availability.Average, 0, psyFocusDiscription),
-            new Item("Regicide Set", Availability.Plentiful, 1, regicideSetDiscription),
-            new Item("Screamer", Availability.Scarce, 2, screamerDiscription),
-            new Item("Signal Jammer", Availability.Rare, 2, signalJammerDiscription),
-            new Item("Static Generator", Availability.Very_Rare, 3, staticGeneratorDiscription),
-            new Item("Stummer", Availability.Average, 2, stummerDiscription),
-            new Item("Vox-Caster", Availability.Scarce, 4, voxCasterDiscription),
-            new Item("Writing Kit", Availability.Plentiful, 2, writingKitDiscription)
-        };
-
         #region Discription
         private static readonly string auspexScannecDiscription = "These standard Imperial detection devices are used to reveal energy emissions, motion, " +
             "life-signs, and other information.A character using an auspex gains a +20 bonus to Awareness tests.Once per round, as a Free Action, " +
@@ -197,5 +155,50 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
         private static readonly string writingKitDiscription = "Simple and basic, standard writing kits contain parchment, inks, " +
             "and quills for Acolytes to transcribe confessions, diagram important finds, and leave messages for fellow Acolytes.";
         #endregion
+
+        /// <summary>
+        /// Collection of tools
+        /// </summary>
+        public static ObservableCollection<IItem> Tools = new ObservableCollection<IItem>
+        {
+            new Item(ToolName.Auspex_Scanner.ToString(), Availability.Scarce, 0.5, auspexScannecDiscription),
+            new Item(ToolName.Auto_Quill.ToString(), Availability.Scarce, 0, autoQuillDiscription),
+            new Item(ToolName.Clip_Drop_Harness.ToString(), Availability.Common, 2, clipDropHarnessDiscription),
+            new Item(ToolName.Combi_Tool.ToString(), Availability.Rare, 1, combiToolDiscription),
+            new Item(ToolName.Comm_Leech.ToString(), Availability.Very_Rare, 1, commLeechDiscription),
+            new Item(ToolName.Dataslate.ToString(), Availability.Common, 0.5, dataslateDiscription),
+            new Item(ToolName.Demolition_Kit.ToString(), Availability.Very_Rare, 4, demolitionKitDiscription),
+            new Item(ToolName.Diagnostor.ToString(), Availability.Rare, 4, diagnostorDiscription),
+            new Item(ToolName.Disguise_Kit.ToString(), Availability.Very_Rare, 2, disguiseKitDiscription),
+            new Item(ToolName.Excruciator_Kit.ToString(), Availability.Very_Rare, 2, excruciatorKitDiscription),
+            new Item(ToolName.Field_Suture.ToString(), Availability.Average, 0.5, fieldSutureDiscription),
+            new Item(ToolName.Glow_Globe_or_Stablight.ToString(), Availability.Abundant, 0.5, glowGlobeStablightDiscription),
+            new Item(ToolName.Gapnel_and_Line.ToString(), Availability.Common, 2, grapnelAndLineDiscription),
+            new Item(ToolName.Grav_Chute.ToString(), Availability.Rare, 15, gravChuteDiscription),
+            new Item(ToolName.Hand_Held_Targeter.ToString(), Availability.Scarce, 0.5, handHeldTargeterDiscription),
+            new Item(ToolName.Inhaler_or_Injector.ToString(), Availability.Common, 0.5, inhalerInjectorDiscription),
+            new Item(ToolName.Lascutter.ToString(), Availability.Average, 4, lascutterDiscription),
+            new Item(ToolName.Laud_Hailer.ToString(), Availability.Scarce, 4, laudHailerDiscription),
+            new Item(ToolName.Magboots.ToString(), Availability.Rare, 2, magbootsDiscription),
+            new Item(ToolName.Magnoculars.ToString(), Availability.Average, 0.5, magnocularsDiscription),
+            new Item(ToolName.Manacles.ToString(), Availability.Plentiful, 1, ManaclesDiscription),
+            new Item(ToolName.Medi_Kit.ToString(), Availability.Common, 2, mediKitDiscription),
+            new Item(ToolName.Micro_bead.ToString(), Availability.Average, 0, microBeadDiscription),
+            new Item(ToolName.Monotask_Servo_Skull.ToString(), Availability.Rare, 2, monotaskServoSkullDiscription),
+            new Item(ToolName.Multicompass.ToString(), Availability.Near_Unique, 4, multicompassDiscription),
+            new Item(ToolName.Miltikey.ToString(), Availability.Scarce, 0, multikeyDiscription),
+            new Item(ToolName.Null_Rod.ToString(), Availability.Near_Unique, 1, nullRodDiscription),
+            new Item(ToolName.Pict_Recorder.ToString(), Availability.Average, 1, pictRecorderDiscription),
+            new Item(ToolName.Psy_Focus.ToString(), Availability.Average, 0, psyFocusDiscription),
+            new Item(ToolName.Regicide_Set.ToString(), Availability.Plentiful, 1, regicideSetDiscription),
+            new Item(ToolName.Screamer.ToString(), Availability.Scarce, 2, screamerDiscription),
+            new Item(ToolName.Signal_Jammer.ToString(), Availability.Rare, 2, signalJammerDiscription),
+            new Item(ToolName.Static_Generator.ToString(), Availability.Very_Rare, 3, staticGeneratorDiscription),
+            new Item(ToolName.Stummer.ToString(), Availability.Average, 2, stummerDiscription),
+            new Item(ToolName.Vox_Caster.ToString(), Availability.Scarce, 4, voxCasterDiscription),
+            new Item(ToolName.Writing_Kit.ToString(), Availability.Plentiful, 2, writingKitDiscription)
+        };
+
+
     }
 }

@@ -25,7 +25,7 @@ namespace DarkHeresy2CharacterCreator.Model.Traits
         #region Properties
         public string Name { get => name; set => name = value; }
         public string Discription { get => discription; set => discription = value; }
-        public int Modifier { get => modifire; set => modifire = value; }
+        public int Modifier { get => modifire; set { if (HasModifire) modifire = value; } }
         public bool HasModifire { get => hasModifire; set => hasModifire = value; }
         #endregion Properties
         /// <summary>
@@ -41,10 +41,6 @@ namespace DarkHeresy2CharacterCreator.Model.Traits
             HasModifire = hasModifire;
         }
 
-        public string[] ToPrerequisite()
-        {
-            return new string[4] { "Trait", $"{Name}", "", $"{Modifier}" };
-        }
         //require add mechanism to operate with modifire
 
     }

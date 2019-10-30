@@ -46,64 +46,64 @@ namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment
                     (AptitudeName.Agility, null), (AptitudeName.Balistic_Skill, AptitudeName.Weapon_Skill),
                     (AptitudeName.Fieldcraft, null), (AptitudeName.Finesse, null), (AptitudeName.Perception, null)
                 },
-                (TalentList.Talents.FirstOrDefault(p => p.Name == TalentName.Jaded.ToString().Replace('_',' ')),
-                TalentList.Talents.FirstOrDefault(p => p.Name == TalentName.Leap_Up.ToString().Replace('_',' ')))
+                (TalentList.Talents.FirstOrDefault(p => p.Name == TalentName.Jaded.ToString()),
+                TalentList.Talents.FirstOrDefault(p => p.Name == TalentName.Leap_Up.ToString()))
                 ),
             new Role(RoleName.Chirurgeon.ToString(), chirurgeonBonus, new List<ValueTuple<AptitudeName, AptitudeName?>>
                 {
                     (AptitudeName.Fieldcraft, null),(AptitudeName.Intelligence, null), (AptitudeName.Knowledge, null),
                     (AptitudeName.Strength, null), (AptitudeName.Toughness, null)
                 },
-                (TalentList.Talents.FirstOrDefault(p => p.Name == TalentName.Resistance.ToString().Replace('_',' ')),  //need logic to choise specialization
-                TalentList.Talents.FirstOrDefault(p => p.Name == TalentName.Takedown.ToString().Replace('_',' ')))
+                (TalentList.Talents.FirstOrDefault(p => p.Name == TalentName.Resistance.ToString()),  //need logic to choise specialization
+                TalentList.Talents.FirstOrDefault(p => p.Name == TalentName.Takedown.ToString()))
                 ),
             new Role(RoleName.Desperado.ToString(), desperadoBonus, new List<ValueTuple<AptitudeName, AptitudeName?>>
                 {
                     (AptitudeName.Agility, null), (AptitudeName.Balistic_Skill, null),(AptitudeName.Defence, null),
                     (AptitudeName.Fellowship, null), (AptitudeName.Finesse, null)
                 },
-                (TalentList.Talents.FirstOrDefault(p => p.Name == TalentName.Catfall.ToString().Replace('_',' ')),
-                TalentList.Talents.FirstOrDefault(p => p.Name == TalentName.Quick_Draw.ToString().Replace('_',' ')))
+                (TalentList.Talents.FirstOrDefault(p => p.Name == TalentName.Catfall.ToString()),
+                TalentList.Talents.FirstOrDefault(p => p.Name == TalentName.Quick_Draw.ToString()))
                 ),
             new Role(RoleName.Hierophant.ToString(), hierophantBonus, new List<ValueTuple<AptitudeName, AptitudeName?>>
                 {
                     (AptitudeName.Fellowship, null), (AptitudeName.Offence, null), (AptitudeName.Social, null),
                     (AptitudeName.Toughness, null), (AptitudeName.Willpower, null)
                 },
-                (TalentList.Talents.FirstOrDefault(p => p.Name == TalentName.Double_Tap.ToString().Replace('_',' ')),
-                TalentList.Talents.FirstOrDefault(p => p.Name == TalentName.Hatred.ToString().Replace('_',' ')))     //need logic to choise specialization
+                (TalentList.Talents.FirstOrDefault(p => p.Name == TalentName.Double_Tap.ToString()),
+                TalentList.Talents.FirstOrDefault(p => p.Name == TalentName.Hatred.ToString()))     //need logic to choise specialization
                 ),
             new Role(RoleName.Mystic.ToString(), mysticBonus, new List<ValueTuple<AptitudeName, AptitudeName?>>
                 {
                     (AptitudeName.Defence, null), (AptitudeName.Intelligence, null), (AptitudeName.Knowledge, null),
                     (AptitudeName.Perception, null), (AptitudeName.Willpower, null)
                 },
-                (TalentList.Talents.FirstOrDefault(p => p.Name == TalentName.Resistance.ToString().Replace('_',' ')),   //need logic to choise specialization
-                TalentList.Talents.FirstOrDefault(p => p.Name == TalentName.Warp_Sense.ToString().Replace('_',' ')))
+                (TalentList.Talents.FirstOrDefault(p => p.Name == TalentName.Resistance.ToString()),   //need logic to choise specialization
+                TalentList.Talents.FirstOrDefault(p => p.Name == TalentName.Warp_Sense.ToString()))
                 ),
             new Role(RoleName.Sage.ToString(), sageBonus, new List<ValueTuple<AptitudeName, AptitudeName?>>
                 {
                     (AptitudeName.Tech, null), (AptitudeName.Intelligence, null), (AptitudeName.Knowledge, null),
                     (AptitudeName.Perception, null), (AptitudeName.Willpower, null)
                 },
-                (TalentList.Talents.FirstOrDefault(p => p.Name == TalentName.Ambidextrous.ToString().Replace('_',' ')),
-                TalentList.Talents.FirstOrDefault(p => p.Name == TalentName.Clues_from_the_Crowds.ToString().Replace('_',' ')))
+                (TalentList.Talents.FirstOrDefault(p => p.Name == TalentName.Ambidextrous.ToString()),
+                TalentList.Talents.FirstOrDefault(p => p.Name == TalentName.Clues_from_the_Crowds.ToString()))
                 ),
             new Role(RoleName.Seeker.ToString(), seekerBonus, new List<ValueTuple<AptitudeName, AptitudeName?>>
                 {
                     (AptitudeName.Tech, null), (AptitudeName.Intelligence, null), (AptitudeName.Fellowship, null),
                     (AptitudeName.Perception, null), (AptitudeName.Social, null)
                 },
-                (TalentList.Talents.FirstOrDefault(p => p.Name == TalentName.Keen_Intuition.ToString().Replace('_',' ')),
-                TalentList.Talents.FirstOrDefault(p => p.Name == TalentName.Disarm.ToString().Replace('_',' ')))
+                (TalentList.Talents.FirstOrDefault(p => p.Name == TalentName.Keen_Intuition.ToString()),
+                TalentList.Talents.FirstOrDefault(p => p.Name == TalentName.Disarm.ToString()))
                 ),
             new Role(RoleName.Warrior.ToString(), warriorBonus, new List<ValueTuple<AptitudeName, AptitudeName?>>
                 {
                     (AptitudeName.Balistic_Skill, null), (AptitudeName.Defence, null), (AptitudeName.Offence, null),
                     (AptitudeName.Strength, null), (AptitudeName.Weapon_Skill, null)
                 },
-                (TalentList.Talents.FirstOrDefault(p => p.Name == TalentName.Iron_Jaw.ToString().Replace('_',' ')),
-                TalentList.Talents.FirstOrDefault(p => p.Name == TalentName.Rapid_Reload.ToString().Replace('_',' ')))
+                (TalentList.Talents.FirstOrDefault(p => p.Name == TalentName.Iron_Jaw.ToString()),
+                TalentList.Talents.FirstOrDefault(p => p.Name == TalentName.Rapid_Reload.ToString()))
                 ),
         };
 

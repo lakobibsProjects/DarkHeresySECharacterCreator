@@ -1,4 +1,5 @@
 ﻿using DarkHeresy2CharacterCreator.Model.Characteristics;
+using DarkHeresy2CharacterCreator.Model.GeneralSuppliment.Enums;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -31,9 +32,8 @@ namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment.Collections
         /// </summary>
         public static ObservableCollection<HomeWorld> HomeWorlds = new ObservableCollection<HomeWorld>
         {
-        //TODO correct and add recomended backgrounds
         #region Core Rulebook
-        new HomeWorld("Feral World")
+        new HomeWorld(HomeworldName.Feral_World.ToString())
             {
                 FateTreshold = 2,
                 EmperorsBlessing = 3,
@@ -41,9 +41,9 @@ namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment.Collections
                 Wounds = 9,
                 Characteristics = new CharacteristicName[3] { CharacteristicName.Strength, CharacteristicName.Toughness, CharacteristicName.Influence },
                 HomeWorldAptitude = AptitudeName.Toughness,
-                RekommendedBackgrouns = new Background[]{ }
+                RekommendedBackgrouns = new List<string>(){ BackgroundName.Adeptus_Arbites.ToString(), BackgroundName.Adeptus_Astra_Telepathica.ToString(), BackgroundName.Imperial_Guard.ToString(), BackgroundName.Outcast.ToString() }
             },
-            new HomeWorld("Forge World")
+            new HomeWorld(HomeworldName.Forge_Wrold.ToString())
             {
                 FateTreshold = 3,
                 EmperorsBlessing = 8,
@@ -51,9 +51,9 @@ namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment.Collections
                 Wounds = 8,
                 Characteristics = new CharacteristicName[3] { CharacteristicName.Intelligence, CharacteristicName.Toughness, CharacteristicName.Fellowship },
                 HomeWorldAptitude = AptitudeName.Intelligence,
-                RekommendedBackgrouns = new Background[]{ }
+                RekommendedBackgrouns = new List<string>(){ BackgroundName.Adeptus_Arbites.ToString(), BackgroundName.Adeptus_Administratum.ToString(), BackgroundName.Adeptus_Mechanicus.ToString(), BackgroundName.Imperial_Guard.ToString(), }
             },
-            new HomeWorld("Highborn")
+            new HomeWorld(HomeworldName.HighBorn.ToString())
             {
                 FateTreshold = 4,
                 EmperorsBlessing = 10,
@@ -61,9 +61,9 @@ namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment.Collections
                 Wounds = 9,
                 Characteristics = new CharacteristicName[3] { CharacteristicName.Fellowship, CharacteristicName.Influence, CharacteristicName.Toughness },
                 HomeWorldAptitude = AptitudeName.Fellowship,
-                RekommendedBackgrouns = new Background[]{ }
+                RekommendedBackgrouns = new List<string>(){  BackgroundName.Adeptus_Administratum.ToString(), BackgroundName.Adeptus_Arbites.ToString(), BackgroundName.Adeptus_Astra_Telepathica.ToString(), BackgroundName.Adeptus_Ministorum.ToString(), }
             },
-            new HomeWorld("Hive World")
+            new HomeWorld(HomeworldName.Hive_World.ToString())
             {
                 FateTreshold = 2,
                 EmperorsBlessing = 6,
@@ -71,9 +71,9 @@ namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment.Collections
                 Wounds = 8,
                 Characteristics = new CharacteristicName[3] { CharacteristicName.Agility, CharacteristicName.Perception, CharacteristicName.Willpower },
                 HomeWorldAptitude = AptitudeName.Perception,
-                RekommendedBackgrouns = new Background[]{ }
+                RekommendedBackgrouns = new List<string>(){ BackgroundName.Adeptus_Arbites.ToString(), BackgroundName.Adeptus_Mechanicus.ToString(), BackgroundName.Imperial_Guard.ToString(), BackgroundName.Outcast.ToString(), }
             },
-            new HomeWorld("Shrine World")
+            new HomeWorld(HomeworldName.Shrine_World.ToString())
             {
                 FateTreshold = 3,
                 EmperorsBlessing = 6,
@@ -81,9 +81,9 @@ namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment.Collections
                 Wounds = 7,
                 Characteristics = new CharacteristicName[3] { CharacteristicName.Fellowship, CharacteristicName.Willpower, CharacteristicName.Perception },
                 HomeWorldAptitude = AptitudeName.Willpower,
-                RekommendedBackgrouns = new Background[]{ }
+                RekommendedBackgrouns = new List<string>(){  BackgroundName.Adeptus_Administratum.ToString(), BackgroundName.Adeptus_Arbites.ToString(), BackgroundName.Adeptus_Ministorum.ToString(), BackgroundName.Imperial_Guard.ToString(), }
             },
-            new HomeWorld("Voidborn")
+            new HomeWorld(HomeworldName.Voidborn.ToString())
             {
                 FateTreshold = 3,
                 EmperorsBlessing = 5,
@@ -91,7 +91,7 @@ namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment.Collections
                 Wounds = 7,
                 Characteristics = new CharacteristicName[3] { CharacteristicName.Intelligence, CharacteristicName.Willpower, CharacteristicName.Strength },
                 HomeWorldAptitude = AptitudeName.Intelligence,
-                RekommendedBackgrouns = new Background[]{ }
+                RekommendedBackgrouns = new List<string>(){ BackgroundName.Adeptus_Astra_Telepathica.ToString(), BackgroundName.Adeptus_Mechanicus.ToString(), BackgroundName.Adeptus_Ministorum.ToString(), BackgroundName.Outcast.ToString(), }
             },
             #endregion Core Rulebook
         };

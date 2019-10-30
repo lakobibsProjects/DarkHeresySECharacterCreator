@@ -1,4 +1,5 @@
-﻿using DarkHeresy2CharacterCreator.Model.Equipment.Interfaces;
+﻿using DarkHeresy2CharacterCreator.Model.Equipment.Enums;
+using DarkHeresy2CharacterCreator.Model.Equipment.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -13,7 +14,7 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
     /// </summary>
     public static class WeaponCollection
     {
-        //require mechanism to add numeric value of weapon special qualities
+        //todo: require mechanism to add numeric value of weapon special qualities
         /// <summary>
         /// Collection of weapons
         /// </summary>
@@ -23,7 +24,7 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
             #region Bolt
             new RangedWeapon()
             {
-                Name = "Bolt Pistol",
+                Name = WeaponName.Bolt_Pistol.ToString(),
                 Type = WeaponType.Bolt,
                 Availability = Availability.Very_Rare,
                 Class = WeaponClass.Pistol,
@@ -35,11 +36,11 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 Clip = 8,
                 Reload = 1,
                 RateOfFire = new Tuple<int, int, int>(1, 2, 0),
-                SpecialQualities = new WeaponSpecialQualitie[1]{ WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Tearing").Select(n=>n).FirstOrDefault() }
+                SpecialQualities = new WeaponSpecialQualitie[1]{ WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Tearing.ToString()).Select(n=>n).FirstOrDefault() }
             },
             new RangedWeapon()
             {
-                Name = "Boltgun",
+                Name = WeaponName.Boltgun.ToString(),
                 Type = WeaponType.Bolt,
                 Availability = Availability.Very_Rare,
                 Class = WeaponClass.Basic,
@@ -51,11 +52,11 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 Clip = 24,
                 Reload = 1,
                 RateOfFire = new Tuple<int, int, int>(1, 3, 0),
-                SpecialQualities = new WeaponSpecialQualitie[1]{ WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Tearing").Select(n=>n).FirstOrDefault() }
+                SpecialQualities = new WeaponSpecialQualitie[1]{ WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Tearing.ToString()).Select(n=>n).FirstOrDefault() }
             },
             new RangedWeapon()
             {
-                Name = "Heavy Bolter",
+                Name = WeaponName.Heavy_Bolter.ToString(),
                 Type = WeaponType.Bolt,
                 Availability = Availability.Very_Rare,
                 Class = WeaponClass.Heavy,
@@ -67,11 +68,11 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 Clip = 60,
                 Reload = 1,
                 RateOfFire = new Tuple<int, int, int>(0, 0, 6),
-                SpecialQualities = new WeaponSpecialQualitie[1]{ WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Tearing").Select(n=>n).FirstOrDefault() }
+                SpecialQualities = new WeaponSpecialQualitie[1]{ WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Tearing.ToString()).Select(n=>n).FirstOrDefault() }
             },
             new RangedWeapon()
             {
-                Name = "Storm Bolter",
+                Name = WeaponName.Storm_Bolter.ToString(),
                 Type = WeaponType.Bolt,
                 Availability = Availability.Extremely_Rare,
                 Class = WeaponClass.Basic,
@@ -83,14 +84,14 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 Clip = 60,
                 Reload = 1,
                 RateOfFire = new Tuple<int, int, int>(1, 2, 0),
-                SpecialQualities = new WeaponSpecialQualitie[2]{ WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Tearing").Select(n=>n).FirstOrDefault(),
-                WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Storm").Select(n=>n).FirstOrDefault()}
+                SpecialQualities = new WeaponSpecialQualitie[2]{ WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Tearing.ToString()).Select(n=>n).FirstOrDefault(),
+                WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Storm.ToString()).Select(n=>n).FirstOrDefault()}
             },
             #endregion
             #region Flame
             new RangedWeapon()
             {
-                Name = "Hand Flamer",
+                Name = WeaponName.Hand_Flamer.ToString(),
                 Type = WeaponType.Flame,
                 Availability = Availability.Rare,
                 Class = WeaponClass.Pistol,
@@ -104,13 +105,13 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 RateOfFire = new Tuple<int, int, int>(1, 0, 0),
                 SpecialQualities = new WeaponSpecialQualitie[2]
                 {
-                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Flame").Select(n=>n).FirstOrDefault(),
-                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Spray").Select(n=>n).FirstOrDefault()
+                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Flame.ToString()).Select(n=>n).FirstOrDefault(),
+                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Spray.ToString()).Select(n=>n).FirstOrDefault()
                 }
             },
             new RangedWeapon()
             {
-                Name = "Flamer",
+                Name = WeaponName.Flamer.ToString(),
                 Type = WeaponType.Flame,
                 Availability = Availability.Scarce,
                 Class = WeaponClass.Basic,
@@ -124,13 +125,13 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 RateOfFire = new Tuple<int, int, int>(1, 0, 0),
                 SpecialQualities = new WeaponSpecialQualitie[2]
                 {
-                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Flame").Select(n=>n).FirstOrDefault(),
-                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Spray").Select(n=>n).FirstOrDefault()
+                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Flame.ToString()).Select(n=>n).FirstOrDefault(),
+                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Spray.ToString()).Select(n=>n).FirstOrDefault()
                 }
             },
             new RangedWeapon()
             {
-                Name = "Heavy Flamer",
+                Name = WeaponName.Hevy_Flamer.ToString(),
                 Type = WeaponType.Flame,
                 Availability = Availability.Rare,
                 Class = WeaponClass.Heavy,
@@ -144,15 +145,15 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 RateOfFire = new Tuple<int, int, int>(1, 0, 0),
                 SpecialQualities = new WeaponSpecialQualitie[2]
                 {
-                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Flame").Select(n=>n).FirstOrDefault(),
-                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Spray").Select(n=>n).FirstOrDefault()
+                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Flame.ToString()).Select(n=>n).FirstOrDefault(),
+                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Spray.ToString()).Select(n=>n).FirstOrDefault()
                 }
             },
             #endregion Flame
             #region Las
             new RangedWeapon()
             {
-                Name = "Laspistol",
+                Name = WeaponName.Laspistiol.ToString(),
                 Type = WeaponType.Las,
                 Availability = Availability.Common,
                 Class = WeaponClass.Pistol,
@@ -164,11 +165,11 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 Clip = 30,
                 Reload = 0.5,
                 RateOfFire = new Tuple<int, int, int>(1, 2, 0),
-                SpecialQualities = new WeaponSpecialQualitie[1]{ WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Reliable").Select(n=>n).FirstOrDefault() }
+                SpecialQualities = new WeaponSpecialQualitie[1]{ WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Reliable.ToString()).Select(n=>n).FirstOrDefault() }
             },
             new RangedWeapon()
             {
-                Name = "Lasgun",
+                Name = WeaponName.Lasgun.ToString(),
                 Type = WeaponType.Las,
                 Availability = Availability.Common,
                 Class = WeaponClass.Basic,
@@ -180,11 +181,11 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 Clip = 60,
                 Reload = 1,
                 RateOfFire = new Tuple<int, int, int>(1, 3, 0),
-                SpecialQualities = new WeaponSpecialQualitie[1]{ WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Reliable").Select(n=>n).FirstOrDefault() }
+                SpecialQualities = new WeaponSpecialQualitie[1]{ WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Reliable.ToString()).Select(n=>n).FirstOrDefault() }
             },
             new RangedWeapon()
             {
-                Name = "Laslock",
+                Name = WeaponName.Laslock.ToString(),
                 Type = WeaponType.Las,
                 Availability = Availability.Plentiful,
                 Class = WeaponClass.Basic,
@@ -196,11 +197,11 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 Clip = 1,
                 Reload = 0.5,
                 RateOfFire = new Tuple<int, int, int>(1, 0, 0),
-                SpecialQualities = new WeaponSpecialQualitie[1]{ WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Unreliable").Select(n=>n).FirstOrDefault() }
+                SpecialQualities = new WeaponSpecialQualitie[1]{ WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Unreliable.ToString()).Select(n=>n).FirstOrDefault() }
             },
             new RangedWeapon()
             {
-                Name = "Longlas",
+                Name = WeaponName.Long_Las.ToString(),
                 Type = WeaponType.Las,
                 Availability = Availability.Scarce,
                 Class = WeaponClass.Basic,
@@ -214,14 +215,14 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 RateOfFire = new Tuple<int, int, int>(1, 0, 0),
                 SpecialQualities = new WeaponSpecialQualitie[3]
                 {
-                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Accurate").Select(n=>n).FirstOrDefault(),
-                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Felling").Select(n=>n).FirstOrDefault(), //add numeric 
-                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Reliable").Select(n=>n).FirstOrDefault()
+                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Accurate.ToString()).Select(n=>n).FirstOrDefault(),
+                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Felling.ToString()).Select(n=>n).FirstOrDefault(), //add numeric 
+                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Reliable.ToString()).Select(n=>n).FirstOrDefault()
                 }
             },
             new RangedWeapon()
             {
-                Name = "Hot-shot Laspistol",
+                Name = WeaponName.Hotshot_Laspistol.ToString(),
                 Type = WeaponType.Las,
                 Availability = Availability.Rare,
                 Class = WeaponClass.Pistol,
@@ -236,7 +237,7 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
             },
             new RangedWeapon()
             {
-                Name = "Hot-shot Lasgun",
+                Name = WeaponName.Hotshot_Lasgun.ToString(),
                 Type = WeaponType.Las,
                 Availability = Availability.Rare,
                 Class = WeaponClass.Basic,
@@ -253,7 +254,7 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
             #region Laucher 
             new RangedWeapon()
             {
-                Name = "Grenade Launcher",
+                Name = WeaponName.Grenade_Launcher.ToString(),
                 Type = WeaponType.Laucher,
                 Availability = Availability.Average,
                 Class = WeaponClass.Basic,
@@ -268,7 +269,7 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
             },
             new RangedWeapon()
             {
-                Name = "Missile Laucher",
+                Name = WeaponName.Missile_Launcher.ToString(),
                 Type = WeaponType.Laucher,
                 Availability = Availability.Rare,
                 Class = WeaponClass.Heavy,
@@ -285,7 +286,7 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
             #region Low-Tech Ranged
             new RangedWeapon()
             {
-                Name = "Bolas",
+                Name = WeaponName.Bolas.ToString(),
                 Type = WeaponType.Low_Tech,
                 Availability = Availability.Average,
                 Class = WeaponClass.Throw,
@@ -299,13 +300,13 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 RateOfFire = new Tuple<int, int, int>(1, 0, 0),
                 SpecialQualities = new WeaponSpecialQualitie[2]
                 {
-                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Inaccurate").Select(n=>n).FirstOrDefault(),
-                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n => n.Name == "Snare").Select(n => n).FirstOrDefault()        //add numeric
+                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Inaccurate.ToString()).Select(n=>n).FirstOrDefault(),
+                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n => n.Name == WeaponQualitieName.Snare.ToString()).Select(n => n).FirstOrDefault()        //add numeric
                 }
             },
             new RangedWeapon()
             {
-                Name = "Bow",
+                Name = WeaponName.Bow.ToString(),
                 Type = WeaponType.Low_Tech,
                 Availability = Availability.Common,
                 Class = WeaponClass.Basic,
@@ -319,13 +320,13 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 RateOfFire = new Tuple<int, int, int>(1, 0, 0),
                 SpecialQualities = new WeaponSpecialQualitie[2]
                 {
-                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Reliable").Select(n=>n).FirstOrDefault(),
-                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n => n.Name == "Primitive").Select(n => n).FirstOrDefault()        //add numeric
+                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Reliable.ToString()).Select(n=>n).FirstOrDefault(),
+                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n => n.Name == WeaponQualitieName.Primitive.ToString()).Select(n => n).FirstOrDefault()        //add numeric
                 }
             },
             new RangedWeapon()
             {
-                Name = "Crossbow",
+                Name = WeaponName.Crossbow.ToString(),
                 Type = WeaponType.Low_Tech,
                 Availability = Availability.Common,
                 Class = WeaponClass.Basic,
@@ -337,13 +338,13 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 Clip = 1,
                 Reload = 2,
                 RateOfFire = new Tuple<int, int, int>(1, 0, 0),
-                SpecialQualities = new WeaponSpecialQualitie[1]{ WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n => n.Name == "Primitive").Select(n => n).FirstOrDefault()  }//add numeric
+                SpecialQualities = new WeaponSpecialQualitie[1]{ WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n => n.Name == WeaponQualitieName.Primitive.ToString()).Select(n => n).FirstOrDefault()  }//add numeric
             },
             #endregion Low-Tech Ranged
             #region Melta
             new RangedWeapon()
             {
-                Name = "Inferno Pistol",
+                Name = WeaponName.Inferno_Pistol.ToString(),
                 Type = WeaponType.Melta,
                 Availability = Availability.Near_Unique,
                 Class = WeaponClass.Pistol,
@@ -355,11 +356,11 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 Clip = 3,
                 Reload = 1,
                 RateOfFire = new Tuple<int, int, int>(1, 0, 0),
-                SpecialQualities = new WeaponSpecialQualitie[1]{ WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Melta").Select(n=>n).FirstOrDefault() }
+                SpecialQualities = new WeaponSpecialQualitie[1]{ WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Melta.ToString()).Select(n=>n).FirstOrDefault() }
             },
             new RangedWeapon()
             {
-                Name = "Meltagun",
+                Name = WeaponName.Meltagun.ToString(),
                 Type = WeaponType.Melta,
                 Availability = Availability.Very_Rare,
                 Class = WeaponClass.Basic,
@@ -371,13 +372,13 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 Clip = 5,
                 Reload = 1,
                 RateOfFire = new Tuple<int, int, int>(1, 0, 0),
-                SpecialQualities = new WeaponSpecialQualitie[1]{ WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Melta").Select(n=>n).FirstOrDefault() }
+                SpecialQualities = new WeaponSpecialQualitie[1]{ WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Melta.ToString()).Select(n=>n).FirstOrDefault() }
             },
             #endregion Melta
             #region Plasma
             new RangedWeapon()
             {
-                Name = "Plasma Pistol",
+                Name = WeaponName.Plasma_Pistol.ToString(),
                 Type = WeaponType.Plasma,
                 Availability = Availability.Very_Rare,
                 Class = WeaponClass.Pistol,
@@ -391,13 +392,13 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 RateOfFire = new Tuple<int, int, int>(1, 2, 0),
                 SpecialQualities = new WeaponSpecialQualitie[2]
                 {
-                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Maximal").Select(n=>n).FirstOrDefault(),
-                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Overheats").Select(n=>n).FirstOrDefault()
+                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Maximal.ToString()).Select(n=>n).FirstOrDefault(),
+                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Overheats.ToString()).Select(n=>n).FirstOrDefault()
                 }
             },
             new RangedWeapon()
             {
-                Name = "Plasma Gun",
+                Name = WeaponName.Plasma_Gun.ToString(),
                 Type = WeaponType.Plasma,
                 Availability = Availability.Very_Rare,
                 Class = WeaponClass.Basic,
@@ -411,15 +412,15 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 RateOfFire = new Tuple<int, int, int>(1, 2, 0),
                 SpecialQualities = new WeaponSpecialQualitie[2]
                 {
-                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Maximal").Select(n=>n).FirstOrDefault(),
-                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Overheats").Select(n=>n).FirstOrDefault()
+                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Maximal.ToString()).Select(n=>n).FirstOrDefault(),
+                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Overheats.ToString()).Select(n=>n).FirstOrDefault()
                 }
             },
             #endregion Plasma
             #region Solid Projectile
             new RangedWeapon()
             {
-                Name = "Autopistol",
+                Name = WeaponName.Autopistol.ToString(),
                 Type = WeaponType.Solid_Projectile,
                 Availability = Availability.Average,
                 Class = WeaponClass.Pistol,
@@ -434,7 +435,7 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
             },
             new RangedWeapon()
             {
-                Name = "Autogun",
+                Name = WeaponName.Autogun.ToString(),
                 Type = WeaponType.Solid_Projectile,
                 Availability = Availability.Average,
                 Class = WeaponClass.Basic,
@@ -449,7 +450,7 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
             },
             new RangedWeapon()
             {
-                Name = "Autocannon",
+                Name = WeaponName.Autocannon.ToString(),
                 Type = WeaponType.Solid_Projectile,
                 Availability = Availability.Very_Rare,
                 Class = WeaponClass.Heavy,
@@ -461,11 +462,11 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 Clip = 24,
                 Reload = 2,
                 RateOfFire = new Tuple<int, int, int>(1, 3, 0),
-                SpecialQualities = new WeaponSpecialQualitie[1]{ WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Reliable").Select(n=>n).FirstOrDefault() }
+                SpecialQualities = new WeaponSpecialQualitie[1]{ WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Reliable.ToString()).Select(n=>n).FirstOrDefault() }
             },
             new RangedWeapon()
             {
-                Name = "Hand Cannon",
+                Name = WeaponName.Hand_Cannon.ToString(),
                 Type = WeaponType.Solid_Projectile,
                 Availability = Availability.Scarce,
                 Class = WeaponClass.Pistol,
@@ -478,7 +479,7 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 Reload = 2,
                 RateOfFire = new Tuple<int, int, int>(1, 0, 0)
             },
-            new RangedWeapon("Heavy Stubber")
+            new RangedWeapon(WeaponName.Heavy_Stubber.ToString())
             {
                 Type = WeaponType.Solid_Projectile,
                 Availability = Availability.Rare,
@@ -492,7 +493,7 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 Reload = 2,
                 RateOfFire = new Tuple<int, int, int>(0, 0, 8)
             },
-            new RangedWeapon("Shotgun")
+            new RangedWeapon(WeaponName.Shotgun.ToString())
             {
                 Type = WeaponType.Solid_Projectile,
                 Availability = Availability.Average,
@@ -505,9 +506,9 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 Clip = 8,
                 Reload = 2,
                 RateOfFire = new Tuple<int, int, int>(1, 0, 0),
-                SpecialQualities = new WeaponSpecialQualitie[1]{ WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Scatter").Select(n=>n).FirstOrDefault() }
+                SpecialQualities = new WeaponSpecialQualitie[1]{ WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Scatter.ToString()).Select(n=>n).FirstOrDefault() }
             },
-            new RangedWeapon("Shotgun (Combat)")
+            new RangedWeapon(WeaponName.Shotgun_Combat.ToString())
             {
                 Type = WeaponType.Solid_Projectile,
                 Availability = Availability.Scarce,
@@ -520,9 +521,9 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 Clip = 18,
                 Reload = 1,
                 RateOfFire = new Tuple<int, int, int>(1, 3, 0),
-                SpecialQualities = new WeaponSpecialQualitie[1]{ WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Scatter").Select(n=>n).FirstOrDefault() }
+                SpecialQualities = new WeaponSpecialQualitie[1]{ WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Scatter.ToString()).Select(n=>n).FirstOrDefault() }
             },
-            new RangedWeapon("Sniper Rifle")
+            new RangedWeapon(WeaponName.Sniper_Rifle.ToString())
             {
                 Type = WeaponType.Solid_Projectile,
                 Availability = Availability.Scarce,
@@ -537,11 +538,11 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 RateOfFire = new Tuple<int, int, int>(1, 0, 0),
                 SpecialQualities = new WeaponSpecialQualitie[2]
                 {
-                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Accurate").Select(n=>n).FirstOrDefault(),
-                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Reliable").Select(n=>n).FirstOrDefault()
+                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Accurate.ToString()).Select(n=>n).FirstOrDefault(),
+                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Reliable.ToString()).Select(n=>n).FirstOrDefault()
                 }
             },
-            new RangedWeapon("Stub Atumatic")
+            new RangedWeapon(WeaponName.Stub_Automatic.ToString())
             {
                 Type = WeaponType.Solid_Projectile,
                 Availability = Availability.Average,
@@ -555,7 +556,7 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 Reload = 1,
                 RateOfFire = new Tuple<int, int, int>(1, 3, 0)
             },
-            new RangedWeapon("Stub Revolver")
+            new RangedWeapon(WeaponName.Stub_Revolver.ToString())
             {
                 Type = WeaponType.Solid_Projectile,
                 Availability = Availability.Plentiful,
@@ -568,11 +569,11 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 Clip = 9,
                 Reload = 6,
                 RateOfFire = new Tuple<int, int, int>(1, 0, 0),
-                SpecialQualities = new WeaponSpecialQualitie[1]{ WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Reliable").Select(n=>n).FirstOrDefault() }
+                SpecialQualities = new WeaponSpecialQualitie[1]{ WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Reliable.ToString()).Select(n=>n).FirstOrDefault() }
             },
             #endregion Solid Projectile
             #region Exotic Ranged
-            new RangedWeapon("Grav Pistol")
+            new RangedWeapon(WeaponName.Grav_Pistol.ToString())
             {
                 Type = WeaponType.Exotic,
                 Availability = Availability.Near_Unique,
@@ -587,11 +588,11 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 RateOfFire = new Tuple<int, int, int>(1, 0, 0),
                 SpecialQualities = new WeaponSpecialQualitie[2]
                 {
-                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Concussive").Select(n=>n).FirstOrDefault(),  //add numeric
-                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Graviton").Select(n=>n).FirstOrDefault()
+                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Concussive.ToString()).Select(n=>n).FirstOrDefault(),  //add numeric
+                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Graviton.ToString()).Select(n=>n).FirstOrDefault()
                 }
             },
-            new RangedWeapon("Graviton Gun")
+            new RangedWeapon(WeaponName.Graviton_Gun.ToString())
             {
                 Type = WeaponType.Exotic,
                 Availability = Availability.Extremely_Rare,
@@ -606,11 +607,11 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 RateOfFire = new Tuple<int, int, int>(1, 3, 0),
                 SpecialQualities = new WeaponSpecialQualitie[2]
                 {
-                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Concussive").Select(n=>n).FirstOrDefault(),  //add numeric
-                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Graviton").Select(n=>n).FirstOrDefault()
+                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Concussive.ToString()).Select(n=>n).FirstOrDefault(),  //add numeric
+                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Graviton.ToString()).Select(n=>n).FirstOrDefault()
                 }
             },
-            new RangedWeapon("Needle Pistol")
+            new RangedWeapon(WeaponName.Needle_Pistol.ToString())
             {
                 Type = WeaponType.Exotic,
                 Availability = Availability.Very_Rare,
@@ -625,12 +626,12 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 RateOfFire = new Tuple<int, int, int>(1, 0, 0),
                 SpecialQualities = new WeaponSpecialQualitie[3]
                 {
-                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Accurate").Select(n=>n).FirstOrDefault(),
-                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Felling").Select(n=>n).FirstOrDefault(),  //add numeric
-                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Toxic").Select(n=>n).FirstOrDefault()     //add numeric
+                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Accurate.ToString()).Select(n=>n).FirstOrDefault(),
+                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Felling.ToString()).Select(n=>n).FirstOrDefault(),  //add numeric
+                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Toxic.ToString()).Select(n=>n).FirstOrDefault()     //add numeric
                 }
             },
-            new RangedWeapon("Needle Rifle")
+            new RangedWeapon(WeaponName.Needle_Rifle.ToString())
             {
                 Type = WeaponType.Exotic,
                 Availability = Availability.Very_Rare,
@@ -645,12 +646,12 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 RateOfFire = new Tuple<int, int, int>(1, 0, 0),
                 SpecialQualities = new WeaponSpecialQualitie[3]
                 {
-                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Accurate").Select(n=>n).FirstOrDefault(),
-                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Felling").Select(n=>n).FirstOrDefault(),  //add numeric
-                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Toxic").Select(n=>n).FirstOrDefault()     //add numeric
+                     WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Accurate.ToString()).Select(n=>n).FirstOrDefault(),
+                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Felling.ToString()).Select(n=>n).FirstOrDefault(),  //add numeric
+                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Toxic.ToString()).Select(n=>n).FirstOrDefault()     //add numeric
                 }
             },
-            new RangedWeapon("Web Pistol")
+            new RangedWeapon(WeaponName.Web_Pistol.ToString())
             {
                 Type = WeaponType.Exotic,
                 Availability = Availability.Very_Rare,
@@ -663,9 +664,9 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 Clip = 1,
                 Reload = 1,
                 RateOfFire = new Tuple<int, int, int>(1, 0, 0),
-                SpecialQualities = new WeaponSpecialQualitie[1] { WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Snare").Select(n=>n).FirstOrDefault() }    //add numeric                
+                SpecialQualities = new WeaponSpecialQualitie[1] { WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Snare.ToString()).Select(n=>n).FirstOrDefault() }    //add numeric                
             },
-            new RangedWeapon("Webber")
+            new RangedWeapon(WeaponName.Webber.ToString())
             {
                 Type = WeaponType.Exotic,
                 Availability = Availability.Rare,
@@ -680,14 +681,14 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 RateOfFire = new Tuple<int, int, int>(1, 0, 0),
                 SpecialQualities = new WeaponSpecialQualitie[2]
                 {
-                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Blast").Select(n=>n).FirstOrDefault(),  //add numeric
-                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Snare").Select(n=>n).FirstOrDefault()     //add numeric
+                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Blast.ToString()).Select(n=>n).FirstOrDefault(),  //add numeric
+                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Snare.ToString()).Select(n=>n).FirstOrDefault()     //add numeric
                 }
             },
             #endregion Exotic Ranged
             #endregion Ranged
             #region Grenades
-            new RangedWeapon("Blind Grenade")
+            new RangedWeapon(WeaponName.Blind_Grenade.ToString())
             {
                 Type = WeaponType.Grenade,
                 Availability = Availability.Scarce,
@@ -699,7 +700,7 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 DamageType = DamageType.Explosive,
                  SpecialQualities = new WeaponSpecialQualitie[1] { WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Smoke").Select(n=>n).FirstOrDefault() }//add numeric
             },
-            new RangedWeapon("Choke Grenade")
+            new RangedWeapon(WeaponName.Choke_Grenade.ToString())
             {
                 Type = WeaponType.Grenade,
                 Availability = Availability.Scarce,
@@ -711,7 +712,7 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 DamageType = DamageType.Explosive,
                 SpecialQualities = new WeaponSpecialQualitie[1] { WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Blast").Select(n=>n).FirstOrDefault() }//add numeric
             },
-            new RangedWeapon("Frag Grenade")
+            new RangedWeapon(WeaponName.Frag_Grenade.ToString())
             {
                 Type = WeaponType.Grenade,
                 Availability = Availability.Common,
@@ -723,7 +724,7 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 DamageType = DamageType.Explosive,
                 SpecialQualities = new WeaponSpecialQualitie[1] { WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Blast").Select(n=>n).FirstOrDefault() }//add numeric
             },
-            new RangedWeapon("Hallucinogenic Grenade")
+            new RangedWeapon(WeaponName.Hallucinogenic_Grenade.ToString())
             {
                 Type = WeaponType.Grenade,
                 Availability = Availability.Scarce,
@@ -738,7 +739,7 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                     WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Hallucinogenic").Select(n=>n).FirstOrDefault()     //add numeric
                 }
             },
-            new RangedWeapon("Krak Grenade")
+            new RangedWeapon(WeaponName.Krak_Grenade.ToString())
             {
                 Type = WeaponType.Grenade,
                 Availability = Availability.Rare,
@@ -750,7 +751,7 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 DamageType = DamageType.Explosive,
                 SpecialQualities = new WeaponSpecialQualitie[1] { WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Concussive").Select(n=>n).FirstOrDefault() } //add numeric                                
             },
-            new RangedWeapon("Harwire Grenade")
+            new RangedWeapon(WeaponName.Haywire_Grenade.ToString())
             {
                 Type = WeaponType.Grenade,
                 Availability = Availability.Very_Rare,
@@ -763,7 +764,7 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 SpecialQualities = new WeaponSpecialQualitie[1] { WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Haywire").Select(n=>n).FirstOrDefault() } //add numeric                                
 
             },
-            new RangedWeapon("Photon Flash Grenade")
+            new RangedWeapon(WeaponName.Photon_Flash_Grenade.ToString())
             {
                 Type = WeaponType.Grenade,
                 Availability = Availability.Rare,
@@ -776,7 +777,7 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 SpecialQualities = new WeaponSpecialQualitie[1] { WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Blast").Select(n=>n).FirstOrDefault() } //add numeric                                
 
             },
-            new RangedWeapon("Smoke Grenade")
+            new RangedWeapon(WeaponName.Smoke_Grenade.ToString())
             {
                 Type = WeaponType.Grenade,
                 Availability = Availability.Common,
@@ -789,7 +790,7 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 SpecialQualities = new WeaponSpecialQualitie[1] { WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Smoke").Select(n=>n).FirstOrDefault() } //add numeric                                
 
             },
-            new RangedWeapon("Stun Grenade")
+            new RangedWeapon(WeaponName.Stun_Grenade.ToString())
             {
                 Type = WeaponType.Grenade,
                 Availability = Availability.Common,
@@ -804,7 +805,7 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                     WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Concussive").Select(n=>n).FirstOrDefault()     //add numeric
                 }
             },
-            new RangedWeapon("Web Grenade")
+            new RangedWeapon(WeaponName.Web_Grenade.ToString())
             {
                 Type = WeaponType.Grenade,
                 Availability = Availability.Rare,
@@ -820,7 +821,7 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                     WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Snare").Select(n=>n).FirstOrDefault()     //add numeric
                 }
             },
-            new RangedWeapon("Frag Missile")
+            new RangedWeapon(WeaponName.Frag_Missile.ToString())
             {
                 Availability = Availability.Average,
                 Class = WeaponClass.Throw,
@@ -832,7 +833,7 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 SpecialQualities = new WeaponSpecialQualitie[1] { WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Blast").Select(n=>n).FirstOrDefault() } //add numeric                                
 
             },
-            new RangedWeapon("Krak Missile")
+            new RangedWeapon(WeaponName.Krak_Missile.ToString())
             {
                 Availability = Availability.Scarce,
                 Class = WeaponClass.Throw,
@@ -851,7 +852,7 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
             #endregion Grenades
             #region Melee
             #region Chain
-            new Weapon("Chainblade")
+            new Weapon(WeaponName.Chainblade.ToString())
             {
                 Type = WeaponType.Chain,
                 Class = WeaponClass.Melee,
@@ -861,9 +862,9 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 Penetration = 1,
                 Weight = 2,
                 Availability = Availability.Scarce,
-                SpecialQualities = new WeaponSpecialQualitie[1] { WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Tearing").Select(n=>n).FirstOrDefault() }
+                SpecialQualities = new WeaponSpecialQualitie[1] { WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Tearing.ToString()).Select(n=>n).FirstOrDefault() }
             },
-            new Weapon("Chainaxe")
+            new Weapon(WeaponName.Chainaxe.ToString())
             {
                 Type = WeaponType.Chain,
                 Class = WeaponClass.Melee,
@@ -875,11 +876,11 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 Availability = Availability.Scarce,
                 SpecialQualities = new WeaponSpecialQualitie[2]
                 {
-                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Tearing").Select(n=>n).FirstOrDefault(),
-                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Two-Handed").Select(n=>n).FirstOrDefault()
+                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Tearing.ToString()).Select(n=>n).FirstOrDefault(),
+                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Two_Handed.ToString()).Select(n=>n).FirstOrDefault()
                 }
             },
-            new Weapon("Chainsword")
+            new Weapon(WeaponName.Chainsword.ToString())
             {
                 Type = WeaponType.Chain,
                 Class = WeaponClass.Melee,
@@ -891,11 +892,11 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 Availability = Availability.Average,
                 SpecialQualities = new WeaponSpecialQualitie[2]
                 {
-                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Tearing").Select(n=>n).FirstOrDefault(),
-                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Balanced").Select(n=>n).FirstOrDefault()
+                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Tearing.ToString()).Select(n=>n).FirstOrDefault(),
+                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Balanced.ToString()).Select(n=>n).FirstOrDefault()
                 }
             },
-            new Weapon("Eviscerator")
+            new Weapon(WeaponName.Eviscerator.ToString())
             {
                 Type = WeaponType.Chain,
                 Class = WeaponClass.Melee,
@@ -907,15 +908,15 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 Availability = Availability.Very_Rare,
                 SpecialQualities = new WeaponSpecialQualitie[4]
                 {
-                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Tearing").Select(n=>n).FirstOrDefault(),
-                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Two-Handed").Select(n=>n).FirstOrDefault(),
-                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Razor Sharp").Select(n=>n).FirstOrDefault(),
-                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Unwieldly").Select(n=>n).FirstOrDefault()
+                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Tearing.ToString()).Select(n=>n).FirstOrDefault(),
+                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Two_Handed.ToString()).Select(n=>n).FirstOrDefault(),
+                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Razor_Sharp.ToString()).Select(n=>n).FirstOrDefault(),
+                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Unwieldly.ToString()).Select(n=>n).FirstOrDefault()
                 }
             },
             #endregion Chain
             #region Force
-            new Weapon("Force Sword")
+            new Weapon(WeaponName.Force_Sword.ToString())
             {
                 Type = WeaponType.Force,
                 Class = WeaponClass.Melee,
@@ -927,11 +928,11 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 Availability = Availability.Near_Unique,
                 SpecialQualities = new WeaponSpecialQualitie[2]
                 {
-                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Force").Select(n=>n).FirstOrDefault(),
-                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Balanced").Select(n=>n).FirstOrDefault(),
+                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Force.ToString()).Select(n=>n).FirstOrDefault(),
+                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Balanced.ToString()).Select(n=>n).FirstOrDefault(),
                 }
             },
-            new Weapon("Force Staff")
+            new Weapon(WeaponName.Force_Staff.ToString())
             {
                 Type = WeaponType.Force,
                 Class = WeaponClass.Melee,
@@ -943,12 +944,12 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 Availability = Availability.Extremely_Rare,
                 SpecialQualities = new WeaponSpecialQualitie[2]
                 {
-                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Force").Select(n=>n).FirstOrDefault(),
-                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Two-Handed").Select(n=>n).FirstOrDefault(),
+                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Force.ToString()).Select(n=>n).FirstOrDefault(),
+                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Two_Handed.ToString()).Select(n=>n).FirstOrDefault(),
                 }            },
             #endregion Force
             #region Low-Tech Melee
-            new Weapon("Great Weapon")
+            new Weapon(WeaponName.Great_Weapon.ToString())
             {
                 Type = WeaponType.Low_Tech,
                 Class = WeaponClass.Melee,
@@ -960,11 +961,11 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 Availability = Availability.Scarce,
                 SpecialQualities = new WeaponSpecialQualitie[2]
                 {
-                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Unbalanced").Select(n=>n).FirstOrDefault(),
-                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Two-Handed").Select(n=>n).FirstOrDefault()
+                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Unbalanced.ToString()).Select(n=>n).FirstOrDefault(),
+                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Two_Handed.ToString()).Select(n=>n).FirstOrDefault()
                 }
             },
-            new Weapon("Hunting Lance")
+            new Weapon(WeaponName.Hunting_Lance.ToString())
             {
                 Type = WeaponType.Low_Tech,
                 Class = WeaponClass.Melee,
@@ -974,9 +975,9 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 Penetration = 7,
                 Weight = 4,
                 Availability = Availability.Scarce,
-                SpecialQualities = new WeaponSpecialQualitie[1] { WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Concussive").Select(n=>n).FirstOrDefault() }    //add numeric
+                SpecialQualities = new WeaponSpecialQualitie[1] { WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Concussive.ToString()).Select(n=>n).FirstOrDefault() }    //add numeric
             },
-            new Weapon("Improvised")
+            new Weapon(WeaponName.Improvised.ToString())
             {
                 Type = WeaponType.Low_Tech,
                 Class = WeaponClass.Melee,
@@ -988,11 +989,11 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 Availability = Availability.Plentiful,
                 SpecialQualities = new WeaponSpecialQualitie[2]
                 {
-                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Primitive").Select(n=>n).FirstOrDefault(),   //add numeric
-                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Unbalanced").Select(n=>n).FirstOrDefault()
+                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Primitive.ToString()).Select(n=>n).FirstOrDefault(),   //add numeric
+                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Unbalanced.ToString()).Select(n=>n).FirstOrDefault()
                 }
             },
-            new Weapon("Knife")
+            new Weapon(WeaponName.Knife.ToString())
             {
                 Type = WeaponType.Low_Tech,
                 Class = WeaponClass.Melee,
@@ -1003,7 +1004,7 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 Weight = 1,
                 Availability = Availability.Plentiful
             },
-            new Weapon("Shield")
+            new Weapon(WeaponName.Shield.ToString())
             {
                 Type = WeaponType.Low_Tech,
                 Class = WeaponClass.Melee,
@@ -1013,9 +1014,9 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 Penetration = 0,
                 Weight = 3,
                 Availability = Availability.Common,
-                SpecialQualities = new WeaponSpecialQualitie[1] { WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Defensive").Select(n=>n).FirstOrDefault() }
+                SpecialQualities = new WeaponSpecialQualitie[1] { WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Defensive.ToString()).Select(n=>n).FirstOrDefault() }
             },
-            new Weapon("Spear")
+            new Weapon(WeaponName.Spear.ToString())
             {
                 Type = WeaponType.Low_Tech,
                 Class = WeaponClass.Melee,
@@ -1027,11 +1028,11 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 Availability = Availability.Common,
                 SpecialQualities = new WeaponSpecialQualitie[2]
                 {
-                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Primitive").Select(n=>n).FirstOrDefault(),    //add numeric
-                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Two-Handed").Select(n=>n).FirstOrDefault()
+                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Primitive.ToString()).Select(n=>n).FirstOrDefault(),    //add numeric
+                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Two_Handed.ToString()).Select(n=>n).FirstOrDefault()
                 }
             },
-            new Weapon("Staff")
+            new Weapon(WeaponName.Staff.ToString())
             {
                 Type = WeaponType.Low_Tech,
                 Class = WeaponClass.Melee,
@@ -1043,12 +1044,12 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 Availability = Availability.Plentiful,
                 SpecialQualities = new WeaponSpecialQualitie[3]
                 {
-                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Balanced").Select(n=>n).FirstOrDefault(),
-                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Primitive").Select(n=>n).FirstOrDefault(),    //add numeric
-                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Two-Handed").Select(n=>n).FirstOrDefault()
+                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Balanced.ToString()).Select(n=>n).FirstOrDefault(),
+                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Primitive.ToString()).Select(n=>n).FirstOrDefault(),    //add numeric
+                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Two_Handed.ToString()).Select(n=>n).FirstOrDefault()
                 }
             },
-            new Weapon("Sword")
+            new Weapon(WeaponName.Sword.ToString())
             {
                 Type = WeaponType.Low_Tech,
                 Class = WeaponClass.Melee,
@@ -1058,9 +1059,9 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 Penetration = 0,
                 Weight = 3,
                 Availability = Availability.Common,
-                SpecialQualities = new WeaponSpecialQualitie[1] { WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Balanced").Select(n=>n).FirstOrDefault() }
+                SpecialQualities = new WeaponSpecialQualitie[1] { WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Balanced.ToString()).Select(n=>n).FirstOrDefault() }
             },
-            new Weapon("Truncheon")
+            new Weapon(WeaponName.Trucheon.ToString())
             {
                 Type = WeaponType.Low_Tech,
                 Class = WeaponClass.Melee,
@@ -1070,9 +1071,9 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 Penetration = 0,
                 Weight = 2,
                 Availability = Availability.Plentiful,
-                SpecialQualities = new WeaponSpecialQualitie[1] { WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Primitive").Select(n=>n).FirstOrDefault() } //add numeric
+                SpecialQualities = new WeaponSpecialQualitie[1] { WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Primitive.ToString()).Select(n=>n).FirstOrDefault() } //add numeric
             },
-            new Weapon("Warhammer")
+            new Weapon(WeaponName.Warhammer.ToString())
             {
                 Type = WeaponType.Low_Tech,
                 Class = WeaponClass.Melee,
@@ -1084,12 +1085,12 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 Availability = Availability.Scarce,
                 SpecialQualities = new WeaponSpecialQualitie[3]
                 {
-                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Concussive").Select(n=>n).FirstOrDefault(),   //add numeric
-                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Primitive").Select(n=>n).FirstOrDefault(),   //add numeric
-                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Two-Handed").Select(n=>n).FirstOrDefault()
+                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Concussive.ToString()).Select(n=>n).FirstOrDefault(),   //add numeric
+                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Primitive.ToString()).Select(n=>n).FirstOrDefault(),   //add numeric
+                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Two_Handed.ToString()).Select(n=>n).FirstOrDefault()
                 }
             },
-            new Weapon("Whip")
+            new Weapon(WeaponName.Whip.ToString())
             {
                 Type = WeaponType.Low_Tech,
                 Class = WeaponClass.Melee,
@@ -1101,13 +1102,13 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 Availability = Availability.Average,
                 SpecialQualities = new WeaponSpecialQualitie[2]
                 {
-                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Flexible").Select(n=>n).FirstOrDefault(),
-                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Primitive").Select(n=>n).FirstOrDefault()     //add numeric
+                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Flexible.ToString()).Select(n=>n).FirstOrDefault(),
+                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Primitive.ToString()).Select(n=>n).FirstOrDefault()     //add numeric
                 }
             },
             #endregion Low-Tech Melee
             #region Power
-            new Weapon("Omnissian Axe")
+            new Weapon(WeaponName.Omnissian_Axe.ToString())
             {
                 Type = WeaponType.Power,
                 Class = WeaponClass.Melee,
@@ -1119,12 +1120,12 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 Availability = Availability.Extremely_Rare,
                 SpecialQualities = new WeaponSpecialQualitie[3]
                 {
-                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Power Filed").Select(n=>n).FirstOrDefault(),
-                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Unwieldly").Select(n=>n).FirstOrDefault(),
-                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Two-Handed").Select(n=>n).FirstOrDefault()
+                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Power_Field.ToString()).Select(n=>n).FirstOrDefault(),
+                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Unwieldly.ToString()).Select(n=>n).FirstOrDefault(),
+                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Two_Handed.ToString()).Select(n=>n).FirstOrDefault()
                 }
             },
-            new Weapon("Power Fist")
+            new Weapon(WeaponName.Power_Fist.ToString())
             {
                 Type = WeaponType.Power,
                 Class = WeaponClass.Melee,
@@ -1136,11 +1137,11 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 Availability = Availability.Very_Rare,
                 SpecialQualities = new WeaponSpecialQualitie[2]
                 {
-                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Power Filed").Select(n=>n).FirstOrDefault(),
-                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Unwieldly").Select(n=>n).FirstOrDefault()
+                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Power_Field.ToString()).Select(n=>n).FirstOrDefault(),
+                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Unwieldly.ToString()).Select(n=>n).FirstOrDefault()
                 }
             },
-            new Weapon("Power Sword")
+            new Weapon(WeaponName.Power_Sword.ToString())
             {
                 Type = WeaponType.Power,
                 Class = WeaponClass.Melee,
@@ -1152,11 +1153,11 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 Availability = Availability.Very_Rare,
                 SpecialQualities = new WeaponSpecialQualitie[2]
                 {
-                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Power Filed").Select(n=>n).FirstOrDefault(),
-                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Balanced").Select(n=>n).FirstOrDefault()
+                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Power_Field.ToString()).Select(n=>n).FirstOrDefault(),
+                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Balanced.ToString()).Select(n=>n).FirstOrDefault()
                 }
             },
-            new Weapon("Power Axe")
+            new Weapon(WeaponName.Power_Axe.ToString())
             {
                 Type = WeaponType.Power,
                 Class = WeaponClass.Melee,
@@ -1168,12 +1169,12 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 Availability = Availability.Very_Rare,
                 SpecialQualities = new WeaponSpecialQualitie[3]
                 {
-                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Power Filed").Select(n=>n).FirstOrDefault(),
-                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Unbalanced").Select(n=>n).FirstOrDefault(),
-                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Two-Handed").Select(n=>n).FirstOrDefault()
+                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Power_Field.ToString()).Select(n=>n).FirstOrDefault(),
+                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Unbalanced.ToString()).Select(n=>n).FirstOrDefault(),
+                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Two_Handed.ToString()).Select(n=>n).FirstOrDefault()
                 }
             },
-            new Weapon("Power Maul (High)")
+            new Weapon(WeaponName.Power_Maul_Heigh.ToString())
             {
                 Type = WeaponType.Power,
                 Class = WeaponClass.Melee,
@@ -1185,11 +1186,11 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 Availability = Availability.Very_Rare,
                 SpecialQualities = new WeaponSpecialQualitie[2]
                 {
-                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Power Filed").Select(n=>n).FirstOrDefault(),
-                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Shoking").Select(n=>n).FirstOrDefault()
+                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Power_Field.ToString()).Select(n=>n).FirstOrDefault(),
+                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Shoking.ToString()).Select(n=>n).FirstOrDefault()
                 }
             },
-             new Weapon("Power Maul (Low)")
+            new Weapon(WeaponName.Power_Maul_Low.ToString())
             {
                 Type = WeaponType.Power,
                 Class = WeaponClass.Melee,
@@ -1199,11 +1200,11 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 Penetration = 2,
                 Weight = 3.5,
                 Availability = Availability.Very_Rare,
-                SpecialQualities = new WeaponSpecialQualitie[1] { WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Shoking").Select(n=>n).FirstOrDefault() }
+                SpecialQualities = new WeaponSpecialQualitie[1] { WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Shoking.ToString()).Select(n=>n).FirstOrDefault() }
             },
             #endregion Power
             #region Shock
-            new Weapon("Shock Maul")
+            new Weapon(WeaponName.Shock_Maul.ToString())
             {
                 Type = WeaponType.Shock,
                 Class = WeaponClass.Melee,
@@ -1213,9 +1214,9 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 Penetration = 0,
                 Weight = 2.5,
                 Availability = Availability.Scarce,
-                SpecialQualities = new WeaponSpecialQualitie[1] { WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Shoking").Select(n=>n).FirstOrDefault() }
+                SpecialQualities = new WeaponSpecialQualitie[1] { WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Shoking.ToString()).Select(n=>n).FirstOrDefault() }
             },
-            new Weapon("Shock Whip")
+            new Weapon(WeaponName.Shock_Whip.ToString())
             {
                 Type = WeaponType.Shock,
                 Class = WeaponClass.Melee,
@@ -1227,8 +1228,8 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 Availability = Availability.Rare,
                 SpecialQualities = new WeaponSpecialQualitie[2]
                 {
-                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Shoking").Select(n=>n).FirstOrDefault(),
-                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == "Flexible").Select(n=>n).FirstOrDefault()
+                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Shoking.ToString()).Select(n=>n).FirstOrDefault(),
+                    WeaponSpecialQuilitieCollection.WeaponSpecialQualities.Where(n =>  n.Name == WeaponQualitieName.Flexible.ToString()).Select(n=>n).FirstOrDefault()
                 }
             },
             #endregion Shock            

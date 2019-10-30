@@ -12,62 +12,6 @@ namespace DarkHeresy2CharacterCreator.Model.Traits
     /// </summary>
     public static class TraitList
     {
-        /// <summary>
-        /// Collection of traits
-        /// </summary>
-        public static ObservableCollection<ITrait> Traits { get; } = new ObservableCollection<ITrait>()
-        {
-            new Trait(TraitName.Amorphous.ToString(),amorphousDiscription, false),
-            new Trait(TraitName.Amphibious.ToString(), amphibiousDiscription, false),
-            new Trait(TraitName.Auto_Stabilized.ToString(), autoStabilisedDiscription, false),
-            new Trait(TraitName.Baneful_Presence.ToString(), banefulPresenceDiscription, true),
-            new Trait(TraitName.Bestial.ToString(), bestialDiscription, false),
-            new Trait(TraitName.Blind.ToString(), blindDiscription, false),
-            new Trait(TraitName.Brutal_Charge.ToString(), brutalChargeDiscription, true),
-            new Trait(TraitName.Burrower.ToString(), burrowerDiscription, true),
-            new Trait(TraitName.Crawler.ToString(), crawlerDiscription, false),
-            new Trait(TraitName.Daemonic.ToString(), daemonicDiscription, true),
-            new Trait(TraitName.Dark_sight.ToString(), darkSightDiscription, false),
-            new Trait(TraitName.Deadly_Natural_Weapon.ToString(), deadlyNaturalWeaponsDiscription, false),
-            new Trait(TraitName.Fear.ToString(), fearDiscription, true),
-            new Trait(TraitName.Flyer.ToString(), flyerDiscription, true),
-            new Trait(TraitName.From_Beyond.ToString(), fromBeyondDiscription, false),
-            new Trait(TraitName.Hoverer.ToString(), hovererDiscription, true),
-            new Trait(TraitName.Incorporeal.ToString(), incorporealDiscription, false),
-            new Trait(TraitName.Machine.ToString(), machineDiscription,true),
-            new Trait(TraitName.Mechanicus_Implants.ToString(), mechinicusImplantsDiscription, false),
-            new Trait(TraitName.Mind_Lock.ToString(),mindLockDiscription, false),
-            new Trait(TraitName.Multiple_Arms.ToString(), multipleArmsDiscription, true),
-            new Trait(TraitName.Natural_Armour.ToString(), naturalArmourDiscription, true),
-            new Trait(TraitName.Natural_Weapons.ToString(), naturalWeaponsDiscription, false),
-            new Trait(TraitName.Phase.ToString(), phaseDiscription, false),
-            new Trait(TraitName.Psyker.ToString(), psykerDiscription, true),
-            new Trait(TraitName.Quadraped.ToString(), quadrupedDiscription, true),
-            new Trait(TraitName.Regeneration.ToString(),regenerationDiscription, true),
-            new Trait(TraitName.Sanctioned.ToString(), sanctionedDiscription, false),
-            new Trait(TraitName.Size.ToString(),sizeDiscription, true),
-            new Trait(TraitName.Sonar_Sense.ToString(), sonarSenseDiscription, false),
-            new Trait(TraitName.Soul_Bound.ToString(), soulBoundDiscription, false),
-            new Trait(TraitName.Stampede.ToString(), stampedeDiscription, false),
-            new Trait(TraitName.Stuff_of_Nightmares.ToString(), stuffOfNightmaresDiscription, false),
-            new Trait(TraitName.Sturdy.ToString(), sturdyDiscription, false),
-            new Trait(TraitName.Touched_by_the_Fates.ToString(), touchedByTheFaithDiscription, true),
-            new Trait(TraitName.Toxic.ToString(), toxicDiscription, true),
-            new Trait(TraitName.Undying.ToString(), undyingDiscription, false),
-            new Trait(TraitName.Unnatural_Agility.ToString(), unnaturalCharacteristicDiscription, true),
-            new Trait(TraitName.Unnatural_Balistic_Skill.ToString(), unnaturalCharacteristicDiscription, true),
-            new Trait(TraitName.Unnatural_Fellowship.ToString(), unnaturalCharacteristicDiscription, true),
-            new Trait(TraitName.Unnatural_Intelligence.ToString(), unnaturalCharacteristicDiscription, true),
-            new Trait(TraitName.Unnatural_Perception.ToString(), unnaturalCharacteristicDiscription, true),
-            new Trait(TraitName.Unnatural_Strength.ToString(), unnaturalCharacteristicDiscription, true),
-            new Trait(TraitName.Unnatural_Toughness.ToString(), unnaturalCharacteristicDiscription, true),
-            new Trait(TraitName.Unnatural_Weapon_Skill.ToString(), unnaturalCharacteristicDiscription, true),
-            new Trait(TraitName.Unnatural_Willpower.ToString(), unnaturalCharacteristicDiscription, true),
-            new Trait(TraitName.Unnatural_Senses.ToString(), unnaturalSensesDiscription, true),
-            new Trait(TraitName.Warp_Instability.ToString(), warpInstabilityDiscription, false),
-            new Trait(TraitName.Warp_Weapons.ToString(), warpWeaponsDiscription, false)
-        };
-
         #region Discription
         private readonly static string amorphousDiscription = "Not every entity is constrained by a rigid skeleton; some organisms possess a malleable shape," +
             " or are made of a host of smaller beings, and can alter their forms as desired or due to changing environmental conditions." +
@@ -222,6 +166,64 @@ namespace DarkHeresy2CharacterCreator.Model.Traits
             "able to ignore such mundane things as armour or cover.Natural weapons and attacks made by a creature with this trait ignore physical armour, " +
             "unless the armour is created from psychoactive materials or is somehow warded against the Warp.Force fields still work against these attacks normally.";
         #endregion
+
+        /// <summary>
+        /// Collection of traits
+        /// </summary>
+        public static ObservableCollection<ITrait> Traits { get; } = new ObservableCollection<ITrait>()
+        {
+            new Trait(TraitName.Amorphous.ToString(),amorphousDiscription, false),
+            new Trait(TraitName.Amphibious.ToString(), amphibiousDiscription, false),
+            new Trait(TraitName.Auto_Stabilized.ToString(), autoStabilisedDiscription, false),
+            new Trait(TraitName.Baneful_Presence.ToString(), banefulPresenceDiscription, true),
+            new Trait(TraitName.Bestial.ToString(), bestialDiscription, false),
+            new Trait(TraitName.Blind.ToString(), blindDiscription, false),
+            new Trait(TraitName.Brutal_Charge.ToString(), brutalChargeDiscription, true),
+            new Trait(TraitName.Burrower.ToString(), burrowerDiscription, true),
+            new Trait(TraitName.Crawler.ToString(), crawlerDiscription, false),
+            new Trait(TraitName.Daemonic.ToString(), daemonicDiscription, true),
+            new Trait(TraitName.Dark_sight.ToString(), darkSightDiscription, false),
+            new Trait(TraitName.Deadly_Natural_Weapon.ToString(), deadlyNaturalWeaponsDiscription, false),
+            new Trait(TraitName.Fear.ToString(), fearDiscription, true),
+            new Trait(TraitName.Flyer.ToString(), flyerDiscription, true),
+            new Trait(TraitName.From_Beyond.ToString(), fromBeyondDiscription, false),
+            new Trait(TraitName.Hoverer.ToString(), hovererDiscription, true),
+            new Trait(TraitName.Incorporeal.ToString(), incorporealDiscription, false),
+            new Trait(TraitName.Machine.ToString(), machineDiscription,true),
+            new Trait(TraitName.Mechanicus_Implants.ToString(), mechinicusImplantsDiscription, false),
+            new Trait(TraitName.Mind_Lock.ToString(),mindLockDiscription, false),
+            new Trait(TraitName.Multiple_Arms.ToString(), multipleArmsDiscription, true),
+            new Trait(TraitName.Natural_Armour.ToString(), naturalArmourDiscription, true),
+            new Trait(TraitName.Natural_Weapons.ToString(), naturalWeaponsDiscription, false),
+            new Trait(TraitName.Phase.ToString(), phaseDiscription, false),
+            new Trait(TraitName.Psyker.ToString(), psykerDiscription, true),
+            new Trait(TraitName.Quadraped.ToString(), quadrupedDiscription, true),
+            new Trait(TraitName.Regeneration.ToString(),regenerationDiscription, true),
+            new Trait(TraitName.Sanctioned.ToString(), sanctionedDiscription, false),
+            new Trait(TraitName.Size.ToString(),sizeDiscription, true),
+            new Trait(TraitName.Sonar_Sense.ToString(), sonarSenseDiscription, false),
+            new Trait(TraitName.Soul_Bound.ToString(), soulBoundDiscription, false),
+            new Trait(TraitName.Stampede.ToString(), stampedeDiscription, false),
+            new Trait(TraitName.Stuff_of_Nightmares.ToString(), stuffOfNightmaresDiscription, false),
+            new Trait(TraitName.Sturdy.ToString(), sturdyDiscription, false),
+            new Trait(TraitName.Touched_by_the_Fates.ToString(), touchedByTheFaithDiscription, true),
+            new Trait(TraitName.Toxic.ToString(), toxicDiscription, true),
+            new Trait(TraitName.Undying.ToString(), undyingDiscription, false),
+            new Trait(TraitName.Unnatural_Agility.ToString(), unnaturalCharacteristicDiscription, true),
+            new Trait(TraitName.Unnatural_Balistic_Skill.ToString(), unnaturalCharacteristicDiscription, true),
+            new Trait(TraitName.Unnatural_Fellowship.ToString(), unnaturalCharacteristicDiscription, true),
+            new Trait(TraitName.Unnatural_Intelligence.ToString(), unnaturalCharacteristicDiscription, true),
+            new Trait(TraitName.Unnatural_Perception.ToString(), unnaturalCharacteristicDiscription, true),
+            new Trait(TraitName.Unnatural_Strength.ToString(), unnaturalCharacteristicDiscription, true),
+            new Trait(TraitName.Unnatural_Toughness.ToString(), unnaturalCharacteristicDiscription, true),
+            new Trait(TraitName.Unnatural_Weapon_Skill.ToString(), unnaturalCharacteristicDiscription, true),
+            new Trait(TraitName.Unnatural_Willpower.ToString(), unnaturalCharacteristicDiscription, true),
+            new Trait(TraitName.Unnatural_Senses.ToString(), unnaturalSensesDiscription, true),
+            new Trait(TraitName.Warp_Instability.ToString(), warpInstabilityDiscription, false),
+            new Trait(TraitName.Warp_Weapons.ToString(), warpWeaponsDiscription, false)
+        };
+
+
 
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DarkHeresy2CharacterCreator.Model.Equipment.Enums;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -12,53 +13,6 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment
     /// </summary>
     public static class WeaponSpecialQuilitieCollection
     {
-        /// <summary>
-        /// Collection of special qualities of weapons
-        /// </summary>
-        public static ObservableCollection<WeaponSpecialQualitie> WeaponSpecialQualities = new ObservableCollection<WeaponSpecialQualitie>
-        {
-            new WeaponSpecialQualitie("Accurate", accurateDiscription),
-            new WeaponSpecialQualitie("Balanced", balancedDiscription),
-            new WeaponSpecialQualitie("Blast", blastDiscription, true),
-            new WeaponSpecialQualitie("Concussive", concussiveDiscription, true),
-            new WeaponSpecialQualitie("Corrosive", corrosiveDiscription),
-            new WeaponSpecialQualitie("Crippling", cripplingDiscription, true),
-            new WeaponSpecialQualitie("Defensive", defensiveDiscription),
-            new WeaponSpecialQualitie("Felling", fellingDiscription, true),
-            new WeaponSpecialQualitie("Flame", flameDiscription),
-            new WeaponSpecialQualitie("Flexible", flexibleDiscription),
-            new WeaponSpecialQualitie("Force", forceDiscription),
-            new WeaponSpecialQualitie("Graviton", gravitonDiscription),
-            new WeaponSpecialQualitie("Hallucinogenic", hallucinogenicDiscription, true),
-            new WeaponSpecialQualitie("Haywire", haywireDiscription, true),
-            new WeaponSpecialQualitie("Inaccurate", inaccurateDiscription),
-            new WeaponSpecialQualitie("Indirect", inderectDiscription, true),
-            new WeaponSpecialQualitie("Lance", lanceDiscription),
-            new WeaponSpecialQualitie("Maximal", maximalDiscription),
-            new WeaponSpecialQualitie("Melta", meltaDiscription),
-            new WeaponSpecialQualitie("Overheats", overheatsDiscription),
-            new WeaponSpecialQualitie("Power Field", powerFieldDiscription),
-            new WeaponSpecialQualitie("Primitive", primitiveDiscription, true),
-            new WeaponSpecialQualitie("Proven", provenDiscription, true),
-            new WeaponSpecialQualitie("Razor Sharp", razorSharpDiscription),
-            new WeaponSpecialQualitie("Recharge", rechargeDiscription),
-            new WeaponSpecialQualitie("Reliable", reliableDiscription),
-            new WeaponSpecialQualitie("Sanctified", sanctifiedDiscription),
-            new WeaponSpecialQualitie("Scatter", scatterDiscription),
-            new WeaponSpecialQualitie("Shoking", shokingDiscription),
-            new WeaponSpecialQualitie("Smoke", smokeDiscription, true),
-            new WeaponSpecialQualitie("Snare", snareDiscription, true),
-            new WeaponSpecialQualitie("Spray", sprayDiscription),
-            new WeaponSpecialQualitie("Storm", stormDiscription),
-            new WeaponSpecialQualitie("Tearing", tearingDiscription),
-            new WeaponSpecialQualitie("Toxic", toxicDiscription, true),
-            new WeaponSpecialQualitie("Twin-Linked", twinLinkedDiscription),
-            new WeaponSpecialQualitie("Unbalanced", unbalancedDiscription),
-            new WeaponSpecialQualitie("Unreliable", unreliableDiscription),
-            new WeaponSpecialQualitie("Unwieldly", unwieldlyDiscription),
-            new WeaponSpecialQualitie("Vengeful", vengefulDiscription, true)
-        };
-
         #region Discriptions
         private static readonly string accurateDiscription = "The weapon is crafted for precision attacks, with perfectly crafted las-lenses or finely honed barrels." +
             "This grants an additional bonus of +10 to the firer’s Ballistic Skill when used with an Aim action, in addition to the normal bonus granted from Aiming." +
@@ -242,6 +196,57 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment
             "They cannot be used to Parry or make Lightning Attack actions.";
         private static readonly string vengefulDiscription = "These weapons seemingly embody the Emperor’s wrath, and eagerly strike down any who would stand against His servants." +
             "When attacking with this weapon, the attacker triggers Righteous Fury on any damage die result with a value of X or higher (before any modifiers are applied).";
+        private static readonly string twoHandedDiscription = "Weapon require two hand to use";
         #endregion
+
+        /// <summary>
+        /// Collection of special qualities of weapons
+        /// </summary>
+        public static ObservableCollection<WeaponSpecialQualitie> WeaponSpecialQualities = new ObservableCollection<WeaponSpecialQualitie>
+        {
+            new WeaponSpecialQualitie(WeaponQualitieName.Accurate.ToString(), accurateDiscription),
+            new WeaponSpecialQualitie(WeaponQualitieName.Balanced.ToString(), balancedDiscription),
+            new WeaponSpecialQualitie(WeaponQualitieName.Blast.ToString(), blastDiscription, true),
+            new WeaponSpecialQualitie(WeaponQualitieName.Concussive.ToString(), concussiveDiscription, true),
+            new WeaponSpecialQualitie(WeaponQualitieName.Corrosive.ToString(), corrosiveDiscription),
+            new WeaponSpecialQualitie(WeaponQualitieName.Crippling.ToString(), cripplingDiscription, true),
+            new WeaponSpecialQualitie(WeaponQualitieName.Defensive.ToString(), defensiveDiscription),
+            new WeaponSpecialQualitie(WeaponQualitieName.Felling.ToString(), fellingDiscription, true),
+            new WeaponSpecialQualitie(WeaponQualitieName.Flame.ToString(), flameDiscription),
+            new WeaponSpecialQualitie(WeaponQualitieName.Flexible.ToString(), flexibleDiscription),
+            new WeaponSpecialQualitie(WeaponQualitieName.Force.ToString(), forceDiscription),
+            new WeaponSpecialQualitie(WeaponQualitieName.Graviton.ToString(), gravitonDiscription),
+            new WeaponSpecialQualitie(WeaponQualitieName.Hallucinogenic.ToString(), hallucinogenicDiscription, true),
+            new WeaponSpecialQualitie(WeaponQualitieName.Haywire.ToString(), haywireDiscription, true),
+            new WeaponSpecialQualitie(WeaponQualitieName.Inaccurate.ToString(), inaccurateDiscription),
+            new WeaponSpecialQualitie(WeaponQualitieName.Indirect.ToString(), inderectDiscription, true),
+            new WeaponSpecialQualitie(WeaponQualitieName.Lance.ToString(), lanceDiscription),
+            new WeaponSpecialQualitie(WeaponQualitieName.Maximal.ToString(), maximalDiscription),
+            new WeaponSpecialQualitie(WeaponQualitieName.Melta.ToString(), meltaDiscription),
+            new WeaponSpecialQualitie(WeaponQualitieName.Overheats.ToString(), overheatsDiscription),
+            new WeaponSpecialQualitie(WeaponQualitieName.Power_Field.ToString(), powerFieldDiscription),
+            new WeaponSpecialQualitie(WeaponQualitieName.Primitive.ToString(), primitiveDiscription, true),
+            new WeaponSpecialQualitie(WeaponQualitieName.Proven.ToString(), provenDiscription, true),
+            new WeaponSpecialQualitie(WeaponQualitieName.Razor_Sharp.ToString(), razorSharpDiscription),
+            new WeaponSpecialQualitie(WeaponQualitieName.Recharge.ToString(), rechargeDiscription),
+            new WeaponSpecialQualitie(WeaponQualitieName.Reliable.ToString(), reliableDiscription),
+            new WeaponSpecialQualitie(WeaponQualitieName.Sanctified.ToString(), sanctifiedDiscription),
+            new WeaponSpecialQualitie(WeaponQualitieName.Scatter.ToString(), scatterDiscription),
+            new WeaponSpecialQualitie(WeaponQualitieName.Shoking.ToString(), shokingDiscription),
+            new WeaponSpecialQualitie(WeaponQualitieName.Smoke.ToString(), smokeDiscription, true),
+            new WeaponSpecialQualitie(WeaponQualitieName.Snare.ToString(), snareDiscription, true),
+            new WeaponSpecialQualitie(WeaponQualitieName.Spray.ToString(), sprayDiscription),
+            new WeaponSpecialQualitie(WeaponQualitieName.Storm.ToString(), stormDiscription),
+            new WeaponSpecialQualitie(WeaponQualitieName.Tearing.ToString(), tearingDiscription),
+            new WeaponSpecialQualitie(WeaponQualitieName.Toxic.ToString(), toxicDiscription, true),
+            new WeaponSpecialQualitie(WeaponQualitieName.Twin_Linked.ToString(), twinLinkedDiscription),
+            new WeaponSpecialQualitie(WeaponQualitieName.Two_Handed.ToString(), twoHandedDiscription),
+            new WeaponSpecialQualitie(WeaponQualitieName.Unbalanced.ToString(), unbalancedDiscription),
+            new WeaponSpecialQualitie(WeaponQualitieName.Unreliable.ToString(), unreliableDiscription),
+            new WeaponSpecialQualitie(WeaponQualitieName.Unwieldly.ToString(), unwieldlyDiscription),
+            new WeaponSpecialQualitie(WeaponQualitieName.Vengeful.ToString(), vengefulDiscription, true)
+        };
+
+        
     }
 }

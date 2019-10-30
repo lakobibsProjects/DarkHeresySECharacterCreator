@@ -123,6 +123,15 @@
     <Compile Include="Model\Characteristics\CharacteristicList.cs" />
     <Compile Include="Model\Character\CharacterCompleteCreationExtension.cs" />
     <Compile Include="Model\Character\CharactersList.cs" />
+    <Compile Include="Model\Equipment\Enums\ArmorName.cs" />
+    <Compile Include="Model\Equipment\Enums\CyberneticName.cs" />
+    <Compile Include="Model\Equipment\Enums\DrugsAndConsumablesName.cs" />
+    <Compile Include="Model\Equipment\Enums\GearName.cs" />
+    <Compile Include="Model\Equipment\Enums\ToolName.cs" />
+    <Compile Include="Model\Equipment\Enums\WeaponName.cs" />
+    <Compile Include="Model\Equipment\Enums\WeaponQualitie.cs" />
+    <Compile Include="Model\GeneralSuppliment\Enums\BackgroundName.cs" />
+    <Compile Include="Model\GeneralSuppliment\Enums\HomeworldName.cs" />
     <Compile Include="Model\JsonConverters\ItemCollectionToJsonConveter.cs" />
     <Compile Include="Model\Enums\ActionLong.cs" />
     <Compile Include="Model\Enums\AptitudeName.cs" />

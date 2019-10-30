@@ -6,8 +6,10 @@ B6.A Update comments
 U9. Think about constructors
 B14. Add Elite Advances
 
-_______________________________________________________________________________
-+PA8. Implement
+
+A1. Create logic  to add specialization in elements of collections;
+A10. Think about events to automaticly update cost when increace rank
+A11. Create logic to operate with numeric values
 PA16. Create methodes to explain array-like properties for appropriate classes:
 	*Character
 	*Equipment
@@ -15,16 +17,12 @@ PA16. Create methodes to explain array-like properties for appropriate classes:
 	*Homeworld
 	*Role
 	*Talent
-+PA17. Add methodes to Charater, that add and remove creation-based properties
 _________________________________________________________________________________
-A13. Cast all to enums
-A1. Create logic  to add specialization in elements of collections;
-A10. Think about events to automaticly update cost when increace rank
+
 +A7. Create Database (Collection of characters now contains as Json file)
-A11. Create logic to operate with numeric values
-A12. Add discriptions
-A15. Fix TypeInitializationException in TalentList!
-A6. Add comments
++PA8. Implement
++++++++A15. Fix TypeInitializationException in TalentList!
++A6. Add comments
 	+Character
 	+Characteristics
 	+DiceRoller
@@ -36,9 +34,9 @@ A6. Add comments
 	+Talents
 	+Traits
 	+Another
-
-
-
++PA17. Add methodes to Charater, that add and remove creation-based properties
++A12. Add discriptions
++A13. Cast all to enums
 
 
 

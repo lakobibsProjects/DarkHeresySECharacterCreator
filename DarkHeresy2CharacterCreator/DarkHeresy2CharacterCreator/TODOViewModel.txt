@@ -1,10 +1,4 @@
-﻿+PA1. Create all requiring VM
-PA2. Add fuctionality to buttons
-	+Create button commands
-	+Add button commands in VM
-	*Add fuctional to button commands
-+PA3. Add bound with Model
-A4. CharacterSheet
+﻿A4. CharacterSheet
 	All - add discriptions
 	CharacterSheet
 		Fix logic with +/- buttons
@@ -13,5 +7,13 @@ A4. CharacterSheet
 		Add ComboBox to filtred lists by type of gear
 A5. Validator to SummaryViewModel
 A6. Talents and traits correction
-+A7. Fix bag ANE with selected character
 
+
+
+_________________________________________________________
++PA1. Create all requiring VM
++PA3. Add bound with Model
+PA2. Add fuctionality to buttons
+	+Create button commands
+	+Add button commands in VM
+	*Add fuctional to button commands

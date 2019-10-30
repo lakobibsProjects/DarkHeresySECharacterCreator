@@ -1,4 +1,5 @@
-﻿using DarkHeresy2CharacterCreator.Model.Equipment.Interfaces;
+﻿using DarkHeresy2CharacterCreator.Model.Equipment.Enums;
+using DarkHeresy2CharacterCreator.Model.Equipment.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -13,30 +14,6 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment
     /// </summary>
     public static class GearCollection
     {
-        /// <summary>
-        /// Collection of elements of gear
-        /// </summary>
-        public static ObservableCollection<IItem> Gear = new ObservableCollection<IItem>
-        {
-            new Item("Backpack", Availability.Abundant, 2, backpackDiscription),
-            new Item("Chameleoline Cloack", Availability.Rare, 0.5, chameleolineCloackDiscription),
-            new Item("Chrono", Availability.Plentiful, 0, chronoDiscription),
-            new Item("Clothing", Availability.Abundant, 2, clothingDiscription),
-            new Item ("Combat Vest", Availability.Scarce, 2, combatVestDiscription),
-            new Item("Concealed Holster", Availability.Average, 1, concealedHolsterDiscription),
-            new Item("Deadspace Earpiece", Availability.Very_Rare, 0, deadspaceEarpieceDiscription),
-            new Item("Explosive Collar", Availability.Scarce, 3, explosiveCollarDiscription),
-            new Item("Filtration Plugs", Availability.Common, 0, filtrationPlugsDiscription),
-            new Item("Photo-Visors/Contacts", Availability.Scarce, 0.5, photoVisorsDiscription),
-            new Item("Preyscense Goggles", Availability.Very_Rare, 0.5, preyscenseGogglesDiscription),
-            new Item("Rebreather", Availability.Scarce, 1, rebreatherDiscription),
-            new Item("Recoil Glove", Availability.Rare, 0.5, recoilGloveDiscription),
-            new Item("Respirator/Gas Mask", Availability.Average, 0.5, respiratorGasMaskDiscription),
-            new Item("Survival Suit", Availability.Average, 0, survivalSuitDiscription),
-            new Item("Synskin", Availability.Very_Rare, 2, synskinDiscription),
-            new Item("Void Suit", Availability.Scarce, 8, voidSuitDiscription)
-        };
-
         #region Discriptions
         private static readonly string backpackDiscription = "These personal carrying items can range from containers of heavy cloth to elaborate, " +
             "body-conforming devices with internal bracing for comfort.They all allow the wearer to transport roughly 30 kg of extra weight, " +
@@ -99,5 +76,31 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment
             "or hostile environments.A Common craftsmanship void suit has 12 hours of air and imposes a –10 penalty to Agility tests. Poor craftsmanship versions have six " +
             "hours of air, while Good and Best craftsmanship versions eliminate the Agility penalty.";
         #endregion
+
+        /// <summary>
+        /// Collection of elements of gear
+        /// </summary>
+        public static ObservableCollection<IItem> Gear = new ObservableCollection<IItem>
+        {
+            new Item(GearName.Backpack.ToString(), Availability.Abundant, 2, backpackDiscription),
+            new Item(GearName.Chameleoline_Cloack.ToString(), Availability.Rare, 0.5, chameleolineCloackDiscription),
+            new Item(GearName.Chrono.ToString(), Availability.Plentiful, 0, chronoDiscription),
+            new Item(GearName.Clothing.ToString(), Availability.Abundant, 2, clothingDiscription),
+            new Item(GearName.Combat_Vest.ToString(), Availability.Scarce, 2, combatVestDiscription),
+            new Item(GearName.Concealed_Holster.ToString(), Availability.Average, 1, concealedHolsterDiscription),
+            new Item(GearName.Deadspace_Earpiece.ToString(), Availability.Very_Rare, 0, deadspaceEarpieceDiscription),
+            new Item(GearName.Explosive_Collar.ToString(), Availability.Scarce, 3, explosiveCollarDiscription),
+            new Item(GearName.Filtration_Plugs.ToString(), Availability.Common, 0, filtrationPlugsDiscription),
+            new Item(GearName.Photo_Visors_or_Contacts.ToString(), Availability.Scarce, 0.5, photoVisorsDiscription),
+            new Item(GearName.Preyscense_Goggles.ToString(), Availability.Very_Rare, 0.5, preyscenseGogglesDiscription),
+            new Item(GearName.Rebreather.ToString(), Availability.Scarce, 1, rebreatherDiscription),
+            new Item(GearName.Recoil_Glove.ToString(), Availability.Rare, 0.5, recoilGloveDiscription),
+            new Item(GearName.Respirator_or_Gas_Mask.ToString(), Availability.Average, 0.5, respiratorGasMaskDiscription),
+            new Item(GearName.Survival_Suit.ToString(), Availability.Average, 0, survivalSuitDiscription),
+            new Item(GearName.Synskin.ToString(), Availability.Very_Rare, 2, synskinDiscription),
+            new Item(GearName.Void_Suit.ToString(), Availability.Scarce, 8, voidSuitDiscription)
+        };
+
+        
     }
 }

@@ -669,6 +669,7 @@ namespace DarkHeresy2CharacterCreator.Model.Skills
         #endregion Trade
         #endregion Specialized Skills
         #endregion Discriptions
+
         /// <summary>
         /// Collection of skills
         /// </summary>
@@ -701,237 +702,664 @@ namespace DarkHeresy2CharacterCreator.Model.Skills
         {
             #region CommonLore
             new SpecializedSkill(skillName:SkillName.Common_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                CommonLoreSpecializations.Adepta_Sororitas.ToString(), adeptaSororitasLoreDiscription){ Discription = commonLoreDiscription },
+                CommonLoreSpecializations.Adepta_Sororitas.ToString(), adeptaSororitasLoreDiscription)
+            {
+                Discription = commonLoreDiscription,
+                SpecializationDiscription = adeptaSororitasLoreDiscription
+            },
             new SpecializedSkill(skillName:SkillName.Common_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                CommonLoreSpecializations.Adeptus_Arbites.ToString(), adeptusArbitesLoreDiscription){ Discription = commonLoreDiscription },
+                CommonLoreSpecializations.Adeptus_Arbites.ToString(), adeptusArbitesLoreDiscription)
+            {
+                Discription = commonLoreDiscription,
+                SpecializationDiscription = adeptusArbitesLoreDiscription
+            },
             new SpecializedSkill(skillName:SkillName.Common_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                CommonLoreSpecializations.Adeptus_Astra_Telepatica.ToString(), adeptusAstraTelepaticsLoreDiscription){ Discription = commonLoreDiscription },
+                CommonLoreSpecializations.Adeptus_Astra_Telepatica.ToString(), adeptusAstraTelepaticsLoreDiscription)
+            {
+                Discription = commonLoreDiscription,
+                SpecializationDiscription = adeptusAstraTelepaticsLoreDiscription
+            },
             new SpecializedSkill(skillName:SkillName.Common_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                CommonLoreSpecializations.Adeptus_Mechanicus.ToString(), adeptusMechanicusLoreDiscription){ Discription = commonLoreDiscription },
+                CommonLoreSpecializations.Adeptus_Mechanicus.ToString(), adeptusMechanicusLoreDiscription)
+            {
+                Discription = commonLoreDiscription,
+                SpecializationDiscription = adeptusMechanicusLoreDiscription
+            },
             new SpecializedSkill(skillName:SkillName.Common_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                CommonLoreSpecializations.Administratum.ToString(), administratumLoreDiscription){ Discription = commonLoreDiscription },
+                CommonLoreSpecializations.Administratum.ToString(), administratumLoreDiscription)
+            {
+                Discription = commonLoreDiscription,
+                SpecializationDiscription = administratumLoreDiscription
+            },
             new SpecializedSkill(skillName:SkillName.Common_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                CommonLoreSpecializations.Askelon_Sector.ToString(), askelonSectorLoreDiscription){ Discription = commonLoreDiscription },
+                CommonLoreSpecializations.Askelon_Sector.ToString(), askelonSectorLoreDiscription)
+            {
+                Discription = commonLoreDiscription,
+                SpecializationDiscription = askelonSectorLoreDiscription
+            },
             new SpecializedSkill(skillName:SkillName.Common_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                CommonLoreSpecializations.Chartist_Captains.ToString(), chartistCaptainsLoreDiscription){ Discription = commonLoreDiscription },
+                CommonLoreSpecializations.Chartist_Captains.ToString(), chartistCaptainsLoreDiscription)
+            {
+                Discription = commonLoreDiscription,
+                SpecializationDiscription = chartistCaptainsLoreDiscription
+            },
             new SpecializedSkill(skillName:SkillName.Common_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                CommonLoreSpecializations.Collegia_Titanicus.ToString(), collegiaTitanicusLoreDiscription){ Discription = commonLoreDiscription },
+                CommonLoreSpecializations.Collegia_Titanicus.ToString(), collegiaTitanicusLoreDiscription)
+            {
+                Discription = commonLoreDiscription,
+                SpecializationDiscription = collegiaTitanicusLoreDiscription
+            },
             new SpecializedSkill(skillName:SkillName.Common_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                CommonLoreSpecializations.Ecclesiarchy.ToString(), ecclesiarchyLoreDiscription){ Discription = commonLoreDiscription },
+                CommonLoreSpecializations.Ecclesiarchy.ToString(), ecclesiarchyLoreDiscription)
+            {
+                Discription = commonLoreDiscription,
+                SpecializationDiscription = ecclesiarchyLoreDiscription
+            },
             new SpecializedSkill(skillName:SkillName.Common_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                CommonLoreSpecializations.Adeptus_Astartes.ToString(), adeptusAstartesLoreDiscription){ Discription = commonLoreDiscription },
+                CommonLoreSpecializations.Adeptus_Astartes.ToString(), adeptusAstartesLoreDiscription)
+            {
+                Discription = commonLoreDiscription,
+                SpecializationDiscription = adeptusAstartesLoreDiscription
+            },
             new SpecializedSkill(skillName:SkillName.Common_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                CommonLoreSpecializations.Imperial_Creed.ToString(), imperialCreedLoreDiscription){ Discription = commonLoreDiscription },
+                CommonLoreSpecializations.Imperial_Creed.ToString(), imperialCreedLoreDiscription)
+            {
+                Discription = commonLoreDiscription,
+                SpecializationDiscription = imperialCreedLoreDiscription
+            },
             new SpecializedSkill(skillName:SkillName.Common_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                CommonLoreSpecializations.imperial_Guard.ToString(), imperialGuardLoreDiscription){ Discription = commonLoreDiscription },
+                CommonLoreSpecializations.imperial_Guard.ToString(), imperialGuardLoreDiscription)
+            {
+                Discription = commonLoreDiscription,
+                SpecializationDiscription = imperialGuardLoreDiscription
+            },
             new SpecializedSkill(skillName:SkillName.Common_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                CommonLoreSpecializations.Imperial_Navy.ToString(), imperialNavyLoreDiscription){ Discription = commonLoreDiscription },
+                CommonLoreSpecializations.Imperial_Navy.ToString(), imperialNavyLoreDiscription)
+            {
+                Discription = commonLoreDiscription,
+                SpecializationDiscription = imperialNavyLoreDiscription
+            },
             new SpecializedSkill(skillName:SkillName.Common_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                CommonLoreSpecializations.Imperium.ToString(), imperiumLoreDiscription){ Discription = commonLoreDiscription },
+                CommonLoreSpecializations.Imperium.ToString(), imperiumLoreDiscription)
+            {
+                Discription = commonLoreDiscription,
+                SpecializationDiscription = imperiumLoreDiscription
+            },
             new SpecializedSkill(skillName:SkillName.Common_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                CommonLoreSpecializations.Navigators.ToString(), navigatorsLoreDiscription){ Discription = commonLoreDiscription },
+                CommonLoreSpecializations.Navigators.ToString(), navigatorsLoreDiscription)
+            {
+                Discription = commonLoreDiscription,
+                SpecializationDiscription = navigatorsLoreDiscription
+            },
             new SpecializedSkill(skillName:SkillName.Common_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                CommonLoreSpecializations.Planetary_Defence_Forces.ToString(), planetaryDefenceForcesLoreDiscription){ Discription = commonLoreDiscription },
+                CommonLoreSpecializations.Planetary_Defence_Forces.ToString(), planetaryDefenceForcesLoreDiscription)
+            {
+                Discription = commonLoreDiscription,
+                SpecializationDiscription = planetaryDefenceForcesLoreDiscription
+            },
             new SpecializedSkill(skillName:SkillName.Common_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                CommonLoreSpecializations.Rogue_Traders.ToString(), rogueTradersLoreDiscription){ Discription = commonLoreDiscription },
+                CommonLoreSpecializations.Rogue_Traders.ToString(), rogueTradersLoreDiscription)
+            {
+                Discription = commonLoreDiscription,
+                SpecializationDiscription = rogueTradersLoreDiscription
+            },
              new SpecializedSkill(skillName:SkillName.Common_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                CommonLoreSpecializations.Schola_Progenium.ToString(), scholaProgeniumLoreDiscription){ Discription = commonLoreDiscription },
+                CommonLoreSpecializations.Schola_Progenium.ToString(), scholaProgeniumLoreDiscription)
+             {
+                 Discription = commonLoreDiscription,
+                SpecializationDiscription = scholaProgeniumLoreDiscription
+             },
             new SpecializedSkill(skillName:SkillName.Common_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                CommonLoreSpecializations.Tech.ToString(), techLoreDiscription){ Discription = commonLoreDiscription },
+                CommonLoreSpecializations.Tech.ToString(), techLoreDiscription)
+            {
+                Discription = commonLoreDiscription,
+                SpecializationDiscription = techLoreDiscription
+            },
             new SpecializedSkill(skillName:SkillName.Common_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                CommonLoreSpecializations.Underworld.ToString(), underworldLoreDiscription){ Discription = commonLoreDiscription },
+                CommonLoreSpecializations.Underworld.ToString(), underworldLoreDiscription)
+            {
+                Discription = commonLoreDiscription,
+                SpecializationDiscription = underworldLoreDiscription
+            },
             new SpecializedSkill(skillName:SkillName.Common_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                CommonLoreSpecializations.War.ToString(), warLoreDiscription){ Discription = commonLoreDiscription },
+                CommonLoreSpecializations.War.ToString(), warLoreDiscription)
+            {
+                Discription = commonLoreDiscription,
+                SpecializationDiscription = warLoreDiscription
+            },
             #endregion CommonLore
             #region ScholasticLore
             #region CommonSpicializations
-            new SpecializedSkill(skillName:SkillName.Scholastic_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                CommonLoreSpecializations.Adepta_Sororitas.ToString(), adeptaSororitasLoreDiscription){ Discription = scholasticLoreDiscription },
-            new SpecializedSkill(skillName:SkillName.Scholastic_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                CommonLoreSpecializations.Adeptus_Arbites.ToString(), adeptusArbitesLoreDiscription){ Discription = scholasticLoreDiscription },
-            new SpecializedSkill(skillName:SkillName.Scholastic_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                CommonLoreSpecializations.Adeptus_Astra_Telepatica.ToString(), adeptusAstraTelepaticsLoreDiscription){ Discription = scholasticLoreDiscription },
-            new SpecializedSkill(skillName:SkillName.Scholastic_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                CommonLoreSpecializations.Adeptus_Mechanicus.ToString(), adeptusMechanicusLoreDiscription){ Discription = scholasticLoreDiscription },
-            new SpecializedSkill(skillName:SkillName.Scholastic_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                CommonLoreSpecializations.Administratum.ToString(), administratumLoreDiscription){ Discription = scholasticLoreDiscription },
-            new SpecializedSkill(skillName:SkillName.Scholastic_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                CommonLoreSpecializations.Askelon_Sector.ToString(), askelonSectorLoreDiscription){ Discription = scholasticLoreDiscription },
-            new SpecializedSkill(skillName:SkillName.Scholastic_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                CommonLoreSpecializations.Chartist_Captains.ToString(), chartistCaptainsLoreDiscription){ Discription = scholasticLoreDiscription },
-            new SpecializedSkill(skillName:SkillName.Scholastic_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                CommonLoreSpecializations.Collegia_Titanicus.ToString(), collegiaTitanicusLoreDiscription){ Discription = scholasticLoreDiscription },
-            new SpecializedSkill(skillName:SkillName.Scholastic_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                CommonLoreSpecializations.Ecclesiarchy.ToString(), ecclesiarchyLoreDiscription){ Discription = scholasticLoreDiscription },
-            new SpecializedSkill(skillName:SkillName.Scholastic_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                CommonLoreSpecializations.Adeptus_Astartes.ToString(), adeptusAstartesLoreDiscription){ Discription = scholasticLoreDiscription },
-            new SpecializedSkill(skillName:SkillName.Scholastic_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                CommonLoreSpecializations.Imperial_Creed.ToString(), imperialCreedLoreDiscription){ Discription = scholasticLoreDiscription },
-            new SpecializedSkill(skillName:SkillName.Scholastic_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                CommonLoreSpecializations.imperial_Guard.ToString(), imperialGuardLoreDiscription){ Discription = scholasticLoreDiscription },
-            new SpecializedSkill(skillName:SkillName.Scholastic_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                CommonLoreSpecializations.Imperial_Navy.ToString(), imperialNavyLoreDiscription){ Discription = scholasticLoreDiscription },
-            new SpecializedSkill(skillName:SkillName.Scholastic_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                CommonLoreSpecializations.Imperium.ToString(), imperiumLoreDiscription){ Discription = scholasticLoreDiscription },
-            new SpecializedSkill(skillName:SkillName.Scholastic_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                CommonLoreSpecializations.Navigators.ToString(), navigatorsLoreDiscription){ Discription = scholasticLoreDiscription },
-            new SpecializedSkill(skillName:SkillName.Scholastic_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                CommonLoreSpecializations.Planetary_Defence_Forces.ToString(), planetaryDefenceForcesLoreDiscription){ Discription = scholasticLoreDiscription },
-            new SpecializedSkill(skillName:SkillName.Scholastic_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                CommonLoreSpecializations.Rogue_Traders.ToString(), rogueTradersLoreDiscription){ Discription = scholasticLoreDiscription },
              new SpecializedSkill(skillName:SkillName.Scholastic_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                CommonLoreSpecializations.Schola_Progenium.ToString(), scholaProgeniumLoreDiscription){ Discription = scholasticLoreDiscription },
+                CommonLoreSpecializations.Adepta_Sororitas.ToString(), adeptaSororitasLoreDiscription)
+            {
+                Discription = scholasticLoreDiscription,
+                SpecializationDiscription = adeptaSororitasLoreDiscription
+            },
             new SpecializedSkill(skillName:SkillName.Scholastic_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                CommonLoreSpecializations.Tech.ToString(), techLoreDiscription){ Discription = scholasticLoreDiscription },
+                CommonLoreSpecializations.Adeptus_Arbites.ToString(), adeptusArbitesLoreDiscription)
+            {
+                Discription = scholasticLoreDiscription,
+                SpecializationDiscription = adeptusArbitesLoreDiscription
+            },
             new SpecializedSkill(skillName:SkillName.Scholastic_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                CommonLoreSpecializations.Underworld.ToString(), underworldLoreDiscription){ Discription = scholasticLoreDiscription },
+                CommonLoreSpecializations.Adeptus_Astra_Telepatica.ToString(), adeptusAstraTelepaticsLoreDiscription)
+            {
+                Discription = scholasticLoreDiscription,
+                SpecializationDiscription = adeptusAstraTelepaticsLoreDiscription
+            },
             new SpecializedSkill(skillName:SkillName.Scholastic_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                CommonLoreSpecializations.War.ToString(), warLoreDiscription){ Discription = scholasticLoreDiscription },
+                CommonLoreSpecializations.Adeptus_Mechanicus.ToString(), adeptusMechanicusLoreDiscription)
+            {
+                Discription = scholasticLoreDiscription,
+                SpecializationDiscription = adeptusMechanicusLoreDiscription
+            },
+            new SpecializedSkill(skillName:SkillName.Scholastic_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
+                CommonLoreSpecializations.Administratum.ToString(), administratumLoreDiscription)
+            {
+                Discription = scholasticLoreDiscription,
+                SpecializationDiscription = administratumLoreDiscription
+            },
+            new SpecializedSkill(skillName:SkillName.Scholastic_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
+                CommonLoreSpecializations.Askelon_Sector.ToString(), askelonSectorLoreDiscription)
+            {
+                Discription = scholasticLoreDiscription,
+                SpecializationDiscription = askelonSectorLoreDiscription
+            },
+            new SpecializedSkill(skillName:SkillName.Scholastic_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
+                CommonLoreSpecializations.Chartist_Captains.ToString(), chartistCaptainsLoreDiscription)
+            {
+                Discription = scholasticLoreDiscription,
+                SpecializationDiscription = chartistCaptainsLoreDiscription
+            },
+            new SpecializedSkill(skillName:SkillName.Scholastic_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
+                CommonLoreSpecializations.Collegia_Titanicus.ToString(), collegiaTitanicusLoreDiscription)
+            {
+                Discription = scholasticLoreDiscription,
+                SpecializationDiscription = collegiaTitanicusLoreDiscription
+            },
+            new SpecializedSkill(skillName:SkillName.Scholastic_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
+                CommonLoreSpecializations.Ecclesiarchy.ToString(), ecclesiarchyLoreDiscription)
+            {
+                Discription = scholasticLoreDiscription,
+                SpecializationDiscription = ecclesiarchyLoreDiscription
+            },
+            new SpecializedSkill(skillName:SkillName.Scholastic_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
+                CommonLoreSpecializations.Adeptus_Astartes.ToString(), adeptusAstartesLoreDiscription)
+            {
+                Discription = scholasticLoreDiscription,
+                SpecializationDiscription = adeptusAstartesLoreDiscription
+            },
+            new SpecializedSkill(skillName:SkillName.Scholastic_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
+                CommonLoreSpecializations.Imperial_Creed.ToString(), imperialCreedLoreDiscription)
+            {
+                Discription = scholasticLoreDiscription,
+                SpecializationDiscription = imperialCreedLoreDiscription
+            },
+            new SpecializedSkill(skillName:SkillName.Scholastic_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
+                CommonLoreSpecializations.imperial_Guard.ToString(), imperialGuardLoreDiscription)
+            {
+                Discription = scholasticLoreDiscription,
+                SpecializationDiscription = imperialGuardLoreDiscription
+            },
+            new SpecializedSkill(skillName:SkillName.Scholastic_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
+                CommonLoreSpecializations.Imperial_Navy.ToString(), imperialNavyLoreDiscription)
+            {
+                Discription = scholasticLoreDiscription,
+                SpecializationDiscription = imperialNavyLoreDiscription
+            },
+            new SpecializedSkill(skillName:SkillName.Scholastic_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
+                CommonLoreSpecializations.Imperium.ToString(), imperiumLoreDiscription)
+            {
+                Discription = scholasticLoreDiscription,
+                SpecializationDiscription = imperiumLoreDiscription
+            },
+            new SpecializedSkill(skillName:SkillName.Scholastic_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
+                CommonLoreSpecializations.Navigators.ToString(), navigatorsLoreDiscription)
+            {
+                Discription = scholasticLoreDiscription,
+                SpecializationDiscription = navigatorsLoreDiscription
+            },
+            new SpecializedSkill(skillName:SkillName.Scholastic_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
+                CommonLoreSpecializations.Planetary_Defence_Forces.ToString(), planetaryDefenceForcesLoreDiscription)
+            {
+                Discription = scholasticLoreDiscription,
+                SpecializationDiscription = planetaryDefenceForcesLoreDiscription
+            },
+            new SpecializedSkill(skillName:SkillName.Scholastic_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
+                CommonLoreSpecializations.Rogue_Traders.ToString(), rogueTradersLoreDiscription)
+            {
+                Discription = scholasticLoreDiscription,
+                SpecializationDiscription = rogueTradersLoreDiscription
+            },
+             new SpecializedSkill(skillName:SkillName.Scholastic_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
+                CommonLoreSpecializations.Schola_Progenium.ToString(), scholaProgeniumLoreDiscription)
+             {
+                 Discription = scholasticLoreDiscription,
+                SpecializationDiscription = scholaProgeniumLoreDiscription
+             },
+            new SpecializedSkill(skillName:SkillName.Scholastic_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
+                CommonLoreSpecializations.Tech.ToString(), techLoreDiscription)
+            {
+                Discription = scholasticLoreDiscription,
+                SpecializationDiscription = techLoreDiscription
+            },
+            new SpecializedSkill(skillName:SkillName.Scholastic_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
+                CommonLoreSpecializations.Underworld.ToString(), underworldLoreDiscription)
+            {
+                Discription = scholasticLoreDiscription,
+                SpecializationDiscription = underworldLoreDiscription
+            },
+            new SpecializedSkill(skillName:SkillName.Scholastic_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
+                CommonLoreSpecializations.War.ToString(), warLoreDiscription)
+            {
+                Discription = scholasticLoreDiscription,
+                SpecializationDiscription = warLoreDiscription
+            },
             #endregion CommonSpicializations
             #region ScholasticSpecializations
             new SpecializedSkill(skillName:SkillName.Scholastic_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                ScholasticLoreSpecializations.Astromancy.ToString(), astromancyLoreDiscription){ Discription = scholasticLoreDiscription },
+                ScholasticLoreSpecializations.Astromancy.ToString(), astromancyLoreDiscription)
+            {
+                Discription = scholasticLoreDiscription,
+                SpecializationDiscription = astromancyLoreDiscription
+            },
             new SpecializedSkill(skillName:SkillName.Scholastic_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                ScholasticLoreSpecializations.Beasts.ToString(), beastsLoreDiscription){ Discription = scholasticLoreDiscription },
+                ScholasticLoreSpecializations.Beasts.ToString(), beastsLoreDiscription)
+            {
+                Discription = scholasticLoreDiscription,
+                SpecializationDiscription = beastsLoreDiscription
+            },
             new SpecializedSkill(skillName:SkillName.Scholastic_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                ScholasticLoreSpecializations.Bureaucracy.ToString(), bureaucracyLoreDiscription){ Discription = scholasticLoreDiscription },
+                ScholasticLoreSpecializations.Bureaucracy.ToString(), bureaucracyLoreDiscription)
+            {
+                Discription = scholasticLoreDiscription,
+                SpecializationDiscription = bureaucracyLoreDiscription
+            },
             new SpecializedSkill(skillName:SkillName.Scholastic_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                ScholasticLoreSpecializations.Chymistry.ToString(), chymistryLoreDiscription){ Discription = scholasticLoreDiscription },
+                ScholasticLoreSpecializations.Chymistry.ToString(), chymistryLoreDiscription)
+            {
+                Discription = scholasticLoreDiscription,
+                SpecializationDiscription = chymistryLoreDiscription
+            },
             new SpecializedSkill(skillName:SkillName.Scholastic_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                ScholasticLoreSpecializations.Cryptology.ToString(), cryptologyLoreDiscription){ Discription = scholasticLoreDiscription },
+                ScholasticLoreSpecializations.Cryptology.ToString(), cryptologyLoreDiscription)
+            {
+                Discription = scholasticLoreDiscription,
+                SpecializationDiscription = cryptologyLoreDiscription
+            },
             new SpecializedSkill(skillName:SkillName.Scholastic_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                ScholasticLoreSpecializations.Heraldy.ToString(), heraldyLoreDiscription){ Discription = scholasticLoreDiscription },
+                ScholasticLoreSpecializations.Heraldy.ToString(), heraldyLoreDiscription)
+            {
+                Discription = scholasticLoreDiscription,
+                SpecializationDiscription = heraldyLoreDiscription
+            },
             new SpecializedSkill(skillName:SkillName.Scholastic_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                ScholasticLoreSpecializations.Imperial_Warrants.ToString(), imperialWarrantsLoreDiscription){ Discription = scholasticLoreDiscription },
+                ScholasticLoreSpecializations.Imperial_Warrants.ToString(), imperialWarrantsLoreDiscription)
+            {
+                Discription = scholasticLoreDiscription,
+                SpecializationDiscription = imperialWarrantsLoreDiscription
+            },
             new SpecializedSkill(skillName:SkillName.Scholastic_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                ScholasticLoreSpecializations.Judgement.ToString(), judgementLoreDiscription){ Discription = scholasticLoreDiscription },
+                ScholasticLoreSpecializations.Judgement.ToString(), judgementLoreDiscription)
+            {
+                Discription = scholasticLoreDiscription,
+                SpecializationDiscription = judgementLoreDiscription
+            },
             new SpecializedSkill(skillName:SkillName.Scholastic_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                ScholasticLoreSpecializations.Legend.ToString(), legendLoreDiscription){ Discription = scholasticLoreDiscription },
+                ScholasticLoreSpecializations.Legend.ToString(), legendLoreDiscription)
+            {
+                Discription = scholasticLoreDiscription,
+                SpecializationDiscription = legendLoreDiscription
+            },
             new SpecializedSkill(skillName:SkillName.Scholastic_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                ScholasticLoreSpecializations.Numerology.ToString(), numerologyLoreDiscription){ Discription = scholasticLoreDiscription },
+                ScholasticLoreSpecializations.Numerology.ToString(), numerologyLoreDiscription)
+            {
+                Discription = scholasticLoreDiscription,
+                SpecializationDiscription = numerologyLoreDiscription
+            },
             new SpecializedSkill(skillName:SkillName.Scholastic_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                ScholasticLoreSpecializations.Occult.ToString(), occultLoreDiscription){ Discription = scholasticLoreDiscription },
+                ScholasticLoreSpecializations.Occult.ToString(), occultLoreDiscription)
+            {
+                Discription = scholasticLoreDiscription,
+                SpecializationDiscription = occultLoreDiscription
+            },
             new SpecializedSkill(skillName:SkillName.Scholastic_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                ScholasticLoreSpecializations.Philisophy.ToString(), philisophyLoreDiscription){ Discription = scholasticLoreDiscription },
+                ScholasticLoreSpecializations.Philisophy.ToString(), philisophyLoreDiscription)
+            {
+                Discription = scholasticLoreDiscription,
+                SpecializationDiscription = philisophyLoreDiscription
+            },
             new SpecializedSkill(skillName:SkillName.Scholastic_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                ScholasticLoreSpecializations.Tactica_Imperialis.ToString(), tacticaImperialisLoreDiscription){ Discription = scholasticLoreDiscription },
+                ScholasticLoreSpecializations.Tactica_Imperialis.ToString(), tacticaImperialisLoreDiscription)
+            {
+                Discription = scholasticLoreDiscription,
+                SpecializationDiscription = tacticaImperialisLoreDiscription
+            },
             #endregion ScholasticSpecializations
             #endregion ScholasticLore
             #region ForbiddenLore
-                #region CommonSpicializations
-            new SpecializedSkill(skillName:SkillName.Forbidden_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                CommonLoreSpecializations.Adepta_Sororitas.ToString(), adeptaSororitasLoreDiscription){ Discription = forbiddenLoreDiscription },
-            new SpecializedSkill(skillName:SkillName.Forbidden_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                CommonLoreSpecializations.Adeptus_Arbites.ToString(), adeptusArbitesLoreDiscription){ Discription = forbiddenLoreDiscription },
-            new SpecializedSkill(skillName:SkillName.Forbidden_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                CommonLoreSpecializations.Adeptus_Astra_Telepatica.ToString(), adeptusAstraTelepaticsLoreDiscription){ Discription = forbiddenLoreDiscription },
-            new SpecializedSkill(skillName:SkillName.Forbidden_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                CommonLoreSpecializations.Adeptus_Mechanicus.ToString(), adeptusMechanicusLoreDiscription){ Discription = forbiddenLoreDiscription },
-            new SpecializedSkill(skillName:SkillName.Forbidden_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                CommonLoreSpecializations.Administratum.ToString(), administratumLoreDiscription){ Discription = forbiddenLoreDiscription },
-            new SpecializedSkill(skillName:SkillName.Forbidden_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                CommonLoreSpecializations.Askelon_Sector.ToString(), askelonSectorLoreDiscription){ Discription = forbiddenLoreDiscription },
-            new SpecializedSkill(skillName:SkillName.Forbidden_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                CommonLoreSpecializations.Chartist_Captains.ToString(), chartistCaptainsLoreDiscription){ Discription = forbiddenLoreDiscription },
-            new SpecializedSkill(skillName:SkillName.Forbidden_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                CommonLoreSpecializations.Collegia_Titanicus.ToString(), collegiaTitanicusLoreDiscription){ Discription = forbiddenLoreDiscription },
-            new SpecializedSkill(skillName:SkillName.Forbidden_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                CommonLoreSpecializations.Ecclesiarchy.ToString(), ecclesiarchyLoreDiscription){ Discription = forbiddenLoreDiscription },
-            new SpecializedSkill(skillName:SkillName.Forbidden_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                CommonLoreSpecializations.Adeptus_Astartes.ToString(), adeptusAstartesLoreDiscription){ Discription = forbiddenLoreDiscription },
-            new SpecializedSkill(skillName:SkillName.Forbidden_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                CommonLoreSpecializations.Imperial_Creed.ToString(), imperialCreedLoreDiscription){ Discription = forbiddenLoreDiscription },
-            new SpecializedSkill(skillName:SkillName.Forbidden_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                CommonLoreSpecializations.imperial_Guard.ToString(), imperialGuardLoreDiscription){ Discription = forbiddenLoreDiscription },
-            new SpecializedSkill(skillName:SkillName.Forbidden_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                CommonLoreSpecializations.Imperial_Navy.ToString(), imperialNavyLoreDiscription){ Discription = forbiddenLoreDiscription },
-            new SpecializedSkill(skillName:SkillName.Forbidden_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                CommonLoreSpecializations.Imperium.ToString(), imperiumLoreDiscription){ Discription = forbiddenLoreDiscription },
-            new SpecializedSkill(skillName:SkillName.Forbidden_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                CommonLoreSpecializations.Navigators.ToString(), navigatorsLoreDiscription){ Discription = forbiddenLoreDiscription },
-            new SpecializedSkill(skillName:SkillName.Forbidden_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                CommonLoreSpecializations.Planetary_Defence_Forces.ToString(), planetaryDefenceForcesLoreDiscription){ Discription = forbiddenLoreDiscription },
-            new SpecializedSkill(skillName:SkillName.Scholastic_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                CommonLoreSpecializations.Rogue_Traders.ToString(), rogueTradersLoreDiscription){ Discription = forbiddenLoreDiscription },
+            #region CommonSpicializations
              new SpecializedSkill(skillName:SkillName.Forbidden_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                CommonLoreSpecializations.Schola_Progenium.ToString(), scholaProgeniumLoreDiscription){ Discription = forbiddenLoreDiscription },
+                CommonLoreSpecializations.Adepta_Sororitas.ToString(), adeptaSororitasLoreDiscription)
+            {
+                Discription = forbiddenLoreDiscription,
+                SpecializationDiscription = adeptaSororitasLoreDiscription
+            },
             new SpecializedSkill(skillName:SkillName.Forbidden_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                CommonLoreSpecializations.Tech.ToString(), techLoreDiscription){ Discription = forbiddenLoreDiscription },
+                CommonLoreSpecializations.Adeptus_Arbites.ToString(), adeptusArbitesLoreDiscription)
+            {
+                Discription = forbiddenLoreDiscription,
+                SpecializationDiscription = adeptusArbitesLoreDiscription
+            },
             new SpecializedSkill(skillName:SkillName.Forbidden_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                CommonLoreSpecializations.Underworld.ToString(), underworldLoreDiscription){ Discription = forbiddenLoreDiscription },
+                CommonLoreSpecializations.Adeptus_Astra_Telepatica.ToString(), adeptusAstraTelepaticsLoreDiscription)
+            {
+                Discription = forbiddenLoreDiscription,
+                SpecializationDiscription = adeptusAstraTelepaticsLoreDiscription
+            },
             new SpecializedSkill(skillName:SkillName.Forbidden_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                CommonLoreSpecializations.War.ToString(), warLoreDiscription){ Discription = forbiddenLoreDiscription },
+                CommonLoreSpecializations.Adeptus_Mechanicus.ToString(), adeptusMechanicusLoreDiscription)
+            {
+                Discription = forbiddenLoreDiscription,
+                SpecializationDiscription = adeptusMechanicusLoreDiscription
+            },
+            new SpecializedSkill(skillName:SkillName.Forbidden_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
+                CommonLoreSpecializations.Administratum.ToString(), administratumLoreDiscription)
+            {
+                Discription = forbiddenLoreDiscription,
+                SpecializationDiscription = administratumLoreDiscription
+            },
+            new SpecializedSkill(skillName:SkillName.Forbidden_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
+                CommonLoreSpecializations.Askelon_Sector.ToString(), askelonSectorLoreDiscription)
+            {
+                Discription = forbiddenLoreDiscription,
+                SpecializationDiscription = askelonSectorLoreDiscription
+            },
+            new SpecializedSkill(skillName:SkillName.Forbidden_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
+                CommonLoreSpecializations.Chartist_Captains.ToString(), chartistCaptainsLoreDiscription)
+            {
+                Discription = forbiddenLoreDiscription,
+                SpecializationDiscription = chartistCaptainsLoreDiscription
+            },
+            new SpecializedSkill(skillName:SkillName.Forbidden_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
+                CommonLoreSpecializations.Collegia_Titanicus.ToString(), collegiaTitanicusLoreDiscription)
+            {
+                Discription = forbiddenLoreDiscription,
+                SpecializationDiscription = collegiaTitanicusLoreDiscription
+            },
+            new SpecializedSkill(skillName:SkillName.Forbidden_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
+                CommonLoreSpecializations.Ecclesiarchy.ToString(), ecclesiarchyLoreDiscription)
+            {
+                Discription = forbiddenLoreDiscription,
+                SpecializationDiscription = ecclesiarchyLoreDiscription
+            },
+            new SpecializedSkill(skillName:SkillName.Forbidden_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
+                CommonLoreSpecializations.Adeptus_Astartes.ToString(), adeptusAstartesLoreDiscription)
+            {
+                Discription = forbiddenLoreDiscription,
+                SpecializationDiscription = adeptusAstartesLoreDiscription
+            },
+            new SpecializedSkill(skillName:SkillName.Forbidden_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
+                CommonLoreSpecializations.Imperial_Creed.ToString(), imperialCreedLoreDiscription)
+            {
+                Discription = forbiddenLoreDiscription,
+                SpecializationDiscription = imperialCreedLoreDiscription
+            },
+            new SpecializedSkill(skillName:SkillName.Forbidden_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
+                CommonLoreSpecializations.imperial_Guard.ToString(), imperialGuardLoreDiscription)
+            {
+                Discription = forbiddenLoreDiscription,
+                SpecializationDiscription = imperialGuardLoreDiscription
+            },
+            new SpecializedSkill(skillName:SkillName.Forbidden_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
+                CommonLoreSpecializations.Imperial_Navy.ToString(), imperialNavyLoreDiscription)
+            {
+                Discription = forbiddenLoreDiscription,
+                SpecializationDiscription = imperialNavyLoreDiscription
+            },
+            new SpecializedSkill(skillName:SkillName.Forbidden_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
+                CommonLoreSpecializations.Imperium.ToString(), imperiumLoreDiscription)
+            {
+                Discription = forbiddenLoreDiscription,
+                SpecializationDiscription = imperiumLoreDiscription
+            },
+            new SpecializedSkill(skillName:SkillName.Forbidden_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
+                CommonLoreSpecializations.Navigators.ToString(), navigatorsLoreDiscription)
+            {
+                Discription = forbiddenLoreDiscription,
+                SpecializationDiscription = navigatorsLoreDiscription
+            },
+            new SpecializedSkill(skillName:SkillName.Forbidden_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
+                CommonLoreSpecializations.Planetary_Defence_Forces.ToString(), planetaryDefenceForcesLoreDiscription)
+            {
+                Discription = forbiddenLoreDiscription,
+                SpecializationDiscription = planetaryDefenceForcesLoreDiscription
+            },
+            new SpecializedSkill(skillName:SkillName.Forbidden_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
+                CommonLoreSpecializations.Rogue_Traders.ToString(), rogueTradersLoreDiscription)
+            {
+                Discription = forbiddenLoreDiscription,
+                SpecializationDiscription = rogueTradersLoreDiscription
+            },
+             new SpecializedSkill(skillName:SkillName.Forbidden_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
+                CommonLoreSpecializations.Schola_Progenium.ToString(), scholaProgeniumLoreDiscription)
+             {
+                 Discription = forbiddenLoreDiscription,
+                SpecializationDiscription = scholaProgeniumLoreDiscription
+             },
+            new SpecializedSkill(skillName:SkillName.Forbidden_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
+                CommonLoreSpecializations.Tech.ToString(), techLoreDiscription)
+            {
+                Discription = forbiddenLoreDiscription,
+                SpecializationDiscription = techLoreDiscription
+            },
+            new SpecializedSkill(skillName:SkillName.Forbidden_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
+                CommonLoreSpecializations.Underworld.ToString(), underworldLoreDiscription)
+            {
+                Discription = forbiddenLoreDiscription,
+                SpecializationDiscription = underworldLoreDiscription
+            },
+            new SpecializedSkill(skillName:SkillName.Forbidden_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
+                CommonLoreSpecializations.War.ToString(), warLoreDiscription)
+            {
+                Discription = forbiddenLoreDiscription,
+                SpecializationDiscription = warLoreDiscription
+            },
             #endregion CommonSpicializations
             #region ScholasticSpecializations
             new SpecializedSkill(skillName:SkillName.Forbidden_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                ScholasticLoreSpecializations.Astromancy.ToString(), astromancyLoreDiscription){ Discription = forbiddenLoreDiscription },
+                ScholasticLoreSpecializations.Astromancy.ToString(), astromancyLoreDiscription)
+            {
+                Discription = forbiddenLoreDiscription,
+                SpecializationDiscription = astromancyLoreDiscription
+            },
             new SpecializedSkill(skillName:SkillName.Forbidden_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                ScholasticLoreSpecializations.Beasts.ToString(), beastsLoreDiscription){ Discription = forbiddenLoreDiscription },
+                ScholasticLoreSpecializations.Beasts.ToString(), beastsLoreDiscription)
+            {
+                Discription = forbiddenLoreDiscription,
+                SpecializationDiscription = beastsLoreDiscription
+            },
             new SpecializedSkill(skillName:SkillName.Forbidden_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                ScholasticLoreSpecializations.Bureaucracy.ToString(), bureaucracyLoreDiscription){ Discription = forbiddenLoreDiscription },
+                ScholasticLoreSpecializations.Bureaucracy.ToString(), bureaucracyLoreDiscription)
+            {
+                Discription = forbiddenLoreDiscription,
+                SpecializationDiscription = bureaucracyLoreDiscription
+            },
             new SpecializedSkill(skillName:SkillName.Forbidden_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                ScholasticLoreSpecializations.Chymistry.ToString(), chymistryLoreDiscription){ Discription = forbiddenLoreDiscription },
+                ScholasticLoreSpecializations.Chymistry.ToString(), chymistryLoreDiscription)
+            {
+                Discription = forbiddenLoreDiscription,
+                SpecializationDiscription = chymistryLoreDiscription
+            },
             new SpecializedSkill(skillName:SkillName.Forbidden_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                ScholasticLoreSpecializations.Cryptology.ToString(), cryptologyLoreDiscription){ Discription = forbiddenLoreDiscription },
+                ScholasticLoreSpecializations.Cryptology.ToString(), cryptologyLoreDiscription)
+            {
+                Discription = forbiddenLoreDiscription,
+                SpecializationDiscription = cryptologyLoreDiscription
+            },
             new SpecializedSkill(skillName:SkillName.Forbidden_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                ScholasticLoreSpecializations.Heraldy.ToString(), heraldyLoreDiscription){ Discription = forbiddenLoreDiscription },
+                ScholasticLoreSpecializations.Heraldy.ToString(), heraldyLoreDiscription)
+            {
+                Discription = forbiddenLoreDiscription,
+                SpecializationDiscription = heraldyLoreDiscription
+            },
             new SpecializedSkill(skillName:SkillName.Forbidden_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                ScholasticLoreSpecializations.Imperial_Warrants.ToString(), imperialWarrantsLoreDiscription){ Discription = forbiddenLoreDiscription },
+                ScholasticLoreSpecializations.Imperial_Warrants.ToString(), imperialWarrantsLoreDiscription)
+            {
+                Discription = forbiddenLoreDiscription,
+                SpecializationDiscription = imperialWarrantsLoreDiscription
+            },
             new SpecializedSkill(skillName:SkillName.Forbidden_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                ScholasticLoreSpecializations.Judgement.ToString(), judgementLoreDiscription){ Discription = forbiddenLoreDiscription },
+                ScholasticLoreSpecializations.Judgement.ToString(), judgementLoreDiscription)
+            {
+                Discription = forbiddenLoreDiscription,
+                SpecializationDiscription = judgementLoreDiscription
+            },
             new SpecializedSkill(skillName:SkillName.Forbidden_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                ScholasticLoreSpecializations.Legend.ToString(), legendLoreDiscription){ Discription = forbiddenLoreDiscription },
+                ScholasticLoreSpecializations.Legend.ToString(), legendLoreDiscription)
+            {
+                Discription = forbiddenLoreDiscription,
+                SpecializationDiscription = legendLoreDiscription
+            },
             new SpecializedSkill(skillName:SkillName.Forbidden_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                ScholasticLoreSpecializations.Numerology.ToString(), numerologyLoreDiscription){ Discription = forbiddenLoreDiscription },
+                ScholasticLoreSpecializations.Numerology.ToString(), numerologyLoreDiscription)
+            {
+                Discription = forbiddenLoreDiscription,
+                SpecializationDiscription = numerologyLoreDiscription
+            },
             new SpecializedSkill(skillName:SkillName.Forbidden_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                ScholasticLoreSpecializations.Occult.ToString(), occultLoreDiscription){ Discription = forbiddenLoreDiscription },
+                ScholasticLoreSpecializations.Occult.ToString(), occultLoreDiscription)
+            {
+                Discription = forbiddenLoreDiscription,
+                SpecializationDiscription = occultLoreDiscription
+            },
             new SpecializedSkill(skillName:SkillName.Forbidden_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                ScholasticLoreSpecializations.Philisophy.ToString(), philisophyLoreDiscription){ Discription = forbiddenLoreDiscription },
+                ScholasticLoreSpecializations.Philisophy.ToString(), philisophyLoreDiscription)
+            {
+                Discription = forbiddenLoreDiscription,
+                SpecializationDiscription = philisophyLoreDiscription
+            },
             new SpecializedSkill(skillName:SkillName.Forbidden_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                ScholasticLoreSpecializations.Tactica_Imperialis.ToString(), tacticaImperialisLoreDiscription){ Discription = forbiddenLoreDiscription },
+                ScholasticLoreSpecializations.Tactica_Imperialis.ToString(), tacticaImperialisLoreDiscription)
+            {
+                Discription = forbiddenLoreDiscription,
+                SpecializationDiscription = tacticaImperialisLoreDiscription
+            },
             #endregion ScholasticSpecializations
             #region ForbiddenSpecializations
             new SpecializedSkill(skillName:SkillName.Forbidden_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                ForbiddenLoreSpecializations.Archeotech.ToString(), archeotechLoreDiscription){ Discription = forbiddenLoreDiscription },
+                ForbiddenLoreSpecializations.Archeotech.ToString(), archeotechLoreDiscription)
+            {
+                Discription = forbiddenLoreDiscription,
+                SpecializationDiscription = archeotechLoreDiscription
+            },
             new SpecializedSkill(skillName:SkillName.Forbidden_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                ForbiddenLoreSpecializations.Criminal_Cartels_and_Smugglers.ToString(), criminalCartelsAndSmugglersLoreDiscription){ Discription = forbiddenLoreDiscription },
+                ForbiddenLoreSpecializations.Criminal_Cartels_and_Smugglers.ToString(), criminalCartelsAndSmugglersLoreDiscription)
+            {
+                Discription = forbiddenLoreDiscription,
+                SpecializationDiscription = criminalCartelsAndSmugglersLoreDiscription
+            },
             new SpecializedSkill(skillName:SkillName.Forbidden_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                ForbiddenLoreSpecializations.Daemonolige.ToString(), daemonologyLoreDiscription){ Discription = forbiddenLoreDiscription },
+                ForbiddenLoreSpecializations.Daemonolige.ToString(), daemonologyLoreDiscription)
+            {
+                Discription = forbiddenLoreDiscription,
+                SpecializationDiscription = daemonologyLoreDiscription
+            },
             new SpecializedSkill(skillName:SkillName.Forbidden_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                ForbiddenLoreSpecializations.Heresy.ToString(), heresyLoreDiscription){ Discription = forbiddenLoreDiscription },
+                ForbiddenLoreSpecializations.Heresy.ToString(), heresyLoreDiscription)
+            {
+                Discription = forbiddenLoreDiscription,
+                SpecializationDiscription = heresyLoreDiscription },
             new SpecializedSkill(skillName:SkillName.Forbidden_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                ForbiddenLoreSpecializations.Inquisitions.ToString(), inquisitionLoreDiscription){ Discription = forbiddenLoreDiscription },
+                ForbiddenLoreSpecializations.Inquisitions.ToString(), inquisitionLoreDiscription)
+            {
+                Discription = forbiddenLoreDiscription,
+                SpecializationDiscription = inquisitionLoreDiscription
+            },
             new SpecializedSkill(skillName:SkillName.Forbidden_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                ForbiddenLoreSpecializations.Mutants.ToString(), mutantsLoreDiscription){ Discription = forbiddenLoreDiscription },
+                ForbiddenLoreSpecializations.Mutants.ToString(), mutantsLoreDiscription)
+            {
+                Discription = forbiddenLoreDiscription,
+                SpecializationDiscription = mutantsLoreDiscription
+            },
             new SpecializedSkill(skillName:SkillName.Forbidden_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                ForbiddenLoreSpecializations.Officio_Assassinorum.ToString(), officioAssassinorumLoreDiscription){ Discription = forbiddenLoreDiscription },
+                ForbiddenLoreSpecializations.Officio_Assassinorum.ToString(), officioAssassinorumLoreDiscription)
+            {
+                Discription = forbiddenLoreDiscription,
+                SpecializationDiscription = officioAssassinorumLoreDiscription
+            },
             new SpecializedSkill(skillName:SkillName.Forbidden_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                ForbiddenLoreSpecializations.Pirates.ToString(), piratesLoreDiscription){ Discription = forbiddenLoreDiscription },
+                ForbiddenLoreSpecializations.Pirates.ToString(), piratesLoreDiscription)
+            {
+                Discription = forbiddenLoreDiscription,
+                SpecializationDiscription = piratesLoreDiscription
+            },
             new SpecializedSkill(skillName:SkillName.Forbidden_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                ForbiddenLoreSpecializations.Psykers.ToString(), psykersLoreDiscription){ Discription = forbiddenLoreDiscription },
+                ForbiddenLoreSpecializations.Psykers.ToString(), psykersLoreDiscription)
+            {
+                Discription = forbiddenLoreDiscription,
+                SpecializationDiscription = psykersLoreDiscription
+            },
             new SpecializedSkill(skillName:SkillName.Forbidden_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                ForbiddenLoreSpecializations.The_Horus_Heresy_and_the_Lond_War.ToString(), theHorusHeresyAndTheLongWarLoreDiscription){ Discription = forbiddenLoreDiscription },
+                ForbiddenLoreSpecializations.The_Horus_Heresy_and_the_Lond_War.ToString(), theHorusHeresyAndTheLongWarLoreDiscription)
+            {
+                Discription = forbiddenLoreDiscription,
+                SpecializationDiscription = theHorusHeresyAndTheLongWarLoreDiscription
+            },
             new SpecializedSkill(skillName:SkillName.Forbidden_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                ForbiddenLoreSpecializations.The_Warp.ToString(), theWarpLoreDiscription){ Discription = forbiddenLoreDiscription },
+                ForbiddenLoreSpecializations.The_Warp.ToString(), theWarpLoreDiscription)
+            {
+                Discription = forbiddenLoreDiscription,
+                SpecializationDiscription = theWarpLoreDiscription
+            },
             new SpecializedSkill(skillName:SkillName.Forbidden_Lore,AptitudeName.Intelligence, AptitudeName.Knowledge,
-                ForbiddenLoreSpecializations.Xenos.ToString(), xenosLoreDiscription){ Discription = forbiddenLoreDiscription },
+                ForbiddenLoreSpecializations.Xenos.ToString(), xenosLoreDiscription)
+            {
+                Discription = forbiddenLoreDiscription,
+                SpecializationDiscription = xenosLoreDiscription
+            },
             #endregion ForbiddenSpecializations
             #endregion ForbiddenLore
             #region Operate
             new SpecializedSkill(skillName:SkillName.Operate,AptitudeName.Agility, AptitudeName.Fieldcraft,
-                OperateSpecializations.Aeronautica.ToString(), aeronauticaOperateDiscription){ Discription = operateDiscription },
+                OperateSpecializations.Aeronautica.ToString(), aeronauticaOperateDiscription)
+            {
+                Discription = operateDiscription,
+                SpecializationDiscription = aeronauticaOperateDiscription
+            },
             new SpecializedSkill(skillName:SkillName.Operate,AptitudeName.Agility, AptitudeName.Fieldcraft,
-                OperateSpecializations.Surface.ToString(), surfaceOperateDiscription){ Discription = operateDiscription },
+                OperateSpecializations.Surface.ToString(), surfaceOperateDiscription)
+            {
+                Discription = operateDiscription,
+                SpecializationDiscription = surfaceOperateDiscription
+            },
             new SpecializedSkill(skillName:SkillName.Operate,AptitudeName.Agility, AptitudeName.Fieldcraft,
-                OperateSpecializations.Voidship.ToString(), voidshipOperateDiscription){ Discription = operateDiscription },
+                OperateSpecializations.Voidship.ToString(), voidshipOperateDiscription)
+            {
+                Discription = operateDiscription,
+                SpecializationDiscription = voidshipOperateDiscription
+            },
             #endregion Operate
             #region Navigate
             new SpecializedSkill(skillName:SkillName.Navigate,AptitudeName.Agility, AptitudeName.Fieldcraft,
-                NavigateSpecializations.Stellar.ToString(), stellarNavigateDiscription){ Discription = navigateDiscription },
+                NavigateSpecializations.Stellar.ToString(), stellarNavigateDiscription)
+            {
+                Discription = navigateDiscription,
+                SpecializationDiscription = stellarNavigateDiscription
+            },
             new SpecializedSkill(skillName:SkillName.Navigate,AptitudeName.Agility, AptitudeName.Fieldcraft,
-                NavigateSpecializations.Surface.ToString(), surfaceNavigateDiscription){ Discription = navigateDiscription },
+                NavigateSpecializations.Surface.ToString(), surfaceNavigateDiscription)
+            {
+                Discription = navigateDiscription,
+                SpecializationDiscription = surfaceNavigateDiscription
+            },
             new SpecializedSkill(skillName:SkillName.Operate,AptitudeName.Agility, AptitudeName.Fieldcraft,
-                NavigateSpecializations.Warp.ToString(), warpNavigateDiscription){ Discription = navigateDiscription },
+                NavigateSpecializations.Warp.ToString(), warpNavigateDiscription)
+            {
+                Discription = navigateDiscription,
+                SpecializationDiscription = warpNavigateDiscription
+            },
             #endregion Navigate
             #region Linguistics
             new SpecializedSkill(skillName:SkillName.Linguistics,AptitudeName.Intelligence, AptitudeName.General,

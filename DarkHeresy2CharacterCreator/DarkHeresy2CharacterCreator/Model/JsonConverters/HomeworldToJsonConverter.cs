@@ -33,12 +33,15 @@ namespace DarkHeresy2CharacterCreator.Model.JsonConverters
         /// <param name="serializer">The calling serializer.</param>
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
-            ObservableCollection<HomeWorld> homeworlds = HomeWorldList.HomeWorlds;
-            var serachedHomewrold = reader.Value.ToString();
-            foreach (var item in homeworlds)
+            if (reader.Value != null)
             {
-                if (item.Name == serachedHomewrold)
-                    return item;
+                ObservableCollection<HomeWorld> homeworlds = HomeWorldList.HomeWorlds;
+                var serachedHomewrold = reader.Value.ToString();
+                foreach (var item in homeworlds)
+                {
+                    if (item.Name == serachedHomewrold)
+                        return item;
+                }
             }
 
             return null;

@@ -122,7 +122,7 @@ namespace DarkHeresy2CharacterCreator.Model.Character
         public ObservableCollection<CommonSkill> CommonSkills { get; set; } = new ObservableCollection<CommonSkill>();
         public ObservableCollection<SpecializedSkill> SpecializedSkills { get; set; } = new ObservableCollection<SpecializedSkill>();
         [JsonIgnoreAttribute]
-        public ObservableCollection<AbstractSkill> Skills => new ObservableCollection<AbstractSkill>(new List<AbstractSkill>().Concat(CommonSkills).Concat(SpecializedSkills));
+        public ObservableCollection<AbstractSkill> Skills => new ObservableCollection<AbstractSkill>(new ObservableCollection<AbstractSkill>().Concat(CommonSkills).Concat(SpecializedSkills));
         public ObservableCollection<Talent> Talents { get => talents; set => talents = value; }
         [JsonConverter(typeof(ItemCollectionToJsonConveter))]
         public ObservableCollection<IItem> Gear { get => gear; set => gear = value; }

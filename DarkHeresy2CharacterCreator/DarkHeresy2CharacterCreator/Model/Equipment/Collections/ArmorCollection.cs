@@ -1,4 +1,5 @@
-﻿using DarkHeresy2CharacterCreator.Model.Equipment.Interfaces;
+﻿using DarkHeresy2CharacterCreator.Model.Equipment.Enums;
+using DarkHeresy2CharacterCreator.Model.Equipment.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -19,7 +20,7 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
         public static ObservableCollection<IArmor> Armors = new ObservableCollection<IArmor>
         {
             #region Basic
-            new Armor("Heavy Leathers")
+            new Armor(ArmorName.Heavy_Leathers.ToString())
             {
                 ArmorType = ArmorType.Basic,
                 ArmorPoints = 1,
@@ -28,7 +29,7 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 Availability = Availability.Common,
                 LocationCovered = new LocationName[3]{ LocationName.Body, LocationName.Left_Arm, LocationName.Right_Arm }
             },
-            new Armor("Imperial Robes")
+            new Armor(ArmorName.Imperial_Robes.ToString())
             {
                 ArmorType = ArmorType.Basic,
                 ArmorPoints = 1,
@@ -37,7 +38,7 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 Availability = Availability.Average,
                 LocationCovered = new LocationName[5]{ LocationName.Body, LocationName.Left_Arm, LocationName.Right_Arm, LocationName.Left_Leg, LocationName.Right_Leg }
             },
-            new Armor("Armoured Bodyglove")
+            new Armor(ArmorName.Armoured_Bodyglove.ToString())
             {
                 ArmorType = ArmorType.Basic,
                 ArmorPoints = 2,
@@ -46,7 +47,7 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 Availability = Availability.Rare,
                 LocationCovered = new LocationName[5]{ LocationName.Body, LocationName.Left_Arm, LocationName.Right_Arm, LocationName.Right_Leg, LocationName.Left_Leg }
             },
-            new Armor("Chainmail Suit")
+            new Armor(ArmorName.Chainmail_Suit.ToString())
             {
                 ArmorType = ArmorType.Basic,
                 ArmorPoints = 3,
@@ -55,7 +56,7 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 Availability = Availability.Common,
                 LocationCovered = new LocationName[5]{ LocationName.Body, LocationName.Left_Arm, LocationName.Right_Arm, LocationName.Right_Leg, LocationName.Left_Leg }
             },
-            new Armor("Feodal World Plate")
+            new Armor(ArmorName.Feudal_World_Plate.ToString())
             {
                 ArmorType = ArmorType.Basic,
                 ArmorPoints = 5,
@@ -64,7 +65,7 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 Availability = Availability.Scarce,
                 LocationCovered = new LocationName[6]{ LocationName.Body, LocationName.Left_Arm, LocationName.Right_Arm, LocationName.Left_Leg, LocationName.Right_Leg, LocationName.Head }
             },
-            new Armor("Xenos Hide Vest")
+            new Armor(ArmorName.Xenos_Hide_Vest.ToString())
             {
                 ArmorType = ArmorType.Basic,
                 ArmorPoints = 6,
@@ -75,7 +76,7 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
             },
             #endregion Basic
             #region Flak
-            new Armor("Flak Helmet")
+            new Armor(ArmorName.Flak_Helmet.ToString())
             {
                 ArmorType = ArmorType.Flak,
                 ArmorPoints = 2,
@@ -84,7 +85,7 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 Availability = Availability.Average,
                 LocationCovered = new LocationName[1]{ LocationName.Head }
             },
-            new Armor("Flak Gauntlents")
+            new Armor(ArmorName.Flak_Gauntlets.ToString())
             {
                 ArmorType = ArmorType.Flak,
                 ArmorPoints = 2,
@@ -93,7 +94,7 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 Availability = Availability.Average,
                 LocationCovered = new LocationName[2]{ LocationName.Left_Arm, LocationName.Right_Arm }
             },
-            new Armor("Light Flak Cloack")
+            new Armor(ArmorName.Light_Flak_Cloak.ToString())
             {
                 ArmorType = ArmorType.Flak,
                 ArmorPoints = 2,
@@ -102,7 +103,7 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 Availability = Availability.Scarce,
                 LocationCovered = new LocationName[5]{ LocationName.Body, LocationName.Left_Arm, LocationName.Right_Arm, LocationName.Left_Leg, LocationName.Right_Leg }
             },
-            new Armor("Flak Vest")
+            new Armor(ArmorName.Flak_Vest.ToString())
             {
                 ArmorType = ArmorType.Flak,
                 ArmorPoints = 3,
@@ -111,7 +112,7 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 Availability = Availability.Average,
                 LocationCovered = new LocationName[1]{ LocationName.Body }
             },
-            new Armor("Flak Cloack")
+            new Armor(ArmorName.Flak_Cloak.ToString())
             {
                 ArmorType = ArmorType.Flak,
                 ArmorPoints = 3,
@@ -120,7 +121,7 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 Availability = Availability.Scarce,
                 LocationCovered = new LocationName[5]{ LocationName.Body, LocationName.Left_Arm, LocationName.Right_Arm, LocationName.Left_Leg, LocationName.Right_Leg }
             },
-            new Armor("Flak Coat")
+            new Armor(ArmorName.Flak_Coat.ToString())
             {
                 ArmorType = ArmorType.Flak,
                 ArmorPoints = 3,
@@ -129,7 +130,7 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 Availability = Availability.Average,
                 LocationCovered = new LocationName[3]{ LocationName.Body, LocationName.Left_Arm, LocationName.Right_Arm }
             },
-            new Armor("Imperial Guard Flak Armor")
+            new Armor(ArmorName.Imperial_Guard_Flak_Armour.ToString())
             {
                 ArmorType = ArmorType.Flak,
                 ArmorPoints = 4,
@@ -140,7 +141,7 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
             },
             #endregion Flak
             #region Mesh
-            new Armor("Mesh Vest")
+            new Armor(ArmorName.Mesh_Vest.ToString())
             {
                 ArmorType = ArmorType.Mesh,
                 ArmorPoints = 4,
@@ -149,7 +150,7 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 Availability = Availability.Rare,
                 LocationCovered = new LocationName[1]{ LocationName.Body }
             },
-            new Armor("Mesh Cloack")
+            new Armor(ArmorName.Mesh_Cloak.ToString())
             {
                 ArmorType = ArmorType.Mesh,
                 ArmorPoints = 4,
@@ -160,7 +161,7 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
             },
             #endregion Mesh
             #region Carapace
-            new Armor("Carapace Helm")
+            new Armor(ArmorName.Carapace_Helm.ToString())
             {
                 ArmorType = ArmorType.Carapace,
                 ArmorPoints = 4,
@@ -169,7 +170,7 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 Availability = Availability.Rare,
                 LocationCovered = new LocationName[1]{ LocationName.Head }
             },
-            new Armor("Carapace Gauntlet")
+            new Armor(ArmorName.Carapace_Gauntlets.ToString())
             {
                 ArmorType = ArmorType.Carapace,
                 ArmorPoints = 5,
@@ -178,7 +179,7 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 Availability = Availability.Rare,
                 LocationCovered = new LocationName[2]{ LocationName.Left_Arm, LocationName.Right_Arm }
             },
-            new Armor("Carapace Greaves")
+            new Armor(ArmorName.Carapace_Greaves.ToString())
             {
                 ArmorType = ArmorType.Basic,
                 ArmorPoints = 3,
@@ -187,7 +188,7 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 Availability = Availability.Rare,
                 LocationCovered = new LocationName[2]{ LocationName.Left_Leg, LocationName.Right_Leg }
             },
-            new Armor("Enforcer Light Carapace")
+            new Armor(ArmorName.Enforcer_Light_Carapace.ToString())
             {
                 ArmorType = ArmorType.Carapace,
                 ArmorPoints = 5,
@@ -196,7 +197,7 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 Availability = Availability.Rare,
                 LocationCovered = new LocationName[6]{ LocationName.Body, LocationName.Left_Arm, LocationName.Right_Arm, LocationName.Left_Leg, LocationName.Right_Leg, LocationName.Head }
             },
-            new Armor("Carapace Chestplate")
+            new Armor(ArmorName.Carapace_Chestplate.ToString())
             {
                 ArmorType = ArmorType.Carapace,
                 ArmorPoints = 6,
@@ -205,7 +206,7 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
                 Availability = Availability.Rare,
                 LocationCovered = new LocationName[1]{ LocationName.Body }
             },
-            new Armor("Militarum Tempestus Carapace")
+            new Armor(ArmorName.Militarum_Tempestus_Carapace.ToString())
             {
                 ArmorType = ArmorType.Carapace,
                 ArmorPoints = 6,
@@ -216,7 +217,7 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
             },
             #endregion Carapace
             #region Power
-            new Armor("Loght Power Armour")
+            new Armor(ArmorName.Light_Power_Armour.ToString())
             {
                 ArmorType = ArmorType.Power,
                 ArmorPoints = 7,

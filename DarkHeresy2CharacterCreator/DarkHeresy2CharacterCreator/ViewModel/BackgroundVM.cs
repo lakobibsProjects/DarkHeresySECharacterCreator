@@ -89,8 +89,13 @@ namespace DarkHeresy2CharacterCreator.ViewModel
                             if (item.Item1 != null)
                             {
                                 if (item.Item2 == null)
+                                {
                                     temp.Append(item.Item1.Name.ToString()).Append(", ");
-                                temp.Append(item.Item1.Name.ToString()).Append(" or ").Append(item.Item2.Name.ToString()).Append(", ");
+                                }
+                                else
+                                {
+                                    temp.Append(item.Item1.Name.ToString()).Append(" or ").Append(item.Item2.Name.ToString()).Append(", ");
+                                }
 
                                 result = temp.ToString().Substring(0, temp.Length - 2);
                             }

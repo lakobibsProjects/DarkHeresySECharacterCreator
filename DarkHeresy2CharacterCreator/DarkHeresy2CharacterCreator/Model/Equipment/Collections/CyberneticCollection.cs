@@ -1,4 +1,5 @@
-﻿using DarkHeresy2CharacterCreator.Model.Equipment.Interfaces;
+﻿using DarkHeresy2CharacterCreator.Model.Equipment.Enums;
+using DarkHeresy2CharacterCreator.Model.Equipment.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -13,44 +14,6 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment
     /// </summary>
     public static class CyberneticCollection
     {
-        /// <summary>
-        /// Collection of all cybernetics
-        /// </summary>
-        public static ObservableCollection<IItem> Cybernetics = new ObservableCollection<IItem>
-        {
-            new Item("Bionic Arm", Availability.Scarce, 0, bionicArmDiscription),
-            new Item("Bionic Heart", Availability.Very_Rare, 0, bionicHeartDiscription),
-            new Item("Augur Array", Availability.Rare, 0, augurArrayDiscription),
-            new Item("Autosanguine", Availability.Very_Rare, 0, autosanguineDiscription),
-            new Item("Baleful Eye", Availability.Near_Unique, 0, balefulEyeDiscription),
-            new Item("Bionic Leg", Availability.Scarce, 0, bionicLegDiscription),
-            new Item("Bionic Respiratory System", Availability.Rare, 0, bionicRespiratorySystemDiscription),
-            new Item("Bionic Senses", Availability.Rare, 0, bionicSensesDiscription),
-            new Item("Calculus Logi Upgrade", Availability.Very_Rare, 0, calculusLogiUpgradeDiscription),
-            new Item("Cerebral Implants", Availability.Very_Rare, 0, cerebralImplantsDiscription),
-            new Item("Cranial Armour", Availability.Scarce, 0, cranialArmourDiscription),
-            new Item("Ferric Lure Implants", Availability.Very_Rare, 0, ferricLureImplantsDiscription),
-            new Item("Interface Port", Availability.Rare, 0, interfacePortDiscription),
-            new Item("Internal Reservoir", Availability.Rare, 0, internalReservoirDiscription),
-            new Item("Locator Matrix", Availability.Rare, 0, locatorMatrixDiscription),
-            new Item("Luminien Capacitor", Availability.Very_Rare, 0, luminienCapacitorDiscription),
-            new Item("Maglev Coils", Availability.Very_Rare, 0, maglevCoilsDiscription),
-            new Item("Ballistik Mechandendrite", Availability.Very_Rare, 0, ballisticMechandendriteDiscription),
-            new Item("Manipulator Mechandendrite", Availability.Very_Rare, 0, manipulatorMechandendriteDiscription),
-            new Item("Medicae Mechandendrite", Availability.Very_Rare, 0, medicaeMechandendriteDiscription),
-            new Item("Optical Mechandendrite", Availability.Very_Rare, 0, opticalMechandendriteDiscription),
-            new Item("Utility Mechandendrite", Availability.Very_Rare, 0,utilityMechandendriteDiscription),
-            new Item("Memorance Implant", Availability.Rare, 0, memoranceImplantDiscription),
-            new Item("Mind Impulse Unit (MIU)", Availability.Rare, 0, mindImpulseUnitDiscription),
-            new Item("MIU Weapon Interface", Availability.Rare, 0, MIUWeaponInterfaceDiscription),
-            new Item("Respiratory Filter Implant", Availability.Rare, 0, respiratoryFilterImplantDiscription),
-            new Item("Scribe-Tunes", Availability.Rare, 0, scribeTinesDiscription),
-            new Item("Subskin Armour", Availability.Very_Rare, 0, subskinArmourDiscription),
-            new Item("Synthmuscle", Availability.Rare, 0, synthmuscleDiscription),
-            new Item("Vocal Implant", Availability.Scarce, 0, vocalImplantDiscription),
-            new Item("Volitor Implant", Availability.Rare, 0, volitorImpantDiscription)
-        };
-
         #region Discriptions
         private static readonly string bionicArmDiscription = "Bionic arms are a common replacement, and Common models can mimic normal hand and arm functions, " +
             "including dexterity and even sense of touch. " +
@@ -206,6 +169,46 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment
             "and can be compelled not to reveal a certain item of information, remain within a set area, or perform a specific task.If the subject attempts—or " +
             "is forced—to counter this compulsion, his brain shuts down into unconsciousness, or even death for some severe volitor patterns.";
         #endregion
+
+        /// <summary>
+        /// Collection of all cybernetics
+        /// </summary>
+        public static ObservableCollection<IItem> Cybernetics = new ObservableCollection<IItem>
+        {
+            new Item(CyberneticName.Bionic_Arm.ToString(), Availability.Scarce, 0, bionicArmDiscription),
+            new Item(CyberneticName.Bionic_Heart.ToString(), Availability.Very_Rare, 0, bionicHeartDiscription),
+            new Item(CyberneticName.Augur_Array.ToString(), Availability.Rare, 0, augurArrayDiscription),
+            new Item(CyberneticName.Autosanguine.ToString(), Availability.Very_Rare, 0, autosanguineDiscription),
+            new Item(CyberneticName.Baleful_Eye.ToString(), Availability.Near_Unique, 0, balefulEyeDiscription),
+            new Item(CyberneticName.Bionic_Leg.ToString(), Availability.Scarce, 0, bionicLegDiscription),
+            new Item(CyberneticName.Bionic_Respiratory_System.ToString(), Availability.Rare, 0, bionicRespiratorySystemDiscription),
+            new Item(CyberneticName.Bionic_Senses.ToString(), Availability.Rare, 0, bionicSensesDiscription),
+            new Item(CyberneticName.Calculus_Logi_Upgrade.ToString(), Availability.Very_Rare, 0, calculusLogiUpgradeDiscription),
+            new Item(CyberneticName.Cerebral_Implants.ToString(), Availability.Very_Rare, 0, cerebralImplantsDiscription),
+            new Item(CyberneticName.Cranial_Armour.ToString(), Availability.Scarce, 0, cranialArmourDiscription),
+            new Item(CyberneticName.Ferric_Lure_Implants.ToString(), Availability.Very_Rare, 0, ferricLureImplantsDiscription),
+            new Item(CyberneticName.Interface_Port.ToString(), Availability.Rare, 0, interfacePortDiscription),
+            new Item(CyberneticName.Internal_Reservoir.ToString(), Availability.Rare, 0, internalReservoirDiscription),
+            new Item(CyberneticName.Locator_Matrix.ToString(), Availability.Rare, 0, locatorMatrixDiscription),
+            new Item(CyberneticName.Luminien_Capacitor.ToString(), Availability.Very_Rare, 0, luminienCapacitorDiscription),
+            new Item(CyberneticName.Maglev_Coils.ToString(), Availability.Very_Rare, 0, maglevCoilsDiscription),
+            new Item(CyberneticName.Ballistik_Mechandendrite.ToString(), Availability.Very_Rare, 0, ballisticMechandendriteDiscription),
+            new Item(CyberneticName.Manipulator_Mechandendrite.ToString(), Availability.Very_Rare, 0, manipulatorMechandendriteDiscription),
+            new Item(CyberneticName.Medicae_Mechandendrite.ToString(), Availability.Very_Rare, 0, medicaeMechandendriteDiscription),
+            new Item(CyberneticName.Optical_Mechandendrite.ToString(), Availability.Very_Rare, 0, opticalMechandendriteDiscription),
+            new Item(CyberneticName.Utility_Mechandendrite.ToString(), Availability.Very_Rare, 0,utilityMechandendriteDiscription),
+            new Item(CyberneticName.Memorance_Implant.ToString(), Availability.Rare, 0, memoranceImplantDiscription),
+            new Item(CyberneticName.Mind_Impulse_Unit.ToString(), Availability.Rare, 0, mindImpulseUnitDiscription),
+            new Item(CyberneticName.MIU_Weapon_Interface.ToString(), Availability.Rare, 0, MIUWeaponInterfaceDiscription),
+            new Item(CyberneticName.Respiratory_Filter_Implant.ToString(), Availability.Rare, 0, respiratoryFilterImplantDiscription),
+            new Item(CyberneticName.Scribe_Tunes.ToString(), Availability.Rare, 0, scribeTinesDiscription),
+            new Item(CyberneticName.Subskin_Armour.ToString(), Availability.Very_Rare, 0, subskinArmourDiscription),
+            new Item(CyberneticName.Synthmuscle.ToString(), Availability.Rare, 0, synthmuscleDiscription),
+            new Item(CyberneticName.Vocal_Implant.ToString(), Availability.Scarce, 0, vocalImplantDiscription),
+            new Item(CyberneticName.Volitor_Implant.ToString(), Availability.Rare, 0, volitorImpantDiscription)
+        };
+
+        
 
     }
 }

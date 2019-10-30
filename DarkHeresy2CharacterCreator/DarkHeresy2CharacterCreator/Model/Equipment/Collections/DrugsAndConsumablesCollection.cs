@@ -1,4 +1,5 @@
-﻿using DarkHeresy2CharacterCreator.Model.Equipment.Interfaces;
+﻿using DarkHeresy2CharacterCreator.Model.Equipment.Enums;
+using DarkHeresy2CharacterCreator.Model.Equipment.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -13,26 +14,6 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment
     /// </summary>
     public static class DrugsAndConsumablesCollection
     {
-        /// <summary>
-        /// Collection of drugs and consumables
-        /// </summary>
-        public static ObservableCollection<IItem> DrugsAndConsumables = new ObservableCollection<IItem>
-        {
-            new Item("Amasec", Availability.Average, 1, amasecDiscription),
-            new Item("Desoleum Fungus", Availability.Scarce, 0, desoleumFungusDiscription),
-            new Item("De-Tox", Availability.Rare, 0, deToxDiscription),
-            new Item("Frenzon", Availability.Very_Rare, 0, frenzonDiscription),
-            new Item("Lho-Sticks", Availability.Common, 0, lhoSticksDiscription),
-            new Item("Obscura", Availability.Rare, 0, obscuraDiscription),
-            new Item("Ration Pack", Availability.Plentiful, 2, rationPackDiscription),
-            new Item("Recaf", Availability.Abundant, 0, recafDiscription),
-            new Item("Sacred Ungents", Availability.Very_Rare, 0, sacredUngentsDiscription),
-            new Item("Slaught", Availability.Scarce, 0, slaughtDiscription),
-            new Item("Spook", Availability.Rare, 0, spookDiscription),
-            new Item("Stimm", Availability.Average, 0, stimmDiscription),
-            new Item("Tranq", Availability.Abundant, 1, tranqDiscription)
-        };
-
         #region Discriptions
         private static readonly string amasecDiscription = "This refreshment is made from distilled wine or other fermented beverages, " +
             "and is popular in many regions of the Imperium.It is usually a fine-quality product, with some well-aged vintages renowned across the sector for bouquet and flavour.";
@@ -116,5 +97,27 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment
             "and even Guardsmen desperate for respite from their wretched lots.It numbs the body and mind, which provides a very different feeling than being drunk on amasec, " +
             "rotgut, or other spirits.Though similar in the end result, the effects of tranq are unpleasant, depressive, and require an acquired taste.";
         #endregion
+
+        /// <summary>
+        /// Collection of drugs and consumables
+        /// </summary>
+        public static ObservableCollection<IItem> DrugsAndConsumables = new ObservableCollection<IItem>
+        {
+            new Item(DrugsAndConsumablesName.Amasec.ToString(), Availability.Average, 1, amasecDiscription),
+            new Item(DrugsAndConsumablesName.Desoleum_Fungus.ToString(), Availability.Scarce, 0, desoleumFungusDiscription),
+            new Item(DrugsAndConsumablesName.De_Tox.ToString(), Availability.Rare, 0, deToxDiscription),
+            new Item(DrugsAndConsumablesName.Frenzon.ToString(), Availability.Very_Rare, 0, frenzonDiscription),
+            new Item(DrugsAndConsumablesName.Lho_Sticks.ToString(), Availability.Common, 0, lhoSticksDiscription),
+            new Item(DrugsAndConsumablesName.Obscura.ToString(), Availability.Rare, 0, obscuraDiscription),
+            new Item(DrugsAndConsumablesName.Ration_Pack.ToString(), Availability.Plentiful, 2, rationPackDiscription),
+            new Item(DrugsAndConsumablesName.Recaf.ToString(), Availability.Abundant, 0, recafDiscription),
+            new Item(DrugsAndConsumablesName.Sacred_Ungents.ToString(), Availability.Very_Rare, 0, sacredUngentsDiscription),
+            new Item(DrugsAndConsumablesName.Slaught.ToString(), Availability.Scarce, 0, slaughtDiscription),
+            new Item(DrugsAndConsumablesName.Spook.ToString(), Availability.Rare, 0, spookDiscription),
+            new Item(DrugsAndConsumablesName.Stimm.ToString(), Availability.Average, 0, stimmDiscription),
+            new Item(DrugsAndConsumablesName.Tranq.ToString(), Availability.Abundant, 1, tranqDiscription)
+        };
+
+        
     }
 }

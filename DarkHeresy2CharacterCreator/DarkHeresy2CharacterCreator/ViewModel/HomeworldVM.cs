@@ -59,7 +59,7 @@ namespace DarkHeresy2CharacterCreator.ViewModel
                 string result = string.Empty;
                 if (SelectedHomeworld != null)
                 {
-                    if (SelectedHomeworld.RekommendedBackgrouns.Length > 0)
+                    if (SelectedHomeworld.RekommendedBackgrouns.Count > 0)
                     {
                         foreach (var item in SelectedHomeworld.RekommendedBackgrouns)
                             temp.Append(item.ToString()).Append(", ");
