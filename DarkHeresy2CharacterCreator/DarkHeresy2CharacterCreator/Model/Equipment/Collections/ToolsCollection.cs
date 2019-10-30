@@ -183,7 +183,7 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Collections
             new Item(ToolName.Magnoculars.ToString(), Availability.Average, 0.5, magnocularsDiscription),
             new Item(ToolName.Manacles.ToString(), Availability.Plentiful, 1, ManaclesDiscription),
             new Item(ToolName.Medi_Kit.ToString(), Availability.Common, 2, mediKitDiscription),
-            new Item(ToolName.Micro_bead.ToString(), Availability.Average, 0, microBeadDiscription),
+            new Item(ToolName.Micro_Bead.ToString(), Availability.Average, 0, microBeadDiscription),
             new Item(ToolName.Monotask_Servo_Skull.ToString(), Availability.Rare, 2, monotaskServoSkullDiscription),
             new Item(ToolName.Multicompass.ToString(), Availability.Near_Unique, 4, multicompassDiscription),
             new Item(ToolName.Miltikey.ToString(), Availability.Scarce, 0, multikeyDiscription),

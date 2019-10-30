@@ -30,7 +30,7 @@ namespace DarkHeresy2CharacterCreator.Model.Equipment.Enums
         Magnoculars,
         Manacles, 
         Medi_Kit, 
-        Micro_bead, 
+        Micro_Bead, 
         Monotask_Servo_Skull,
         Multicompass,
         Miltikey,

@@ -1,4 +1,6 @@
-﻿using DarkHeresy2CharacterCreator.Model.Skills;
+﻿using DarkHeresy2CharacterCreator.Model.Equipment.Enums;
+using DarkHeresy2CharacterCreator.Model.GeneralSuppliment.Enums;
+using DarkHeresy2CharacterCreator.Model.Skills;
 using DarkHeresy2CharacterCreator.Model.Talents;
 using DarkHeresy2CharacterCreator.Model.Traits;
 using System;
@@ -38,7 +40,7 @@ namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment.Collections
         {
             //TODO create mechanizm to add specialization
             #region Core Culebook
-            new Background("Adeptus Administratum")
+            new Background(BackgroundName.Adeptus_Administratum.ToString())
             {
                 BackgroundBonuds = adeptusAdministratumBonus,
                 BackgroundSkills = new List<ValueTuple<AbstractSkill, AbstractSkill>>
@@ -55,18 +57,18 @@ namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment.Collections
                 },
                 BackgroundEquipment = new List<ValueTuple<Equipment.Interfaces.IItem, Equipment.Interfaces.IItem>>
                 {
-                    (Equipment.Collections.WeaponCollection.Weapons.Where( w => w.Name == "Laspistol").FirstOrDefault(),
-                        Equipment.Collections.WeaponCollection.Weapons.Where( w => w.Name == "Stub Automatic").FirstOrDefault()),
-                    (Equipment.Collections.ArmorCollection.Armors.Where( a => a.Name == "Imperial Robes").FirstOrDefault(), null),
-                    (Equipment.Collections.ToolsCollection.Tools.Where ( t => t.Name == "Qutoquill").FirstOrDefault(), null),
-                    (Equipment.Collections.ToolsCollection.Tools.Where ( t => t.Name == "Chrono").FirstOrDefault(), null),
-                    (Equipment.Collections.ToolsCollection.Tools.Where ( t => t.Name == "Dataslate").FirstOrDefault(), null),
-                    (Equipment.Collections.ToolsCollection.Tools.Where ( t => t.Name == "Medi-kit").FirstOrDefault(), null)
+                    (Equipment.Collections.WeaponCollection.Weapons.Where( w => w.Name == WeaponName.Laspistiol.ToString()).FirstOrDefault(),
+                        Equipment.Collections.WeaponCollection.Weapons.Where( w => w.Name == WeaponName.Stub_Automatic.ToString()).FirstOrDefault()),
+                    (Equipment.Collections.ArmorCollection.Armors.Where( a => a.Name == ArmorName.Imperial_Robes.ToString()).FirstOrDefault(), null),
+                    (Equipment.Collections.ToolsCollection.Tools.Where ( t => t.Name == ToolName.Auto_Quill.ToString()).FirstOrDefault(), null),
+                    (Equipment.GearCollection.Gear.Where ( t => t.Name == GearName.Chrono.ToString()).FirstOrDefault(), null),
+                    (Equipment.Collections.ToolsCollection.Tools.Where ( t => t.Name == ToolName.Dataslate.ToString()).FirstOrDefault(), null),
+                    (Equipment.Collections.ToolsCollection.Tools.Where ( t => t.Name == ToolName.Medi_Kit.ToString()).FirstOrDefault(), null)
                 },
                 BackgroundAptitude = (AptitudeName.Knowledge, AptitudeName.Social),
                 RecommendedRoles = new List<string> { RoleName.Chirurgeon.ToString(), RoleName.Hierophant.ToString(), RoleName.Sage.ToString(), RoleName.Seeker.ToString() }
             },
-            new Background("Adeptus Arbites")
+            new Background(BackgroundName.Adeptus_Arbites.ToString())
             {
                 BackgroundBonuds = adeptusArbitesBonus,
                 BackgroundSkills = new List<ValueTuple<AbstractSkill, AbstractSkill>>
@@ -86,18 +88,18 @@ namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment.Collections
                 },
                 BackgroundEquipment = new List<ValueTuple<Equipment.Interfaces.IItem, Equipment.Interfaces.IItem>>
                 {
-                    (Equipment.Collections.WeaponCollection.Weapons.Where( w => w.Name == "Shotgun").FirstOrDefault(),
-                        Equipment.Collections.WeaponCollection.Weapons.Where( w => w.Name == "Shock Maul").FirstOrDefault()),
-                    (Equipment.Collections.ArmorCollection.Armors.Where( a => a.Name == "Enforcer Light Carapace Armour").FirstOrDefault(),
-                        Equipment.Collections.ArmorCollection.Armors.Where( a => a.Name == "Carapace Chestplate").FirstOrDefault()),
-                    (Equipment.Collections.ToolsCollection.Tools.Where ( t => t.Name == "Stimm").FirstOrDefault(), null),    //add number
-                    (Equipment.Collections.ToolsCollection.Tools.Where ( t => t.Name == "Manacles").FirstOrDefault(), null),
-                    (Equipment.Collections.ToolsCollection.Tools.Where ( t => t.Name == "Lho Stiks").FirstOrDefault(), null),
+                    (Equipment.Collections.WeaponCollection.Weapons.Where( w => w.Name == WeaponName.Shotgun.ToString()).FirstOrDefault(),
+                        Equipment.Collections.WeaponCollection.Weapons.Where( w => w.Name == WeaponName.Shock_Maul.ToString()).FirstOrDefault()),
+                    (Equipment.Collections.ArmorCollection.Armors.Where( a => a.Name == ArmorName.Enforcer_Light_Carapace.ToString()).FirstOrDefault(),
+                        Equipment.Collections.ArmorCollection.Armors.Where( a => a.Name == ArmorName.Carapace_Chestplate.ToString()).FirstOrDefault()),
+                    (Equipment.DrugsAndConsumablesCollection.DrugsAndConsumables.Where ( t => t.Name == DrugsAndConsumablesName.Stimm.ToString()).FirstOrDefault(), null),    //add number
+                    (Equipment.Collections.ToolsCollection.Tools.Where ( t => t.Name == ToolName.Manacles.ToString()).FirstOrDefault(), null),
+                    (Equipment.DrugsAndConsumablesCollection.DrugsAndConsumables.Where ( t => t.Name == DrugsAndConsumablesName.Lho_Sticks.ToString()).FirstOrDefault(), null),
                 },
                 BackgroundAptitude = (AptitudeName.Offence, AptitudeName.Defence),
                 RecommendedRoles = new List<string> { RoleName.Assassin.ToString(), RoleName.Desperado.ToString(), RoleName.Warrior.ToString(), RoleName.Seeker.ToString() }
             },
-            new Background("Adeptus Astra Telepatica")
+            new Background(BackgroundName.Adeptus_Astra_Telepathica.ToString())
             {
                 BackgroundBonuds = adeptusAstraTelepaticaBonus,
                 BackgroundSkills = new List<ValueTuple<AbstractSkill, AbstractSkill>>
@@ -117,18 +119,18 @@ namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment.Collections
                 },
                 BackgroundEquipment = new List<ValueTuple<Equipment.Interfaces.IItem, Equipment.Interfaces.IItem>>
                 {
-                    (Equipment.Collections.WeaponCollection.Weapons.Where( w => w.Name == "Staff").FirstOrDefault(),
-                        Equipment.Collections.WeaponCollection.Weapons.Where( w => w.Name == "Whip").FirstOrDefault()),
-                    (Equipment.Collections.WeaponCollection.Weapons.Where( a => a.Name == "Laspistol").FirstOrDefault(), null),
-                    (Equipment.Collections.ArmorCollection.Armors.Where ( t => t.Name == "Loght Flak Cloack").FirstOrDefault(),
-                        Equipment.Collections.ArmorCollection.Armors.Where ( t => t.Name == "Flak Vest").FirstOrDefault()),
-                    (Equipment.Collections.ToolsCollection.Tools.Where ( t => t.Name == "Micro Bead").FirstOrDefault(),
-                        Equipment.Collections.ToolsCollection.Tools.Where ( t => t.Name == "Psy Focus").FirstOrDefault()),
+                    (Equipment.Collections.WeaponCollection.Weapons.Where( w => w.Name == WeaponName.Staff.ToString()).FirstOrDefault(),
+                        Equipment.Collections.WeaponCollection.Weapons.Where( w => w.Name == WeaponName.Whip.ToString()).FirstOrDefault()),
+                    (Equipment.Collections.WeaponCollection.Weapons.Where( a => a.Name == WeaponName.Laspistiol.ToString()).FirstOrDefault(), null),
+                    (Equipment.Collections.ArmorCollection.Armors.Where ( t => t.Name == ArmorName.Light_Flak_Cloak.ToString()).FirstOrDefault(),
+                        Equipment.Collections.ArmorCollection.Armors.Where ( t => t.Name == ArmorName.Flak_Vest.ToString()).FirstOrDefault()),
+                    (Equipment.Collections.ToolsCollection.Tools.Where ( t => t.Name == ToolName.Micro_Bead.ToString()).FirstOrDefault(),
+                        Equipment.Collections.ToolsCollection.Tools.Where ( t => t.Name == ToolName.Psy_Focus.ToString()).FirstOrDefault()),
                 },
                 BackgroundAptitude = (AptitudeName.Defence, AptitudeName.Psyker),
                 RecommendedRoles = new List<string> { RoleName.Chirurgeon.ToString(), RoleName.Mystic.ToString(), RoleName.Sage.ToString(), RoleName.Seeker.ToString() }
             },
-            new Background("Adeptus Mechanicus")
+            new Background(BackgroundName.Adeptus_Mechanicus.ToString())
             {
                 BackgroundBonuds = adeptusMechanicusBonus,
                 BackgroundSkills = new List<ValueTuple<AbstractSkill, AbstractSkill>>
@@ -147,19 +149,19 @@ namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment.Collections
                 },
                 BackgroundEquipment = new List<ValueTuple<Equipment.Interfaces.IItem, Equipment.Interfaces.IItem>>
                 {
-                    (Equipment.Collections.WeaponCollection.Weapons.Where( w => w.Name == "Autogun").FirstOrDefault(),
-                        Equipment.Collections.WeaponCollection.Weapons.Where( w => w.Name == "Hand Cannon").FirstOrDefault()),
-                    (Equipment.Collections.ArmorCollection.Armors.Where( a => a.Name == "Imperial Robes").FirstOrDefault(), null),
-                    (Equipment.Collections.ToolsCollection.Tools.Where ( t => t.Name == "Vial of Sacred Urgents").FirstOrDefault(), null),
-                    (Equipment.Collections.ToolsCollection.Tools.Where ( t => t.Name == "Monotask Servoskull").FirstOrDefault(),
-                        Equipment.Collections.ToolsCollection.Tools.Where ( t => t.Name == "Utility Mechandendrite").FirstOrDefault()),
+                    (Equipment.Collections.WeaponCollection.Weapons.Where( w => w.Name == WeaponName.Autogun.ToString()).FirstOrDefault(),
+                        Equipment.Collections.WeaponCollection.Weapons.Where( w => w.Name == WeaponName.Hand_Cannon.ToString()).FirstOrDefault()),
+                    (Equipment.Collections.ArmorCollection.Armors.Where( a => a.Name == ArmorName.Imperial_Robes.ToString()).FirstOrDefault(), null),
+                    (Equipment.DrugsAndConsumablesCollection.DrugsAndConsumables.Where ( t => t.Name == DrugsAndConsumablesName.Sacred_Ungents.ToString()).FirstOrDefault(), null),
+                    (Equipment.Collections.ToolsCollection.Tools.Where ( t => t.Name == ToolName.Monotask_Servo_Skull.ToString()).FirstOrDefault(),
+                        Equipment.CyberneticCollection.Cybernetics.Where ( t => t.Name == CyberneticName.Utility_Mechandendrite.ToString()).FirstOrDefault()),
                 },
                 BackgroundAptitude = (AptitudeName.Knowledge, AptitudeName.Tech),
                 RecommendedRoles = new List<string> { RoleName.Chirurgeon.ToString(), RoleName.Hierophant.ToString(), RoleName.Sage.ToString(), RoleName.Seeker.ToString() },
-                Trait = Traits.TraitList.Traits.Where (t => t.Name == "Mechanicus Implants").FirstOrDefault() as Trait
+                Trait = Traits.TraitList.Traits.Where (t => t.Name == TraitName.Mechanicus_Implants.ToString()).FirstOrDefault() as Trait
 
             },
-            new Background("Adeptus Ministorum")
+            new Background(BackgroundName.Adeptus_Ministorum.ToString())
             {
                 BackgroundBonuds = adeptusMinistorumBonus,
                 BackgroundSkills = new List<ValueTuple<AbstractSkill, AbstractSkill>>
@@ -178,18 +180,18 @@ namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment.Collections
                 },
                 BackgroundEquipment = new List<ValueTuple<Equipment.Interfaces.IItem, Equipment.Interfaces.IItem>>
                 {
-                    (Equipment.Collections.WeaponCollection.Weapons.Where( w => w.Name == "Hand Flamer").FirstOrDefault(),
-                        Equipment.Collections.WeaponCollection.Weapons.Where( w => w.Name == "Stub Rvolver").FirstOrDefault()),
-                    (Equipment.Collections.ArmorCollection.Armors.Where( a => a.Name == "Imperial Robes").FirstOrDefault(),
-                        Equipment.Collections.ArmorCollection.Armors.Where( a => a.Name == "Flak Vest").FirstOrDefault()),
-                    (Equipment.Collections.ToolsCollection.Tools.Where ( t => t.Name == "Backpack").FirstOrDefault(), null),
-                    (Equipment.Collections.ToolsCollection.Tools.Where ( t => t.Name == "Glow Globe/Stublight").FirstOrDefault(), null),
-                    (Equipment.Collections.ToolsCollection.Tools.Where ( t => t.Name == "Monotask Sevoskull").FirstOrDefault(), null)
+                    (Equipment.Collections.WeaponCollection.Weapons.Where( w => w.Name == WeaponName.Hand_Flamer.ToString()).FirstOrDefault(),
+                        Equipment.Collections.WeaponCollection.Weapons.Where( w => w.Name == WeaponName.Stub_Revolver.ToString()).FirstOrDefault()),
+                    (Equipment.Collections.ArmorCollection.Armors.Where( a => a.Name == ArmorName.Imperial_Robes.ToString()).FirstOrDefault(),
+                        Equipment.Collections.ArmorCollection.Armors.Where( a => a.Name == ArmorName.Flak_Vest.ToString()).FirstOrDefault()),
+                    (Equipment.GearCollection.Gear.Where ( t => t.Name == GearName.Backpack.ToString()).FirstOrDefault(), null),
+                    (Equipment.Collections.ToolsCollection.Tools.Where ( t => t.Name == ToolName.Glow_Globe_or_Stablight.ToString()).FirstOrDefault(), null),
+                    (Equipment.Collections.ToolsCollection.Tools.Where ( t => t.Name == ToolName.Monotask_Servo_Skull.ToString()).FirstOrDefault(), null)
                 },
                 BackgroundAptitude = (AptitudeName.Leadship, AptitudeName.Social),
                 RecommendedRoles = new List<string> { RoleName.Chirurgeon.ToString(), RoleName.Hierophant.ToString(), RoleName.Warrior.ToString(), RoleName.Seeker.ToString() }
             },
-            new Background("Imperial Guard")
+            new Background(BackgroundName.Imperial_Guard.ToString())
             {
                 BackgroundBonuds = imprialGuardBonus,
                 BackgroundSkills = new List<ValueTuple<AbstractSkill, AbstractSkill>>
@@ -208,18 +210,18 @@ namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment.Collections
                 },
                 BackgroundEquipment = new List<ValueTuple<Equipment.Interfaces.IItem, Equipment.Interfaces.IItem>>
                 {
-                    (Equipment.Collections.WeaponCollection.Weapons.Where( w => w.Name == "Laspistol").FirstOrDefault(),
-                        Equipment.Collections.WeaponCollection.Weapons.Where( w => w.Name == "Lasgun").FirstOrDefault()),
-                    (Equipment.Collections.ArmorCollection.Armors.Where( a => a.Name == "Imperial Guard Flak Armour").FirstOrDefault(), null),
-                    (Equipment.Collections.ToolsCollection.Tools.Where ( t => t.Name == "Combat Vest").FirstOrDefault(), null),
-                    (Equipment.Collections.ToolsCollection.Tools.Where ( t => t.Name == "Grappnel and Line").FirstOrDefault(), null),
-                    (Equipment.Collections.ToolsCollection.Tools.Where ( t => t.Name == "Lho Stiks").FirstOrDefault(), null),
-                    (Equipment.Collections.ToolsCollection.Tools.Where ( t => t.Name == "Magnoculars").FirstOrDefault(), null)
+                    (Equipment.Collections.WeaponCollection.Weapons.Where( w => w.Name == WeaponName.Laspistiol.ToString()).FirstOrDefault(),
+                        Equipment.Collections.WeaponCollection.Weapons.Where( w => w.Name == WeaponName.Lasgun.ToString()).FirstOrDefault()),
+                    (Equipment.Collections.ArmorCollection.Armors.Where( a => a.Name == ArmorName.Imperial_Guard_Flak_Armour.ToString()).FirstOrDefault(), null),
+                    (Equipment.GearCollection.Gear.Where ( t => t.Name == GearName.Combat_Vest.ToString()).FirstOrDefault(), null),
+                    (Equipment.Collections.ToolsCollection.Tools.Where ( t => t.Name == ToolName.Gapnel_and_Line.ToString()).FirstOrDefault(), null),
+                    (Equipment.DrugsAndConsumablesCollection.DrugsAndConsumables.Where ( t => t.Name == DrugsAndConsumablesName.Lho_Sticks.ToString()).FirstOrDefault(), null),
+                    (Equipment.Collections.ToolsCollection.Tools.Where ( t => t.Name == ToolName.Magnoculars.ToString()).FirstOrDefault(), null)
                 },
                 BackgroundAptitude = (AptitudeName.Fieldcraft, AptitudeName.Leadship),
                 RecommendedRoles = new List<string> { RoleName.Assassin.ToString(), RoleName.Desperado.ToString(), RoleName.Hierophant.ToString(), RoleName.Warrior.ToString() }
             },
-            new Background("Outcast")
+            new Background(BackgroundName.Outcast.ToString())
             {
                 BackgroundBonuds = outcastBonus,
                 BackgroundSkills = new List<ValueTuple<AbstractSkill, AbstractSkill>>
@@ -238,14 +240,14 @@ namespace DarkHeresy2CharacterCreator.Model.GeneralSuppliment.Collections
                 },
                 BackgroundEquipment = new List<ValueTuple<Equipment.Interfaces.IItem, Equipment.Interfaces.IItem>>
                 {
-                    (Equipment.Collections.WeaponCollection.Weapons.Where( w => w.Name == "Laspistol").FirstOrDefault(),
-                        Equipment.Collections.WeaponCollection.Weapons.Where( w => w.Name == "Autopistol").FirstOrDefault()),
-                    (Equipment.Collections.ArmorCollection.Armors.Where( a => a.Name == "Armoured Bodyglove").FirstOrDefault(),
-                        Equipment.Collections.ArmorCollection.Armors.Where( a => a.Name == "Flak Vest").FirstOrDefault()),
-                    (Equipment.Collections.WeaponCollection.Weapons.Where( w => w.Name == "Chainsword").FirstOrDefault(), null),
-                    (Equipment.Collections.ToolsCollection.Tools.Where ( t => t.Name == "Injector").FirstOrDefault(), null),
-                    (Equipment.Collections.ToolsCollection.Tools.Where ( t => t.Name == "Obscura").FirstOrDefault(),
-                        Equipment.Collections.ToolsCollection.Tools.Where ( t => t.Name == "Slaught").FirstOrDefault()),
+                    (Equipment.Collections.WeaponCollection.Weapons.Where( w => w.Name == WeaponName.Laspistiol.ToString()).FirstOrDefault(),
+                        Equipment.Collections.WeaponCollection.Weapons.Where( w => w.Name == WeaponName.Autopistol.ToString()).FirstOrDefault()),
+                    (Equipment.Collections.ArmorCollection.Armors.Where( a => a.Name == ArmorName.Armoured_Bodyglove.ToString()).FirstOrDefault(),
+                        Equipment.Collections.ArmorCollection.Armors.Where( a => a.Name == ArmorName.Flak_Vest.ToString()).FirstOrDefault()),
+                    (Equipment.Collections.WeaponCollection.Weapons.Where( w => w.Name == WeaponName.Chainsword.ToString()).FirstOrDefault(), null),
+                    (Equipment.Collections.ToolsCollection.Tools.Where ( t => t.Name == ToolName.Inhaler_or_Injector.ToString()).FirstOrDefault(), null),
+                    (Equipment.DrugsAndConsumablesCollection.DrugsAndConsumables.Where ( t => t.Name == DrugsAndConsumablesName.Obscura.ToString()).FirstOrDefault(),
+                        Equipment.DrugsAndConsumablesCollection.DrugsAndConsumables.Where ( t => t.Name == DrugsAndConsumablesName.Slaught.ToString()).FirstOrDefault()),
                 },
                 BackgroundAptitude = (AptitudeName.Fieldcraft, AptitudeName.Social),
                 RecommendedRoles = new List<string> { RoleName.Assassin.ToString(), RoleName.Desperado.ToString(), RoleName.Seeker.ToString() }

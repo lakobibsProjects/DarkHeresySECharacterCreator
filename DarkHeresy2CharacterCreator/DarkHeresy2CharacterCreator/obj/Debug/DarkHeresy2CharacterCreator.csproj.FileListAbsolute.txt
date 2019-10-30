@@ -37,3 +37,4 @@ C:\Projects\C#\DarkHeresy2CharacterCreator\DarkHeresy2CharacterCreator\DarkHeres
 C:\Projects\C#\DarkHeresy2CharacterCreator\DarkHeresy2CharacterCreator\DarkHeresy2CharacterCreator\bin\Debug\System.ComponentModel.TypeConverter.dll
 C:\Projects\C#\DarkHeresy2CharacterCreator\DarkHeresy2CharacterCreator\DarkHeresy2CharacterCreator\bin\Debug\Newtonsoft.Json.dll
 C:\Projects\C#\DarkHeresy2CharacterCreator\DarkHeresy2CharacterCreator\DarkHeresy2CharacterCreator\bin\Debug\Newtonsoft.Json.xml
+C:\Projects\C#\DarkHeresy2CharacterCreator\DarkHeresy2CharacterCreator\DarkHeresy2CharacterCreator\obj\Debug\DarkHeresy2CharacterCreator.csprojAssemblyReference.cache
